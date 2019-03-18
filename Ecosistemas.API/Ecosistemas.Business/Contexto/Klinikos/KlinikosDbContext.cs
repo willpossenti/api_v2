@@ -1,0 +1,49 @@
+﻿using Ecosistemas.Business.Entities;
+using Ecosistemas.Business.Entities.Klinikos;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Ecosistemas.Business.Contexto.Klinikos
+{
+    public class KlinikosDbContext : DbContext
+    {
+        public KlinikosDbContext(
+            DbContextOptions<KlinikosDbContext> options) : base(options)
+        {
+
+        }
+
+        public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<PessoaPaciente> PessoaPacientes { get; set; }
+        public DbSet<PessoaContato> PessoaContatos { get; set; }
+
+        public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Estado> Estados { get; set; }
+
+        public DbSet<Etnia> Etnias { get; set; }
+        public DbSet<Raca> Racas { get; set; }
+        public DbSet<Justificativa> Justificativas { get; set; }
+
+        public DbSet<Nacionalidade> Nacionalidades { get; set; }
+
+        public DbSet<OrgaoEmissor> OrgaosEmissores { get; set; }
+
+        public DbSet<Ocupacao> Ocupacoes { get; set; }
+
+        public DbSet<Pais> Paises { get; set; }
+        public DbSet<TipoCertidao> TiposCertidao { get; set; }
+        public DbSet<Escolaridade> Escolaridades { get; set; }
+        public DbSet<SituacaoFamiliarConjugal> SituacoesFamiliaresConjugais { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+         
+        }
+
+       
+    }
+}

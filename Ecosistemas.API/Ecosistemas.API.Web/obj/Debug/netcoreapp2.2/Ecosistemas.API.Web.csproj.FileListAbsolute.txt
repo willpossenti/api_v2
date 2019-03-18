@@ -1,0 +1,13 @@
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\bin\Debug\netcoreapp2.2\Ecosistemas.API.Web.deps.json
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\bin\Debug\netcoreapp2.2\Ecosistemas.API.Web.runtimeconfig.json
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\bin\Debug\netcoreapp2.2\Ecosistemas.API.Web.runtimeconfig.dev.json
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\bin\Debug\netcoreapp2.2\Ecosistemas.API.Web.dll
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\bin\Debug\netcoreapp2.2\Ecosistemas.API.Web.pdb
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.csproj.CoreCompileInputs.cache
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.RazorAssemblyInfo.cache
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.RazorAssemblyInfo.cs
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.AssemblyInfoInputs.cache
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.AssemblyInfo.cs
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.RazorTargetAssemblyInfo.cache
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.dll
+D:\API\Ecosistemas.API\Ecosistemas.API.Web\obj\Debug\netcoreapp2.2\Ecosistemas.API.Web.pdb

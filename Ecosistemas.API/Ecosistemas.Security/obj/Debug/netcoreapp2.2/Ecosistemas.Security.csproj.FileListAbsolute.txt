@@ -1,0 +1,10 @@
+D:\API\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.deps.json
+D:\API\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.runtimeconfig.json
+D:\API\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.runtimeconfig.dev.json
+D:\API\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.dll
+D:\API\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
+D:\API\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.csproj.CoreCompileInputs.cache
+D:\API\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.AssemblyInfoInputs.cache
+D:\API\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.AssemblyInfo.cs
+D:\API\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.dll
+D:\API\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
