@@ -1,0 +1,14 @@
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\bin\Debug\netcoreapp2.2\Ecosistemas.Klinikos.deps.json
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\bin\Debug\netcoreapp2.2\Ecosistemas.Klinikos.runtimeconfig.json
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\bin\Debug\netcoreapp2.2\Ecosistemas.Klinikos.runtimeconfig.dev.json
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\bin\Debug\netcoreapp2.2\Ecosistemas.Klinikos.dll
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\bin\Debug\netcoreapp2.2\Ecosistemas.Klinikos.pdb
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.csprojAssemblyReference.cache
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.csproj.CoreCompileInputs.cache
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.RazorAssemblyInfo.cache
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.RazorAssemblyInfo.cs
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.AssemblyInfoInputs.cache
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.AssemblyInfo.cs
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.RazorTargetAssemblyInfo.cache
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.dll
+D:\API\Ecosistemas.Klinikos\Ecosistemas.Klinikos\obj\Debug\netcoreapp2.2\Ecosistemas.Klinikos.pdb

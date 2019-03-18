@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" data-ng-app="AngularAuthApp" data-ng-controller="indexController">
+<!-- begin::Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>API | Klinikos</title>
+    <meta name="description" content="Autenticador do Klinikos">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="versaosistema" content="1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--begin::Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+
+            google: {
+                "families": [
+                    "Poppins:300,400,500,600,700"]
+            },
+
+            active: function () {
+
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <!--end::Fonts -->
+    <!--begin:: Global Mandatory Vendors -->
+    <link href="../../Content/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+    <!--end:: Global Mandatory Vendors -->
+    <!--begin:: Global Optional Vendors -->
+    <link href="../../Content/css/tether.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/nouislider.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/owl.theme.default.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/dropzone.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/summernote.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/morris.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/sweetalert2.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/socicon.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/line-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/flaticon.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/all.min.css" rel="stylesheet" type="text/css" />
+    <!--end:: Global Optional Vendors -->
+    <!--begin::Global Theme Styles(used by all pages) -->
+
+    <link href="../../Content/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles -->
+    <!--begin::Layout Skins(used by all pages) -->
+    <link href="../../Content/css/light.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/navy.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/aside/navy.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="Content/media/logos/16X16.ico" />
+
+    <!--begin:: Loading bar (loading for top of the pages)-->
+    <link href="../../Content/css/loading-bar.Css" rel="stylesheet" />
+    <!--end:: Loading bar-->
+    <!-- begin:: 3rd party libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>-->
+    <script src="../../Scripts/angular-local-storage.min.js"></script>
+    <script src="../../Scripts/loading-bar.min.js"></script>
+    <!--end:: 3rd party libraries -->
+    <!-- begin:: Load app main script -->
+    <script src="App/app.js"></script>
+    <!--end:: Load app main script -->
+    <!-- begin:: Load services -->
+    <script src="App/Services/authInterceptorService.js"></script>
+    <script src="App/Services/authService.js"></script>
+    <script src="App/Services/usersService.js"></script>
+    <script src="App/Services/tokensManagerService.js"></script>
+    <!--end:: Load services -->
+    <!-- begin:: Load controllers -->
+    <script src="App/Controllers/indexController.js"></script>
+    <script src="App/Controllers/homeController.js"></script>
+    <script src="App/Controllers/loginController.js"></script>
+    <script src="App/Controllers/signupController.js"></script>
+    <script src="App/Controllers/usersController.js"></script>
+    <script src="App/Controllers/refreshController.js"></script>
+    <script src="App/Controllers/tokensManagerController.js"></script>
+    <script src="App/Controllers/associateController.js"></script>
+    <!--end:: Load controllers -->
+    <script>
+
+
+        var KAppOptions = {
+
+            "colors": {
+
+                "state": {
+
+                    "brand": "#5d78ff",
+
+                    "metal": "#c4c5d6",
+
+                    "light": "#ffffff",
+
+                    "accent": "#00c5dc",
+
+                    "primary": "#5867dd",
+
+                    "success": "#34bfa3",
+
+                    "info": "#36a3f7",
+
+                    "warning": "#ffb822",
+
+                    "danger": "#fd3995",
+
+                    "focus": "#9816f4"
+                },
+
+                "base": {
+
+                    "label": [
+
+                        "#c5cbe3",
+
+                        "#a1a8c3",
+
+                        "#3d4465",
+
+                        "#3e4466"
+                    ],
+
+                    "shape": [
+
+                        "#f0f3ff",
+
+                        "#d9dffa",
+
+                        "#afb4d4",
+
+                        "#646c9a"
+                    ]
+                }
+            }
+        };
+    </script>
+    <!-- end::Global Config -->
+    <!--begin:: Global Mandatory Vendors -->
+    <script src="../../Scripts/jquery.js" type="text/javascript"></script>
+    <script src="../../Scripts/popper.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/js.cookie.js" type="text/javascript"></script>
+    <script src="../../Scripts/moment.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/tooltip.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="../../Scripts/sticky.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/wNumb.js" type="text/javascript"></script>
+    <!--end:: Global Mandatory Vendors -->
+    <!--begin:: Global Optional Vendors -->
+    <script src="../../Scripts/jquery.form.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/init.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-timepicker.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-timepicker/init.js" type="text/javascript"></script>
+    <script src="../../Scripts/daterangepicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-maxlength.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-select.js" type="text/javascript"></script>
+    <script src="../../Scripts/typeahead.bundle.js" type="text/javascript"></script>
+    <script src="../../Scripts/handlebars.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.inputmask.bundle.js" type="text/javascript"></script>
+    <script src="../../Scripts/inputmask.date.extensions.js" type="text/javascript"></script>
+    <script src="../../Scripts/inputmask.numeric.extensions.js" type="text/javascript"></script>
+    <!-- <script src="../assets/vendors/general/inputmask/dist/inputmask/inputmask.phone.extensions.js" type="text/javascript"></script>-->
+    <script src="../../Scripts/nouislider.js" type="text/javascript"></script>
+    <script src="../../Scripts/owl.carousel.js" type="text/javascript"></script>
+    <script src="../../Scripts/autosize.js" type="text/javascript"></script>
+    <script src="../../Scripts/clipboard.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/dropzone.js" type="text/javascript"></script>
+    <script src="../../Scripts/summernote.js" type="text/javascript"></script>
+    <script src="../../Scripts/markdown.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-markdown.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-markdown/init.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="../../Scripts/additional-methods.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-validation/init.js" type="text/javascript"></script>
+    <script src="../../Scripts/toastr.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/raphael.js" type="text/javascript"></script>
+    <script src="../../Scripts/morris.js" type="text/javascript"></script>
+    <script src="../../Scripts/Chart.bundle.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap-session-timeout.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/idle-timer.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.waypoints.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.counterup.js" type="text/javascript"></script>
+    <script src="../../Scripts/promise.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/sweetalert2/init.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.repeater/src/lib.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.repeater/src/repeater.js" type="text/javascript"></script>
+    <script src="../../Scripts/purify.js" type="text/javascript"></script>
+    <!--end:: Global Optional Vendors -->
+    <!--begin::Global Theme Bundle(used by all pages) -->
+
+  <!--  <script src="../../Scripts/Scripts.bundle.js" type="text/javascript"></script>-->
+    <!--end::Global Theme Bundle -->
+    <!--begin::Global App Bundle(used by all pages) -->
+    <!--<script src="../../Scripts/app.bundle.js" type="text/javascript"></script>-->
+</head>
+<!-- end::Head -->
+<!-- begin::Body -->
+
+<body>
+
+
+                <div>
+                    <div ng-view="">
+
+
+                    </div>
+                </div>
+
+
+
+                <!-- begin::Global Config(global config for global JS sciprts) -->
+
+
+
+</body>
+
+</html>
+
+<!-- end::Body -->
