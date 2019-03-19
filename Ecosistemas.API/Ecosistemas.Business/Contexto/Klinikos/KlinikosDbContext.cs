@@ -37,6 +37,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<TipoCertidao> TiposCertidao { get; set; }
         public DbSet<Escolaridade> Escolaridades { get; set; }
         public DbSet<SituacaoFamiliarConjugal> SituacoesFamiliaresConjugais { get; set; }
+        public DbSet<TipoProfissional> TiposProfissional { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

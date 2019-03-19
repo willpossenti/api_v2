@@ -5,18 +5,12 @@ using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
 {
-    public class Escolaridade
+    public class TipoProfissional
     {
         [Key]
-        public Guid EscolaridadeId { get; set; }
+        public Guid TipoProfissionalId { get; set; }
 
-        [Required(ErrorMessage = "O código da escolaridade é obrigatório")]
-        [StringLength(2, ErrorMessage = "{0} Precisa ter no máximo 2")]
-        [DataType(DataType.Text)]
-
-        public string CodigoEscolaridade { get; set; }
-
-        [Required(ErrorMessage = "A descrição da escolaridade é obrigatória")]
+        [Required(ErrorMessage = "A descrição do tipo de profissional é obrigatória")]
         [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]
         public string Descricao { get; set; }

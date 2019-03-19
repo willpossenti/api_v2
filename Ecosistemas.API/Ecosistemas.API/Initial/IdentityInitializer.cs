@@ -9160,7 +9160,6 @@ namespace Ecosistemas.API.Initial
 
                     new PaisService(_contextKlinikos).AdicionarCarga(listaPais, Guid.Empty);
                     #endregion
-
                     #region carga Tipo Certidão
                     var listaTipoCertidao = new List<TipoCertidao>() {
 
@@ -9174,42 +9173,56 @@ namespace Ecosistemas.API.Initial
 
                     new TipoCertidaoService(_contextKlinikos).AdicionarCarga(listaTipoCertidao, Guid.Empty);
                     #endregion
-
                     #region carga Escolaridade
                     var listaEscolaridade = new List<Escolaridade>() {
 
 
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "NÃO SABE LER/ESCREVER", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "ALFABETIZADO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "1º GRAU COMPLETO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "2º GRAU COMPLETO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "3º GRAU COMPLETO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "SUPERIOR INCOMPLETO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "SUPERIOR COMPLETO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "ESPECIALIZADO/RESIDÊNCIA", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "MESTRADO", Ativo = true },
-                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), Descricao = "DOUTORADO", Ativo = true }
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="01", Descricao = "NÃO SABE LER/ESCREVER", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="02", Descricao = "ALFABETIZADO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="03", Descricao = "1º GRAU INCOMPLETO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="04", Descricao = "1º GRAU COMPLETO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="05", Descricao = "2º GRAU INCOMPLETO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="06", Descricao = "2º GRAU COMPLETO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="07", Descricao = "SUPERIOR INCOMPLETO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="08", Descricao = "SUPERIOR COMPLETO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="09", Descricao = "ESPECIALIZADO/RESIDÊNCIA", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="10", Descricao = "MESTRADO", Ativo = true },
+                        new Escolaridade() { EscolaridadeId = Guid.NewGuid(), CodigoEscolaridade ="11", Descricao = "DOUTORADO", Ativo = true }
 
                     };
 
 
                     new EscolaridadeService(_contextKlinikos).AdicionarCarga(listaEscolaridade, Guid.Empty);
                     #endregion
-
                     #region carga Situacao Conjugal Familiar Conjugal
                     var listaSituacaoFamiliarConjugal = new List<SituacaoFamiliarConjugal>() {
 
 
-                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), Descricao = "CONVIVE COM COMPANHEIRO(A) E FILHO(S)", Ativo = true },
-                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), Descricao = "CONVIVE COM COMPANHEIRO(A) COM LAÇOS CONJUGAIS E SEM FILHO(S)", Ativo = true },
-                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), Descricao = "CONVIVE COM COMPANHEIRO(A) COM FILHO(S) E/OU OUTRO(S) FAMILIAR(ES)", Ativo = true },
-                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), Descricao = "CONVIVE COM FAMILIAR(ES) SEM COMPANHEIRO(A)", Ativo = true },
-                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), Descricao = "CONVIVE COM OUTRA(S) PESSOA(S)", Ativo = true }
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="1", Descricao = "CONVIVE COM COMPANHEIRA(O) E FILHO(S)", Ativo = true },
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="2", Descricao = "CONVIVE COM COMPANHEIRA(O) COM LACOS CONJUGAIS E SEM FILHO(S)", Ativo = true },
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="3", Descricao = "CONVIVE COM COMPANHEIRA(O) COM FILHO(S) E/OU OUTRO(S) FAMILIAR(ES)", Ativo = true },
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="4", Descricao = "CONVIVE COM FAMILIAR(ES) SEM COMPANHEIRA(O)", Ativo = true },
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="5", Descricao = "CONVIVE COM OUTRA(S) PESSOA(S) SEM LACOS CONSANGUINEOS E/OU LACOS CONJUGAIS", Ativo = true },
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="6", Descricao = "VIVE SO", Ativo = true },
+                        new SituacaoFamiliarConjugal() { SituacaoFamiliarConjugalId = Guid.NewGuid(), CodigoSituacaoFamiliarConjugal ="99", Descricao = "SEM INFORMACAO", Ativo = true }
 
                     };
 
 
                     new SituacaoFamiliarConjugalService(_contextKlinikos).AdicionarCarga(listaSituacaoFamiliarConjugal, Guid.Empty);
+                    #endregion
+                    #region carga Tipo Profissional
+                    var listaTipoProfissional = new List<TipoProfissional>() {
+
+
+                        new TipoProfissional() { TipoProfissionalId = Guid.NewGuid(),  Descricao = "AUXILIAR ADMINISTRATIVO", Ativo = true },
+                       new TipoProfissional() { TipoProfissionalId = Guid.NewGuid(),  Descricao = "TÉCNICO DE ENFERMAGEM", Ativo = true },
+                       new TipoProfissional() { TipoProfissionalId = Guid.NewGuid(),  Descricao = "ENFERMEIRO", Ativo = true },
+                       new TipoProfissional() { TipoProfissionalId = Guid.NewGuid(),  Descricao = "MÉDICO", Ativo = true }
+                    };
+
+
+                    new TipoProfissionalService(_contextKlinikos).AdicionarCarga(listaTipoProfissional, Guid.Empty);
                     #endregion
                 }
 

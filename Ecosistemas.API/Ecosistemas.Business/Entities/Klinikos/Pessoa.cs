@@ -110,6 +110,8 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual Escolaridade Escolaridade { get; set; }
 
+        public virtual SituacaoFamiliarConjugal SituacaoFamiliarConjugal { get; set; }
+
         public bool Ativo { get; set; }
 
         //public virtual List<PessoaContato> PessoaContatos { get; set; }
