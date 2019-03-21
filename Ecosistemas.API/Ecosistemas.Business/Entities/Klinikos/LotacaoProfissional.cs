@@ -10,9 +10,19 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid LotacaoProfissionalId { get; set; }
 
-        public virtual Pessoa Pessoa { get; set; }
+        public virtual PessoaProfissional PessoaProfissional { get; set; }
 
         public virtual TipoProfissional TipoProfissional { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string NumeroConselho { get; set; }
+
+        [StringLength(2, ErrorMessage = "{0} Precisa ter no máximo 2")]
+        [DataType(DataType.Text)]
+        public string UfProfissional { get; set; }
+
+        public virtual OrgaoEmissor OrgaoEmissorProfissional { get; set; }
 
         public bool Coordenador { get; set; }
 
