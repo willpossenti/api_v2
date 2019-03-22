@@ -1,23 +1,30 @@
-﻿using Ecosistemas.Business.Entities.Klinikos;
+using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
 using System;
 using System.Collections.Generic;
 using System.Text;
+<<<<<<<<< Temporary merge branch 1
 using System.Threading.Tasks;
 using Ecosistemas.Business.Utility;
 using System.Linq;
+=========
+>>>>>>>>> Temporary merge branch 2
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaPacienteService : BaseService<PessoaPaciente>, IPessoaPacienteService
     {
         private readonly KlinikosDbContext _context;
+<<<<<<<<< Temporary merge branch 1
         private IPessoaHistoricoService _servicePessoaHistorico;
+=========
+>>>>>>>>> Temporary merge branch 2
 
         public PessoaPacienteService(KlinikosDbContext context) : base(context)
         {
             _context = context;
+<<<<<<<<< Temporary merge branch 1
             _servicePessoaHistorico = new PessoaHistoricoService(context);
         }
 
@@ -47,5 +54,9 @@ namespace Ecosistemas.Business.Services.Klinikos
         }
 
 
+=========
+
+        }
+>>>>>>>>> Temporary merge branch 2
     }
 }
