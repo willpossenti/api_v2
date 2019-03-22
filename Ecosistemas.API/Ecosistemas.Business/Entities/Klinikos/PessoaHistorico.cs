@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
 {
-    public class Pessoa
+    public class PessoaHistorico
     {
+
         [Key]
-        public Guid PessoaId { get; set; }
+        public Guid PessoaPacienteHistoricoId { get; set; }
+
+        public virtual Pessoa Pessoa { get; set; }
 
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 70")]
@@ -30,9 +34,13 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string IdadeAparente { get; set; }
 
-        public virtual Raca Raca { get; set; }
+        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [DataType(DataType.Text)]
+        public string Raca { get; set; }
 
-        public virtual Etnia Etnia { get; set; }
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Etnia { get; set; }
 
         [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 70")]
         [DataType(DataType.Text)]
@@ -47,9 +55,19 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Cpf { get; set; }
 
-        public virtual Justificativa Justificativa { get; set; }
-        public virtual Nacionalidade Nacionalidade { get; set; }
-        public virtual Cidade Naturalidade { get; set; }
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Justificativa { get; set; }
+
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Nacionalidade { get; set; }
+
+
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Naturalidade { get; set; }
+
         public virtual OrgaoEmissor OrgaoEmissor { get; set; }
 
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
@@ -88,25 +106,30 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Bairro { get; set; }
 
-        public virtual Estado Estado { get; set; }
+        public string Estado { get; set; }
 
-        public virtual Cidade Cidade { get; set; }
-
-        public virtual List<PessoaContato> PessoaContatos { get; set; }
-
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Cidade { get; set; }
 
         [StringLength(15, ErrorMessage = "{0} Precisa ter no máximo 15")]
         [DataType(DataType.Text)]
         public string PisPasep { get; set; }
 
-        public virtual Ocupacao Ocupacao { get; set; }
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Ocupacao { get; set; }
 
-        public virtual Pais PaisOrigem { get; set; }
+        [StringLength(60, ErrorMessage = "{0} Precisa ter no máximo 60")]
+        [DataType(DataType.Text)]
+        public string PaisOrigem { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime DataEntradaPis { get; set; }
 
-        public virtual TipoCertidao TipoCertidao { get; set; }
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string TipoCertidao { get; set; }
 
         [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
         [DataType(DataType.Text)]
@@ -156,9 +179,13 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool FrequentaEscola { get; set; }
 
-        public virtual Escolaridade Escolaridade { get; set; }
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string Escolaridade { get; set; }
 
-        public virtual SituacaoFamiliarConjugal SituacaoFamiliarConjugal { get; set; }
+        [StringLength(200, ErrorMessage = "{0} Precisa ter no máximo 200")]
+        [DataType(DataType.Text)]
+        public string SituacaoFamiliarConjugal { get; set; }
 
         public bool PacienteProfissional { get; set; }
 
@@ -174,9 +201,31 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Senha { get; set; }
 
-        public bool Master { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string NumeroProntuario { get; set; }
+
+
+        [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 500")]
+        [DataType(DataType.Text)]
+        public string DescricaoNaoIdentificado { get; set; }
+
+        public bool Recemnascido { get; set; }
+
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string PessoaAlteracao { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime DataAlteracao { get; set; }
+
+        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [DataType(DataType.Text)]
+        public string TipoPessoa { get; set; }
 
         public bool Ativo { get; set; }
+
+
 
 
     }
