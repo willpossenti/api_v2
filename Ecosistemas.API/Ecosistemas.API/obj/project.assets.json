@@ -11337,11 +11337,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\API\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
+      "projectUniqueName": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
       "projectName": "Ecosistemas.API",
-      "projectPath": "D:\\API\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
+      "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
       "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
-      "outputPath": "D:\\API\\Ecosistemas.API\\Ecosistemas.API\\obj\\",
+      "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11360,8 +11360,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\API\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
-              "projectPath": "D:\\API\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj"
+            "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
+              "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj"
             }
           }
         }

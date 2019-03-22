@@ -8278,11 +8278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\API\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+      "projectUniqueName": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
       "projectName": "Ecosistemas.Security",
-      "projectPath": "D:\\API\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+      "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
       "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
-      "outputPath": "D:\\API\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
+      "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
