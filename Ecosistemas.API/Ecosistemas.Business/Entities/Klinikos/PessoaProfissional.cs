@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
 {
-    public class PessoaProfissional
+    public class PessoaProfissional: Pessoa
     {
 
-      
+        public virtual List<LotacaoProfissional> LotacoesProfissional { get; set; }
 
     }
 }
