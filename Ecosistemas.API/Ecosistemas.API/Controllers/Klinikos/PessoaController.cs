@@ -26,12 +26,10 @@ namespace Ecosistemas.API.Controllers.Api
 
         private IPessoaPacienteService _servicePaciente;
         private IPessoaProfissionalService _serviceProfissional;
-        private IPessoaContatoService _serviceContato;
 
         public PessoaController(KlinikosDbContext context)
         {
             _servicePaciente = new PessoaPacienteService(context);
-            _serviceContato = new PessoaContatoService(context);
             _serviceProfissional = new PessoaProfissionalService(context);
         }
 

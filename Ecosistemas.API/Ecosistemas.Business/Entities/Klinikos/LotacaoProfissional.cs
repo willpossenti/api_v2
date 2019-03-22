@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
 {
-    public class LotacaoProfissional 
+    public class LotacaoProfissional
     {
         [Key]
         public Guid LotacaoProfissionalId { get; set; }
 
-        public virtual PessoaProfissional PessoaProfissional { get; set; }
+        public virtual PessoaProfissional Pessoa { get; set; }
 
         public virtual TipoProfissional TipoProfissional { get; set; }
 

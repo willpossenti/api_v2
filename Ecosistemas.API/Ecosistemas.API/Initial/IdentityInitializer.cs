@@ -99,7 +99,18 @@ namespace Ecosistemas.API.Initial
             {
                 if (_contextKlinikos.Database.EnsureCreated())
                 {
+                    #region carga Pessoa 
 
+                    var pessoaMaster = Guid.NewGuid();
+
+                    var pessoaProfissional = new List<PessoaProfissional>() {
+
+                         new PessoaProfissional() { PessoaId = pessoaMaster, NomeCompleto = "MASTER", Master = true, Ativo = true }
+
+                    };
+
+                    new PessoaProfissionalService(_contextKlinikos).AdicionarCarga(pessoaProfissional, pessoaMaster);
+                    #endregion
                     #region carga justificativa
                     var listaJustificativa = new List<Justificativa>() {
 
@@ -110,7 +121,7 @@ namespace Ecosistemas.API.Initial
 
 
 
-                    new JustificativaService(_contextKlinikos).AdicionarCarga(listaJustificativa, Guid.Empty);
+                    new JustificativaService(_contextKlinikos).AdicionarCarga(listaJustificativa, pessoaMaster);
                     #endregion
                     #region carga nacionalidade
                     var listaNacionalidade = new List<Nacionalidade>() {
@@ -120,7 +131,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new NacionalidadeService(_contextKlinikos).AdicionarCarga(listaNacionalidade, Guid.Empty);
+                    new NacionalidadeService(_contextKlinikos).AdicionarCarga(listaNacionalidade, pessoaMaster);
                     #endregion
                     #region carga raca
                     var listaRaca = new List<Raca>() {
@@ -134,7 +145,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new RacaService(_contextKlinikos).AdicionarCarga(listaRaca, Guid.Empty);
+                    new RacaService(_contextKlinikos).AdicionarCarga(listaRaca, pessoaMaster);
                     #endregion
                     #region carga etnia
                     var listaEtnia = new List<Etnia>() {
@@ -406,7 +417,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new EtniaService(_contextKlinikos).AdicionarCarga(listaEtnia, Guid.Empty);
+                    new EtniaService(_contextKlinikos).AdicionarCarga(listaEtnia, pessoaMaster);
                     #endregion
                     #region carga estado
                     var listaEstado = new List<Estado>() {
@@ -441,7 +452,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new EstadoService(_contextKlinikos).AdicionarCarga(listaEstado, Guid.Empty);
+                    new EstadoService(_contextKlinikos).AdicionarCarga(listaEstado, pessoaMaster);
 
 
                     #region cargaAcre
@@ -473,7 +484,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesAcre, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesAcre, pessoaMaster);
                     #endregion
                     #region cargaAlagoas
 
@@ -497,7 +508,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VITORIA DO JARI", Estado =  listaEstado.Where(x=>x.Uf == "AP").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeAlagoas, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeAlagoas, pessoaMaster);
                     #endregion
                     #region cargaAmazonas
 
@@ -567,7 +578,7 @@ namespace Ecosistemas.API.Initial
                     new Cidade() { CidadeId = Guid.NewGuid(), Nome = "URUCURITUBA", Estado =  listaEstado.Where(x=>x.Uf == "AM").FirstOrDefault(), Ativo = true },
                         };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeAmazonas, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeAmazonas, pessoaMaster);
                     #endregion
                     #region cargaAmapa
 
@@ -591,7 +602,7 @@ namespace Ecosistemas.API.Initial
                     new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VITORIA DO JARI", Estado =  listaEstado.Where(x=>x.Uf == "AP").FirstOrDefault(), Ativo = true },
                         };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeAmapa, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeAmapa, pessoaMaster);
                     #endregion
                     #region cargaBahia
 
@@ -1016,7 +1027,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "XIQUE-XIQUE", Estado =  listaEstado.Where(x=>x.Uf == "BA").FirstOrDefault(), Ativo = true },
                         };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeBahia, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeBahia, pessoaMaster);
                     #endregion
                     #region cargaCeara
 
@@ -1208,13 +1219,13 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VICOSA DO CEARA", Estado =  listaEstado.Where(x=>x.Uf == "CE").FirstOrDefault(), Ativo = true },
                         };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeCeara, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadeCeara, pessoaMaster);
                     #endregion
                     #region cargaDistritoFederal
 
                     var listaDistritoFederal = new List<Cidade>() { new Cidade() { CidadeId = Guid.NewGuid(), Nome = "Brasília", Estado = listaEstado.Where(x => x.Uf == "DF").FirstOrDefault(), Ativo = true } };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaDistritoFederal, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaDistritoFederal, pessoaMaster);
                     #endregion
                     #region cargaEspiritoSanto
 
@@ -1301,7 +1312,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VITORIA", Estado =  listaEstado.Where(x=>x.Uf == "ES").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesEspiritoSanto, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesEspiritoSanto, pessoaMaster);
                     #endregion
                     #region cargaGoias
 
@@ -1557,7 +1568,7 @@ namespace Ecosistemas.API.Initial
 
                                         };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesGoias, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesGoias, pessoaMaster);
                     #endregion
                     #region cargaMaranhao
 
@@ -1783,7 +1794,7 @@ namespace Ecosistemas.API.Initial
 
                                         };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesMaranhao, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesMaranhao, pessoaMaster);
                     #endregion
                     #region cargaMinasGerais
 
@@ -2644,7 +2655,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "WENCESLAU BRAZ", Estado =  listaEstado.Where(x=>x.Uf == "MG").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaMinasGerais, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaMinasGerais, pessoaMaster);
                     #endregion
                     #region cargaMatoGrossoDoSul
 
@@ -2730,7 +2741,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VICENTINA", Estado =  listaEstado.Where(x=>x.Uf == "MS").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesMatoGrossoDoSul, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesMatoGrossoDoSul, pessoaMaster);
                     #endregion
                     #region cargaMatoGrosso
 
@@ -2879,7 +2890,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "NOVA MONTE VERDE", Estado =  listaEstado.Where(x=>x.Uf == "MT").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaMatoGrosso, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaMatoGrosso, pessoaMaster);
                     #endregion
                     #region cargaPara
 
@@ -3031,7 +3042,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesPara, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesPara, pessoaMaster);
                     #endregion
                     #region cargaParaiba
 
@@ -3262,7 +3273,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "ZABELE", Estado =  listaEstado.Where(x=>x.Uf == "PB").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesParaiba, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesParaiba, pessoaMaster);
                     #endregion
                     #region cargaPernambuco
 
@@ -3455,7 +3466,7 @@ namespace Ecosistemas.API.Initial
                     new Cidade() { CidadeId = Guid.NewGuid(), Nome = "XEXEU", Estado =  listaEstado.Where(x=>x.Uf == "PE").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesPernambuco, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesPernambuco, pessoaMaster);
                     #endregion
                     #region cargaPiaui
 
@@ -3687,7 +3698,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "WALL FERRAZ", Estado =  listaEstado.Where(x=>x.Uf == "PI").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesPiaui, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesPiaui, pessoaMaster);
                     #endregion
                     #region cargaParana
 
@@ -4094,7 +4105,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "XAMBRE", Estado =  listaEstado.Where(x=>x.Uf == "PR").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesParana, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesParana, pessoaMaster);
                     #endregion
                     #region cargaRioDeJaneiro
 
@@ -4197,7 +4208,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "SEPETIBA", Estado =  listaEstado.Where(x=>x.Uf == "RJ").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRioDeJaneiro, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRioDeJaneiro, pessoaMaster);
                     #endregion
                     #region cargaRioGrandeDoNorte
 
@@ -4372,7 +4383,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VILA FLOR", Estado =  listaEstado.Where(x=>x.Uf == "RN").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRioGrandeDoNorte, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRioGrandeDoNorte, pessoaMaster);
                     #endregion
                     #region cargaRondonia
 
@@ -4432,7 +4443,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "VALE DO PARAISO", Estado =  listaEstado.Where(x=>x.Uf == "RO").FirstOrDefault(), Ativo = true },
                     };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRondonia, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRondonia, pessoaMaster);
                     #endregion
                     #region cargaRoraima
 
@@ -4455,7 +4466,7 @@ namespace Ecosistemas.API.Initial
 
                                };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRoraima, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRoraima, pessoaMaster);
                     #endregion
                     #region cargaRioGrandeDoSul
 
@@ -4960,7 +4971,7 @@ namespace Ecosistemas.API.Initial
 
                                };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRioGrandeDoSul, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesRioGrandeDoSul, pessoaMaster);
                     #endregion
                     #region cargaSantaCatarina
 
@@ -5261,7 +5272,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "ZORTEA", Estado =  listaEstado.Where(x=>x.Uf == "SC").FirstOrDefault(), Ativo = true },
                                                 };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesSantaCatarina, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesSantaCatarina, pessoaMaster);
                     #endregion
                     #region cargaSergipe
 
@@ -5344,7 +5355,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "UMBAUBA", Estado =  listaEstado.Where(x=>x.Uf == "SE").FirstOrDefault(), Ativo = true },
                                };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesSergipe, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesSergipe, pessoaMaster);
                     #endregion
                     #region cargaSaoPaulo
 
@@ -5996,7 +6007,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "ESTIVA GERBI", Estado =  listaEstado.Where(x=>x.Uf == "SP").FirstOrDefault(), Ativo = true },
                                };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesSaoPaulo, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesSaoPaulo, pessoaMaster);
                     #endregion
                     #region cargaTocantins
 
@@ -6142,7 +6153,7 @@ namespace Ecosistemas.API.Initial
                         new Cidade() { CidadeId = Guid.NewGuid(), Nome = "XAMBIOA", Estado =  listaEstado.Where(x=>x.Uf == "TO").FirstOrDefault(), Ativo = true },
                                };
 
-                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesTocantins, Guid.Empty);
+                    new CidadeService(_contextKlinikos).AdicionarCarga(listaCidadesTocantins, pessoaMaster);
                     #endregion
                     #endregion
                     #region carga OrgaoEmissor
@@ -6195,7 +6206,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new OrgaoEmissorService(_contextKlinikos).AdicionarCarga(listaOrgaoEmissor, Guid.Empty);
+                    new OrgaoEmissorService(_contextKlinikos).AdicionarCarga(listaOrgaoEmissor, pessoaMaster);
                     #endregion
                     #region Carga Ocupação
                     var listaOcupacao = new List<Ocupacao>() {
@@ -8814,7 +8825,7 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-                    new OcupacaoService(_contextKlinikos).AdicionarCarga(listaOcupacao, Guid.Empty);
+                    new OcupacaoService(_contextKlinikos).AdicionarCarga(listaOcupacao, pessoaMaster);
                     #endregion
                     #region carga Pais
                     var listaPais = new List<Pais>() {
@@ -9158,7 +9169,7 @@ namespace Ecosistemas.API.Initial
                     };
 
 
-                    new PaisService(_contextKlinikos).AdicionarCarga(listaPais, Guid.Empty);
+                    new PaisService(_contextKlinikos).AdicionarCarga(listaPais, pessoaMaster);
                     #endregion
                     #region carga Tipo Certidão
                     var listaTipoCertidao = new List<TipoCertidao>() {
@@ -9171,7 +9182,7 @@ namespace Ecosistemas.API.Initial
                     };
 
 
-                    new TipoCertidaoService(_contextKlinikos).AdicionarCarga(listaTipoCertidao, Guid.Empty);
+                    new TipoCertidaoService(_contextKlinikos).AdicionarCarga(listaTipoCertidao, pessoaMaster);
                     #endregion
                     #region carga Escolaridade
                     var listaEscolaridade = new List<Escolaridade>() {
@@ -9192,7 +9203,7 @@ namespace Ecosistemas.API.Initial
                     };
 
 
-                    new EscolaridadeService(_contextKlinikos).AdicionarCarga(listaEscolaridade, Guid.Empty);
+                    new EscolaridadeService(_contextKlinikos).AdicionarCarga(listaEscolaridade, pessoaMaster);
                     #endregion
                     #region carga Situacao Conjugal Familiar Conjugal
                     var listaSituacaoFamiliarConjugal = new List<SituacaoFamiliarConjugal>() {
@@ -9209,7 +9220,7 @@ namespace Ecosistemas.API.Initial
                     };
 
 
-                    new SituacaoFamiliarConjugalService(_contextKlinikos).AdicionarCarga(listaSituacaoFamiliarConjugal, Guid.Empty);
+                    new SituacaoFamiliarConjugalService(_contextKlinikos).AdicionarCarga(listaSituacaoFamiliarConjugal, pessoaMaster);
                     #endregion
                     #region carga Tipo Profissional
                     var listaTipoProfissional = new List<TipoProfissional>() {
@@ -9222,8 +9233,10 @@ namespace Ecosistemas.API.Initial
                     };
 
 
-                    new TipoProfissionalService(_contextKlinikos).AdicionarCarga(listaTipoProfissional, Guid.Empty);
+                    new TipoProfissionalService(_contextKlinikos).AdicionarCarga(listaTipoProfissional, pessoaMaster);
                     #endregion
+
+
                 }
 
             }
