@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Ecosistemas.Business.Utility;
 using System.Linq;
-
+using System.Linq.Expressions;
+using Microsoft.AspNetCore.Http;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -25,10 +26,20 @@ namespace Ecosistemas.Business.Services.Klinikos
         public async Task<CustomResponse<PessoaPaciente>> AdicionarPaciente(PessoaPaciente pessoaPaciente, Guid userId)
         {
             var _response = new CustomResponse<PessoaPaciente>();
-      
+
 
             try
             {
+
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.Cpf.Contains(pessoaPaciente.Cpf) || x.Cns.Contains(pessoaPaciente.Cns) || x.TituloEleitor.Contains(pessoaPaciente.PisPasep);
+                var _cadastroEncontrado = base.ObterByExpression(_filtroNome).Result.Result.Count;
+
+                if (_cadastroEncontrado > 0)
+                {
+                    _response.StatusCode = StatusCodes.Status409Conflict;
+                    return _response;
+                }
+
                 var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
                 await base.Adicionar(pessoaPaciente, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoPaciente(pessoaPaciente, _pessoaMaster);
@@ -47,7 +58,6 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-        }
-
     }
+
 }

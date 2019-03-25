@@ -42,6 +42,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<LotacaoProfissional> LotacoesProfissional { get; set; }
 
         public DbSet<PessoaHistorico> PessoaHistorico { get; set; }
+        public DbSet<PessoaContatoHistorico> PessoaContatoHistorico { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
