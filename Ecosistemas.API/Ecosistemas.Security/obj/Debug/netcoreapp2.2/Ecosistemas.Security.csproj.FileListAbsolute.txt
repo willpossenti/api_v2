@@ -18,4 +18,3 @@ D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistem
 D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.AssemblyInfo.cs
 D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.dll
 D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
-D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.csprojAssemblyReference.cache

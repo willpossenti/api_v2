@@ -12,11 +12,12 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class PessoaHistoricoService : BaseService<PessoaHistorico>, IPessoaHistoricoService
     {
         private readonly KlinikosDbContext _context;
+        private IPessoaContatoHistoricoService _servicePessoaContatoHistorico;
 
         public PessoaHistoricoService(KlinikosDbContext context) : base(context)
         {
             _context = context;
-
+            _servicePessoaContatoHistorico = new PessoaContatoHistoricoService(context);
         }
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoPaciente(PessoaPaciente pessoaPaciente, PessoaProfissional pessoaProfissionalCadastro)
         {
@@ -30,7 +31,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Ativo = pessoaPaciente.Ativo,
                     Cep = pessoaPaciente.Cep,
                     Bairro = pessoaPaciente.Bairro,
-                    Cidade = pessoaPaciente.Cidade == null ? null :  pessoaPaciente.Cidade.Nome,
+                    Cidade = pessoaPaciente.Cidade == null ? null : pessoaPaciente.Cidade.Nome,
                     Cns = pessoaPaciente.Cns,
                     CodigoLogin = pessoaPaciente.CodigoLogin,
                     Complemento = pessoaPaciente.Complemento,
@@ -40,18 +41,18 @@ namespace Ecosistemas.Business.Services.Klinikos
                     DataEntradaPis = pessoaPaciente.DataEntradaPis,
                     DescricaoNaoIdentificado = pessoaPaciente.DescricaoNaoIdentificado,
                     Emissao = pessoaPaciente.Emissao,
-                    Escolaridade = pessoaPaciente.Escolaridade == null? null: pessoaPaciente.Escolaridade.Descricao,
-                    Estado = pessoaPaciente.Estado == null ? null :  pessoaPaciente.Estado.Nome,
-                    Etnia = pessoaPaciente.Etnia == null ? null :  pessoaPaciente.Etnia.Nome,
+                    Escolaridade = pessoaPaciente.Escolaridade == null ? null : pessoaPaciente.Escolaridade.Descricao,
+                    Estado = pessoaPaciente.Estado == null ? null : pessoaPaciente.Estado.Nome,
+                    Etnia = pessoaPaciente.Etnia == null ? null : pessoaPaciente.Etnia.Nome,
                     FrequentaEscola = pessoaPaciente.FrequentaEscola,
                     IdadeAparente = pessoaPaciente.IdadeAparente,
                     Identidade = pessoaPaciente.Identidade,
                     Justificativa = pessoaPaciente.Justificativa == null ? null : pessoaPaciente.Justificativa.Descricao,
                     Login = pessoaPaciente.Login,
                     Logradouro = pessoaPaciente.Logradouro,
-                    Nacionalidade = pessoaPaciente.Nacionalidade == null ? null :  pessoaPaciente.Nacionalidade.Descricao,
+                    Nacionalidade = pessoaPaciente.Nacionalidade == null ? null : pessoaPaciente.Nacionalidade.Descricao,
                     Nascimento = pessoaPaciente.Nascimento,
-                    Naturalidade = pessoaPaciente.Naturalidade == null ? null :  pessoaPaciente.Naturalidade.Nome,
+                    Naturalidade = pessoaPaciente.Naturalidade == null ? null : pessoaPaciente.Naturalidade.Nome,
                     NomeCartorio = pessoaPaciente.NomeCartorio,
                     NomeCompleto = pessoaPaciente.NomeCompleto,
                     NomeMae = pessoaPaciente.NomeMae,
@@ -63,19 +64,19 @@ namespace Ecosistemas.Business.Services.Klinikos
                     NumeroLivro = pessoaPaciente.NumeroLivro,
                     NumeroProntuario = pessoaPaciente.NumeroProntuario,
                     NumeroTermo = pessoaPaciente.NumeroTermo,
-                    Ocupacao = pessoaPaciente.Ocupacao == null ? null :  pessoaPaciente.Ocupacao.Descricao,
+                    Ocupacao = pessoaPaciente.Ocupacao == null ? null : pessoaPaciente.Ocupacao.Descricao,
                     OrgaoEmissor = pessoaPaciente.OrgaoEmissor,
                     PacienteProfissional = pessoaPaciente.PacienteProfissional,
                     PaisOrigem = pessoaPaciente.PaisOrigem == null ? null : pessoaPaciente.PaisOrigem.Descricao,
                     PisPasep = pessoaPaciente.PisPasep,
-                    Raca = pessoaPaciente.Raca == null ? null :  pessoaPaciente.Raca.Nome,
+                    Raca = pessoaPaciente.Raca == null ? null : pessoaPaciente.Raca.Nome,
                     Recemnascido = pessoaPaciente.Recemnascido,
                     Secao = pessoaPaciente.Secao,
                     Senha = pessoaPaciente.Senha,
                     SerieCtps = pessoaPaciente.SerieCtps,
                     Sexo = pessoaPaciente.Sexo,
-                    SituacaoFamiliarConjugal = pessoaPaciente.SituacaoFamiliarConjugal == null ? null :  pessoaPaciente.SituacaoFamiliarConjugal.CodigoSituacaoFamiliarConjugal,
-                    TipoCertidao = pessoaPaciente.TipoCertidao == null ? null :  pessoaPaciente.TipoCertidao.Descricao,
+                    SituacaoFamiliarConjugal = pessoaPaciente.SituacaoFamiliarConjugal == null ? null : pessoaPaciente.SituacaoFamiliarConjugal.CodigoSituacaoFamiliarConjugal,
+                    TipoCertidao = pessoaPaciente.TipoCertidao == null ? null : pessoaPaciente.TipoCertidao.Descricao,
                     TituloEleitor = pessoaPaciente.TituloEleitor,
                     Uf = pessoaPaciente.Uf,
                     UfCtps = pessoaPaciente.UfCtps,
@@ -87,6 +88,29 @@ namespace Ecosistemas.Business.Services.Klinikos
                 };
 
                 await base.Adicionar(_pessoaPacienteHistorico, pessoaProfissionalCadastro.PessoaId);
+
+                var listaPessoaContato = new List<PessoaContatoHistorico>();
+
+                for (int i = 0; i < pessoaPaciente.PessoaContatos.Count; i++)
+                {
+                    var _pessoaContatoHistorico = new PessoaContatoHistorico
+                    {
+                        Ativo = true,
+                        Celular = pessoaPaciente.PessoaContatos[i].Celular,
+                        DataAlteracao = DateTime.Now,
+                        Email = pessoaPaciente.PessoaContatos[i].Email,
+                        PessoaAlteracao = pessoaProfissionalCadastro.NomeCompleto,
+                        PessoaContato = pessoaPaciente.PessoaContatos[i],
+                        Telefone = pessoaPaciente.PessoaContatos[i].Telefone,
+                        TipoPessoa = "PessoaPaciente"
+                    };
+                    listaPessoaContato.Add(_pessoaContatoHistorico);
+
+                }
+
+                if (listaPessoaContato.Count > 0)
+                    await _servicePessoaContatoHistorico.AdicionarRange(listaPessoaContato, pessoaProfissionalCadastro.PessoaId);
+
                 return _response;
             }
             catch (Exception ex)
@@ -165,7 +189,32 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Pessoa = pessoaProfissional
                 };
 
+
                 await base.Adicionar(_pessoaProfissionalHistorico, pessoaProfissionalCadastro.PessoaId);
+
+
+                var listaPessoaContato = new List<PessoaContatoHistorico>();
+
+                for (int i = 0; i < pessoaProfissional.PessoaContatos.Count; i++)
+                {
+                    var _pessoaContatoHistorico = new PessoaContatoHistorico
+                    {
+                        Ativo = true,
+                        Celular = pessoaProfissional.PessoaContatos[i].Celular,
+                        DataAlteracao = DateTime.Now,
+                        Email = pessoaProfissional.PessoaContatos[i].Email,
+                        PessoaAlteracao = pessoaProfissionalCadastro.NomeCompleto,
+                        PessoaContato = pessoaProfissional.PessoaContatos[i],
+                        Telefone = pessoaProfissional.PessoaContatos[i].Telefone,
+                        TipoPessoa = "PessoaProfissional"
+                    };
+                    listaPessoaContato.Add(_pessoaContatoHistorico);
+
+                }
+
+                if (listaPessoaContato.Count > 0)
+                    await _servicePessoaContatoHistorico.AdicionarRange(listaPessoaContato, pessoaProfissionalCadastro.PessoaId);
+
                 return _response;
             }
             catch (Exception ex)

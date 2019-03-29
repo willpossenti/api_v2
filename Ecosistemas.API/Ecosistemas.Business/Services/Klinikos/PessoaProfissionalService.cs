@@ -7,6 +7,8 @@ using System.Text;
 using Ecosistemas.Business.Utility;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
+using System.Linq.Expressions;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -28,6 +30,16 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
+                Expression<Func<PessoaProfissional, bool>> _filtroNome = x => x.Cpf.Contains(pessoaprofissional.Cpf) || x.Cns.Contains(pessoaprofissional.Cns) || x.TituloEleitor.Contains(pessoaprofissional.PisPasep);
+                var _cadastroEncontrado = base.ObterByExpression(_filtroNome).Result.Result.Count;
+
+                if (_cadastroEncontrado > 0)
+                {
+                    _response.StatusCode = StatusCodes.Status409Conflict;
+                    return _response;
+                }
+
+
                 var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
                 pessoaprofissional.Master = false;
 
