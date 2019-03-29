@@ -24,6 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     public class PessoaController : Controller
     {
 
+        private IPessoaService _servicePessoa;
         private IPessoaPacienteService _servicePaciente;
         private IPessoaProfissionalService _serviceProfissional;
 
@@ -82,7 +83,13 @@ namespace Ecosistemas.API.Controllers.Api
             return await _servicePaciente.Obter(Guid.Parse(PessoaId));
         }
 
-      
+
+        [HttpGet("ConsultaCpf/{cpf}")]
+        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<Pessoa>> ConsultaCpf(string cpf)
+        {
+            return await _servicePessoa.ConsultaCpf(cpf, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
+        }
 
     }
 }

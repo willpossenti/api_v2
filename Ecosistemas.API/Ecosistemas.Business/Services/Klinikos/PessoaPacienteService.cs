@@ -31,7 +31,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             try
             {
 
-                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.Cpf.Contains(pessoaPaciente.Cpf) || x.Cns.Contains(pessoaPaciente.Cns) || x.TituloEleitor.Contains(pessoaPaciente.PisPasep);
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.Cpf.Contains(pessoaPaciente.Cpf) || x.Cns.Contains(pessoaPaciente.Cns) || x.PisPasep.Contains(pessoaPaciente.PisPasep);
                 var _cadastroEncontrado = base.ObterByExpression(_filtroNome).Result.Result.Count;
 
                 if (_cadastroEncontrado > 0)
@@ -53,6 +53,44 @@ namespace Ecosistemas.Business.Services.Klinikos
                 _response.Message = ex.InnerException.Message;
                 Error.LogError(ex);
 
+            }
+
+            return _response;
+        }
+
+
+        public async Task<CustomResponse<PessoaPaciente>> ConsultaCpf(string cpf, Guid userId)
+        {
+            var _response = new CustomResponse<PessoaPaciente>();
+
+            try
+            {
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.Cpf.Equals(cpf);
+
+                await Task.Run(() =>
+               {
+
+                   var _pessoaEncontrado = ObterByExpression(_filtroNome).Result.Result.FirstOrDefault();
+
+                   if (_pessoaEncontrado != null)
+                   {
+                       _response.Message = "Cpf encontrado";
+                       _response.StatusCode = StatusCodes.Status302Found;
+                       _response.Result = _pessoaEncontrado;
+                   }
+                   else
+                   {
+                       _response.Message = "Cpf não encontrado";
+                       _response.StatusCode = StatusCodes.Status404NotFound;
+
+                   }
+               });
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
             }
 
             return _response;
