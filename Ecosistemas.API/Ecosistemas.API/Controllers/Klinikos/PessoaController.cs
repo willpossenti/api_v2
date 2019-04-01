@@ -16,6 +16,7 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 
+
 namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
@@ -24,7 +25,6 @@ namespace Ecosistemas.API.Controllers.Api
     public class PessoaController : Controller
     {
 
-        private IPessoaService _servicePessoa;
         private IPessoaPacienteService _servicePaciente;
         private IPessoaProfissionalService _serviceProfissional;
 
@@ -84,12 +84,18 @@ namespace Ecosistemas.API.Controllers.Api
         }
 
 
-        [HttpGet("ConsultaCpf/{cpf}")]
+        [HttpGet("PessoaPaciente/ConsultaCpf/{cpf}")]
         //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<Pessoa>> ConsultaCpf(string cpf)
+        public async Task<CustomResponse<PessoaPaciente>> ConsultaPacienteCpf(string cpf)
         {
-            return await _servicePessoa.ConsultaCpf(cpf, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
+            return await _servicePaciente.ConsultaCpf(cpf, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
+        [HttpGet("PessoaProfissional/ConsultaCpf/{cpf}")]
+        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissionalCpf(string cpf)
+        {
+            return await _serviceProfissional.ConsultaCpf(cpf, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
+        }
     }
 }

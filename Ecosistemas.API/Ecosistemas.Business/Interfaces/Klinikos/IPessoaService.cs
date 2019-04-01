@@ -9,6 +9,5 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
 {
       public interface IPessoaService : IBaseService<Pessoa>
     {
-         Task<CustomResponse<Pessoa>> ConsultaCpf(string cpf, Guid userId);
     }
 }

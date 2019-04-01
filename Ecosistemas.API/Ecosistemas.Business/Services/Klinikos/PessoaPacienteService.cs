@@ -9,6 +9,7 @@ using Ecosistemas.Business.Utility;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -67,10 +68,11 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                 Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.Cpf.Equals(cpf);
 
+
                 await Task.Run(() =>
                {
 
-                   var _pessoaEncontrado = ObterByExpression(_filtroNome).Result.Result.FirstOrDefault();
+                   var _pessoaEncontrado = _context.PessoaPacientes.Include(pessoa => pessoa.Raca).Where(_filtroNome).ToList().FirstOrDefault();
 
                    if (_pessoaEncontrado != null)
                    {
@@ -85,6 +87,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                    }
                });
+        
 
             }
             catch (Exception ex)

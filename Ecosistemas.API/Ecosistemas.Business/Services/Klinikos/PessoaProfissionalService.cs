@@ -74,5 +74,42 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             return _response;
         }
+
+        public async Task<CustomResponse<PessoaProfissional>> ConsultaCpf(string cpf, Guid userId)
+        {
+            var _response = new CustomResponse<PessoaProfissional>();
+
+            try
+            {
+                Expression<Func<PessoaProfissional, bool>> _filtroNome = x => x.Cpf.Equals(cpf);
+
+                await Task.Run(() =>
+                {
+
+                    var _pessoaEncontrado = ObterByExpression(_filtroNome).Result.Result.FirstOrDefault();
+
+                    if (_pessoaEncontrado != null)
+                    {
+                        _response.Message = "Cpf encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _pessoaEncontrado;
+                    }
+                    else
+                    {
+                        _response.Message = "Cpf não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
     }
 }

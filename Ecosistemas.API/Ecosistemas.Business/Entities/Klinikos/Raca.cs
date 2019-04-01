@@ -7,6 +7,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 {
     public class Raca
     {
+
         [Key]
         public Guid RacaId { get; set; }
 
@@ -23,6 +24,8 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Ativo { get; set; }
 
-        //public virtual List<PessoaPaciente> PessoaPacientes { get; set; }
+        //public virtual List<Pessoa> Pessoas { get; set; }
+
+
     }
 }

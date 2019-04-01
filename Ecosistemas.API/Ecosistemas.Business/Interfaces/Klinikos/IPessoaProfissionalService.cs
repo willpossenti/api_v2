@@ -10,5 +10,6 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
       public interface IPessoaProfissionalService : IBaseService<PessoaProfissional>
     {
         Task<CustomResponse<PessoaProfissional>> AdicionarProfissional(PessoaProfissional entity, Guid UserId);
+        Task<CustomResponse<PessoaProfissional>> ConsultaCpf(string cpf, Guid UserId);
     }
 }
