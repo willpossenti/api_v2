@@ -7,6 +7,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
 {
     public class Cidade
     {
+
+        public Cidade() {  }
+
         [Key]
         public Guid CidadeId { get; set; }
 

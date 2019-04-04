@@ -72,7 +72,39 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                {
 
-                   var _pessoaEncontrado = _context.PessoaPacientes.Include(pessoa => pessoa.Raca).Where(_filtroNome).ToList().FirstOrDefault();
+                   var _pessoaEncontrado = _context.PessoaPacientes
+                   .Include(pessoa => pessoa.Raca)
+                   .Include(pessoa => pessoa.Etnia)
+                   .Include(pessoa => pessoa.Justificativa)
+                   .Include(pessoa => pessoa.Nacionalidade)
+                   .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
+                   .Include(pessoa => pessoa.OrgaoEmissor)
+                   .Include(pessoa => pessoa.PessoaContatos)
+                   .Include(pessoa => pessoa.Estado)
+                   .Include(pessoa => pessoa.Cidade)
+                   .Include(pessoa => pessoa.Ocupacao)
+                   .Include(pessoa => pessoa.PaisOrigem)
+                   .Include(pessoa => pessoa.TipoCertidao)
+                   .Include(pessoa => pessoa.Escolaridade)
+                   .Include(pessoa => pessoa.SituacaoFamiliarConjugal)
+
+                   .Where(_filtroNome).ToList().FirstOrDefault();
+
+                   if (_pessoaEncontrado != null)
+                   {
+
+                       var newListaContato = new List<PessoaContato>();
+
+                       foreach (var contato in _pessoaEncontrado.PessoaContatos)
+                       {
+                           contato.Pessoa = null;
+                           newListaContato.Add(contato);
+                       }
+
+                       _pessoaEncontrado.PessoaContatos = newListaContato;
+
+
+                   }
 
                    if (_pessoaEncontrado != null)
                    {
@@ -87,7 +119,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                    }
                });
-        
+
 
             }
             catch (Exception ex)

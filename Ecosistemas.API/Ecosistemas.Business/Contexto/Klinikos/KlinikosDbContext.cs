@@ -46,6 +46,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
         }
 
     }

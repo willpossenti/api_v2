@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -83,24 +84,72 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                 Expression<Func<PessoaProfissional, bool>> _filtroNome = x => x.Cpf.Equals(cpf);
 
+
                 await Task.Run(() =>
                 {
 
-                    var _pessoaEncontrado = ObterByExpression(_filtroNome).Result.Result.FirstOrDefault();
+                    var _pessoaEncontrado = _context.PessoaProfissionais
+                    .Include(pessoa => pessoa.Raca)
+                    .Include(pessoa => pessoa.Etnia)
+                    .Include(pessoa => pessoa.Justificativa)
+                    .Include(pessoa => pessoa.Nacionalidade)
+                    .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
+                    .Include(pessoa => pessoa.OrgaoEmissor)
+                    .Include(pessoa => pessoa.Estado)
+                    .Include(pessoa => pessoa.Cidade)
+                    .Include(pessoa => pessoa.Ocupacao)
+                    .Include(pessoa => pessoa.PaisOrigem)
+                    .Include(pessoa => pessoa.TipoCertidao)
+                    .Include(pessoa => pessoa.Escolaridade)
+                    .Include(pessoa => pessoa.SituacaoFamiliarConjugal)
+                    .Where(_filtroNome).ToList().FirstOrDefault();
 
-                    if (_pessoaEncontrado != null)
-                    {
-                        _response.Message = "Cpf encontrado";
-                        _response.StatusCode = StatusCodes.Status302Found;
-                        _response.Result = _pessoaEncontrado;
-                    }
-                    else
-                    {
-                        _response.Message = "Cpf não encontrado";
-                        _response.StatusCode = StatusCodes.Status404NotFound;
+                if (_pessoaEncontrado != null)
+                {
 
+                    var lotacoes = _context.LotacoesProfissional
+                    .Include(profissional => profissional.TipoProfissional)
+                    .Include(profissional => profissional.OrgaoEmissorProfissional)
+                    .Where(pessoa => pessoa.Pessoa.PessoaId == _pessoaEncontrado.PessoaId);
+
+                        var newListaLotacao = new List<LotacaoProfissional>();
+
+                        foreach (var lotacao in lotacoes)
+                        {
+                            lotacao.Pessoa = null;
+                            newListaLotacao.Add(lotacao);
+                        }
+
+                        _pessoaEncontrado.LotacoesProfissional = newListaLotacao;
+
+                        if (_pessoaEncontrado.PessoaContatos != null)
+                        {
+                            var newListaContato = new List<PessoaContato>();
+
+                            foreach (var contato in _pessoaEncontrado.PessoaContatos)
+                            {
+                                contato.Pessoa = null;
+                                newListaContato.Add(contato);
+                            }
+
+                            _pessoaEncontrado.PessoaContatos = newListaContato;
+                        }
+
+                        if (_pessoaEncontrado != null)
+                        {
+                            _response.Message = "Cpf encontrado";
+                            _response.StatusCode = StatusCodes.Status302Found;
+                            _response.Result = _pessoaEncontrado;
+                        }
+                        else
+                        {
+                            _response.Message = "Cpf não encontrado";
+                            _response.StatusCode = StatusCodes.Status404NotFound;
+
+                        }
                     }
                 });
+
 
             }
             catch (Exception ex)
