@@ -11,5 +11,6 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
     {
         Task<CustomResponse<PessoaPaciente>> AdicionarPaciente(PessoaPaciente entity, Guid UserId);
         Task<CustomResponse<PessoaPaciente>> ConsultaCpf(string cpf, Guid userId);
+        Task<CustomResponse<List<PessoaPaciente>>> ConsultaNome(string nome, Guid userId);
     }
 }

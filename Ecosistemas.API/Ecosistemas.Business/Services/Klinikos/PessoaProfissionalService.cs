@@ -82,26 +82,13 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                Expression<Func<PessoaProfissional, bool>> _filtroNome = x => x.Cpf.Equals(cpf);
+                Expression<Func<PessoaProfissional, bool>> _filtroNome = x => x.Cpf.Equals(cpf) && x.Ativo && !x.Master;
 
 
                 await Task.Run(() =>
                 {
 
-                    var _pessoaEncontrado = _context.PessoaProfissionais
-                    .Include(pessoa => pessoa.Raca)
-                    .Include(pessoa => pessoa.Etnia)
-                    .Include(pessoa => pessoa.Justificativa)
-                    .Include(pessoa => pessoa.Nacionalidade)
-                    .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
-                    .Include(pessoa => pessoa.OrgaoEmissor)
-                    .Include(pessoa => pessoa.Estado)
-                    .Include(pessoa => pessoa.Cidade)
-                    .Include(pessoa => pessoa.Ocupacao)
-                    .Include(pessoa => pessoa.PaisOrigem)
-                    .Include(pessoa => pessoa.TipoCertidao)
-                    .Include(pessoa => pessoa.Escolaridade)
-                    .Include(pessoa => pessoa.SituacaoFamiliarConjugal)
+                    var _pessoaEncontrado = Profissional
                     .Where(_filtroNome).ToList().FirstOrDefault();
 
                 if (_pessoaEncontrado != null)
@@ -159,6 +146,88 @@ namespace Ecosistemas.Business.Services.Klinikos
             }
 
             return _response;
+        }
+
+
+        public async Task<CustomResponse<List<PessoaProfissional>>> ConsultaNome(string nome, Guid userId)
+        {
+            var _response = new CustomResponse<List<PessoaProfissional>>();
+
+            try
+            {
+                Expression<Func<PessoaProfissional, bool>> _filtroNome = x => (x.NomeCompleto.StartsWith(nome) || x.NomeCompleto.Contains(nome) || x.NomeCompleto.EndsWith(nome)) && x.Ativo && !x.Master;
+
+
+                await Task.Run(() =>
+                {
+
+
+                    var _pessoaEncontrado = Profissional.Where(_filtroNome).ToList();
+
+                    //if (_pessoaEncontrado != null)
+                    //{
+
+                    //    var newListaContato = new List<PessoaContato>();
+
+                    //    foreach (var contato in _pessoaEncontrado.PessoaContatos)
+                    //    {
+                    //        contato.Pessoa = null;
+                    //        newListaContato.Add(contato);
+                    //    }
+
+                    //    _pessoaEncontrado.PessoaContatos = newListaContato;
+
+
+                    //}
+
+                    if (_pessoaEncontrado != null)
+                    {
+                        _response.Message = "Nome encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _pessoaEncontrado.Take(5).ToList();
+                    }
+                    else
+                    {
+                        _response.Message = "Nome não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
+
+        protected internal IQueryable<PessoaProfissional> Profissional
+        {
+
+
+            get
+            {
+                return _context.PessoaProfissionais
+                   .Include(pessoa => pessoa.Raca)
+                   .Include(pessoa => pessoa.Etnia)
+                   .Include(pessoa => pessoa.Justificativa)
+                   .Include(pessoa => pessoa.Nacionalidade)
+                   .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
+                   .Include(pessoa => pessoa.OrgaoEmissor)
+                   .Include(pessoa => pessoa.PessoaContatos)
+                   .Include(pessoa => pessoa.Estado)
+                   .Include(pessoa => pessoa.Cidade)
+                   .Include(pessoa => pessoa.Ocupacao)
+                   .Include(pessoa => pessoa.PaisOrigem)
+                   .Include(pessoa => pessoa.TipoCertidao)
+                   .Include(pessoa => pessoa.Escolaridade)
+                   .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
+            }
         }
     }
 }
