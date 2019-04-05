@@ -116,6 +116,118 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+        public async Task<CustomResponse<PessoaPaciente>> ConsultaCns(string cns, Guid userId)
+        {
+            var _response = new CustomResponse<PessoaPaciente>();
+
+            try
+            {
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.Cns.Equals(cns) && x.Ativo;
+
+
+                await Task.Run(() =>
+                {
+
+
+                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
+
+                    if (_pessoaEncontrado != null)
+                    {
+
+                        var newListaContato = new List<PessoaContato>();
+
+                        foreach (var contato in _pessoaEncontrado.PessoaContatos)
+                        {
+                            contato.Pessoa = null;
+                            newListaContato.Add(contato);
+                        }
+
+                        _pessoaEncontrado.PessoaContatos = newListaContato;
+
+
+                    }
+
+                    if (_pessoaEncontrado != null)
+                    {
+                        _response.Message = "Cns encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _pessoaEncontrado;
+                    }
+                    else
+                    {
+                        _response.Message = "Cns não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
+        public async Task<CustomResponse<PessoaPaciente>> ConsultaPis(string pis, Guid userId)
+        {
+            var _response = new CustomResponse<PessoaPaciente>();
+
+            try
+            {
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => x.PisPasep.Equals(pis) && x.Ativo;
+
+
+                await Task.Run(() =>
+                {
+
+
+                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
+
+                    if (_pessoaEncontrado != null)
+                    {
+
+                        var newListaContato = new List<PessoaContato>();
+
+                        foreach (var contato in _pessoaEncontrado.PessoaContatos)
+                        {
+                            contato.Pessoa = null;
+                            newListaContato.Add(contato);
+                        }
+
+                        _pessoaEncontrado.PessoaContatos = newListaContato;
+
+
+                    }
+
+                    if (_pessoaEncontrado != null)
+                    {
+                        _response.Message = "Cns encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _pessoaEncontrado;
+                    }
+                    else
+                    {
+                        _response.Message = "Cns não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
         public async Task<CustomResponse<List<PessoaPaciente>>> ConsultaNome(string nome, Guid userId)
         {
             var _response = new CustomResponse<List<PessoaPaciente>>();
@@ -128,29 +240,23 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                 {
 
-                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList();
+                    var _listaPacientes = Paciente.Where(_filtroNome).Take(5).ToList();
 
-                    //if (_pessoaEncontrado != null)
-                    //{
-
-                    //    var newListaContato = new List<PessoaContato>();
-
-                    //    foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                    //    {
-                    //        contato.Pessoa = null;
-                    //        newListaContato.Add(contato);
-                    //    }
-
-                    //    _pessoaEncontrado.PessoaContatos = newListaContato;
-
-
-                    //}
-
-                    if (_pessoaEncontrado != null)
+                    if (_listaPacientes != null)
                     {
+
+                        var newListaPessoa = new List<PessoaPaciente>();
+
+                        foreach (var pessoa in _listaPacientes)
+                        {
+                            pessoa.PessoaContatos = null;
+                            newListaPessoa.Add(pessoa);
+                        }
+
                         _response.Message = "Nome encontrado";
                         _response.StatusCode = StatusCodes.Status302Found;
-                        _response.Result = _pessoaEncontrado.Take(5).ToList();
+                        _response.Result = newListaPessoa;
+
                     }
                     else
                     {
@@ -171,30 +277,81 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+        public async Task<CustomResponse<List<PessoaPaciente>>> ConsultaNomeSocial(string nomeSocial, Guid userId)
+        {
+            var _response = new CustomResponse<List<PessoaPaciente>>();
+
+            try
+            {
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => (x.NomeSocial.StartsWith(nomeSocial) || x.NomeSocial.Contains(nomeSocial) || x.NomeSocial.EndsWith(nomeSocial)) && x.Ativo;
+
+
+                await Task.Run(() =>
+                {
+
+                    var _listaPacientes = Paciente.Where(_filtroNome).Take(5).ToList();
+
+                    if (_listaPacientes != null)
+                    {
+
+                        var newListaPessoa = new List<PessoaPaciente>();
+
+                        foreach (var pessoa in _listaPacientes)
+                        {
+                            pessoa.PessoaContatos = null;
+                            newListaPessoa.Add(pessoa);
+                        }
+
+                        _response.Message = "Nome social encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = newListaPessoa;
+
+                    }
+                    else
+                    {
+                        _response.Message = "Nome social não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
         protected internal IQueryable<PessoaPaciente> Paciente
         {
- 
 
-            get { return _context.PessoaPacientes
-                     .Include(pessoa => pessoa.Raca)
-                     .Include(pessoa => pessoa.Etnia)
-                     .Include(pessoa => pessoa.Justificativa)
-                     .Include(pessoa => pessoa.Nacionalidade)
-                     .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
-                     .Include(pessoa => pessoa.OrgaoEmissor)
-                     .Include(pessoa => pessoa.PessoaContatos)
-                     .Include(pessoa => pessoa.Estado)
-                     .Include(pessoa => pessoa.Cidade)
-                     .Include(pessoa => pessoa.Ocupacao)
-                     .Include(pessoa => pessoa.PaisOrigem)
-                     .Include(pessoa => pessoa.TipoCertidao)
-                     .Include(pessoa => pessoa.Escolaridade)
-                     .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
+
+            get
+            {
+                return _context.PessoaPacientes
+                   .Include(pessoa => pessoa.Raca)
+                   .Include(pessoa => pessoa.Etnia)
+                   .Include(pessoa => pessoa.Justificativa)
+                   .Include(pessoa => pessoa.Nacionalidade)
+                   .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
+                   .Include(pessoa => pessoa.OrgaoEmissor)
+                   .Include(pessoa => pessoa.PessoaContatos)
+                   .Include(pessoa => pessoa.Estado)
+                   .Include(pessoa => pessoa.Cidade)
+                   .Include(pessoa => pessoa.Ocupacao)
+                   .Include(pessoa => pessoa.PaisOrigem)
+                   .Include(pessoa => pessoa.TipoCertidao)
+                   .Include(pessoa => pessoa.Escolaridade)
+                   .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
             }
         }
 
     }
 
 
-    
+
 }
