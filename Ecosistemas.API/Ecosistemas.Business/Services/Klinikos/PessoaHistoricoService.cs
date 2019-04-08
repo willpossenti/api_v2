@@ -89,6 +89,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 await base.Adicionar(_pessoaPacienteHistorico, pessoaProfissionalCadastro.PessoaId);
 
+
                 var listaPessoaContato = new List<PessoaContatoHistorico>();
 
                 for (int i = 0; i < pessoaPaciente.PessoaContatos.Count; i++)
@@ -108,8 +109,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 }
 
-                if (listaPessoaContato.Count > 0)
-                    await _servicePessoaContatoHistorico.AdicionarRange(listaPessoaContato, pessoaProfissionalCadastro.PessoaId);
+                await _servicePessoaContatoHistorico.AdicionarRange(listaPessoaContato, pessoaProfissionalCadastro.PessoaId);
+
 
                 return _response;
             }

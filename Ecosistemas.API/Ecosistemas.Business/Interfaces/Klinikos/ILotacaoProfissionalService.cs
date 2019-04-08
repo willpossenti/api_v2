@@ -9,7 +9,8 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
 {
     public interface ILotacaoProfissionalService : IBaseService<LotacaoProfissional>
     {
-
+        Task<CustomResponse<List<LotacaoProfissional>>> ConsultaLotacoesProfissional(Guid pessoaId, Guid userId);
 
     }
+
 }

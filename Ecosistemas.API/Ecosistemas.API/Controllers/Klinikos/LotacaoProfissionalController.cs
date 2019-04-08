@@ -67,7 +67,13 @@ namespace Ecosistemas.API.Controllers.Api
             return await _service.Obter(Guid.Parse(LotacaoProfissionalId));
         }
 
-      
+        [HttpGet("ConsultaLotacoesProfissional/{PessoaId}")]
+        //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<List<LotacaoProfissional>>> ConsultaLotacoesProfissional(string PessoaId)
+        {
+            return await _service.ConsultaLotacoesProfissional(Guid.Parse(PessoaId), Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
+        }
+
 
     }
 }

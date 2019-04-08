@@ -188,6 +188,8 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+
+
         public async Task<CustomResponse<T>> GerarLog(string action, string entity, Guid UserId)
         {
             var _response = new CustomResponse<T>();

@@ -24,6 +24,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Ativo { get; set; }
 
-        //public List<Cidade> Cidades { get; set; } 
+        //public List<Cidade> Cidades { get; set; }
     }
 }

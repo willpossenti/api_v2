@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Utility;
+﻿using Ecosistemas.Business.Entities.Klinikos;
+using Ecosistemas.Business.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
