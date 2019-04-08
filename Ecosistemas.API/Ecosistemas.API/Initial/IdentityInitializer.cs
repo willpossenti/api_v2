@@ -9235,8 +9235,48 @@ namespace Ecosistemas.API.Initial
 
                     new TipoProfissionalService(_contextKlinikos).AdicionarCarga(listaTipoProfissional, pessoaMaster);
                     #endregion
+                    #region carga Especialidade
+                    var listaEspecialidade = new List<Especialidade>() {
 
 
+                        new Especialidade() { EspecialidadeId = Guid.NewGuid(),  Descricao = "CLÍNICA MÉDICA", Ativo = true },
+                        new Especialidade() { EspecialidadeId = Guid.NewGuid(),  Descricao = "PEDIATRIA", Ativo = true },
+                        new Especialidade() { EspecialidadeId = Guid.NewGuid(),  Descricao = "SERVIÇO SOCIAL", Ativo = true },
+                        new Especialidade() { EspecialidadeId = Guid.NewGuid(),  Descricao = "GINECOLOGIA", Ativo = true },
+                        new Especialidade() { EspecialidadeId = Guid.NewGuid(),  Descricao = "ODONTOLOGIA", Ativo = true }
+                    };
+
+
+                    new EspecialidadeService(_contextKlinikos).AdicionarCarga(listaEspecialidade, pessoaMaster);
+                    #endregion
+                    #region carga Tipo Chegada
+                    var listaTipoChegada = new List<TipoChegada>() {
+
+
+                        new TipoChegada() { TipoChegadaId = Guid.NewGuid(),  Descricao = "SAMU", Ativo = true },
+                        new TipoChegada() { TipoChegadaId = Guid.NewGuid(),  Descricao = "GSE", Ativo = true },
+                        new TipoChegada() { TipoChegadaId = Guid.NewGuid(),  Descricao = "MEIOS PRÓPRIOS", Ativo = true },
+                        new TipoChegada() { TipoChegadaId = Guid.NewGuid(),  Descricao = "OUTROS", Ativo = true }
+                    };
+
+
+                    new TipoChegadaService(_contextKlinikos).AdicionarCarga(listaTipoChegada, pessoaMaster);
+                    #endregion
+                    #region carga Tipo Ocorrencia
+                    var listaTipoOcorrencia = new List<TipoOcorrencia>() {
+
+
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "ACIDENTE DE TRABALHO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AFOGAMENTOS", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÕES (OUTRAS IDADES)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÕES AO IDOSO  (60 ANOS OU MAIS)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÕES ÀS CRIANÇAS (MENORES DE 12 ANOS)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "ATROPELAMENTOS", Ativo = true }
+                    };
+
+
+                    new TipoOcorrenciaService(_contextKlinikos).AdicionarCarga(listaTipoOcorrencia, pessoaMaster);
+                    #endregion
                 }
 
             }
