@@ -60,6 +60,33 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+        public async Task<CustomResponse<PessoaPaciente>> AtualizarPaciente(PessoaPaciente pessoaPaciente, Guid userId)
+        {
+            var _response = new CustomResponse<PessoaPaciente>();
+
+
+            try
+            {
+
+
+                var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
+                await base.Atualizar(pessoaPaciente, userId);
+                await _servicePessoaHistorico.AdicionarHistoricoPaciente(pessoaPaciente, _pessoaMaster);
+                pessoaPaciente.PessoaContatos = null;
+                _response.Result = pessoaPaciente;
+                return _response;
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+        }
+
         public async Task<CustomResponse<PessoaPaciente>> ConsultaCpf(string cpf, Guid userId)
         {
             var _response = new CustomResponse<PessoaPaciente>();

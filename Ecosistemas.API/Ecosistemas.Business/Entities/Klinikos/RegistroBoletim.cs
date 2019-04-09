@@ -18,7 +18,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.DateTime)]
         public DateTime? DataBoletim { get; set; }
 
-        public virtual Pessoa Pessoa { get; set; }
+        public virtual PessoaPaciente Pessoa { get; set; }
 
         public virtual TipoChegada TipoChegada { get; set; }
 
