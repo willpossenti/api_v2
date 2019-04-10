@@ -9267,11 +9267,33 @@ namespace Ecosistemas.API.Initial
 
 
                         new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "ACIDENTE DE TRABALHO", Ativo = true },
-                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AFOGAMENTOS", Ativo = true },
-                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÕES (OUTRAS IDADES)", Ativo = true },
-                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÕES AO IDOSO  (60 ANOS OU MAIS)", Ativo = true },
-                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÕES ÀS CRIANÇAS (MENORES DE 12 ANOS)", Ativo = true },
-                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "ATROPELAMENTOS", Ativo = true }
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AFOGAMENTO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÃO (OUTRAS IDADES)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÃO AO IDOSO  (60 ANOS OU MAIS)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "AGRESSÃO ÀS CRIANÇAS (MENORES DE 12 ANOS)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "ATROPELAMENTO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "COLISÃO AUTO X MOTO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "COLISÃO AUTO X AUTO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "INTOXICAÇÃO POR OUTRAS CAUSAS", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "INTOXICAÇÃO MEDICAMENTOSA", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "LESÃO POR ARMA BRANCA", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "MORDEDURA POR CÃO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "MORDEDURA POR OUTROS ANIMAIS", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "OCORRÊNCIA POLICIAL", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "PERFURAÇÃO POR ARMA DE FOGO (PAF)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEDA DA PRÓPRIA ALTURA", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEDA DE CAMA", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEDA DE MACA", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEDA DE MOTO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEDA DE NÍVEL SUPERIOR", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEIMADURA POR FOGOS DE ARTIFÍCIOS", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "QUEIMADURA POR OUTROS MEIOS", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "SUSPEITA DE DENGUE", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "SUSPEITA DE GRIPE (OUTRAS)", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "SUSPEITA DE GRIPE H1N1", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "SUSPEITA DE LEPTOSPIROSE", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "TENTATIVA DE SUICÍDIO", Ativo = true },
+                        new TipoOcorrencia() { TipoOcorrenciaId = Guid.NewGuid(),  Descricao = "TRAUMA", Ativo = true },
                     };
 
 

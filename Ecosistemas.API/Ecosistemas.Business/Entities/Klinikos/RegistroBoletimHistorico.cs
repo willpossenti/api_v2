@@ -5,11 +5,13 @@ using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
 {
-    public class RegistroBoletim
+    public class RegistroBoletimHistorico
     {
 
         [Key]
-        public Guid RegistroBoletimId { get; set; }
+        public Guid RegistroBoletimHistoricoId { get; set; }
+
+        public virtual RegistroBoletim RegistroBoletim { get; set; }
 
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
@@ -17,9 +19,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         [DataType(DataType.DateTime)]
         public DateTime? DataBoletim { get; set; }
-
-        [Required]
-        public virtual PessoaPaciente Pessoa { get; set; }
 
         public virtual TipoChegada TipoChegada { get; set; }
 
@@ -77,6 +76,13 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public virtual Estado Estado { get; set; }
 
         public virtual Cidade Cidade { get; set; }
+
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string PessoaAlteracao { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime DataAlteracao { get; set; }
 
         public bool Ativo { get; set; }
 
