@@ -41,7 +41,7 @@ namespace Ecosistemas.Security.Manager
         {
 
             DateTime _dataCriacao = DateTime.Now;
-            DateTime _dataExpiracao = _dataCriacao +
+            DateTime _dataExpiracao = _dataCriacao + 
                 TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
             var _handler = new JwtSecurityTokenHandler();

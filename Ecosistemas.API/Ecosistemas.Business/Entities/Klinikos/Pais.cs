@@ -15,7 +15,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
 
         public string CodigoPais { get; set; }
-
+          
         [Required(ErrorMessage = "O nome da cidade é obrigatório")]
         [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 50")]
         [DataType(DataType.Text)]

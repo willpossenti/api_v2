@@ -81,8 +81,17 @@ namespace Ecosistemas.API.Controllers.Api
         {
             return await _servicePaciente.Obter(Guid.Parse(PessoaId));
         }
-
-      
+        [HttpGet("pessoapaciente/consultacpf")]
+        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<PessoaPaciente>> ConsultaCpf([FromBody]PessoaPaciente pessoapaciente)
+        {
+            return await _servicePaciente.ConsultaCpf(pessoapaciente.Cpf);
+        }
+        [HttpGet("pessoapaciente/consultanome")]
+        public async Task<CustomResponse<List<PessoaPaciente>>> ConsultarNome([FromBody]PessoaPaciente pessoapaciente)
+        {
+            return await _servicePaciente.ConsultarNomeComRaca(pessoapaciente.NomeCompleto);
+        }
 
     }
 }

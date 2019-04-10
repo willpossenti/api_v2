@@ -15,7 +15,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
 
         public string CodigoRaca { get; set; }
-
+        
         [Required(ErrorMessage = "O nome da raça é obrigatório")]
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
@@ -23,6 +23,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Ativo { get; set; }
 
-        //public virtual List<PessoaPaciente> PessoaPacientes { get; set; }
+
+        public virtual List<PessoaPaciente> PessoaPacientes { get; set; }
     }
 }

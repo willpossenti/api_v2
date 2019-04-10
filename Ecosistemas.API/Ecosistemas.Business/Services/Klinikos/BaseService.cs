@@ -175,7 +175,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             var _response = new CustomResponse<IList<T>> ();
 
             try
-            {
+            { 
                 _response.Result = await _context.Set<T>().Where(predicate).ToListAsync();
                 _response.Message = "Sucesso";
                 _response.StatusCode = StatusCodes.Status302Found;

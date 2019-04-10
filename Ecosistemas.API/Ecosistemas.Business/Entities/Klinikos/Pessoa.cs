@@ -43,7 +43,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string NomeMae { get; set; }
 
-        [StringLength(11, ErrorMessage = "{0} Precisa ter no máximo 11")]
+        //[StringLength(11, ErrorMessage = "{0} Precisa ter no máximo 11")]
         [DataType(DataType.Text)]
         public string Cpf { get; set; }
 
