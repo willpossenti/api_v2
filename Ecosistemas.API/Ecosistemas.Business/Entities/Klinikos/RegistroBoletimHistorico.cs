@@ -20,9 +20,13 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.DateTime)]
         public DateTime? DataBoletim { get; set; }
 
-        public virtual TipoChegada TipoChegada { get; set; }
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string TipoChegada { get; set; }
 
-        public virtual Especialidade Especialidade { get; set; }
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string Especialidade { get; set; }
 
         [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
         [DataType(DataType.Text)]
@@ -44,7 +48,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Procedencia { get; set; }
 
-        public virtual TipoOcorrencia TipoOcorrencia { get; set; }
+        [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 50")]
+        [DataType(DataType.Text)]
+        public string TipoOcorrencia { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime? DataOcorrencia { get; set; }
@@ -73,9 +79,13 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Bairro { get; set; }
 
-        public virtual Estado Estado { get; set; }
+        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [DataType(DataType.Text)]
+        public string Estado { get; set; }
 
-        public virtual Cidade Cidade { get; set; }
+        [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 50")]
+        [DataType(DataType.Text)]
+        public string Cidade { get; set; }
 
         [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]

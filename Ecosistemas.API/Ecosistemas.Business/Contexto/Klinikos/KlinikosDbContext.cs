@@ -50,6 +50,18 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<RegistroBoletim> RegistrosBoletim { get; set; }
         public DbSet<RegistroBoletimHistorico> RegistroBoletimHistorico { get; set; }
 
+        public DbSet<EscalaDor> EscalasDor { get; set; }
+        public DbSet<NivelConsciencia> NiveisConsciencia { get; set; }
+        public DbSet<DoencaPreExistente> DoencasPreExistentes { get; set; }
+        public DbSet<Risco> Riscos { get; set; }
+        public DbSet<AberturaOcular> AberturasOculares { get; set; }
+        public DbSet<RespostaVerbal> RespostasVerbais { get; set; }
+        public DbSet<RespostaMotora> RespostasMotoras { get; set; }
+        public DbSet<Trauma> Traumas { get; set; }
+        public DbSet<CausaExterna> CausasExternas { get; set; }
+        public DbSet<ClassificacaoRisco> ClassificacoesRisco { get; set; }
+        public DbSet<ClassificacaoRiscoHistorico> ClassificacaoRiscoHistorico { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

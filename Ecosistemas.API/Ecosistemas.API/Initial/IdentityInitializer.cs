@@ -9299,6 +9299,152 @@ namespace Ecosistemas.API.Initial
 
                     new TipoOcorrenciaService(_contextKlinikos).AdicionarCarga(listaTipoOcorrencia, pessoaMaster);
                     #endregion
+                    #region carga Escala Dor
+                    var listaescalador = new List<EscalaDor>() {
+
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 0, Descricao = "SEM DOR", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 1, Descricao = "DOR LEVE", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 2, Descricao = "DOR LEVE", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 3, Descricao = "DOR LEVE", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 4, Descricao = "DOR MODERADA", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 5, Descricao = "DOR MODERADA", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 6, Descricao = "DOR MODERADA", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 7, Descricao = "DOR MODERADA", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 8, Descricao = "DOR INTENSA", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 9, Descricao = "DOR INTENSA", Ativo = true },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 10, Descricao = "DOR INTENSA", Ativo = true },
+
+                    };
+
+                    new EscalaDorService(_contextKlinikos).AdicionarCarga(listaescalador, pessoaMaster);
+                    #endregion
+                    #region carga Nivel Consciencia 
+                    var listanivelconsciencia = new List<NivelConsciencia>() {
+
+                        new NivelConsciencia() { NivelConscienciaId = Guid.NewGuid(), Descricao = "LÚCIDO", Ativo = true },
+                        new NivelConsciencia() { NivelConscienciaId = Guid.NewGuid(), Descricao = "AGITAÇÃO", Ativo = true },
+                        new NivelConsciencia() { NivelConscienciaId = Guid.NewGuid(), Descricao = "DESORIENTADO", Ativo = true },
+                        new NivelConsciencia() { NivelConscienciaId = Guid.NewGuid(), Descricao = "INCONSCIENTE", Ativo = true },
+                        new NivelConsciencia() { NivelConscienciaId = Guid.NewGuid(), Descricao = "TORPOSO", Ativo = true },
+
+                    };
+
+                    new NivelConscienciaService(_contextKlinikos).AdicionarCarga(listanivelconsciencia, pessoaMaster);
+                    #endregion
+                    #region carga Doenca Pre Existente
+                    var listadoencapreexistente = new List<DoencaPreExistente>() {
+
+                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "HIPERTENSÃO", Ativo = true },
+                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "DIABETE", Ativo = true },
+                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "CARDIOPATA", Ativo = true },
+                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "RENAL CRÔNICO", Ativo = true },
+                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "RESPIRATÓRIA CRÔNICA", Ativo = true },
+                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "OUTROS", Ativo = true },
+
+                    };
+
+                    new DoencaPreExistenteService(_contextKlinikos).AdicionarCarga(listadoencapreexistente, pessoaMaster);
+                    #endregion
+                    #region carga Risco
+                    var listarisco = new List<Risco>() {
+
+                        new Risco() { RiscoId = Guid.NewGuid(), Descricao = "AZUL", Ativo = true },
+                        new Risco() { RiscoId = Guid.NewGuid(), Descricao = "VERDE", Ativo = true },
+                        new Risco() { RiscoId = Guid.NewGuid(), Descricao = "AMARELO CONSULTÓRIO", Ativo = true },
+                        new Risco() { RiscoId = Guid.NewGuid(), Descricao = "AMARELO OBSERVAÇÃO", Ativo = true },
+                        new Risco() { RiscoId = Guid.NewGuid(), Descricao = "LARANJA", Ativo = true },
+                        new Risco() { RiscoId = Guid.NewGuid(), Descricao = "VERMELHO", Ativo = true },
+
+                    };
+
+                    new RiscoService(_contextKlinikos).AdicionarCarga(listarisco, pessoaMaster);
+                    #endregion
+                    #region carga Abertura Ocular
+                    var listaaberturaocular = new List<AberturaOcular>() {
+
+                        new AberturaOcular() { AberturaOcularId = Guid.NewGuid(), Variavel = "ESPONTÂNEA", Escore = 4, Ativo = true },
+                        new AberturaOcular() { AberturaOcularId = Guid.NewGuid(), Variavel = "AO SOM", Escore = 3, Ativo = true },
+                        new AberturaOcular() { AberturaOcularId = Guid.NewGuid(), Variavel = "A PRESSÃO", Escore = 2, Ativo = true },
+                        new AberturaOcular() { AberturaOcularId = Guid.NewGuid(), Variavel = "AUSENTE", Escore = 1, Ativo = true },
+                        new AberturaOcular() { AberturaOcularId = Guid.NewGuid(), Variavel = "NAO TESTÁVEL", Escore = 0, Ativo = true },
+
+
+                    };
+
+                    new AberturaOcularService(_contextKlinikos).AdicionarCarga(listaaberturaocular, pessoaMaster);
+                    #endregion
+                    #region carga Resposta Verbal
+                    var listarespostaverbal = new List<RespostaVerbal>() {
+
+                        new RespostaVerbal() { RespostaVerbalId = Guid.NewGuid(), Variavel = "ORIENTADA", Escore = 5, Ativo = true },
+                        new RespostaVerbal() { RespostaVerbalId = Guid.NewGuid(), Variavel = "CONFUSA", Escore = 4, Ativo = true },
+                        new RespostaVerbal() { RespostaVerbalId = Guid.NewGuid(), Variavel = "PALAVRAS", Escore = 3, Ativo = true },
+                        new RespostaVerbal() { RespostaVerbalId = Guid.NewGuid(), Variavel = "SONS", Escore = 2, Ativo = true },
+                        new RespostaVerbal() { RespostaVerbalId = Guid.NewGuid(), Variavel = "AUSENTE", Escore = 1, Ativo = true },
+                        new RespostaVerbal() { RespostaVerbalId = Guid.NewGuid(), Variavel = "NAO TESTÁVEL", Escore = 0, Ativo = true },
+
+                    };
+
+                    new RespostaVerbalService(_contextKlinikos).AdicionarCarga(listarespostaverbal, pessoaMaster);
+                    #endregion
+                    #region carga Resposta Motora
+                    var listarespostamotora = new List<RespostaMotora>() {
+
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "OBEDECE A COMANDOS", Escore = 6, Ativo = true },
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "LOCALIZADORA", Escore = 5, Ativo = true },
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "FLEXÃO NORMAL", Escore = 4, Ativo = true },
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "FLEXÃO ANORMAL", Escore = 3, Ativo = true },
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "EXTENSÃO", Escore = 2, Ativo = true },
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "NENHUMA", Escore = 1, Ativo = true },
+                        new RespostaMotora() { RespostaMotoraId = Guid.NewGuid(), Variavel = "NAO TESTÁVEL", Escore = 0, Ativo = true },
+
+                    };
+
+                    new RespostaMotoraService(_contextKlinikos).AdicionarCarga(listarespostamotora, pessoaMaster);
+                    #endregion
+                    #region carga Trauma
+                    var listatrauma = new List<Trauma>() {
+
+                        new Trauma() { TraumaId = Guid.NewGuid(), Descricao = "TRAUMA GRAVE", Ativo = true },
+                        new Trauma() { TraumaId = Guid.NewGuid(), Descricao = "TRAUMA MODERADO", Ativo = true },
+                        new Trauma() { TraumaId = Guid.NewGuid(), Descricao = "TRAUMA LEVE", Ativo = true },
+
+                    };
+
+                    new TraumaService(_contextKlinikos).AdicionarCarga(listatrauma, pessoaMaster);
+                    #endregion
+                    #region carga Causa Externa
+                    var listacausaexterna = new List<CausaExterna>() {
+
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ACIDENTE DE TRABALHO", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ACIDENTE DE TRANSPORTE TERRESTRE", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ACIDENTES DE TRANSPORTE AÉREO E ESPACIAL", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ACIDENTES DE TRANSPORTE POR ÁGUA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "AGRESSÃO FISICA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "AFOGAMENTO", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ASFIXIA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ATROPELAMENTO", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "CHOQUE ELÉTRICO", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "CONTATO COM ANIMAIS OU PLANTAS VENENOSAS", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ENVENENAMENTO (INTOXICAÇÃO) ACIDENTAL POR E EXPOSIÇÃO À SUBSTANCIAS NOCIVAS", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "ESMAGAMENTO", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "EXPOSICÃO À FUMACA, AO FOGO OU AS CHAMAS", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "EXPOSIÇÃO AS FORÇAS DA NATUREZA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "HIPOTERMIA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "INTOXICAÇÃO EXÓGENA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "INTOXICAÇÃO OU OUTRA LESÃO/TRAUMA DE CARACTERÍSTICA INTENCIONAL", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "LESÃO AUTO PROVOCADA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "MAUS TRATOS", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "MORDEDURAS DE ANIMAIS", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "OUTROS ACIDENTES DE TRANSPORTES E OS NÃO ESPECIFICADOS", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "QUEDA", Ativo = true },
+                        new CausaExterna() { CausaExternaId = Guid.NewGuid(), Descricao= "VIOLÊNCIA SEXUAL", Ativo = true },
+
+                    };
+
+                    new CausaExternaService(_contextKlinikos).AdicionarCarga(listacausaexterna, pessoaMaster);
+                    #endregion
+
                 }
 
             }

@@ -18,3 +18,13 @@ D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistem
 D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.AssemblyInfo.cs
 D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.dll
 D:\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.deps.json
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.runtimeconfig.json
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.runtimeconfig.dev.json
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.dll
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\bin\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.csproj.CoreCompileInputs.cache
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.AssemblyInfoInputs.cache
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.AssemblyInfo.cs
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.dll
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Security\obj\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
