@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -25,9 +26,9 @@ namespace Ecosistemas.API.Controllers.Api
     {
         private IOcupacaoService _service;
 
-        public OcupacaoController(KlinikosDbContext context)
+        public OcupacaoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new OcupacaoService(context);
+            _service = new OcupacaoService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

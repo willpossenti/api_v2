@@ -32,5 +32,12 @@ namespace Ecosistemas.Security.Manager
             public readonly string Password = "!q2w3e4r5t";
             public readonly string Email = "willian.possenti@ecosistemas.com.br";
         };
+
+        public class UnidadeUsuarioMaster
+        {
+            public readonly string Username = "will";
+            public readonly string Password = "will92";
+            public readonly string Email = "willian.possenti@ecosistemas.com.br";
+        };
     }
 }

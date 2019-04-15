@@ -15,7 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
-
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -28,10 +28,10 @@ namespace Ecosistemas.API.Controllers.Api
         private IPessoaPacienteService _servicePaciente;
         private IPessoaProfissionalService _serviceProfissional;
 
-        public PessoaController(KlinikosDbContext context)
+        public PessoaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _servicePaciente = new PessoaPacienteService(context);
-            _serviceProfissional = new PessoaProfissionalService(context);
+            _servicePaciente = new PessoaPacienteService(contextKlinikos, context);
+            _serviceProfissional = new PessoaProfissionalService(contextKlinikos, context);
         }
 
         [Route("PessoaPaciente/Incluir")]

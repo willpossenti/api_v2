@@ -11,18 +11,21 @@ using System.Linq.Expressions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaPacienteService : BaseService<PessoaPaciente>, IPessoaPacienteService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
         private IPessoaHistoricoService _servicePessoaHistorico;
 
-        public PessoaPacienteService(KlinikosDbContext context) : base(context)
+        public PessoaPacienteService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-            _servicePessoaHistorico = new PessoaHistoricoService(context);
+            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
         }
 
         public async Task<CustomResponse<PessoaPaciente>> AdicionarPaciente(PessoaPaciente pessoaPaciente, Guid userId)
@@ -42,7 +45,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     return _response;
                 }
 
-                var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
                 await base.Adicionar(pessoaPaciente, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoPaciente(pessoaPaciente, _pessoaMaster);
                 _response.Result = pessoaPaciente;
@@ -68,7 +71,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
 
 
-                var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
                 await base.Atualizar(pessoaPaciente, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoPaciente(pessoaPaciente, _pessoaMaster);
                 _response.Result = pessoaPaciente;
@@ -297,7 +300,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             get
             {
-                return _context.PessoaPacientes
+                return _contextKlinikos.PessoaPacientes
                    .Include(pessoa => pessoa.Raca)
                    .Include(pessoa => pessoa.Etnia)
                    .Include(pessoa => pessoa.Justificativa)

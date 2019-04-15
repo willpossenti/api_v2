@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -25,9 +26,9 @@ namespace Ecosistemas.API.Controllers.Api
     {
         private ICidadeService _service;
 
-        public CidadeController(KlinikosDbContext context)
+        public CidadeController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new CidadeService(context);
+            _service = new CidadeService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

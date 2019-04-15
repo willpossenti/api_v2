@@ -30,6 +30,12 @@ D:\API\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.R
 D:\API\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csproj.CopyComplete
 D:\API\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.dll
 D:\API\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.pdb
+D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csprojAssemblyReference.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csproj.CoreCompileInputs.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.RazorAssemblyInfo.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.RazorAssemblyInfo.cs
+D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.AssemblyInfoInputs.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.AssemblyInfo.cs
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.deps.json
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.runtimeconfig.json
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.runtimeconfig.dev.json
@@ -39,12 +45,6 @@ D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Bu
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Security.dll
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Business.pdb
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
-D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csprojAssemblyReference.cache
-D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csproj.CoreCompileInputs.cache
-D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.RazorAssemblyInfo.cache
-D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.RazorAssemblyInfo.cs
-D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.AssemblyInfoInputs.cache
-D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.AssemblyInfo.cs
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.RazorTargetAssemblyInfo.cache
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csproj.CopyComplete
 D:\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.dll

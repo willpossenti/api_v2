@@ -10,17 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class LotacaoProfissionalService : BaseService<LotacaoProfissional>, ILotacaoProfissionalService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
 
-        public LotacaoProfissionalService(KlinikosDbContext context) : base(context)
+        public LotacaoProfissionalService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-
         }
 
         public async Task<CustomResponse<List<LotacaoProfissional>>> ConsultaLotacoesProfissional(Guid pessoaId, Guid userId)
@@ -75,7 +77,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             get
             {
-                return _context.LotacoesProfissional
+                return _contextKlinikos.LotacoesProfissional
                     .Include(lotacao => lotacao.OrgaoEmissorProfissional)
                     .Include(lotacao => lotacao.Pessoa)
                     .Include(lotacao => lotacao.TipoProfissional);

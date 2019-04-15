@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
@@ -13,15 +14,17 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class RegistroBoletimService : BaseService<RegistroBoletim>, IRegistroBoletimService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
         private IPessoaHistoricoService _servicePessoaHistorico;
         private IRegistroBoletimHistoricoService _serviceRegistroBoletimHistorico;
 
-        public RegistroBoletimService(KlinikosDbContext context) : base(context)
+        public RegistroBoletimService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-            _servicePessoaHistorico = new PessoaHistoricoService(context);
-            _serviceRegistroBoletimHistorico = new RegistroBoletimHistoricoService(context);
+            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
+            _serviceRegistroBoletimHistorico = new RegistroBoletimHistoricoService(contextKlinikos, context);
         }
 
         public async Task<CustomResponse<RegistroBoletim>> AdicionarRegistroBoletim(RegistroBoletim registroBoletim, Guid userId)
@@ -30,8 +33,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
-                var numeroBoletim = _context.RegistrosBoletim.Max(x => x.NumeroBoletim);
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
+                var numeroBoletim = _contextKlinikos.RegistrosBoletim.Max(x => x.NumeroBoletim);
 
                 if (numeroBoletim != null)
                 {
@@ -53,7 +56,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Message = "Incluído com sucesso";
-
+                _response.Result = registroBoletim;
             }
             catch (Exception ex)
             {

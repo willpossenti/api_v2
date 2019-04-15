@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using System;
@@ -9,12 +10,13 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class OcupacaoService : BaseService<Ocupacao>, IOcupacaoService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
 
-        public OcupacaoService(KlinikosDbContext context) : base(context)
+        public OcupacaoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-
         }
     }
 }

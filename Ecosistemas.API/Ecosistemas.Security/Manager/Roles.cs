@@ -11,4 +11,6 @@ namespace Ecosistemas.Security.Manager
         public const string ROLE_API_USUARIOS = "Acesso-APIUsuarios";
         public const string ROLE_API_KLINIKOS = "Acesso-APIKlinikos";
     }
+
+  
 }
