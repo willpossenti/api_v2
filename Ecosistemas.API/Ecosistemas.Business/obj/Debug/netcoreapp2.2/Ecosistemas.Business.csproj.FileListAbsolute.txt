@@ -26,3 +26,17 @@ D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistem
 D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.csproj.CopyComplete
 D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.dll
 D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.pdb
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Business.deps.json
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Business.runtimeconfig.json
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Business.runtimeconfig.dev.json
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Business.dll
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Business.pdb
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Security.dll
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.csprojAssemblyReference.cache
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.csproj.CoreCompileInputs.cache
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.AssemblyInfoInputs.cache
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.AssemblyInfo.cs
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.csproj.CopyComplete
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.dll
+C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Debug\netcoreapp2.2\Ecosistemas.Business.pdb

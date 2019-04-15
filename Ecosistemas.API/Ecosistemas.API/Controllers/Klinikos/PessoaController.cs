@@ -27,13 +27,11 @@ namespace Ecosistemas.API.Controllers.Api
 
         private IPessoaPacienteService _servicePaciente;
         private IPessoaProfissionalService _serviceProfissional;
-        private IPessoaContatoService _serviceContato;
 
         public PessoaController(KlinikosDbContext context)
         {
             _servicePaciente = new PessoaPacienteService(context);
             _serviceProfissional = new PessoaProfissionalService(context);
-            _serviceContato = new PessoaContatoService(context);
         }
 
         [Route("PessoaPaciente/Incluir")]
@@ -56,10 +54,11 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpPut]
-     //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Route("PessoaPaciente/Alterar")]
+        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> Put([FromBody]PessoaPaciente pessoapaciente, [FromServices]AccessManager accessManager)
         {
-            return await _servicePaciente.Atualizar(pessoapaciente, Guid.Parse(HttpContext.User.Identity.Name));
+            return await _servicePaciente.AtualizarPaciente(pessoapaciente, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
 
@@ -156,11 +155,6 @@ namespace Ecosistemas.API.Controllers.Api
             return await _serviceProfissional.ConsultaPis(pis, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
-        [HttpGet("PessoaContato/{PessoaId}")]
-        //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<List<PessoaContato>>> Contatos(string PessoaId)
-        {
-            return await _serviceContato.ConsultaContato(Guid.Parse(PessoaId), Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
-        }
+       
     }
 }

@@ -68,7 +68,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Naturalidade { get; set; }
 
-        public virtual OrgaoEmissor OrgaoEmissor { get; set; }
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string  OrgaoEmissor { get; set; }
 
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
@@ -111,6 +113,19 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]
         public string Cidade { get; set; }
+
+        [StringLength(11, ErrorMessage = "{0} Precisa ter no máximo 11")]
+        [DataType(DataType.Text)]
+        public virtual string Contato1 { get; set; }
+        [StringLength(11, ErrorMessage = "{0} Precisa ter no máximo 11")]
+        [DataType(DataType.Text)]
+        public virtual string Contato2 { get; set; }
+        [StringLength(11, ErrorMessage = "{0} Precisa ter no máximo 11")]
+        [DataType(DataType.Text)]
+        public virtual string Contato3 { get; set; }
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public virtual string Email { get; set; }
 
         [StringLength(15, ErrorMessage = "{0} Precisa ter no máximo 15")]
         [DataType(DataType.Text)]

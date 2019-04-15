@@ -10,6 +10,7 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
       public interface IPessoaPacienteService : IBaseService<PessoaPaciente>
     {
         Task<CustomResponse<PessoaPaciente>> AdicionarPaciente(PessoaPaciente entity, Guid UserId);
+        Task<CustomResponse<PessoaPaciente>> AtualizarPaciente(PessoaPaciente entity, Guid UserId);
         Task<CustomResponse<PessoaPaciente>> ConsultaCpf(string cpf, Guid userId);
         Task<CustomResponse<PessoaPaciente>> ConsultaCns(string cns, Guid userId);
         Task<CustomResponse<PessoaPaciente>> ConsultaPis(string pis, Guid userId);

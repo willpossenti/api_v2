@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ecosistemas.Business.Interfaces.Klinikos
 {
-      public interface IPessoaContatoHistoricoService : IBaseService<PessoaContatoHistorico>
+    public interface IEspecialidadeService : IBaseService<Especialidade>
     {
 
     }

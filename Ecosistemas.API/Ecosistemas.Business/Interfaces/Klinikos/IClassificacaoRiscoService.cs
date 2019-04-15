@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Ecosistemas.Business.Interfaces.Klinikos
 {
-      public interface IPessoaContatoService : IBaseService<PessoaContato>
+    public interface IClassificacaoRiscoService : IBaseService<ClassificacaoRisco>
     {
-        Task<CustomResponse<List<PessoaContato>>> ConsultaContato(Guid pessoaId, Guid userId);
+        Task<CustomResponse<ClassificacaoRisco>> AdicionarClassificacaoRisco(ClassificacaoRisco classificacaoRisco, Guid userId);
     }
 }
