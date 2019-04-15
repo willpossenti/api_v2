@@ -60,7 +60,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 await base.Adicionar(pessoaprofissional, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoProfissional(pessoaprofissional, _pessoaMaster);
-                pessoaprofissional.PessoaContatos = null;
                 pessoaprofissional.LotacoesProfissional = null;
                 _response.Result = pessoaprofissional;
                 return _response;
@@ -109,19 +108,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                         _pessoaEncontrado.LotacoesProfissional = newListaLotacao;
 
-                        if (_pessoaEncontrado.PessoaContatos != null)
-                        {
-                            var newListaContato = new List<PessoaContato>();
-
-                            foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                            {
-                                contato.Pessoa = null;
-                                newListaContato.Add(contato);
-                            }
-
-                            _pessoaEncontrado.PessoaContatos = newListaContato;
-                        }
-
                         if (_pessoaEncontrado != null)
                         {
                             _response.Message = "Cpf encontrado";
@@ -165,22 +151,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     if (_pessoaEncontrado != null)
                     {
-
-                        var newListaContato = new List<PessoaContato>();
-
-                        foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                        {
-                            contato.Pessoa = null;
-                            newListaContato.Add(contato);
-                        }
-
-                        _pessoaEncontrado.PessoaContatos = newListaContato;
-
-
-                    }
-
-                    if (_pessoaEncontrado != null)
-                    {
                         _response.Message = "Cns encontrado";
                         _response.StatusCode = StatusCodes.Status302Found;
                         _response.Result = _pessoaEncontrado;
@@ -219,21 +189,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     var _pessoaEncontrado = Profissional.Where(_filtroNome).ToList().FirstOrDefault();
 
-                    if (_pessoaEncontrado != null)
-                    {
-
-                        var newListaContato = new List<PessoaContato>();
-
-                        foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                        {
-                            contato.Pessoa = null;
-                            newListaContato.Add(contato);
-                        }
-
-                        _pessoaEncontrado.PessoaContatos = newListaContato;
-
-
-                    }
 
                     if (_pessoaEncontrado != null)
                     {
@@ -278,17 +233,9 @@ namespace Ecosistemas.Business.Services.Klinikos
                     if (_listaProfissionais != null)
                     {
 
-                        var newListaPessoa = new List<PessoaProfissional>();
-
-                        foreach (var pessoa in _listaProfissionais)
-                        {
-                            pessoa.PessoaContatos = null;
-                            newListaPessoa.Add(pessoa);
-                        }
-
                         _response.Message = "Nome encontrado";
                         _response.StatusCode = StatusCodes.Status302Found;
-                        _response.Result = newListaPessoa;
+                        _response.Result = _listaProfissionais;
 
                     }
                     else
@@ -363,7 +310,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                    .Include(pessoa => pessoa.Nacionalidade)
                    .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
                    .Include(pessoa => pessoa.OrgaoEmissor)
-                   .Include(pessoa => pessoa.PessoaContatos)
                    .Include(pessoa => pessoa.Estado)
                    .Include(pessoa => pessoa.Cidade)
                    .Include(pessoa => pessoa.Ocupacao)

@@ -45,7 +45,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
                 await base.Adicionar(pessoaPaciente, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoPaciente(pessoaPaciente, _pessoaMaster);
-                pessoaPaciente.PessoaContatos = null;
                 _response.Result = pessoaPaciente;
                 return _response;
             }
@@ -72,7 +71,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
                 await base.Atualizar(pessoaPaciente, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoPaciente(pessoaPaciente, _pessoaMaster);
-                pessoaPaciente.PessoaContatos = null;
                 _response.Result = pessoaPaciente;
                 return _response;
             }
@@ -102,21 +100,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
 
-                   if (_pessoaEncontrado != null)
-                   {
-
-                       var newListaContato = new List<PessoaContato>();
-
-                       foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                       {
-                           contato.Pessoa = null;
-                           newListaContato.Add(contato);
-                       }
-
-                       _pessoaEncontrado.PessoaContatos = newListaContato;
-
-
-                   }
 
                    if (_pessoaEncontrado != null)
                    {
@@ -158,21 +141,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
 
-                    if (_pessoaEncontrado != null)
-                    {
-
-                        var newListaContato = new List<PessoaContato>();
-
-                        foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                        {
-                            contato.Pessoa = null;
-                            newListaContato.Add(contato);
-                        }
-
-                        _pessoaEncontrado.PessoaContatos = newListaContato;
-
-
-                    }
 
                     if (_pessoaEncontrado != null)
                     {
@@ -214,21 +182,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
 
-                    if (_pessoaEncontrado != null)
-                    {
-
-                        var newListaContato = new List<PessoaContato>();
-
-                        foreach (var contato in _pessoaEncontrado.PessoaContatos)
-                        {
-                            contato.Pessoa = null;
-                            newListaContato.Add(contato);
-                        }
-
-                        _pessoaEncontrado.PessoaContatos = newListaContato;
-
-
-                    }
 
                     if (_pessoaEncontrado != null)
                     {
@@ -272,17 +225,9 @@ namespace Ecosistemas.Business.Services.Klinikos
                     if (_listaPacientes != null)
                     {
 
-                        var newListaPessoa = new List<PessoaPaciente>();
-
-                        foreach (var pessoa in _listaPacientes)
-                        {
-                            pessoa.PessoaContatos = null;
-                            newListaPessoa.Add(pessoa);
-                        }
-
                         _response.Message = "Nome encontrado";
                         _response.StatusCode = StatusCodes.Status302Found;
-                        _response.Result = newListaPessoa;
+                        _response.Result = _listaPacientes;
 
                     }
                     else
@@ -321,17 +266,10 @@ namespace Ecosistemas.Business.Services.Klinikos
                     if (_listaPacientes != null)
                     {
 
-                        var newListaPessoa = new List<PessoaPaciente>();
-
-                        foreach (var pessoa in _listaPacientes)
-                        {
-                            pessoa.PessoaContatos = null;
-                            newListaPessoa.Add(pessoa);
-                        }
 
                         _response.Message = "Nome social encontrado";
                         _response.StatusCode = StatusCodes.Status302Found;
-                        _response.Result = newListaPessoa;
+                        _response.Result = _listaPacientes;
 
                     }
                     else
@@ -366,7 +304,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                    .Include(pessoa => pessoa.Nacionalidade)
                    .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
                    .Include(pessoa => pessoa.OrgaoEmissor)
-                   .Include(pessoa => pessoa.PessoaContatos)
                    .Include(pessoa => pessoa.Estado)
                    .Include(pessoa => pessoa.Cidade)
                    .Include(pessoa => pessoa.Ocupacao)

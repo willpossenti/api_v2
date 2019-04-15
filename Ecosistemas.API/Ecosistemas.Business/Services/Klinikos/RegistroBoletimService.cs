@@ -15,11 +15,13 @@ namespace Ecosistemas.Business.Services.Klinikos
     {
         private readonly KlinikosDbContext _context;
         private IPessoaHistoricoService _servicePessoaHistorico;
+        private IRegistroBoletimHistoricoService _serviceRegistroBoletimHistorico;
 
         public RegistroBoletimService(KlinikosDbContext context) : base(context)
         {
             _context = context;
             _servicePessoaHistorico = new PessoaHistoricoService(context);
+            _serviceRegistroBoletimHistorico = new RegistroBoletimHistoricoService(context);
         }
 
         public async Task<CustomResponse<RegistroBoletim>> AdicionarRegistroBoletim(RegistroBoletim registroBoletim, Guid userId)
@@ -40,12 +42,14 @@ namespace Ecosistemas.Business.Services.Klinikos
                 else
                     registroBoletim.NumeroBoletim = "000001";
 
+                registroBoletim.Ativo = true;
+
                 await this.Adicionar(registroBoletim, userId);
 
-                if (registroBoletim.Pessoa != null) 
+                if (registroBoletim.Pessoa != null)
                     await _servicePessoaHistorico.AdicionarHistoricoPaciente(registroBoletim.Pessoa, _pessoaMaster);
 
-                
+                await _serviceRegistroBoletimHistorico.AdicionarHistoricoRegistroBoletim(registroBoletim, _pessoaMaster);
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Message = "Incluído com sucesso";

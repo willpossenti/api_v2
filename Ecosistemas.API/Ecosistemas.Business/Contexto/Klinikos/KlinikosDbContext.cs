@@ -17,7 +17,6 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         }
 
         public DbSet<Pessoa> Pessoas { get; set; }
-        public DbSet<PessoaContato> PessoaContatos { get; set; }
         public DbSet<PessoaPaciente> PessoaPacientes { get; set; }
         public DbSet<PessoaProfissional> PessoaProfissionais { get; set; }
 
@@ -42,7 +41,6 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<LotacaoProfissional> LotacoesProfissional { get; set; }
 
         public DbSet<PessoaHistorico> PessoaHistorico { get; set; }
-        public DbSet<PessoaContatoHistorico> PessoaContatoHistorico { get; set; }
 
         public DbSet<Especialidade> Especialidades { get; set; }
         public DbSet<TipoChegada> TiposChegada { get; set; }
@@ -50,6 +48,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<TipoOcorrencia> TiposOcorrencia { get; set; }
 
         public DbSet<RegistroBoletim> RegistrosBoletim { get; set; }
+        public DbSet<RegistroBoletimHistorico> RegistroBoletimHistorico { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

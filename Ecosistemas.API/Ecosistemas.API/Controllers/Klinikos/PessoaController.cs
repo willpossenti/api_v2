@@ -27,13 +27,11 @@ namespace Ecosistemas.API.Controllers.Api
 
         private IPessoaPacienteService _servicePaciente;
         private IPessoaProfissionalService _serviceProfissional;
-        private IPessoaContatoService _serviceContato;
 
         public PessoaController(KlinikosDbContext context)
         {
             _servicePaciente = new PessoaPacienteService(context);
             _serviceProfissional = new PessoaProfissionalService(context);
-            _serviceContato = new PessoaContatoService(context);
         }
 
         [Route("PessoaPaciente/Incluir")]
@@ -157,11 +155,6 @@ namespace Ecosistemas.API.Controllers.Api
             return await _serviceProfissional.ConsultaPis(pis, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
-        [HttpGet("PessoaContato/{PessoaId}")]
-        //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<List<PessoaContato>>> Contatos(string PessoaId)
-        {
-            return await _serviceContato.ConsultaContato(Guid.Parse(PessoaId), Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
-        }
+       
     }
 }
