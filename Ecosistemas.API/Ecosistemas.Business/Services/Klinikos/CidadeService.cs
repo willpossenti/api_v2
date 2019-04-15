@@ -10,17 +10,19 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class CidadeService : BaseService<Cidade>, ICidadeService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
 
-        public CidadeService(KlinikosDbContext context) : base(context)
+        public CidadeService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _context = context;
-            
+            _contextKlinikos = contextKlinikos;
 
         }
 

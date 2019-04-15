@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -25,9 +26,9 @@ namespace Ecosistemas.API.Controllers.Api
     {
         private ISituacaoFamiliarConjugalService _service;
 
-        public SituacaoFamiliarConjugalController(KlinikosDbContext context)
+        public SituacaoFamiliarConjugalController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new SituacaoFamiliarConjugalService(context);
+            _service = new SituacaoFamiliarConjugalService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

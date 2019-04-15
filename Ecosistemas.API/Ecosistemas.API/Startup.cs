@@ -104,10 +104,10 @@ namespace Ecosistemas.API
                 app.UseHsts();
             }
 
-            new IdentityInitializer(context, _signingConfigurations, _tokenConfigurations, services)
+            new IdentityInitializer(context, _signingConfigurations, _tokenConfigurations)
                .InitializeApi();
 
-            new IdentityInitializer(klinikosDbContext)
+            new IdentityInitializer(klinikosDbContext, context)
             .InitializeKlinikos();
 
             app.UseCors("ApiPolicy");

@@ -18,12 +18,13 @@ namespace Ecosistemas.Business.Services.Klinikos
 
     public class BaseService<T> : IDisposable, IBaseService<T> where T : class
     {
-        private KlinikosDbContext _context;
+        private KlinikosDbContext _contextKlinikos;
+        private ApiDbContext _context;
 
-        public BaseService(KlinikosDbContext context)
+        public BaseService(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-
         }
 
         public async Task<CustomResponse<T>> Adicionar(T entity, Guid UserId)
@@ -32,8 +33,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _context.Attach<T>(entity);
-                await _context.SaveChangesAsync();
+                _contextKlinikos.Attach<T>(entity);
+                await _contextKlinikos.SaveChangesAsync();
                 _response.Message = "Inclusão";
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Result = entity;
@@ -53,8 +54,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _context.AttachRange(entity);
-                await _context.SaveChangesAsync();
+                _contextKlinikos.AttachRange(entity);
+                await _contextKlinikos.SaveChangesAsync();
                 _response.Message = "Inclusão de lista";
                 _response.StatusCode = StatusCodes.Status201Created;
                 await GerarLog(_response.Message, typeof(T).Name, UserId);
@@ -74,8 +75,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _context.AddRange(entity);
-                _context.SaveChanges();
+                _contextKlinikos.AddRange(entity);
+                _contextKlinikos.SaveChanges();
                 _response.Message = "Inclusão de lista";
                 _response.StatusCode = StatusCodes.Status201Created;
             }
@@ -94,8 +95,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _context.Update<T>(entity);
-                await _context.SaveChangesAsync();
+                _contextKlinikos.Update<T>(entity);
+                await _contextKlinikos.SaveChangesAsync();
                 _response.Message = "Alteração";
                 _response.StatusCode = StatusCodes.Status200OK;
                 await GerarLog(_response.Message, typeof(T).Name, UserId);
@@ -113,9 +114,9 @@ namespace Ecosistemas.Business.Services.Klinikos
             var _response = new CustomResponse<T>();
             try
             {
-                T _entity = _context.Set<T>().Find(Id);
-                _context.Remove<T>(_entity);
-                await _context.SaveChangesAsync();
+                T _entity = _contextKlinikos.Set<T>().Find(Id);
+                _contextKlinikos.Remove<T>(_entity);
+                await _contextKlinikos.SaveChangesAsync();
 
                 _response.Message = "Remoção";
                 _response.StatusCode = StatusCodes.Status200OK;
@@ -137,7 +138,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _response.Result = await _context.Set<T>().ToListAsync<T>();
+                _response.Result = await _contextKlinikos.Set<T>().ToListAsync<T>();
                 _response.Message = "Sucesso";
                 _response.StatusCode = StatusCodes.Status302Found;
             }
@@ -158,7 +159,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _response.Result = await _context.FindAsync<T>(id);
+                _response.Result = await _contextKlinikos.FindAsync<T>(id);
                 _response.Message = "Sucesso";
                 _response.StatusCode = StatusCodes.Status302Found;
             }
@@ -176,7 +177,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _response.Result = await _context.Set<T>().Where(predicate).ToListAsync();
+                _response.Result = await _contextKlinikos.Set<T>().Where(predicate).ToListAsync();
                 _response.Message = "Sucesso";
                 _response.StatusCode = StatusCodes.Status302Found;
             }
@@ -197,20 +198,19 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                using (ApiDbContext _apicontext = new ApiDbContext())
-                {
+
                     var _log = new Log
                     {
                         Acao = action,
                         Data = DateTime.Now,
                         LocalAcao = entity.ToString(),
-                        User = await _apicontext.FindAsync<User>(UserId)
+                        User = await _context.FindAsync<User>(UserId)
                     };
 
-                    await _apicontext.AddAsync<Log>(_log);
-                    await _apicontext.SaveChangesAsync();
+                    await _context.AddAsync<Log>(_log);
+                    await _context.SaveChangesAsync();
                     _response.StatusCode = StatusCodes.Status201Created;
-                }
+                
             }
             catch (Exception ex)
             {
@@ -224,6 +224,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
         public void Dispose()
         {
+            _contextKlinikos.Dispose();
             _context.Dispose();
         }
 

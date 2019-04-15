@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -25,9 +26,9 @@ namespace Ecosistemas.API.Controllers.Api
     {
         private INacionalidadeService _service;
 
-        public NacionalidadeController(KlinikosDbContext context)
+        public NacionalidadeController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new NacionalidadeService(context);
+            _service = new NacionalidadeService(contextKlinikos, context);
         }
 
         [Route("Incluir")]
