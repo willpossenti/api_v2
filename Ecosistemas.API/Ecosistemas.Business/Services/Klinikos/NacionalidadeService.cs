@@ -10,13 +10,9 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class NacionalidadeService : BaseService<Nacionalidade>, INacionalidadeService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
 
         public NacionalidadeService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
         }
     }
 }

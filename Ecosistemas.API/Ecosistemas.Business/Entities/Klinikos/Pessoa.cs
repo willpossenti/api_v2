@@ -191,7 +191,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Master { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
 
     }

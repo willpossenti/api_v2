@@ -10,13 +10,10 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class TipoProfissionalService : BaseService<TipoProfissional>, ITipoProfissionalService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
 
         public TipoProfissionalService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+
         }
     }
 }

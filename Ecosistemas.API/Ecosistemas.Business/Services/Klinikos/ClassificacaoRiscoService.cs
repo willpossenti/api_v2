@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
@@ -13,13 +14,16 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class ClassificacaoRiscoService : BaseService<ClassificacaoRisco>, IClassificacaoRiscoService
     {
-        private readonly KlinikosDbContext _context;
-        private IClassificacaoRiscoHistoricoService _serviceClassificacaoRiscoHistorico;
 
-        public ClassificacaoRiscoService(KlinikosDbContext context) : base(context)
+        private IClassificacaoRiscoHistoricoService _serviceClassificacaoRiscoHistorico;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
+
+        public ClassificacaoRiscoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-            _serviceClassificacaoRiscoHistorico = new ClassificacaoRiscoHistoricoService(context);
+
         }
 
         public async Task<CustomResponse<ClassificacaoRisco>> AdicionarClassificacaoRisco(ClassificacaoRisco classificacaoRisco, Guid userId)
@@ -28,7 +32,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
 
                 classificacaoRisco.Ativo = true;

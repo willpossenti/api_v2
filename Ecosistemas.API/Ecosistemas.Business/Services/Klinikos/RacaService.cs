@@ -10,13 +10,10 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class RacaService : BaseService<Raca>, IRacaService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
 
         public RacaService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+
         }
     }
 }

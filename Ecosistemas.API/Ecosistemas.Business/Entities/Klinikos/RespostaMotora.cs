@@ -18,7 +18,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public int Escore { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
     }
 }

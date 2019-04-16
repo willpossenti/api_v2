@@ -10,13 +10,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class JustificativaService : BaseService<Justificativa>, IJustificativaService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
-
         public JustificativaService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
 
         }
     }

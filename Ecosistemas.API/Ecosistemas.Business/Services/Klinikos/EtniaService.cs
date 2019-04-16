@@ -10,12 +10,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class EtniaService : BaseService<Etnia>, IEtniaService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
         public EtniaService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
         }
     }
 }

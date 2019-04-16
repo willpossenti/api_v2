@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using System;
@@ -9,11 +10,9 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class DoencaPreExistenteService : BaseService<DoencaPreExistente>, IDoencaPreExistenteService
     {
-        private readonly KlinikosDbContext _context;
 
-        public DoencaPreExistenteService(KlinikosDbContext context) : base(context)
+        public DoencaPreExistenteService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _context = context;
 
         }
     }
