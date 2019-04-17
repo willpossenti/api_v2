@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class RegistroBoletimController : Controller
     {
-        private IRegistroBoletimService _service;
+        private readonly IRegistroBoletimService _service;
 
         public RegistroBoletimController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

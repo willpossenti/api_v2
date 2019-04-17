@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class SituacaoFamiliarConjugalController : Controller
     {
-        private ISituacaoFamiliarConjugalService _service;
+        private readonly ISituacaoFamiliarConjugalService _service;
 
         public SituacaoFamiliarConjugalController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

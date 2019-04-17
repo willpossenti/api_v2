@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class AberturaOcularController : Controller
     {
-        private IAberturaOcularService _service;
+        private readonly IAberturaOcularService _service;
 
         public AberturaOcularController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

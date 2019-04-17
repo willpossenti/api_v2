@@ -12,10 +12,10 @@ namespace Ecosistemas.Business.Entities.Api
 
         [Required]
         public string Nome { get; set; }
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
-        public User User { get; set; }
+        public virtual Unidade Unidade { get; set; }
 
-        public List<Cliente> Clientes { get; set; }
+        public List<SistemaUser> SistemasUser { get; set; }
     }
 }

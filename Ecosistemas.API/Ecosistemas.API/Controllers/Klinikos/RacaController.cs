@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class RacaController : Controller
     {
-        private IRacaService _service;
+        private readonly IRacaService _service;
 
         public RacaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

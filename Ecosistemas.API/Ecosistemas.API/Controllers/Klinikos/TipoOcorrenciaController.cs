@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class TipoOcorrenciaController : Controller
     {
-        private ITipoOcorrenciaService _service;
+        private readonly ITipoOcorrenciaService _service;
 
         public TipoOcorrenciaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

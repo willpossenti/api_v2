@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class EtniaController : Controller
     {
-        private IEtniaService _service;
+        private readonly IEtniaService _service;
 
         public EtniaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

@@ -10,7 +10,7 @@ using static Ecosistemas.Security.Manager.Util;
 
 namespace Ecosistemas.Business.Interfaces.Api
 {
-    public interface IUserService
+    public interface IUserService : IBaseService<User>
     {
         Task<CustomResponse<User>> Adicionar(User user, AccessManager accessManager, Guid UserId);
         Task<CustomResponse<User>> Atualizar(User user, AccessManager accessManager, Guid UserId);

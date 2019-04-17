@@ -37,13 +37,11 @@ namespace Ecosistemas.Business.Entities.Api
         [DataType(DataType.Text)]
         public string Telefone { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
         public List<UserRole> UserRoles { get; set; }
-        public List<Log> Logs { get; set; }
+    
 
-        public List<Acesso> Acessos { get; set; }
-
-        public List<Sistema> Sistemas { get; set; }
+        public List<SistemaUser> SistemasUser { get; set; }
     }
 }

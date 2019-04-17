@@ -12,3 +12,17 @@ D:\API\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistema
 D:\API\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.csproj.CopyComplete
 D:\API\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.dll
 D:\API\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.pdb
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Business.deps.json
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Business.runtimeconfig.json
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Business.runtimeconfig.dev.json
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Business.dll
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Business.pdb
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Security.dll
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\bin\Release\netcoreapp2.2\Ecosistemas.Security.pdb
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.csprojAssemblyReference.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.csproj.CoreCompileInputs.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.AssemblyInfoInputs.cache
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.AssemblyInfo.cs
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.csproj.CopyComplete
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.dll
+D:\api_v2\Ecosistemas.API\Ecosistemas.Business\obj\Release\netcoreapp2.2\Ecosistemas.Business.pdb

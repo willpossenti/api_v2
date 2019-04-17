@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class PaisController : Controller
     {
-        private IPaisService _service;
+        private readonly IPaisService _service;
 
         public PaisController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

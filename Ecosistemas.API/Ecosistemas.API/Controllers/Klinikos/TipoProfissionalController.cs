@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class TipoProfissionalController : Controller
     {
-        private ITipoProfissionalService _service;
+        private readonly ITipoProfissionalService _service;
 
         public TipoProfissionalController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

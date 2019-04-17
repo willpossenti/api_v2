@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class OrgaoEmissorController : Controller
     {
-        private IOrgaoEmissorService _service;
+        private readonly IOrgaoEmissorService _service;
 
         public OrgaoEmissorController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

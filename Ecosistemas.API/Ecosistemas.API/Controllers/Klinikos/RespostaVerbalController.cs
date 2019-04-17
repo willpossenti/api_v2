@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class RespostaVerbalController : Controller
     {
-        private IRespostaVerbalService _service;
+        private readonly IRespostaVerbalService _service;
 
         public RespostaVerbalController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

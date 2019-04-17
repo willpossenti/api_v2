@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class EspecialidadeController : Controller
     {
-        private IEspecialidadeService _service;
+        private readonly IEspecialidadeService _service;
 
         public EspecialidadeController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

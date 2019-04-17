@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class OcupacaoController : Controller
     {
-        private IOcupacaoService _service;
+        private readonly IOcupacaoService _service;
 
         public OcupacaoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

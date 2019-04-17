@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class TipoChegadaController : Controller
     {
-        private ITipoChegadaService _service;
+        private readonly ITipoChegadaService _service;
 
         public TipoChegadaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

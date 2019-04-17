@@ -13,11 +13,9 @@ namespace Ecosistemas.Business.Services.Api
 
     public class UnidadeService : BaseService<Unidade>, IUnidadeService
     {
-        private readonly ApiDbContext _context;
 
         public UnidadeService(ApiDbContext context) : base(context)
         {
-            _context = context;
 
         }
 

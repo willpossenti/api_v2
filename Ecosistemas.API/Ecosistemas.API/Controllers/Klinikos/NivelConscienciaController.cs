@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class NivelConscienciaController : Controller
     {
-        private INivelConscienciaService _service;
+        private readonly INivelConscienciaService _service;
 
         public NivelConscienciaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

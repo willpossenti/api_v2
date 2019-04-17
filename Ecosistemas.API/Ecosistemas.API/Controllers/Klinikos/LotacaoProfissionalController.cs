@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class LotacaoProfissionalController : Controller
     {
-        private ILotacaoProfissionalService _service;
+        private readonly ILotacaoProfissionalService _service;
 
         public LotacaoProfissionalController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class CausaExternaController : Controller
     {
-        private ICausaExternaService _service;
+        private readonly ICausaExternaService _service;
 
         public CausaExternaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

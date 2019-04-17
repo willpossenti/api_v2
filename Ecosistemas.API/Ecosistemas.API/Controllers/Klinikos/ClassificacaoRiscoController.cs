@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class ClassificacaoRiscoController : Controller
     {
-        private IClassificacaoRiscoService _service;
+        private readonly IClassificacaoRiscoService _service;
 
         public ClassificacaoRiscoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

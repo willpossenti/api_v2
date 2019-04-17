@@ -82,6 +82,14 @@ namespace Ecosistemas.API.Initial
 
                     await new UserRoleService(_context).Adicionar(_userRole, _user.UserId);
 
+
+                    //Cria Sistemas
+                    //var listaSistemas = new List<Sistema>() {
+                    var sistema = new Sistema() { SistemaId = Guid.NewGuid(), Nome = "KLINIKOS/UPA" };
+                    //};
+
+                    await new SistemaService(_context).Adicionar(sistema, _user.UserId);
+
                 }
             }
             catch (Exception ex)
@@ -114,7 +122,7 @@ namespace Ecosistemas.API.Initial
 
                     new PessoaProfissionalService(_contextKlinikos, _context).AdicionarCarga(pessoaProfissional, pessoaMasterId);
 
-                    AdicionaUnidadeUsuario(pessoaMasterId);
+                    AdicionaUnidadeUsuario();
 
                     #endregion
                     #region carga justificativa
@@ -9463,24 +9471,38 @@ namespace Ecosistemas.API.Initial
         }
 
 
-        public void AdicionaUnidadeUsuario(Guid pessoaMasterId)
+        public void AdicionaUnidadeUsuario()
         {
-            var _unidadeUsuarioMaster = new Util.UnidadeUsuarioMaster();
+            var _unidadeUsuarioMaster = new Util.UserMaster();
 
             var _password = Convert.ToBase64String(_acessmanager.HashPassword(_unidadeUsuarioMaster.Password, _rng));
 
-
-            var _unidadeUsuario = new UnidadeUsuario()
+            var _user = new User()
             {
-                UnidadeUsuarioId = Guid.NewGuid(),
-                Username = _unidadeUsuarioMaster.Username,
+                UserId = Guid.NewGuid(),
+                Username = "admin",
                 Email = _unidadeUsuarioMaster.Email,
                 Password = _password,
                 ConfirmPassword = _password,
                 Ativo = true
+
             };
 
-            new UnidadeUsuarioService(_context).AdicionarCarga(_unidadeUsuario, pessoaMasterId);
+            new UserService(_context).AdicionarCarga(_user, _user.UserId);
+
+            var _sitema = _context.Sistemas.Where(x => x.Nome.Equals("KLINIKOS/UPA")).FirstOrDefault();
+
+            var _userSistema = new SistemaUser() { Sistema = _sitema, User = _user };
+
+            new SistemaUserService(_context).AdicionarCarga(_userSistema, _user.UserId);
+
+
+            var _role = _context.Roles.Where(x => x.NameRole == Roles.ROLE_API_KLINIKOS).FirstOrDefault();
+
+            var _userRole = new UserRole() { Role = _role, User = _user };
+
+             new UserRoleService(_context).AdicionarCarga(_userRole, _user.UserId);
+
 
         }
 

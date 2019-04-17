@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class TipoCertidaoController : Controller
     {
-        private ITipoCertidaoService _service;
+        private readonly ITipoCertidaoService _service;
 
         public TipoCertidaoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

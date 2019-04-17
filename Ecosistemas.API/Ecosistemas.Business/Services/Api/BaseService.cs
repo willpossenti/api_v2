@@ -14,7 +14,7 @@ namespace Ecosistemas.Business.Services.Api
 
     public class BaseService<T> : IDisposable, IBaseService<T> where T : class
     {
-        private ApiDbContext _context;
+        private readonly ApiDbContext _context;
 
         public BaseService(ApiDbContext context)
         {

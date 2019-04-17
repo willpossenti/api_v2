@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class TraumaController : Controller
     {
-        private ITraumaService _service;
+        private readonly ITraumaService _service;
 
         public TraumaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

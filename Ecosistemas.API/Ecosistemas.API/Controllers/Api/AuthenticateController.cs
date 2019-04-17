@@ -4,6 +4,7 @@ using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Entities.Api;
 using Ecosistemas.Business.Interfaces.Api;
 using Ecosistemas.Business.Services.Api;
+using Ecosistemas.Business.Utility;
 using Ecosistemas.Security.Manager;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -22,7 +23,7 @@ namespace EcosistemasAPI.Controllers.Api
     [AllowAnonymous]
     public class AuthenticateController : Controller
     {
-        private IUserService _service;
+        private readonly IUserService _service;
 
         public AuthenticateController(ApiDbContext context)
         {
@@ -30,35 +31,13 @@ namespace EcosistemasAPI.Controllers.Api
         }
 
         [HttpPost]
-        public object Post(
+        public async Task<CustomResponse<User>> Post(
             [FromBody]User usuario,
             [FromServices]AccessManager accessManager)
         {
-            var resultado = _service.ValidateCredentials(usuario, accessManager).Result;
 
-            if (resultado.StatusCode == StatusCodes.Status200OK)
-            {
-                accessManager.IpAcess = HttpContext.Connection.LocalIpAddress.ToString() != "127.0.0.1" ? HttpContext.Connection.RemoteIpAddress.ToString() :
-                    HttpContext.Connection.LocalIpAddress.ToString();
+            return await _service.ValidateCredentials(usuario, accessManager);
 
-                return new
-                {
-                    Authenticated = true,
-                   _service.GerarAcesso(resultado.Result, accessManager).Result,
-                    resultado.Message,
-                    StatusCode = StatusCodes.Status401Unauthorized
-                };
-
-            }
-            else
-            {
-                return new
-                {
-                    Authenticated = false,
-                    resultado.Message,
-                    StatusCode = StatusCodes.Status401Unauthorized
-                };
-            }
         }
 
 

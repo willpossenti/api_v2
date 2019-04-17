@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class CidadeController : Controller
     {
-        private ICidadeService _service;
+        private readonly ICidadeService _service;
 
         public CidadeController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

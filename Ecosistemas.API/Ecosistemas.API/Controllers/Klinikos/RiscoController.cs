@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class RiscoController : Controller
     {
-        private IRiscoService _service;
+        private readonly IRiscoService _service;
 
         public RiscoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class EstadoController : Controller
     {
-        private IEstadoService _service;
+        private readonly IEstadoService _service;
 
         public EstadoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

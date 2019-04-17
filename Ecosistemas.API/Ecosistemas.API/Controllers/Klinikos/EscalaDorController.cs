@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class EscalaDorController : Controller
     {
-        private IEscalaDorService _service;
+        private readonly IEscalaDorService _service;
 
         public EscalaDorController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

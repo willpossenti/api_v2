@@ -24,7 +24,7 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class JustificativaController : Controller
     {
-        private IJustificativaService _service;
+        private readonly IJustificativaService _service;
 
         public JustificativaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

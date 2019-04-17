@@ -15218,3 +15218,180 @@ DateTime : 15/04/2019 13:02:44
 MessageObject reference not set to an instance of an object.
 
 StackTrace   at Ecosistemas.Business.Services.Api.BaseService`1.Adicionar(T entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\BaseService.cs:line 31
+DateTime : 16/04/2019 11:09:35
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:16:37
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:32
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:34
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:35
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:35
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:37
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:39
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:40
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:40
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:40
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:41
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:41
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:23:56
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:23:57
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:23:57
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:24:38
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 17/04/2019 08:44:07
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Ecosistemas.Business.Services.Api.UserService.GerarAcesso(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 293
+DateTime : 17/04/2019 08:44:24
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Ecosistemas.Business.Services.Api.UserService.GerarAcesso(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 293
+DateTime : 17/04/2019 09:22:12
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Ecosistemas.Business.Services.Api.UserService.GerarAcesso(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 292

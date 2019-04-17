@@ -14,11 +14,9 @@ namespace Ecosistemas.Business.Services.Api
 
     public class LogService : BaseService<Log>, ILogService
     {
-        private readonly ApiDbContext _context;
-
+      
         public LogService(ApiDbContext context) : base(context)
         {
-            _context = context;
 
         }
 

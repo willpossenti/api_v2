@@ -17,13 +17,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 
         private IClassificacaoRiscoHistoricoService _serviceClassificacaoRiscoHistorico;
         private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
 
         public ClassificacaoRiscoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _context = context;
-
+            _serviceClassificacaoRiscoHistorico = new ClassificacaoRiscoHistoricoService(contextKlinikos, context);
         }
 
         public async Task<CustomResponse<ClassificacaoRisco>> AdicionarClassificacaoRisco(ClassificacaoRisco classificacaoRisco, Guid userId)

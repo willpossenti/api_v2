@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class RespostaMotoraController : Controller
     {
-        private IRespostaMotoraService _service;
+        private readonly IRespostaMotoraService _service;
 
         public RespostaMotoraController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

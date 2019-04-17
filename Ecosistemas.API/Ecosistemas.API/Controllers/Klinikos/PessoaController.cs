@@ -25,8 +25,8 @@ namespace Ecosistemas.API.Controllers.Api
     public class PessoaController : Controller
     {
 
-        private IPessoaPacienteService _servicePaciente;
-        private IPessoaProfissionalService _serviceProfissional;
+        private readonly IPessoaPacienteService _servicePaciente;
+        private readonly IPessoaProfissionalService _serviceProfissional;
 
         public PessoaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {

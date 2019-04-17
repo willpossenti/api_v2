@@ -22,7 +22,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class DoencaPreExistenteController : Controller
     {
-        private IDoencaPreExistenteService _service;
+        private readonly IDoencaPreExistenteService _service;
 
         public DoencaPreExistenteController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
