@@ -7,15 +7,16 @@ namespace Ecosistemas.Business.Entities.Api
 {
     public class Cliente
     {
+
+        public Cliente() { this.Unidades = new List<Unidade>(); }
+
         [Key]
         public Guid ClienteId { get; set; }
 
         [Required]
         public string Nome { get; set; }
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
-        public Sistema Sistemas { get; set; }
-
-        public List<Unidade> Unidades { get; set; }
+        public virtual List<Unidade> Unidades { get; set; }
     }
 }

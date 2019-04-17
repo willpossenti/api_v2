@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class RacaController : Controller
     {
-        private IRacaService _service;
+        private readonly IRacaService _service;
 
-        public RacaController(KlinikosDbContext context)
+        public RacaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new RacaService(context);
+            _service = new RacaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

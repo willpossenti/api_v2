@@ -13,11 +13,10 @@ namespace Ecosistemas.Business.Services.Api
 
     public class SistemaService : BaseService<Sistema>, ISistemaService
     {
-        private readonly ApiDbContext _context;
 
         public SistemaService(ApiDbContext context) : base(context)
         {
-            _context = context;
+
 
         }
 

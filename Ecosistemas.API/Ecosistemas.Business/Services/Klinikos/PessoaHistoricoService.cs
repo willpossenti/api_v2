@@ -6,15 +6,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaHistoricoService : BaseService<PessoaHistorico>, IPessoaHistoricoService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
 
-        public PessoaHistoricoService(KlinikosDbContext context) : base(context)
+        public PessoaHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
         }
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoPaciente(PessoaPaciente pessoaPaciente, PessoaProfissional pessoaProfissionalCadastro)

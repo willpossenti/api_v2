@@ -14528,41 +14528,7 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
    at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 11/04/2019 17:01:00
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 78
-
-Inner Exception : String or binary data would be truncated.
-The statement has been terminated.
-------******------
-DateTime : 11/04/2019 17:09:01
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 78
-
-Inner Exception : String or binary data would be truncated.
-The statement has been terminated.
-------******------
-DateTime : 11/04/2019 18:02:24
+DateTime : 12/04/2019 10:41:46
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -14573,344 +14539,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 12/04/2019 15:02:52
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:04:35
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:04:55
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:05:16
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:06:59
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:10:35
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:10:57
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:21:10
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:21:12
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:21:51
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:27:26
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:32:45
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:36:34
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:40:49
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:41:35
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:44:35
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:46:18
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:54:10
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_CausasExternas_CausaExternaId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.CausasExternas", column 'CausaExternaId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:54:13
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_CausasExternas_CausaExternaId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.CausasExternas", column 'CausaExternaId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:54:25
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:55:03
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_EscalasDor_EscalaDorId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.EscalasDor", column 'EscalaDorId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:55:38
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 10:41:50
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -14921,24 +14551,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 12/04/2019 15:56:20
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_CausasExternas_CausaExternaId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.CausasExternas", column 'CausaExternaId'.
-The statement has been terminated.
-------******------
-DateTime : 12/04/2019 15:56:56
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 10:41:50
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -14949,8 +14563,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 12/04/2019 16:11:50
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 10:54:07
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -14961,8 +14575,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 12/04/2019 16:19:39
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 10:54:07
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -14973,8 +14587,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 12/04/2019 16:20:26
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 10:54:12
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -14985,24 +14599,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:01:51
-
-
-MessageAn error occurred while updating the entries. See the inner exception for details.
-
-StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 36
-
-Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_CausasExternas_CausaExternaId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.CausasExternas", column 'CausaExternaId'.
-The statement has been terminated.
-------******------
-DateTime : 15/04/2019 15:16:31
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 10:54:12
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15013,8 +14611,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:18:41
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 11:36:30
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15025,8 +14623,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:21:41
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 11:36:30
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15037,8 +14635,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:22:04
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 11:36:30
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15049,8 +14647,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:25:07
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 11:36:42
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15061,8 +14659,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:25:20
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 11:36:42
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15073,8 +14671,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:28:46
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:02:37
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15085,8 +14683,8 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
-DateTime : 15/04/2019 15:28:48
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:02:37
 
 
 MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
@@ -15097,4 +14695,703 @@ StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initial
    at Microsoft.EntityFrameworkCore.DbContext.get_Model()
    at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
    at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
-   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:03:15
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:03:15
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:04:06
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:04:06
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:04:13
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:04:13
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:04:13
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:05:52
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:05:52
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:05:52
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:06:09
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:06:09
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:06:09
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:06:33
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:06:33
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:06:33
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:07:32
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:07:32
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:07:32
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:09:53
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:09:53
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:09:53
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:10:12
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:10:12
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:10:12
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:11:06
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:11:07
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:11:07
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:11:47
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:11:47
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:11:47
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:12:26
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:12:26
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:12:26
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:13:54
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:13:54
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:13:54
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:22:41
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:22:41
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:22:42
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:27:20
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:27:20
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 12/04/2019 14:27:20
+
+
+MessageNo database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, IDbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.DbContext.Finder(Type type)
+   at Microsoft.EntityFrameworkCore.DbContext.FindAsync[TEntity](Object[] keyValues)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.GerarLog(String action, String entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 202
+DateTime : 15/04/2019 13:02:44
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Ecosistemas.Business.Services.Api.BaseService`1.Adicionar(T entity, Guid UserId) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\BaseService.cs:line 31
+DateTime : 16/04/2019 11:09:35
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:16:37
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:32
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:34
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:35
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:35
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:37
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:39
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:40
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:40
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:40
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:41
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:18:41
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:23:56
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:23:57
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:23:57
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 16/04/2019 11:24:38
+
+
+MessageValue cannot be null.
+Parameter name: password
+
+StackTrace   at Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(String password, Byte[] salt, KeyDerivationPrf prf, Int32 iterationCount, Int32 numBytesRequested)
+   at Ecosistemas.Security.Manager.AccessManager.VerifyHashedPassword(Byte[] hashedPassword, String password) in D:\api_v2\Ecosistemas.API\Ecosistemas.Security\Manager\AccessManager.cs:line 108
+   at Ecosistemas.Business.Services.Api.UserService.ValidateCredentials(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 245
+DateTime : 17/04/2019 08:44:07
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Ecosistemas.Business.Services.Api.UserService.GerarAcesso(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 293
+DateTime : 17/04/2019 08:44:24
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Ecosistemas.Business.Services.Api.UserService.GerarAcesso(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 293
+DateTime : 17/04/2019 09:22:12
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Ecosistemas.Business.Services.Api.UserService.GerarAcesso(User user, AccessManager accessManager) in D:\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Api\UserService.cs:line 292

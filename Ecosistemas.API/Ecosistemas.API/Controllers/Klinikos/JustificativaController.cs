@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class JustificativaController : Controller
     {
-        private IJustificativaService _service;
+        private readonly IJustificativaService _service;
 
-        public JustificativaController(KlinikosDbContext context)
+        public JustificativaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new JustificativaService(context);
+            _service = new JustificativaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

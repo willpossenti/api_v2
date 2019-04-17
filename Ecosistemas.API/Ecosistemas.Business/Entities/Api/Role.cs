@@ -15,8 +15,9 @@ namespace Ecosistemas.Business.Entities.Api
         [Required]
         [StringLength(100)]
         public string NameRole { get; set; }
-       
 
         public List<UserRole> UserRoles { get; set; }
+
+        public bool Ativo { get; set; } = true;
     }
 }

@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class TipoOcorrenciaController : Controller
     {
-        private ITipoOcorrenciaService _service;
+        private readonly ITipoOcorrenciaService _service;
 
-        public TipoOcorrenciaController(KlinikosDbContext context)
+        public TipoOcorrenciaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new TipoOcorrenciaService(context);
+            _service = new TipoOcorrenciaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -21,11 +22,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class RiscoController : Controller
     {
-        private IRiscoService _service;
+        private readonly IRiscoService _service;
 
-        public RiscoController(KlinikosDbContext context)
+        public RiscoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new RiscoService(context);
+            _service = new RiscoService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

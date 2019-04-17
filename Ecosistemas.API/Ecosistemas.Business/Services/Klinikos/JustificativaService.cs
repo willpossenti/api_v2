@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using System;
@@ -9,11 +10,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class JustificativaService : BaseService<Justificativa>, IJustificativaService
     {
-        private readonly KlinikosDbContext _context;
-
-        public JustificativaService(KlinikosDbContext context) : base(context)
+        public JustificativaService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _context = context;
 
         }
     }

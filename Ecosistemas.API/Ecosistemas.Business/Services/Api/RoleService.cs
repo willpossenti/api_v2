@@ -11,11 +11,9 @@ namespace Ecosistemas.Business.Services.Api
 
     public class RoleService : BaseService<Role>, IRoleService
     {
-        private readonly ApiDbContext _context;
 
         public RoleService(ApiDbContext context) : base(context)
         {
-            _context = context;
 
         }
     }

@@ -21,7 +21,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Descricao { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
         //public virtual List<PessoaPaciente> PessoaPacientes { get; set; } 
     }

@@ -189,9 +189,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Senha { get; set; }
 
-        public bool Master { get; set; }
+        public bool Master { get; set; } = false;
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
 
     }

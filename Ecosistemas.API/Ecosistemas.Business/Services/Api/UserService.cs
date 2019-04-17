@@ -233,11 +233,11 @@ namespace Ecosistemas.Business.Services.Api
             {
                 try
                 {
-                    var _userFound = await _context.Users.Where(x => x.Username == user.Username && x.Ativo).FirstOrDefaultAsync();
+                    var _userFound = await _context.Users.Include(usuario => usuario.UserRoles).Where(x => x.Username == user.Username && x.Ativo).FirstOrDefaultAsync();
 
                     if (_userFound != null)
                     {
-
+              
                         // Efetua o login com base no Id do usuário e sua senha
 
                         byte[] decodedByPassword = System.Convert.FromBase64String(_userFound.Password);
@@ -249,25 +249,21 @@ namespace Ecosistemas.Business.Services.Api
 
                         }
                         else
-                        {
-                            var _userRoles = _context.UserRoles.Where(x => x.User.UserId == _userFound.UserId).ToList<UserRole>();
+                        {             
+                            _result.Token = this.GerarAcesso(_userFound, accessManager).Result.Result;
 
-                            foreach (UserRole _userRole in _userRoles)
-                            {
-                                _userRole.Role = _context.UserRoles.Where(x => x.UserRoleId == _userRole.UserRoleId).Select(x => x.Role).FirstOrDefault<Role>();
+                            var _userSistema = new User() { UserId = _userFound.UserId, Username = _userFound.Username};
 
-                            }
-
-                            _userFound.UserRoles = _userRoles;
-
-                            _result.Result = _userFound;
+                            _result.Result = _userSistema;
                             _result.StatusCode = StatusCodes.Status200OK;
+                   
                         }
-
-
                     }
                     else
+                    {
                         _result.Message = "Usuário não encontrado";
+                        _result.StatusCode = StatusCodes.Status404NotFound;
+                    }
                 }
                 catch (Exception ex) { _result.Message = ex.Message; Error.LogError(ex); }
 
@@ -307,7 +303,7 @@ namespace Ecosistemas.Business.Services.Api
 
                 var acesso = new Acesso() { Data = DateTime.Now, User = user, IpAcesso = accessManager.IpAcess };
 
-                await _acessoService.Adicionar(acesso);
+                await _acessoService.AdicionarAcesso(acesso);
 
             }
             catch (Exception ex)

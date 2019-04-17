@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -21,11 +22,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class RespostaMotoraController : Controller
     {
-        private IRespostaMotoraService _service;
+        private readonly IRespostaMotoraService _service;
 
-        public RespostaMotoraController(KlinikosDbContext context)
+        public RespostaMotoraController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new RespostaMotoraService(context);
+            _service = new RespostaMotoraService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

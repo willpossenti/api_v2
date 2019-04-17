@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using System;
@@ -9,12 +10,9 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class EspecialidadeService : BaseService<Especialidade>, IEspecialidadeService
     {
-        private readonly KlinikosDbContext _context;
 
-        public EspecialidadeService(KlinikosDbContext context) : base(context)
+        public EspecialidadeService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _context = context;
-
         }
     }
 }

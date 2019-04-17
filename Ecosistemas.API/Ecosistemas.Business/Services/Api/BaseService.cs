@@ -14,7 +14,7 @@ namespace Ecosistemas.Business.Services.Api
 
     public class BaseService<T> : IDisposable, IBaseService<T> where T : class
     {
-        private ApiDbContext _context;
+        private readonly ApiDbContext _context;
 
         public BaseService(ApiDbContext context)
         {
@@ -44,10 +44,31 @@ namespace Ecosistemas.Business.Services.Api
             return _response;
         }
 
+        public CustomResponse<T> AdicionarCarga(T entity, Guid UserId)
+        {
+            var _response = new CustomResponse<T>();
+
+            try
+            {
+                _context.AddAsync<T>(entity);
+                _context.SaveChangesAsync();
+                _response.Message = "Inclusão";
+                _response.StatusCode = StatusCodes.Status201Created;
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
         public async Task<CustomResponse<T>> AdicionarRange(List<T> entity, Guid UserId)
         {
             var _response = new CustomResponse<T>();
-      
+
             try
             {
                 await _context.AddRangeAsync(entity);
@@ -178,12 +199,15 @@ namespace Ecosistemas.Business.Services.Api
             return _response;
         }
 
-       
+
+
+
+
         public void Dispose()
         {
-            _context.Dispose(); 
+            _context.Dispose();
         }
 
-      
+
     }
 }

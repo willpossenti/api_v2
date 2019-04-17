@@ -7,16 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ecosistemas.Business.Interfaces.Api
 {
-    public interface IUnidadeService
+    public interface IUnidadeService : IBaseService<Unidade>
     {
-        Task<CustomResponse<Unidade>> Adicionar(Unidade sistema, Guid UserId);
-
-        Task<CustomResponse<Unidade>> Atualizar(Unidade sistema, Guid UserId);
-
-        Task<CustomResponse<Unidade>> Remover(Guid Id, Guid UserId);
-
-        Task<CustomResponse<IList<Unidade>>> ListarTodos();
-
-        Task<CustomResponse<Unidade>> Obter(Guid id);
     }
 }

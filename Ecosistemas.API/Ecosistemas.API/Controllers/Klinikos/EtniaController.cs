@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class EtniaController : Controller
     {
-        private IEtniaService _service;
+        private readonly IEtniaService _service;
 
-        public EtniaController(KlinikosDbContext context)
+        public EtniaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new EtniaService(context);
+            _service = new EtniaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class EscolaridadeController : Controller
     {
-        private IEscolaridadeService _service;
+        private readonly IEscolaridadeService _service;
 
-        public EscolaridadeController(KlinikosDbContext context)
+        public EscolaridadeController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new EscolaridadeService(context);
+            _service = new EscolaridadeService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

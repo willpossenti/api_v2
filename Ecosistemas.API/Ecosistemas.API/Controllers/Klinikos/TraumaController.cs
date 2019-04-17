@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -21,11 +22,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class TraumaController : Controller
     {
-        private ITraumaService _service;
+        private readonly ITraumaService _service;
 
-        public TraumaController(KlinikosDbContext context)
+        public TraumaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new TraumaService(context);
+            _service = new TraumaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

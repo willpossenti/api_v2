@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-
+using static Ecosistemas.Security.Manager.Util;
 
 namespace Ecosistemas.Business.Utility
 {
@@ -14,6 +14,8 @@ namespace Ecosistemas.Business.Utility
         public int StatusCode { get; set; }
 
         public T Result { get; set; }
+
+        public Token Token { get; set; }
 
     }
 

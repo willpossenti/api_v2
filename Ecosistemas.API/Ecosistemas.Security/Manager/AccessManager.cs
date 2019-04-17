@@ -58,7 +58,7 @@ namespace Ecosistemas.Security.Manager
 
             return new Token()
             {
-                //Authenticated = true,
+                Authenticated = true,
                 Created = _dataCriacao.ToString("yyyy-MM-dd HH:mm:ss"),
                 Expiration = _dataExpiracao.ToString("yyyy-MM-dd HH:mm:ss"),
                 AccessToken = _token,

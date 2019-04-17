@@ -23,7 +23,7 @@ namespace Ecosistemas.API.Controllers.Api
     [Authorize("Bearer")]
     public class SistemaController : Controller
     {
-        private ISistemaService _service;
+        private readonly ISistemaService _service;
 
         public SistemaController(ApiDbContext context)
         {

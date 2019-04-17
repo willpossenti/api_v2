@@ -9,11 +9,9 @@ namespace Ecosistemas.Business.Services.Api
 {
     public class ClienteService : BaseService<Cliente>, IClienteService
     {
-        private readonly ApiDbContext _context;
 
         public ClienteService(ApiDbContext context) : base(context)
         {
-            _context = context;
 
         }
 

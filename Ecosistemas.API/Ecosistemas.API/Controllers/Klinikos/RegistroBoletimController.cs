@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class RegistroBoletimController : Controller
     {
-        private IRegistroBoletimService _service;
+        private readonly IRegistroBoletimService _service;
 
-        public RegistroBoletimController(KlinikosDbContext context)
+        public RegistroBoletimController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new RegistroBoletimService(context);
+            _service = new RegistroBoletimService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

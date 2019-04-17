@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Ecosistemas.Business.Interfaces.Api
 {
-    public interface IAcessoService
+    public interface IAcessoService : IBaseService<Acesso>
     {
-        Task<CustomResponse<Acesso>> Adicionar(Acesso acesso);
+        Task<CustomResponse<Acesso>> AdicionarAcesso(Acesso acesso);
     }
 }

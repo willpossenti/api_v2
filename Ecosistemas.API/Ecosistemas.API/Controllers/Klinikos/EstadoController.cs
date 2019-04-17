@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class EstadoController : Controller
     {
-        private IEstadoService _service;
+        private readonly IEstadoService _service;
 
-        public EstadoController(KlinikosDbContext context)
+        public EstadoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new EstadoService(context);
+            _service = new EstadoService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

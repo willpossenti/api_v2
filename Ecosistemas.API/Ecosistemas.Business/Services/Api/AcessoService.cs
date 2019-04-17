@@ -22,7 +22,7 @@ namespace Ecosistemas.Business.Services.Api
 
         }
 
-        public async Task<CustomResponse<Acesso>> Adicionar(Acesso acesso)
+        public async Task<CustomResponse<Acesso>> AdicionarAcesso(Acesso acesso)
         {
             var _response = new CustomResponse<Acesso>();
 

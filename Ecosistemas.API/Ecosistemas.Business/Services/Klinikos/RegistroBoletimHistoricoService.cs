@@ -6,18 +6,19 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class RegistroBoletimHistoricoService : BaseService<RegistroBoletimHistorico>, IRegistroBoletimHistoricoService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _context;
 
-
-        public RegistroBoletimHistoricoService(KlinikosDbContext context) : base(context)
+        public RegistroBoletimHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _context = context;
-
         }
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoRegistroBoletim(RegistroBoletim registroBoletim, PessoaProfissional pessoaProfissionalCadastro)
         {

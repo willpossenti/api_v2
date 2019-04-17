@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -20,11 +21,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class NivelConscienciaController : Controller
     {
-        private INivelConscienciaService _service;
+        private readonly INivelConscienciaService _service;
 
-        public NivelConscienciaController(KlinikosDbContext context)
+        public NivelConscienciaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new NivelConscienciaService(context);
+            _service = new NivelConscienciaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

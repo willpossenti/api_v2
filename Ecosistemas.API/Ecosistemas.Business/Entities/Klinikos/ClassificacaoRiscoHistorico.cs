@@ -129,7 +129,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.DateTime)]
         public DateTime DataAlteracao { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
     }
 }

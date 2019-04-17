@@ -9,17 +9,15 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaService : BaseService<Pessoa>,  IPessoaService
     {
-        private readonly KlinikosDbContext _context;
 
-        public PessoaService(KlinikosDbContext context): base(context)
+        public PessoaService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _context = context;
-
         }
 
       

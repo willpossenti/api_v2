@@ -10,18 +10,21 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaProfissionalService : BaseService<PessoaProfissional>, IPessoaProfissionalService
     {
-        private readonly KlinikosDbContext _context;
+        private readonly KlinikosDbContext _contextKlinikos;
+        private readonly ApiDbContext _contextApi;
         private IPessoaHistoricoService _servicePessoaHistorico;
 
-        public PessoaProfissionalService(KlinikosDbContext context) : base(context)
+        public PessoaProfissionalService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _context = context;
-            _servicePessoaHistorico = new PessoaHistoricoService(context);
+            _contextKlinikos = contextKlinikos;
+            _contextApi = context;
+            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
         }
 
 
@@ -41,12 +44,12 @@ namespace Ecosistemas.Business.Services.Klinikos
                 }
 
 
-                var _pessoaMaster = (PessoaProfissional)_context.Pessoas.Where(x => x.Master).FirstOrDefault();
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
                 pessoaprofissional.Master = false;
 
                 if (!string.IsNullOrWhiteSpace(pessoaprofissional.Login))
                 {
-                    var login = _context.Pessoas.Max(x => x.CodigoLogin);
+                    var login = _contextKlinikos.Pessoas.Max(x => x.CodigoLogin);
 
                     if (login != null)
                     {
@@ -93,7 +96,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     if (_pessoaEncontrado != null)
                     {
 
-                        var lotacoes = _context.LotacoesProfissional
+                        var lotacoes = _contextKlinikos.LotacoesProfissional
                         .Include(profissional => profissional.TipoProfissional)
                         .Include(profissional => profissional.OrgaoEmissorProfissional)
                         .Where(pessoa => pessoa.Pessoa.PessoaId == _pessoaEncontrado.PessoaId);
@@ -303,7 +306,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             get
             {
-                return _context.PessoaProfissionais
+                return _contextKlinikos.PessoaProfissionais
                    .Include(pessoa => pessoa.Raca)
                    .Include(pessoa => pessoa.Etnia)
                    .Include(pessoa => pessoa.Justificativa)

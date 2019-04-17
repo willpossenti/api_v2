@@ -23,7 +23,7 @@ namespace Ecosistemas.API.Controllers.Api
     [Authorize("Bearer")]
     public class UserController : Controller
     {
-        private IUserService _service;
+        private readonly IUserService _service;
 
         public UserController(ApiDbContext context)
         {

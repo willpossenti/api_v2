@@ -23,7 +23,7 @@ namespace Ecosistemas.API.Controllers.Api
     [Authorize("Bearer")]
     public class ClienteController : Controller
     {
-        private IClienteService _service;
+        private readonly IClienteService _service;
 
         public ClienteController(ApiDbContext context)
         {

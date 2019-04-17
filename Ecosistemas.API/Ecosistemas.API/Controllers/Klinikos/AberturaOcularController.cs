@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -21,11 +22,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class AberturaOcularController : Controller
     {
-        private IAberturaOcularService _service;
+        private readonly IAberturaOcularService _service;
 
-        public AberturaOcularController(KlinikosDbContext context)
+        public AberturaOcularController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new AberturaOcularService(context);
+            _service = new AberturaOcularService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

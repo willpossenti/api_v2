@@ -15,5 +15,7 @@ namespace Ecosistemas.Business.Entities.Api
         public string IpAcesso { get; set; }
 
         public User User { get; set; }
+
+
     }
 }

@@ -5,17 +5,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Interfaces.Api;
 
 namespace Ecosistemas.Business.Services.Api
 {
 
-    public class UserRoleService: BaseService<UserRole>
+    public class UserRoleService: BaseService<UserRole>, IUserRoleService
     {
-        private readonly ApiDbContext _context;
 
         public UserRoleService(ApiDbContext context)  : base (context)
         {
-            _context = context;
            
         }
 

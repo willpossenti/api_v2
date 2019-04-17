@@ -15,6 +15,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Api
 {
@@ -23,11 +24,11 @@ namespace Ecosistemas.API.Controllers.Api
     //[Authorize("Bearer")]
     public class OrgaoEmissorController : Controller
     {
-        private IOrgaoEmissorService _service;
+        private readonly IOrgaoEmissorService _service;
 
-        public OrgaoEmissorController(KlinikosDbContext context)
+        public OrgaoEmissorController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new OrgaoEmissorService(context);
+            _service = new OrgaoEmissorService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

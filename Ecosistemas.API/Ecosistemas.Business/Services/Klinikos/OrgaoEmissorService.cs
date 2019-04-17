@@ -1,4 +1,5 @@
-﻿using Ecosistemas.Business.Contexto.Klinikos;
+﻿using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Klinikos;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using System;
@@ -9,12 +10,9 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class OrgaoEmissorService : BaseService<OrgaoEmissor>, IOrgaoEmissorService
     {
-        private readonly KlinikosDbContext _context;
 
-        public OrgaoEmissorService(KlinikosDbContext context) : base(context)
+        public OrgaoEmissorService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _context = context;
-
         }
     }
 }

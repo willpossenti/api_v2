@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -21,11 +22,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class CausaExternaController : Controller
     {
-        private ICausaExternaService _service;
+        private readonly ICausaExternaService _service;
 
-        public CausaExternaController(KlinikosDbContext context)
+        public CausaExternaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new CausaExternaService(context);
+            _service = new CausaExternaService(contextKlinikos, context);
         }
 
         [Route("Incluir")]

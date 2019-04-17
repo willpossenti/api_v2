@@ -23,7 +23,7 @@ namespace Ecosistemas.API.Controllers.Api
     [Authorize("Bearer")]
     public class UnidadeController : Controller
     {
-        private IUnidadeService _service;
+        private readonly IUnidadeService _service;
 
         public UnidadeController(ApiDbContext context)
         {

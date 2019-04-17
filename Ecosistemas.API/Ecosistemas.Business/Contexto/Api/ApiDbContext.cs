@@ -28,7 +28,6 @@ namespace Ecosistemas.Business.Contexto.Api
         public DbSet<Sistema> Sistemas { get; set; }
         public DbSet<Unidade> Unidades { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<UnidadeUsuario> UnidadeUsuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

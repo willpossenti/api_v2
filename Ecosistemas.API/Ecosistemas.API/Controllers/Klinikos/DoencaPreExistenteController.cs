@@ -13,6 +13,7 @@ using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Ecosistemas.Business.Contexto.Api;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -21,11 +22,11 @@ namespace Ecosistemas.API.Controllers.Klinikos
     [ApiController]
     public class DoencaPreExistenteController : Controller
     {
-        private IDoencaPreExistenteService _service;
+        private readonly IDoencaPreExistenteService _service;
 
-        public DoencaPreExistenteController(KlinikosDbContext context)
+        public DoencaPreExistenteController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new DoencaPreExistenteService(context);
+            _service = new DoencaPreExistenteService(contextKlinikos, context);
         }
 
         [Route("Incluir")]
