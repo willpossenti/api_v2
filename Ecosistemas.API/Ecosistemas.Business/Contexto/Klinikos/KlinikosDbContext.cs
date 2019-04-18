@@ -62,6 +62,11 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<ClassificacaoRisco> ClassificacoesRisco { get; set; }
         public DbSet<ClassificacaoRiscoHistorico> ClassificacaoRiscoHistorico { get; set; }
 
+        public DbSet<Prioridade> Prioridades { get; set; }
+        public DbSet<Acolhimento> Acolhimentos { get; set; }
+        public DbSet<AcolhimentoHistorico> AcolhimentoHistorico { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
