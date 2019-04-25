@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class OrgaoEmissorController : Controller
     {
         private readonly IOrgaoEmissorService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<OrgaoEmissor>> Incluir([FromBody]OrgaoEmissor orgaoemissor)
         {
             return await _service.Adicionar(orgaoemissor, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<OrgaoEmissor>> Put([FromBody]OrgaoEmissor orgaoemissor, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(orgaoemissor, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,21 +48,21 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{OrgaoEmissorId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<OrgaoEmissor>> Delete(string OrgaoEmissorId)
         {
             return await _service.Remover(Guid.Parse(OrgaoEmissorId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<OrgaoEmissor>>> Get()
         {
             return await _service.ListarTodos();
         }
 
         [HttpGet("{OrgaoEmissorId}")]
-      //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<OrgaoEmissor>> Get(string OrgaoEmissorId)
         {
             return await _service.Obter(Guid.Parse(OrgaoEmissorId));

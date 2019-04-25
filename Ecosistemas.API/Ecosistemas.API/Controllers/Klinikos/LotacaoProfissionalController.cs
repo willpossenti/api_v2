@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class LotacaoProfissionalController : Controller
     {
         private readonly ILotacaoProfissionalService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<LotacaoProfissional>> Incluir([FromBody]LotacaoProfissional lotacaoProfissional)
         {
             return await _service.Adicionar(lotacaoProfissional, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<LotacaoProfissional>> Put([FromBody]LotacaoProfissional lotacaoProfissional, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(lotacaoProfissional, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,28 +48,28 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{LotacaoProfissionalId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<LotacaoProfissional>> Delete(string LotacaoProfissionalId)
         {
             return await _service.Remover(Guid.Parse(LotacaoProfissionalId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<LotacaoProfissional>>> Get()
         {
             return await _service.ListarTodos();
         }
 
         [HttpGet("{LotacaoProfissionalId}")]
-      //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<LotacaoProfissional>> Get(string LotacaoProfissionalId)
         {
             return await _service.Obter(Guid.Parse(LotacaoProfissionalId));
         }
 
         [HttpGet("ConsultaLotacoesProfissional/{PessoaId}")]
-        //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<List<LotacaoProfissional>>> ConsultaLotacoesProfissional(string PessoaId)
         {
             return await _service.ConsultaLotacoesProfissional(Guid.Parse(PessoaId), Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));

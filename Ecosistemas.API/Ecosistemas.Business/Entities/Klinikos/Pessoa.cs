@@ -33,7 +33,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
         public string IdadeAparente { get; set; }
-
+        
         public virtual Raca Raca { get; set; }
 
         public virtual Etnia Etnia { get; set; }

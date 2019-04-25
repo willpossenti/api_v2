@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class RegistroBoletimController : Controller
     {
         private readonly IRegistroBoletimService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RegistroBoletim>> Incluir([FromBody]RegistroBoletim registroBoletim)
         {
             return await _service.AdicionarRegistroBoletim(registroBoletim, Guid.Parse("285CE313-2D96-4425-9A70-B1E71BC17020"));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RegistroBoletim>> Put([FromBody]RegistroBoletim registroBoletim, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(registroBoletim, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,21 +48,21 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{RegistroBoletimId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RegistroBoletim>> Delete(string registroBoletimId)
         {
             return await _service.Remover(Guid.Parse(registroBoletimId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<RegistroBoletim>>> Get()
         {
             return await _service.ListarTodos();
         }
 
         [HttpGet("{RegistroBoletimId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RegistroBoletim>> Get(string registroBoletimId)
         {
             return await _service.Obter(Guid.Parse(registroBoletimId));

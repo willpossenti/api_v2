@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class PessoaController : Controller
     {
 
@@ -36,7 +36,7 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("PessoaPaciente/Incluir")]
         [HttpPost]
-      //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> IncluirPessoaPaciente([FromBody]PessoaPaciente pessoapaciente)
         {
             //return await _service.Adicionar(pessoa, Guid.Parse(HttpContext.User.Identity.Name));
@@ -45,7 +45,7 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("PessoaProfissional/Incluir")]
         [HttpPost]
-        //  [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaProfissional>> IncluirPessoaProfissional([FromBody]PessoaProfissional pessoaprofissional)
         {
             //return await _service.Adicionar(pessoa, Guid.Parse(HttpContext.User.Identity.Name));
@@ -55,7 +55,7 @@ namespace Ecosistemas.API.Controllers.Api
 
         [HttpPut]
         [Route("PessoaPaciente/Alterar")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> Put([FromBody]PessoaPaciente pessoapaciente, [FromServices]AccessManager accessManager)
         {
             return await _servicePaciente.AtualizarPaciente(pessoapaciente, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
@@ -63,7 +63,7 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{PessoaId}")]
-     //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> Delete(string PessoaId)
         {
            // return _service.RemoverUser(Guid.Parse(UserId), Guid.Parse(HttpContext.User.Identity.Name));
@@ -71,14 +71,14 @@ namespace Ecosistemas.API.Controllers.Api
         }
 
         [HttpGet]
-    //    [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<PessoaPaciente>>> Get()
         {
             return await _servicePaciente.ListarTodos();
         }
 
         [HttpGet("{PessoaId}")]
-     //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> Get(string PessoaId)
         {
             return await _servicePaciente.Obter(Guid.Parse(PessoaId));
@@ -86,70 +86,70 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpGet("PessoaPaciente/ConsultaCpf/{cpf}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> ConsultaPacienteCpf(string cpf)
         {
             return await _servicePaciente.ConsultaCpf(cpf, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaProfissional/ConsultaCpf/{cpf}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissionalCpf(string cpf)
         {
             return await _serviceProfissional.ConsultaCpf(cpf, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaPaciente/ConsultaNome/{nome}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<List<PessoaPaciente>>> ConsultaPacienteNome(string nome)
         {
             return await _servicePaciente.ConsultaNome(nome, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaProfissional/ConsultaNome/{nome}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<List<PessoaProfissional>>> ConsultaProfissionalNome(string nome)
         {
             return await _serviceProfissional.ConsultaNome(nome, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaPaciente/ConsultaNomeSocial/{nomesocial}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<List<PessoaPaciente>>> ConsultaPacienteNomeSocial(string nomesocial)
         {
             return await _servicePaciente.ConsultaNomeSocial(nomesocial, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaProfissional/ConsultaNomeSocial/{nomesocial}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<List<PessoaProfissional>>> ConsultaProfissionalNomeSocial(string nomesocial)
         {
             return await _serviceProfissional.ConsultaNomeSocial(nomesocial, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaPaciente/ConsultaCns/{cns}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> ConsultaPacienteCns(string cns)
         {
             return await _servicePaciente.ConsultaCns(cns, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaProfissional/ConsultaCns/{cns}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissionalCns(string cns)
         {
             return await _serviceProfissional.ConsultaCns(cns, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaPaciente/ConsultaPis/{pis}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaPaciente>> ConsultaPacientePis(string pis)
         {
             return await _servicePaciente.ConsultaPis(pis, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpGet("PessoaProfissional/ConsultaPis/{pis}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissionalPis(string pis)
         {
             return await _serviceProfissional.ConsultaPis(pis, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));

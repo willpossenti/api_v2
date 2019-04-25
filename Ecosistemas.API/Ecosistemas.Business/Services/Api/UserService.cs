@@ -132,7 +132,7 @@ namespace Ecosistemas.Business.Services.Api
                 _response.Message = ex.Message;
                 Error.LogError(ex);
             }
-          
+
 
             return _response;
         }
@@ -150,7 +150,7 @@ namespace Ecosistemas.Business.Services.Api
                 _response.Message = ex.Message;
 
             }
-         
+
             return _response;
         }
 
@@ -162,14 +162,14 @@ namespace Ecosistemas.Business.Services.Api
             {
                 _response.Result = await _context.Set<User>().Where(x => x.UserRoles.Any(y => y.Role.NameRole != Roles.ROLE_API_MASTER) && x.UserId == user.UserId || x.Username == user.Username || x.Email == user.Email).FirstOrDefaultAsync<User>();
 
-                _response.StatusCode = _response.Result != null? StatusCodes.Status200OK: StatusCodes.Status204NoContent;
+                _response.StatusCode = _response.Result != null ? StatusCodes.Status200OK : StatusCodes.Status204NoContent;
             }
             catch (Exception ex)
             {
                 _response.Message = ex.Message;
                 Error.LogError(ex);
             }
-          
+
 
             return _response;
         }
@@ -214,7 +214,7 @@ namespace Ecosistemas.Business.Services.Api
                 _response.Message = ex.Message;
                 Error.LogError(ex);
             }
-           
+
 
 
             return _response;
@@ -233,11 +233,13 @@ namespace Ecosistemas.Business.Services.Api
             {
                 try
                 {
-                    var _userFound = await _context.Users.Include(usuario => usuario.UserRoles).Where(x => x.Username == user.Username && x.Ativo).FirstOrDefaultAsync();
+                    var _userFound = await _context.Users.Include(usuario => usuario.UserRoles)
+                        .Where(x => x.Username == user.Username && x.Ativo).FirstOrDefaultAsync();
+
 
                     if (_userFound != null)
                     {
-              
+
                         // Efetua o login com base no Id do usuário e sua senha
 
                         byte[] decodedByPassword = System.Convert.FromBase64String(_userFound.Password);
@@ -249,14 +251,16 @@ namespace Ecosistemas.Business.Services.Api
 
                         }
                         else
-                        {             
+                        {
+
+
                             _result.Token = this.GerarAcesso(_userFound, accessManager).Result.Result;
 
-                            var _userSistema = new User() { UserId = _userFound.UserId, Username = _userFound.Username};
+                            var _userSistema = new User() { UserId = _userFound.UserId, Username = _userFound.Username };
 
                             _result.Result = _userSistema;
                             _result.StatusCode = StatusCodes.Status200OK;
-                   
+
                         }
                     }
                     else
@@ -283,18 +287,17 @@ namespace Ecosistemas.Business.Services.Api
 
             try
             {
-                if (user.UserRoles.Any(x => x != null))
-                    if (user.UserRoles.Any(x => x.Role != null))
-                    {
 
-                        foreach (Role role in user.UserRoles.Select(x => x.Role).ToList<Role>())
-                        {
-                            var _roleFound = await _context.Set<Role>().Where(x => x.NameRole == role.NameRole).FirstOrDefaultAsync<Role>();
-                            identity.AddClaim(new Claim(ClaimTypes.Role, _roleFound.NameRole));
+                var Roles = _context.UserRoles.Include(roles => roles.Role).Where(x => x.UserRoleId == user.UserRoles.FirstOrDefault().UserRoleId).Select(x => x.Role);
 
-                        }
+                foreach (Role role in Roles)
+                {
+                    var _roleFound = await _context.Set<Role>().Where(x => x.NameRole == role.NameRole).FirstOrDefaultAsync<Role>();
+                    identity.AddClaim(new Claim(ClaimTypes.Role, _roleFound.NameRole));
 
-                    }
+                }
+
+
 
                 var Token = accessManager.GenerateToken(identity);
                 _result.StatusCode = StatusCodes.Status202Accepted;
@@ -321,7 +324,7 @@ namespace Ecosistemas.Business.Services.Api
 
         }
 
-        
+
 
     }
 }
