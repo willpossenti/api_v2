@@ -54,13 +54,25 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<NivelConsciencia> NiveisConsciencia { get; set; }
         public DbSet<DoencaPreExistente> DoencasPreExistentes { get; set; }
         public DbSet<Risco> Riscos { get; set; }
+        public DbSet<Alergia> Alergias { get; set; }
+        public DbSet<TipoAlergia> TiposAlergia { get; set; }
+        public DbSet<LocalizacaoAlergia> LocalizacoesAlergia { get; set; }
+        public DbSet<ReacaoAlergia> ReacoesAlergia { get; set; }
+        public DbSet<SeveridadeAlergia> SeveridadesAlergia { get; set; }
         public DbSet<AberturaOcular> AberturasOculares { get; set; }
         public DbSet<RespostaVerbal> RespostasVerbais { get; set; }
         public DbSet<RespostaMotora> RespostasMotoras { get; set; }
         public DbSet<Trauma> Traumas { get; set; }
         public DbSet<CausaExterna> CausasExternas { get; set; }
+        public DbSet<ClassificacaoRiscoAlergia> ClassificacaoRiscoAlergias { get; set; }
+        public DbSet<ClassificacaoRiscoAlergiaHistorico> ClassificacaoRiscoAlergiaHistorico { get; set; }
         public DbSet<ClassificacaoRisco> ClassificacoesRisco { get; set; }
         public DbSet<ClassificacaoRiscoHistorico> ClassificacaoRiscoHistorico { get; set; }
+
+        public DbSet<Prioridade> Prioridades { get; set; }
+        public DbSet<Acolhimento> Acolhimentos { get; set; }
+        public DbSet<AcolhimentoHistorico> AcolhimentoHistorico { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

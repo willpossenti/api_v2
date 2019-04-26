@@ -9372,6 +9372,117 @@ namespace Ecosistemas.API.Initial
 
                     new RiscoService(_contextKlinikos, _context).AdicionarCarga(listarisco, pessoaMasterId);
                     #endregion
+                    #region carga Alergia
+                    var listaalergia = new List<Alergia>() {
+
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A ALIMENTOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A ANIMAIS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A COSMÉDICOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A DETERGENTES" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A FÁRMACOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A FUNGOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A MATERIAIS DIVERSOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A PERFUMES" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A PLANTAS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A PÓ" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A PRODUTOS DE COMBUSTÃO" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A PRODUTOS DERIVADOS DA ATIVIDADE LABORAL" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A PRODUTOS QUÍMICOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A FATORES AMBIENTAIS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA ORIGINADA EM AMBIENTES HUMANOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "OUTRAS ALERGIAS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "NÃO SÃO CONHECIDAS ALERGIAS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "AMENDOIM" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "DERIVADOS DE LEITE" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "FERMENTO" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "FRUTOS DO MAR" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "OUTRAS ALERGIAS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "OUTRAS NOZES" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "OVOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "PEIXE" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "SOJA" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "TRIGO" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ÁCAROS (CONTATO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "LÁTEX (CONTATO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "MOFO (INALADO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "NÍQUEL (CONTATO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "PÊLO DE ANIMAL (CONTATO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "PICADA DE INSETO (CONTATO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "PÓ (INALADO)" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "PÓLEN (INALADO)" },
+
+                    };
+
+                    new AlergiaService(_contextKlinikos, _context).AdicionarCarga(listaalergia, pessoaMasterId);
+                    #endregion
+                    #region carga Tipo Alergia
+                    var listatipoalergia = new List<TipoAlergia>() {
+
+                        new TipoAlergia() { TipoAlergiaId = Guid.NewGuid(), Descricao = "ALIMENTOS" },
+                        new TipoAlergia() { TipoAlergiaId = Guid.NewGuid(), Descricao = "AMBIENTE" },
+                        new TipoAlergia() { TipoAlergiaId = Guid.NewGuid(), Descricao = "MEDICAMENTOS" },
+
+                    };
+
+                    new TipoAlergiaService(_contextKlinikos, _context).AdicionarCarga(listatipoalergia, pessoaMasterId);
+                    #endregion
+                    #region carga Localizacao Alergia
+                    var listalocalizacaoalergia = new List<LocalizacaoAlergia>() {
+
+                        new LocalizacaoAlergia() { LocalizacaoAlergiaId = Guid.NewGuid(), Nome = "PELE" },
+                        new LocalizacaoAlergia() { LocalizacaoAlergiaId = Guid.NewGuid(), Nome = "LOCAL" },
+                        new LocalizacaoAlergia() { LocalizacaoAlergiaId = Guid.NewGuid(), Nome = "ABDOMINAL" },
+                        new LocalizacaoAlergia() { LocalizacaoAlergiaId = Guid.NewGuid(), Nome = "SISTEMICA / ANAFILÁTICA" },
+
+                    };
+
+                    new LocalizacaoAlergiaService(_contextKlinikos, _context).AdicionarCarga(listalocalizacaoalergia, pessoaMasterId);
+                    #endregion
+                    #region carga Reacao Alergia
+                    var listareacaoalergia = new List<ReacaoAlergia>() {
+
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "COÇEIRA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "ERUPÇÃO (GENERALIZADA)" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "ERUPÇÃO (LOCAL)" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "INCHAÇO FACIAL" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "INCHAÇO IRREGULAR NA PELE" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "URTICÁRIA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "CONJUNTIVITE" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "CORRIMENTO NASAL" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "TOSSE" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "DIARRÉRIA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "DOR/CÓLICAS" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "INCHAÇO/GAS" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "NÁUSEA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "VÔMITO" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "BATIMENTO CÁRDIACO IRREGULAR" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "BRANQUICARDIA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "CHIADO" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "DIFICULDADE DE FALAR OU ENGOLIR" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "DOR NO PEITO" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "ESTRESSE RESPIRATÓRIO" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "FALTA DE AR" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "INCHAÇO DA LÍNGUA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "PERDA DE CONSCIÊNCIA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "TAQUICARDIA" },
+                        new ReacaoAlergia() { ReacaoAlergiaId = Guid.NewGuid(), Descricao = "TONTURA/SENSAÇÃO DE DESMAIO" },
+
+                    };
+
+                    new ReacaoAlergiaService(_contextKlinikos, _context).AdicionarCarga(listareacaoalergia, pessoaMasterId);
+                    #endregion
+                    #region carga Severidade Alergia
+                    var listaseveridadealergia = new List<SeveridadeAlergia>() {
+
+                        new SeveridadeAlergia() { SeveridadeAlergiaId = Guid.NewGuid(), Nome = "MUITO SUAVE" },
+                        new SeveridadeAlergia() { SeveridadeAlergiaId = Guid.NewGuid(), Nome = "SUAVE" },
+                        new SeveridadeAlergia() { SeveridadeAlergiaId = Guid.NewGuid(), Nome = "MODERADO" },
+                        new SeveridadeAlergia() { SeveridadeAlergiaId = Guid.NewGuid(), Nome = "SEVERO" },
+
+                    };
+
+                    new SeveridadeAlergiaService(_contextKlinikos, _context).AdicionarCarga(listaseveridadealergia, pessoaMasterId);
+                    #endregion
                     #region carga Abertura Ocular
                     var listaaberturaocular = new List<AberturaOcular>() {
 
@@ -9456,6 +9567,18 @@ namespace Ecosistemas.API.Initial
                     };
 
                     new CausaExternaService(_contextKlinikos, _context).AdicionarCarga(listacausaexterna, pessoaMasterId);
+                    #endregion
+                    #region carga Prioridade
+                    var listaprioridade = new List<Prioridade>() {
+
+                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "GESTANTE"},
+                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "DEFICIENTE FISICO"},
+                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "IDOSO 60 ANOS: PESSOA COM IDADE ENTRE 60 E 79 ANOS"},
+                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "IDOSO 80 ANOS: PESSOA COM IDADE IGUAL OU SUPERIOR A 80 ANOS"},
+
+                    };
+
+                    new PrioridadeService(_contextKlinikos, _context).AdicionarCarga(listaprioridade, pessoaMasterId);
                     #endregion
 
                 }

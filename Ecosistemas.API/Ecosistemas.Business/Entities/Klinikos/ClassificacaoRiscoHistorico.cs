@@ -13,6 +13,24 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual ClassificacaoRisco ClassificacaoRisco { get; set; }
 
+        [StringLength(150, ErrorMessage = "{0} Precisa ter no máximo 150")]
+        [DataType(DataType.Text)]
+        public string DescricaoQueixa { get; set; }
+
+        [StringLength(90, ErrorMessage = "{0} Precisa ter no máximo 90")]
+        [DataType(DataType.Text)]
+        public string CausaExterna { get; set; }
+
+        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [DataType(DataType.Text)]
+        public string NivelConsciencia { get; set; }
+
+        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [DataType(DataType.Text)]
+        public string EscalaDor { get; set; }
+
+        public bool Sutura { get; set; }
+
         public double Peso { get; set; }
 
         public int Altura { get; set; }
@@ -31,29 +49,15 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
-        public string EscalaDor { get; set; }
-
-        [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 200")]
-        [DataType(DataType.Text)]
-        public string DescricaoQueixa { get; set; }
-
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
-        [DataType(DataType.Text)]
-        public string NivelConsciencia { get; set; }
-
-        [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 40")]
-        [DataType(DataType.Text)]
-        public string Alergia { get; set; }
-
-        public bool Sutura { get; set; }
-
-        [StringLength(90, ErrorMessage = "{0} Precisa ter no máximo 90")]
-        [DataType(DataType.Text)]
-        public string CausaExterna { get; set; }
-
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
-        [DataType(DataType.Text)]
         public string DoencaPreExistente { get; set; }
+
+        [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 500")]
+        [DataType(DataType.Text)]
+        public string Avaliacao { get; set; }
+
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string TipoChegada { get; set; }
 
         [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
         [DataType(DataType.Text)]
@@ -90,9 +94,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.DateTime)]
         public DateTime? DataOcorrencia { get; set; }
 
-        [StringLength(3, ErrorMessage = "{0} Precisa ter no máximo 3")]
-        [DataType(DataType.Text)]
-        public string TipoPerfuracao { get; set; }
+        public bool Pab { get; set; }
+
+        public bool Paf { get; set; }
 
         [StringLength(8, ErrorMessage = "{0} Precisa ter no máximo 8")]
         [DataType(DataType.Text)]
