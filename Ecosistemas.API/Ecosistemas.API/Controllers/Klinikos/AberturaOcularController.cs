@@ -20,6 +20,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class AberturaOcularController : Controller
     {
         private readonly IAberturaOcularService _service;
@@ -31,14 +32,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<AberturaOcular>> Incluir([FromBody]AberturaOcular aberturaOcular)
         {
             return await _service.Adicionar(aberturaOcular, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<AberturaOcular>> Put([FromBody]AberturaOcular aberturaOcular, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(aberturaOcular, Guid.Parse(HttpContext.User.Identity.Name));
@@ -46,14 +47,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{AberturaOcularId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<AberturaOcular>> Delete(string AberturaOcularId)
         {
             return await _service.Remover(Guid.Parse(AberturaOcularId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<AberturaOcular>>> Get()
         {
             return await _service.ListarTodos();

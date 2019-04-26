@@ -19,6 +19,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class NivelConscienciaController : Controller
     {
         private readonly INivelConscienciaService _service;
@@ -30,14 +31,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<NivelConsciencia>> Incluir([FromBody]NivelConsciencia nivelConsciencia)
         {
             return await _service.Adicionar(nivelConsciencia, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<NivelConsciencia>> Put([FromBody]NivelConsciencia nivelConsciencia, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(nivelConsciencia, Guid.Parse(HttpContext.User.Identity.Name));
@@ -45,14 +46,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{NivelConscienciaId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<NivelConsciencia>> Delete(string NivelConscienciaId)
         {
             return await _service.Remover(Guid.Parse(NivelConscienciaId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<NivelConsciencia>>> Get()
         {
             return await _service.ListarTodos();

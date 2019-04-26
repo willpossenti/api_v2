@@ -31,14 +31,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Trauma>> Incluir([FromBody]Trauma trauma)
         {
             return await _service.Adicionar(trauma, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Trauma>> Put([FromBody]Trauma trauma, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(trauma, Guid.Parse(HttpContext.User.Identity.Name));
@@ -46,14 +46,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{TraumaId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Trauma>> Delete(string TraumaId)
         {
             return await _service.Remover(Guid.Parse(TraumaId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Trauma>>> Get()
         {
             return await _service.ListarTodos();

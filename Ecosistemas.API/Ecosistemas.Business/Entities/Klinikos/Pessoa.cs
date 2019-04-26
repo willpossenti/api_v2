@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
@@ -33,7 +34,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
         public string IdadeAparente { get; set; }
-
+        
         public virtual Raca Raca { get; set; }
 
         public virtual Etnia Etnia { get; set; }
@@ -190,6 +191,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public string Senha { get; set; }
 
         public bool Master { get; set; } = false;
+
+        [Column(TypeName = "varchar(MAX)")]
+        [DataType(DataType.Text)]
+        public string foto { get; set; }
 
         public bool Ativo { get; set; } = true;
 

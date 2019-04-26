@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class CidadeController : Controller
     {
         private readonly ICidadeService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Cidade>> Incluir([FromBody]Cidade cidade)
         {
             return await _service.Adicionar(cidade, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Cidade>> Put([FromBody]Cidade cidade, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(cidade, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,14 +48,14 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{CidadeId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Cidade>> Delete(string CidadeId)
         {
             return await _service.Remover(Guid.Parse(CidadeId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet("BuscaCidade/{NomeCidade}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Cidade>>> GetByName(string NomeCidade)
         {
 
@@ -63,7 +63,7 @@ namespace Ecosistemas.API.Controllers.Api
         }
 
         [HttpGet("{CidadeId}")]
-        //   [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Cidade>> Get(string CidadeId)
         {
             return await _service.Obter(Guid.Parse(CidadeId));
@@ -78,7 +78,7 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("GetByEstado")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Cidade>>> GetByEstado([FromBody]Estado estado)
         {
 

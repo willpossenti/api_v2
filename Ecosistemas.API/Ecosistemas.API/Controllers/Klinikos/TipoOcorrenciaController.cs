@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class TipoOcorrenciaController : Controller
     {
         private readonly ITipoOcorrenciaService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<TipoOcorrencia>> Incluir([FromBody]TipoOcorrencia tipoOcorrencia)
         {
             return await _service.Adicionar(tipoOcorrencia, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<TipoOcorrencia>> Put([FromBody]TipoOcorrencia tipoOcorrencia, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(tipoOcorrencia, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,14 +48,14 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{tipoOcorrenciaId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<TipoOcorrencia>> Delete(string tipoOcorrenciaId)
         {
             return await _service.Remover(Guid.Parse(tipoOcorrenciaId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<TipoOcorrencia>>> Get()
         {
             return await _service.ListarTodos();

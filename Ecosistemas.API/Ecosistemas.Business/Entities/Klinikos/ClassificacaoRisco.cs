@@ -8,8 +8,22 @@ namespace Ecosistemas.Business.Entities.Klinikos
     public class ClassificacaoRisco
     {
 
+        public ClassificacaoRisco() { this.ClassificacoesRiscoAlergia = new List<ClassificacaoRiscoAlergia>(); }
+
         [Key]
         public Guid ClassificacaoRiscoId { get; set; }
+
+        [StringLength(150, ErrorMessage = "{0} Precisa ter no máximo 150")]
+        [DataType(DataType.Text)]
+        public string DescricaoQueixa { get; set; }
+
+        public virtual CausaExterna CausaExterna { get; set; }
+
+        public virtual NivelConsciencia NivelConsciencia { get; set; }
+
+        public virtual EscalaDor EscalaDor { get; set; }
+
+        public bool Sutura { get; set; }
 
         public double Peso { get; set; }
 
@@ -27,27 +41,22 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public int Saturacao { get; set; }
 
-        public virtual EscalaDor EscalaDor { get; set; }
+        public virtual DoencaPreExistente DoencaPreExistente { get; set; }
 
         [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 200")]
         [DataType(DataType.Text)]
-        public string DescricaoQueixa { get; set; }
+        public string Avaliacao { get; set; }
 
-        public virtual NivelConsciencia NivelConsciencia { get; set; }
+        [Required(ErrorMessage = "O tipo de chegada obrigatório")]
+        public virtual TipoChegada TipoChegada { get; set; }
 
-        [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 40")]
-        [DataType(DataType.Text)]
-        public string Alergia { get; set; }
-
-        public bool Sutura { get; set; }
-
-        public virtual CausaExterna CausaExterna { get; set; }
-
-        public virtual DoencaPreExistente DoencaPreExistente { get; set; }
-
+        [Required(ErrorMessage = "A especialidade é obrigatória")]
         public virtual Especialidade Especialidade { get; set; }
 
+        [Required(ErrorMessage = "O risco é obrigatório")]
         public virtual Risco Risco { get; set; }
+
+        public virtual List<ClassificacaoRiscoAlergia> ClassificacoesRiscoAlergia { get; set; }
 
         public virtual AberturaOcular AberturaOcular { get; set; }
 
@@ -66,9 +75,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.DateTime)]
         public DateTime? DataOcorrencia { get; set; }
 
-        [StringLength(3, ErrorMessage = "{0} Precisa ter no máximo 3")]
-        [DataType(DataType.Text)]
-        public string TipoPerfuracao { get; set; }
+        public bool Pab { get; set; }
+
+        public bool Paf { get; set; }
 
         [StringLength(8, ErrorMessage = "{0} Precisa ter no máximo 8")]
         [DataType(DataType.Text)]
@@ -93,6 +102,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public virtual Estado Estado { get; set; }
 
         public virtual Cidade Cidade { get; set; }
+
+
+
 
         public bool Ativo { get; set; } = true;
 

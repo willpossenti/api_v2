@@ -34,7 +34,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             try
             {
 
-                _response.Result = await _context.Set<Cidade>().Include(e => e.Estado).Where(x => x.Estado.EstadoId == estadoId)
+                _response.Result = await _contextKlinikos.Set<Cidade>().Include(e => e.Estado).Where(x => x.Estado.EstadoId == estadoId)
                     .Select(s => new Cidade { CidadeId = s.CidadeId, Nome = s.Nome, Ativo = s.Ativo }).ToListAsync();
 
                 _response.Message = "Sucesso";

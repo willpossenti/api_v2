@@ -20,6 +20,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class RiscoController : Controller
     {
         private readonly IRiscoService _service;
@@ -31,14 +32,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Risco>> Incluir([FromBody]Risco risco)
         {
             return await _service.Adicionar(risco, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Risco>> Put([FromBody]Risco risco, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(risco, Guid.Parse(HttpContext.User.Identity.Name));
@@ -46,14 +47,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{RiscoId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Risco>> Delete(string RiscoId)
         {
             return await _service.Remover(Guid.Parse(RiscoId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Risco>>> Get()
         {
             return await _service.ListarTodos();

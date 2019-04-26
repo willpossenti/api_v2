@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Especialidade>> Incluir([FromBody]Especialidade especialidade)
         {
             return await _service.Adicionar(especialidade, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Especialidade>> Put([FromBody]Especialidade especialidade, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(especialidade, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,14 +48,14 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{EspecialidadeId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Especialidade>> Delete(string especialidadeId)
         {
             return await _service.Remover(Guid.Parse(especialidadeId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Especialidade>>> Get()
         {
             return await _service.ListarTodos();

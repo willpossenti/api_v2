@@ -20,6 +20,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class ClassificacaoRiscoController : Controller
     {
         private readonly IClassificacaoRiscoService _service;
@@ -31,14 +32,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<ClassificacaoRisco>> Incluir([FromBody]ClassificacaoRisco classificacaoRisco)
         {
             return await _service.AdicionarClassificacaoRisco(classificacaoRisco, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<ClassificacaoRisco>> Put([FromBody]ClassificacaoRisco classificacaoRisco, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(classificacaoRisco, Guid.Parse(HttpContext.User.Identity.Name));
@@ -46,14 +47,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{ClassificacaoRiscoId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<ClassificacaoRisco>> Delete(string ClassificacaoRiscoId)
         {
             return await _service.Remover(Guid.Parse(ClassificacaoRiscoId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<ClassificacaoRisco>>> Get()
         {
             return await _service.ListarTodos();

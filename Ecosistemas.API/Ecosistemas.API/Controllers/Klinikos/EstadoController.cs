@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class EstadoController : Controller
     {
         private readonly IEstadoService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Estado>> Incluir([FromBody]Estado estado)
         {
             return await _service.Adicionar(estado, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Estado>> Put([FromBody]Estado estado, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(estado, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,21 +48,21 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{EstadoId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Estado>> Delete(string EstadoId)
         {
             return await _service.Remover(Guid.Parse(EstadoId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Estado>>> Get()
         {
              return await _service.ListarTodos();
         }
 
         [HttpGet("{EstadoId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Estado>> Get(string EstadoId)
         {
             return await _service.Obter(Guid.Parse(EstadoId));

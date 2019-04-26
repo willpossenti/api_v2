@@ -20,6 +20,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class RespostaVerbalController : Controller
     {
         private readonly IRespostaVerbalService _service;
@@ -31,14 +32,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RespostaVerbal>> Incluir([FromBody]RespostaVerbal respostaVerbal)
         {
             return await _service.Adicionar(respostaVerbal, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RespostaVerbal>> Put([FromBody]RespostaVerbal respostaVerbal, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(respostaVerbal, Guid.Parse(HttpContext.User.Identity.Name));
@@ -46,14 +47,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{RespostaVerbalId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<RespostaVerbal>> Delete(string RespostaVerbalId)
         {
             return await _service.Remover(Guid.Parse(RespostaVerbalId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<RespostaVerbal>>> Get()
         {
             return await _service.ListarTodos();

@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class RacaController : Controller
     {
         private readonly IRacaService _service;
@@ -33,14 +33,14 @@ namespace Ecosistemas.API.Controllers.Api
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Raca>> Incluir([FromBody]Raca raca)
         {
             return await _service.Adicionar(raca, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Raca>> Put([FromBody]Raca raca, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(raca, Guid.Parse(HttpContext.User.Identity.Name));
@@ -48,14 +48,14 @@ namespace Ecosistemas.API.Controllers.Api
 
 
         [HttpDelete("{RacaId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<Raca>> Delete(string RacaId)
         {
             return await _service.Remover(Guid.Parse(RacaId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<Raca>>> Get()
         {
             return await _service.ListarTodos();

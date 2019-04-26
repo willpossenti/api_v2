@@ -9,7 +9,7 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
 {
     public interface IClassificacaoRiscoHistoricoService : IBaseService<ClassificacaoRiscoHistorico>
     {
-        Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoClassificacaoRisco(ClassificacaoRisco registroBoletim, PessoaProfissional pessoaProfissionalCadastro);
+        Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoClassificacaoRisco(ClassificacaoRisco classificacaoRisco, PessoaProfissional pessoaProfissionalCadastro);
 
     }
 }

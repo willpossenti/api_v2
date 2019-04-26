@@ -20,6 +20,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class CausaExternaController : Controller
     {
         private readonly ICausaExternaService _service;
@@ -31,14 +32,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<CausaExterna>> Incluir([FromBody]CausaExterna causaExterna)
         {
             return await _service.Adicionar(causaExterna, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<CausaExterna>> Put([FromBody]CausaExterna causaExterna, [FromServices]AccessManager accessManager)
         {
             return await _service.Atualizar(causaExterna, Guid.Parse(HttpContext.User.Identity.Name));
@@ -46,14 +47,14 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
 
         [HttpDelete("{CausaExternaId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<CausaExterna>> Delete(string CausaExternaId)
         {
             return await _service.Remover(Guid.Parse(CausaExternaId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<CausaExterna>>> Get()
         {
             return await _service.ListarTodos();
