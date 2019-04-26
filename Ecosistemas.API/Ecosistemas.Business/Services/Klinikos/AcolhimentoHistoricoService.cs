@@ -32,12 +32,12 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AcolhimentoHistorico = new AcolhimentoHistorico
                 {
                     Acolhimento = acolhimento,
-                    Nome = acolhimento.PessoaPaciente == null ? null : acolhimento.PessoaPaciente.NomeCompleto,
-                    CPF = acolhimento.PessoaPaciente == null ? null : acolhimento.PessoaPaciente.Cpf,
-                    CNS = acolhimento.PessoaPaciente == null ? null : acolhimento.PessoaPaciente.Cns,
-                    NomeSocial = acolhimento.PessoaPaciente == null ? null : acolhimento.PessoaPaciente.NomeSocial,
-                    Especialidade = acolhimento.Especialidade == null ? null : acolhimento.Especialidade.Descricao,
-                    Prioridade = acolhimento.Prioridade == null ? null : acolhimento.Prioridade.Nome,
+                    Nome = acolhimento.PessoaPaciente?.NomeCompleto,
+                    CPF = acolhimento.PessoaPaciente?.Cpf,
+                    CNS = acolhimento.PessoaPaciente?.Cns,
+                    NomeSocial = acolhimento.PessoaPaciente?.NomeSocial,
+                    Especialidade = acolhimento.Especialidade?.Descricao,
+                    Prioridade = acolhimento.Prioridade?.Nome,
                     Risco = acolhimento.Risco,
                     Peso = acolhimento.Peso,
                     Altura = acolhimento.Altura,

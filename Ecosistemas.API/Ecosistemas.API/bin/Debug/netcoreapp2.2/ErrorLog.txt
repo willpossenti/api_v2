@@ -15605,3 +15605,619 @@ StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBa
 
 Inner Exception : Invalid object name 'Acolhimentos'.
 ------******------
+DateTime : 24/04/2019 16:09:39
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:39
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:39
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:40
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:40
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:40
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:40
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:09:41
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:16
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:17
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:17
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:17
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:17
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:18
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:18
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:48:18
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:44
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:45
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:45
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:45
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:45
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:45
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:46
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 24/04/2019 16:52:46
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarCarga(List`1 entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 79
+
+Inner Exception : String or binary data would be truncated.
+The statement has been terminated.
+------******------
+DateTime : 25/04/2019 17:54:47
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+------******------
+DateTime : 25/04/2019 17:54:50
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+------******------
+DateTime : 26/04/2019 14:03:27
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:03:28
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:04:58
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:05:13
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:13:23
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:13:39
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:18:06
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:18:14
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : Invalid column name 'Avaliacao'.
+Invalid column name 'Pab'.
+Invalid column name 'Paf'.
+Invalid column name 'TipoChegadaId'.
+------******------
+DateTime : 26/04/2019 14:24:06
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_AberturasOculares_AberturaOcularId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.AberturasOculares", column 'AberturaOcularId'.
+The statement has been terminated.
+------******------
+DateTime : 26/04/2019 14:24:14
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.Adicionar(T entity, Guid UserId) in C:\eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 37
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ClassificacoesRisco_AberturasOculares_AberturaOcularId". The conflict occurred in database "DESENVOLVIMENTO_KLINIKOS", table "dbo.AberturasOculares", column 'AberturaOcularId'.
+The statement has been terminated.
+------******------
