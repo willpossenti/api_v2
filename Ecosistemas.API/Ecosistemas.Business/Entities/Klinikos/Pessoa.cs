@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Ecosistemas.Business.Entities.Klinikos
@@ -190,6 +191,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public string Senha { get; set; }
 
         public bool Master { get; set; } = false;
+
+        [Column(TypeName = "varchar(MAX)")]
+        [DataType(DataType.Text)]
+        public string foto { get; set; }
 
         public bool Ativo { get; set; } = true;
 
