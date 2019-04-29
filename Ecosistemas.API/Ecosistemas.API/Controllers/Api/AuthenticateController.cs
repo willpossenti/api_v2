@@ -27,7 +27,7 @@ namespace EcosistemasAPI.Controllers.Api
 
         public AuthenticateController(ApiDbContext context)
         {
-            _service = new UserService(context);
+                _service = new UserService(context);
         }
 
         [HttpPost]
