@@ -8,12 +8,9 @@ C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistema
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.runtimeconfig.json
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.runtimeconfig.dev.json
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.dll
-C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.API.pdb
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Business.dll
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Security.dll
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Business.pdb
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\bin\Debug\netcoreapp2.2\Ecosistemas.Security.pdb
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.RazorTargetAssemblyInfo.cache
 C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.csproj.CopyComplete
-C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.dll
-C:\eco\api_v2\Ecosistemas.API\Ecosistemas.API\obj\Debug\netcoreapp2.2\Ecosistemas.API.pdb

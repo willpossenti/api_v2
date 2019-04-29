@@ -6,7 +6,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Security.Claims;
 using System.Security.Principal;
