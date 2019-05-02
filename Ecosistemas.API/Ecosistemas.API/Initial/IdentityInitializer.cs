@@ -122,7 +122,36 @@ namespace Ecosistemas.API.Initial
 
                     new PessoaProfissionalService(_contextKlinikos, _context).AdicionarCarga(pessoaProfissional, pessoaMasterId);
 
-                    AdicionaUnidadeUsuario();
+                    var _unidadeUsuarioMaster = new Util.UserMaster();
+
+                    var _password = Convert.ToBase64String(_acessmanager.HashPassword(_unidadeUsuarioMaster.Password, _rng));
+
+                    var _user = new User()
+                    {
+                        UserId = Guid.NewGuid(),
+                        Username = "admin",
+                        Email = _unidadeUsuarioMaster.Email,
+                        Password = _password,
+                        ConfirmPassword = _password,
+                        Ativo = true
+
+                    };
+
+                    new UserService(_context).AdicionarCarga(_user, _user.UserId);
+
+                    var _sitema = _context.Sistemas.Where(x => x.Nome.Equals("KLINIKOS/UPA")).FirstOrDefault();
+
+                    var _userSistema = new SistemaUser() { Sistema = _sitema, User = _user };
+
+                    new SistemaUserService(_context).AdicionarCarga(_userSistema, _user.UserId);
+
+
+                    var _role = _context.Roles.Where(x => x.NameRole == Roles.ROLE_API_KLINIKOS).FirstOrDefault();
+
+                    var _userRole = new UserRole() { Role = _role, User = _user };
+
+                    new UserRoleService(_context).AdicionarCarga(_userRole, _user.UserId);
+
 
                     #endregion
                     #region carga justificativa
@@ -9594,40 +9623,7 @@ namespace Ecosistemas.API.Initial
         }
 
 
-        public void AdicionaUnidadeUsuario()
-        {
-            var _unidadeUsuarioMaster = new Util.UserMaster();
-
-            var _password = Convert.ToBase64String(_acessmanager.HashPassword(_unidadeUsuarioMaster.Password, _rng));
-
-            var _user = new User()
-            {
-                UserId = Guid.NewGuid(),
-                Username = "admin",
-                Email = _unidadeUsuarioMaster.Email,
-                Password = _password,
-                ConfirmPassword = _password,
-                Ativo = true
-
-            };
-
-            new UserService(_context).AdicionarCarga(_user, _user.UserId);
-
-            var _sitema = _context.Sistemas.Where(x => x.Nome.Equals("KLINIKOS/UPA")).FirstOrDefault();
-
-            var _userSistema = new SistemaUser() { Sistema = _sitema, User = _user };
-
-            new SistemaUserService(_context).AdicionarCarga(_userSistema, _user.UserId);
-
-
-            var _role = _context.Roles.Where(x => x.NameRole == Roles.ROLE_API_KLINIKOS).FirstOrDefault();
-
-            var _userRole = new UserRole() { Role = _role, User = _user };
-
-            new UserRoleService(_context).AdicionarCarga(_userRole, _user.UserId);
-
-
-        }
+     
 
     }
 }
