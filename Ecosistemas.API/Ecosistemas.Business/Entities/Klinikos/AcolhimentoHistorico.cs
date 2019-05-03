@@ -39,6 +39,12 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Risco { get; set; }
 
+        public double Peso { get; set; }
+
+        public int Altura { get; set; }
+
+        public double IMC { get; set; }
+
         public double Temperatura { get; set; }
 
         public int PressaoArterialSistolica { get; set; }
