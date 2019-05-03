@@ -194,7 +194,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         [Column(TypeName = "varchar(MAX)")]
         [DataType(DataType.Text)]
-        public string foto { get; set; }
+        public string Foto { get; set; }
 
         public bool Ativo { get; set; } = true;
 
