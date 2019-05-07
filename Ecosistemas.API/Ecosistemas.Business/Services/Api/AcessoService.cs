@@ -45,9 +45,6 @@ namespace Ecosistemas.Business.Services.Api
             return _response;
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

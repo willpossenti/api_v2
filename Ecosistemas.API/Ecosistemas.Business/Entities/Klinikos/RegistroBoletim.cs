@@ -41,42 +41,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string GrauParentesco { get; set; }
 
-        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
-        [DataType(DataType.Text)]
-        public string Procedencia { get; set; }
-
-        public virtual TipoOcorrencia TipoOcorrencia { get; set; }
-
-        [DataType(DataType.DateTime)]
-        public DateTime? DataOcorrencia { get; set; }
-
-        [StringLength(3, ErrorMessage = "{0} Precisa ter no máximo 3")]
-        [DataType(DataType.Text)]
-        public string TipoPerfuracao { get; set; }
-
-        [StringLength(8, ErrorMessage = "{0} Precisa ter no máximo 8")]
-        [DataType(DataType.Text)]
-        public string Cep { get; set; }
-
-        [StringLength(150, ErrorMessage = "{0} Precisa ter no máximo 150")]
-        [DataType(DataType.Text)]
-        public string Logradouro { get; set; }
-
-        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
-        [DataType(DataType.Text)]
-        public string Numero { get; set; }
-
-        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
-        [DataType(DataType.Text)]
-        public string Complemento { get; set; }
-
-        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
-        [DataType(DataType.Text)]
-        public string Bairro { get; set; }
-
-        public virtual Estado Estado { get; set; }
-
-        public virtual Cidade Cidade { get; set; }
+       
 
         public bool Ativo { get; set; } = true;
 

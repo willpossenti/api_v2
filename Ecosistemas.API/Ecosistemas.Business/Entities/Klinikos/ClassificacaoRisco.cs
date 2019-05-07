@@ -25,23 +25,62 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Sutura { get; set; }
 
-        public double Peso { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Peso { get; set; }
 
-        public int Altura { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Altura { get; set; }
 
-        public double IMC { get; set; }
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string Imc { get; set; }
 
-        public double Temperatura { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Temperatura { get; set; }
 
-        public int PressaoArterial { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string PressaoArterialDiastolica { get; set; }
 
-        public int Pulso { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string PressaoArterialSistolica { get; set; }
 
-        public int FrequenciaRespiratoria { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Pulso { get; set; }
 
-        public int Saturacao { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string FrequenciaRespiratoria { get; set; }
 
-        public virtual DoencaPreExistente DoencaPreExistente { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Saturacao { get; set; }
+
+        public bool Cardiopata { get; set; }
+
+        public bool Diabete { get; set; }
+
+        public bool Hipertensao { get; set; }
+
+        public bool Outros { get; set; }
+
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string ObservacaoOutros { get; set; }
+
+        public bool RenalCronico { get; set; }
+
+        public bool RespiratoriaCronica { get; set; }
+
+        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [DataType(DataType.Text)]
+        public string ObservacaoRespiratoriaCronica { get; set; }
+
 
         [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 200")]
         [DataType(DataType.Text)]
@@ -64,7 +103,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual RespostaMotora RespostaMotora { get; set; }
 
-        public virtual Trauma Trauma { get; set; }
+        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [DataType(DataType.Text)]
+        public string Status { get; set; }
 
         [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
         [DataType(DataType.Text)]
@@ -102,9 +143,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public virtual Estado Estado { get; set; }
 
         public virtual Cidade Cidade { get; set; }
-
-
-
 
         public bool Ativo { get; set; } = true;
 

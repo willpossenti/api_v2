@@ -31,25 +31,57 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool Sutura { get; set; }
 
-        public double Peso { get; set; }
-
-        public int Altura { get; set; }
-
-        public double IMC { get; set; }
-
-        public double Temperatura { get; set; }
-
-        public int PressaoArterial { get; set; }
-
-        public int Pulso { get; set; }
-
-        public int FrequenciaRespiratoria { get; set; }
-
-        public int Saturacao { get; set; }
-
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
-        public string DoencaPreExistente { get; set; }
+        public string Peso { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Altura { get; set; }
+
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string Imc { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Temperatura { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string PressaoArterialDiastolica { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string PressaoArterialSistolica { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Pulso { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string FrequenciaRespiratoria { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Saturacao { get; set; }
+
+        public bool Cardiopata { get; set; }
+
+        public bool Diabete { get; set; }
+
+        public bool Hipertensao { get; set; }
+
+        public bool Outros { get; set; }
+
+        public string ObservacaoOutros { get; set; }
+
+        public bool RenalCronico { get; set; }
+
+        public bool RespiratoriaCronica { get; set; }
+
+        public string ObservacaoRespiratoriaCronica { get; set; }
 
         [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 500")]
         [DataType(DataType.Text)]
