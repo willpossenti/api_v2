@@ -12,7 +12,7 @@ using Ecosistemas.Business.Utility;
 namespace Ecosistemas.Business.Services.Api
 {
 
-    public class BaseService<T> : IDisposable, IBaseService<T> where T : class
+    public class BaseService<T>: IDisposable, IBaseService<T> where T : class
     {
         private readonly ApiDbContext _context;
 
@@ -199,15 +199,9 @@ namespace Ecosistemas.Business.Services.Api
             return _response;
         }
 
-
-
-
-
         public void Dispose()
         {
-            _context.Dispose();
+            throw new NotImplementedException();
         }
-
-
     }
 }

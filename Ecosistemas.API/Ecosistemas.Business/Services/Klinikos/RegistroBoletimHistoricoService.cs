@@ -30,26 +30,15 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _registroBoletimHistorico = new RegistroBoletimHistorico
                 {
                     Ativo = registroBoletim.Ativo,
-                    Bairro = registroBoletim.Bairro,
-                    Cep = registroBoletim.Cep,
-                    Cidade = registroBoletim.Cidade?.Nome,
-                    Complemento = registroBoletim.Complemento,
                     DataBoletim = registroBoletim.DataBoletim,
-                    DataOcorrencia = registroBoletim.DataOcorrencia,
                     EnderecoInformante = registroBoletim.EnderecoInformante,
                     Especialidade = registroBoletim.Especialidade?.Descricao,
-                    Estado = registroBoletim.Estado?.Nome,
                     GrauParentesco = registroBoletim.GrauParentesco,
-                    Logradouro = registroBoletim.Logradouro,
                     NomeInformante = registroBoletim.NomeInformante,
-                    Numero = registroBoletim.Numero,
                     NumeroBoletim = registroBoletim.NumeroBoletim,
-                    Procedencia = registroBoletim.Procedencia,
                     RegistroBoletim = registroBoletim,
                     TelefoneInformante = registroBoletim.TelefoneInformante,
                     TipoChegada = registroBoletim.TipoChegada?.Descricao,
-                    TipoOcorrencia = registroBoletim.TipoOcorrencia?.Descricao,
-                    TipoPerfuracao = registroBoletim.TipoPerfuracao,
                     DataAlteracao = DateTime.Now,
                     PessoaAlteracao = pessoaProfissionalCadastro.NomeCompleto
                 };

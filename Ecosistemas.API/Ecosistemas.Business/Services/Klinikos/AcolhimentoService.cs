@@ -30,7 +30,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
+               var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
 
                 acolhimento.Ativo = true;

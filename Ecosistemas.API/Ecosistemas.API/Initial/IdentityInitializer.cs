@@ -62,7 +62,8 @@ namespace Ecosistemas.API.Initial
 
                     var _userMaster = new Util.UserMaster();
 
-                    //Cria o usuário Master
+
+                    #region Cria usuário Master
                     var _user = new User()
                     {
                         UserId = Guid.NewGuid(),
@@ -89,6 +90,39 @@ namespace Ecosistemas.API.Initial
                     //};
 
                     await new SistemaService(_context).Adicionar(sistema, _user.UserId);
+
+                    #endregion
+                    #region Cria usuário Klinikos
+                    var _unidadeUsuarioMaster = new Util.UserMaster();
+
+                    var _password = Convert.ToBase64String(_acessmanager.HashPassword(_unidadeUsuarioMaster.Password, _rng));
+
+                    var _userKlinikos = new User()
+                    {
+                        UserId = Guid.NewGuid(),
+                        Username = "admin",
+                        Email = _unidadeUsuarioMaster.Email,
+                        Password = _password,
+                        ConfirmPassword = _password,
+                        Ativo = true
+
+                    };
+
+                    new UserService(_context).AdicionarCarga(_userKlinikos, _userKlinikos.UserId);
+
+                    var _sitema = _context.Sistemas.Where(x => x.Nome.Equals("KLINIKOS/UPA")).FirstOrDefault();
+
+                    var _userSistema = new SistemaUser() { Sistema = _sitema, User = _userKlinikos };
+
+                    new SistemaUserService(_context).AdicionarCarga(_userSistema, _userKlinikos.UserId);
+
+
+                    var _roleKlinikos = _context.Roles.Where(x => x.NameRole == Roles.ROLE_API_KLINIKOS).FirstOrDefault();
+
+                    var _userRoleKlinikos = new UserRole() { Role = _roleKlinikos, User = _userKlinikos };
+
+                    new UserRoleService(_context).AdicionarCarga(_userRoleKlinikos, _userKlinikos.UserId);
+                    #endregion
 
                 }
             }
@@ -122,7 +156,7 @@ namespace Ecosistemas.API.Initial
 
                     new PessoaProfissionalService(_contextKlinikos, _context).AdicionarCarga(pessoaProfissional, pessoaMasterId);
 
-                    AdicionaUnidadeUsuario();
+
 
                     #endregion
                     #region carga justificativa
@@ -9318,12 +9352,12 @@ namespace Ecosistemas.API.Initial
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 0, Descricao = "SEM DOR" },
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 1, Descricao = "DOR LEVE" },
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 2, Descricao = "DOR LEVE" },
-                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 3, Descricao = "DOR LEVE" },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 3, Descricao = "DOR MODERADA" },
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 4, Descricao = "DOR MODERADA" },
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 5, Descricao = "DOR MODERADA" },
-                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 6, Descricao = "DOR MODERADA" },
-                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 7, Descricao = "DOR MODERADA" },
-                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 8, Descricao = "DOR INTENSA" },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 6, Descricao = "DOR FORTE" },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 7, Descricao = "DOR FORTE" },
+                        new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 8, Descricao = "DOR FORTE" },
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 9, Descricao = "DOR INTENSA" },
                         new EscalaDor() { EscalaDorId = Guid.NewGuid(), CodigoEscalaDor= 10, Descricao = "DOR INTENSA" },
 
@@ -9343,20 +9377,6 @@ namespace Ecosistemas.API.Initial
                     };
 
                     new NivelConscienciaService(_contextKlinikos, _context).AdicionarCarga(listanivelconsciencia, pessoaMasterId);
-                    #endregion
-                    #region carga Doenca Pre Existente
-                    var listadoencapreexistente = new List<DoencaPreExistente>() {
-
-                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "HIPERTENSÃO" },
-                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "DIABETE" },
-                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "CARDIOPATA" },
-                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "RENAL CRÔNICO" },
-                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "RESPIRATÓRIA CRÔNICA" },
-                        new DoencaPreExistente() { DoencaPreExistenteId = Guid.NewGuid(), Descricao = "OUTROS" },
-
-                    };
-
-                    new DoencaPreExistenteService(_contextKlinikos, _context).AdicionarCarga(listadoencapreexistente, pessoaMasterId);
                     #endregion
                     #region carga Risco
                     var listarisco = new List<Risco>() {
@@ -9526,17 +9546,6 @@ namespace Ecosistemas.API.Initial
 
                     new RespostaMotoraService(_contextKlinikos, _context).AdicionarCarga(listarespostamotora, pessoaMasterId);
                     #endregion
-                    #region carga Trauma
-                    var listatrauma = new List<Trauma>() {
-
-                        new Trauma() { TraumaId = Guid.NewGuid(), Descricao = "TRAUMA GRAVE" },
-                        new Trauma() { TraumaId = Guid.NewGuid(), Descricao = "TRAUMA MODERADO" },
-                        new Trauma() { TraumaId = Guid.NewGuid(), Descricao = "TRAUMA LEVE" },
-
-                    };
-
-                    new TraumaService(_contextKlinikos, _context).AdicionarCarga(listatrauma, pessoaMasterId);
-                    #endregion
                     #region carga Causa Externa
                     var listacausaexterna = new List<CausaExterna>() {
 
@@ -9594,40 +9603,7 @@ namespace Ecosistemas.API.Initial
         }
 
 
-        public void AdicionaUnidadeUsuario()
-        {
-            var _unidadeUsuarioMaster = new Util.UserMaster();
-
-            var _password = Convert.ToBase64String(_acessmanager.HashPassword(_unidadeUsuarioMaster.Password, _rng));
-
-            var _user = new User()
-            {
-                UserId = Guid.NewGuid(),
-                Username = "admin",
-                Email = _unidadeUsuarioMaster.Email,
-                Password = _password,
-                ConfirmPassword = _password,
-                Ativo = true
-
-            };
-
-            new UserService(_context).AdicionarCarga(_user, _user.UserId);
-
-            var _sitema = _context.Sistemas.Where(x => x.Nome.Equals("KLINIKOS/UPA")).FirstOrDefault();
-
-            var _userSistema = new SistemaUser() { Sistema = _sitema, User = _user };
-
-            new SistemaUserService(_context).AdicionarCarga(_userSistema, _user.UserId);
-
-
-            var _role = _context.Roles.Where(x => x.NameRole == Roles.ROLE_API_KLINIKOS).FirstOrDefault();
-
-            var _userRole = new UserRole() { Role = _role, User = _user };
-
-             new UserRoleService(_context).AdicionarCarga(_userRole, _user.UserId);
-
-
-        }
+     
 
     }
 }

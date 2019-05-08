@@ -100,7 +100,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                {
 
-
                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
 
 

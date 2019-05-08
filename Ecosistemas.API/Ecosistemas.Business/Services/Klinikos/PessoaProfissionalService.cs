@@ -103,27 +103,27 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                         var newListaLotacao = new List<LotacaoProfissional>();
 
-                        foreach (var lotacao in lotacoes)
-                        {
-                            lotacao.Pessoa = null;
-                            newListaLotacao.Add(lotacao);
-                        }
-
-                        _pessoaEncontrado.LotacoesProfissional = newListaLotacao;
-
-                        if (_pessoaEncontrado != null)
-                        {
-                            _response.Message = "Cpf encontrado";
-                            _response.StatusCode = StatusCodes.Status302Found;
-                            _response.Result = _pessoaEncontrado;
-                        }
-                        else
-                        {
-                            _response.Message = "Cpf não encontrado";
-                            _response.StatusCode = StatusCodes.Status404NotFound;
-
-                        }
+                    foreach (var lotacao in lotacoes)
+                    {
+                        lotacao.Pessoa = null;
+                        newListaLotacao.Add(lotacao);
                     }
+
+                    _pessoaEncontrado.LotacoesProfissional = newListaLotacao;
+
+                    if (_pessoaEncontrado != null)
+                    {
+                        _response.Message = "Cpf encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _pessoaEncontrado;
+                    }
+                    else
+                    {
+                        _response.Message = "Cpf não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                }
                 });
 
 

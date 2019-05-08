@@ -207,9 +207,9 @@ namespace Ecosistemas.Business.Services.Klinikos
                         User = await _context.FindAsync<User>(UserId)
                     };
 
-                    await _context.AddAsync<Log>(_log);
-                    await _context.SaveChangesAsync();
-                    _response.StatusCode = StatusCodes.Status201Created;
+                await _context.AddAsync<Log>(_log);
+                await _context.SaveChangesAsync();
+                _response.StatusCode = StatusCodes.Status201Created;
                 
             }
             catch (Exception ex)

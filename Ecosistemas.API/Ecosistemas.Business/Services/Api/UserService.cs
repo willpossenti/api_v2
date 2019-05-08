@@ -112,8 +112,8 @@ namespace Ecosistemas.Business.Services.Api
                         _userHash.Password = Convert.ToBase64String(accessManager.HashPassword(user.Password, _rng));
 
                     _context.Update<User>(_userHash);
-
                     await _context.SaveChangesAsync();
+
                     _response.Message = "Alteração";
                     _response.StatusCode = StatusCodes.Status200OK;
 
@@ -252,8 +252,6 @@ namespace Ecosistemas.Business.Services.Api
                         }
                         else
                         {
-
-
                             _result.Token = this.GerarAcesso(_userFound, accessManager).Result.Result;
 
                             var _userSistema = new User() { UserId = _userFound.UserId, Username = _userFound.Username };
@@ -296,8 +294,6 @@ namespace Ecosistemas.Business.Services.Api
                     identity.AddClaim(new Claim(ClaimTypes.Role, _roleFound.NameRole));
 
                 }
-
-
 
                 var Token = accessManager.GenerateToken(identity);
                 _result.StatusCode = StatusCodes.Status202Accepted;

@@ -21,7 +21,7 @@ namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     public class EspecialidadeController : Controller
     {
         private readonly IEspecialidadeService _service;

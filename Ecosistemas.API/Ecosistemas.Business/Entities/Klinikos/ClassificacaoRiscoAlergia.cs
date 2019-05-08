@@ -11,7 +11,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid ClassificacaoRiscoAlergiaId { get; set; }
 
-        [Required(ErrorMessage = "A classificação de risco é obrigatória")]
         public virtual ClassificacaoRisco ClassificacaoRisco { get; set; }
 
         [Required(ErrorMessage = "O nome da alergia é obrigatório")]
