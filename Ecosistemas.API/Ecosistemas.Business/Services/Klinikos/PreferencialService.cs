@@ -8,10 +8,10 @@ using System.Text;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
-    public class PrioridadeService : BaseService<Prioridade>, IPrioridadeService
+    public class PreferencialService : BaseService<Preferencial>, IPreferencialService
     {
 
-        public PrioridadeService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public PreferencialService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
 
         }

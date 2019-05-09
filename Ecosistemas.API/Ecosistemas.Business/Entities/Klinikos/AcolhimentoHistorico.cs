@@ -35,25 +35,45 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 70")]
         [DataType(DataType.Text)]
-        public string Prioridade { get; set; }
+        public string Preferencial { get; set; }
 
         public bool Risco { get; set; }
 
-        public double Peso { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Peso { get; set; }
 
-        public int Altura { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Altura { get; set; }
 
-        public double IMC { get; set; }
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
+        [DataType(DataType.Text)]
+        public string IMC { get; set; }
 
-        public double Temperatura { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Temperatura { get; set; }
 
-        public int PressaoArterial { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string PressaoArterialSistolica { get; set; }
 
-        public int Pulso { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string PressaoArterialDiastolica { get; set; }
 
-        public int FrequenciaRespiratoria { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Pulso { get; set; }
 
-        public int Saturacao { get; set; }
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string FrequenciaRespiratoria { get; set; }
+
+        [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
+        [DataType(DataType.Text)]
+        public string Saturacao { get; set; }
 
         [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]

@@ -9577,17 +9577,17 @@ namespace Ecosistemas.API.Initial
 
                     new CausaExternaService(_contextKlinikos, _context).AdicionarCarga(listacausaexterna, pessoaMasterId);
                     #endregion
-                    #region carga Prioridade
-                    var listaprioridade = new List<Prioridade>() {
+                    #region carga Preferencial
+                    var listapreferencial = new List<Preferencial>() {
 
-                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "GESTANTE"},
-                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "DEFICIENTE FISICO"},
-                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "IDOSO 60 ANOS: PESSOA COM IDADE ENTRE 60 E 79 ANOS"},
-                        new Prioridade() { PrioridadeId = Guid.NewGuid(), Nome = "IDOSO 80 ANOS: PESSOA COM IDADE IGUAL OU SUPERIOR A 80 ANOS"},
+                        new Preferencial() { PreferencialId = Guid.NewGuid(), Nome = "GESTANTE"},
+                        new Preferencial() { PreferencialId = Guid.NewGuid(), Nome = "DEFICIENTE FISICO"},
+                        new Preferencial() { PreferencialId = Guid.NewGuid(), Nome = "IDOSO 60 ANOS: PESSOA COM IDADE ENTRE 60 E 79 ANOS"},
+                        new Preferencial() { PreferencialId = Guid.NewGuid(), Nome = "IDOSO 80 ANOS: PESSOA COM IDADE IGUAL OU SUPERIOR A 80 ANOS"},
 
                     };
 
-                    new PrioridadeService(_contextKlinikos, _context).AdicionarCarga(listaprioridade, pessoaMasterId);
+                    new PreferencialService(_contextKlinikos, _context).AdicionarCarga(listapreferencial, pessoaMasterId);
                     #endregion
 
                 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ecosistemas.Business.Interfaces.Klinikos
 {
-    public interface IPrioridadeService : IBaseService<Prioridade>
+    public interface IPreferencialService : IBaseService<Preferencial>
     {
 
     }

@@ -54,7 +54,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<ClassificacaoRiscoAlergiaHistorico> ClassificacaoRiscoAlergiaHistorico { get; set; }
         public DbSet<ClassificacaoRisco> ClassificacoesRisco { get; set; }
         public DbSet<ClassificacaoRiscoHistorico> ClassificacaoRiscoHistorico { get; set; }
-        public DbSet<Prioridade> Prioridades { get; set; }
+        public DbSet<Preferencial> Preferenciais { get; set; }
         public DbSet<Acolhimento> Acolhimentos { get; set; }
         public DbSet<AcolhimentoHistorico> AcolhimentoHistorico { get; set; }
 
