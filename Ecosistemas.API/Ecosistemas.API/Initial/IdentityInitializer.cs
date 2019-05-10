@@ -9397,7 +9397,7 @@ namespace Ecosistemas.API.Initial
 
                         new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A ALIMENTOS" },
                         new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A ANIMAIS" },
-                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A COSMÉDICOS" },
+                        new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A COSMÉTICOS" },
                         new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A DETERGENTES" },
                         new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A FÁRMACOS" },
                         new Alergia() { AlergiaId = Guid.NewGuid(), Nome = "ALERGIA A FUNGOS" },
