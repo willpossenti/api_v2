@@ -17,5 +17,6 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
         Task<CustomResponse<List<PessoaPaciente>>> ConsultaNome(string nome, Guid userId);
         Task<CustomResponse<List<PessoaPaciente>>> ConsultaNomeSocial(string nome, Guid userId);
 
+        Task<CustomResponse<List<PessoaPaciente>>> ConsultaPacienteAcolhimento(string pesquisa, Guid userId);
     }
 }

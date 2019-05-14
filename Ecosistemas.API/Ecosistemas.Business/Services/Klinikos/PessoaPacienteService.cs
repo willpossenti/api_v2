@@ -293,6 +293,47 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+
+        public async Task<CustomResponse<List<PessoaPaciente>>> ConsultaPacienteAcolhimento(string pesquisa, Guid userId)
+       {
+            var _response = new CustomResponse<List<PessoaPaciente>>();
+
+            try
+            {
+                Expression<Func<PessoaPaciente, bool>> _filtroNome = x => (x.NomeCompleto.Contains(pesquisa) || x.NomeSocial.Contains(pesquisa) || x.Cpf.Contains(pesquisa) || x.Cns.Contains(pesquisa)) && x.Ativo;
+
+
+                await Task.Run(() =>
+                {
+
+                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList();
+
+
+                    if (_pessoaEncontrado != null)
+                    {
+                        _response.Message = "Paciente encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _pessoaEncontrado;
+                    }
+                    else
+                    {
+                        _response.Message = "Paciente não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
         protected internal IQueryable<PessoaPaciente> Paciente
         {
 
