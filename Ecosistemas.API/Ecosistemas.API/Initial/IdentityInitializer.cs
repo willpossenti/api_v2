@@ -9589,7 +9589,51 @@ namespace Ecosistemas.API.Initial
 
                     new PreferencialService(_contextKlinikos, _context).AdicionarCarga(listapreferencial, pessoaMasterId);
                     #endregion
+                    #region carga Tipo Saida
+                    var listatiposaida = new List<TipoSaida>() {
 
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "ATENDIMENTO CONCLUÍDO"},
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "EVASÃO SEM ATENDIMENTO"},
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "ALTA POR DECISÃO MÉDICA"},
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "ALTA A PEDIDO"},
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "ALTA POR EVASAO"},
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "ÓBITO"},
+                        new TipoSaida() { TipoSaidaId = Guid.NewGuid(), Descricao = "CHEGOU CADÁVER"},
+
+                    };
+
+                    new TipoSaidaService(_contextKlinikos, _context).AdicionarCarga(listatiposaida, pessoaMasterId);
+                    #endregion
+                    #region carga Consulta CID
+                    var listaconsultacid = new List<ConsultaCID>() {
+
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "I", Nome = "ALGUMAS DOENÇAS INFECCIOSAS E PARASITÁRIAS", Posicao = "A00-B99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "II", Nome = "NEOPLASMAS (TUMORES)", Posicao = "C00-D48"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "III", Nome = "DOEÇAS DO SANGUE E DOS ORGÃOS HEMATOPOÉTICOS E ALGUNS TRANSTORNOS IMUNITÁRIOS", Posicao = "D50-D89"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "IV", Nome = "DOENÇAS ENDÓCRINAS, NUTRICIONAIS E METABÓLICAS", Posicao = "E00-E90"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "V", Nome = "TRANSTORNOS MENTAIS E COMPORTAMENTAIS", Posicao = "F00-F99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "VI", Nome = "DOENÇAS DO SISTEMA NERVOSO", Posicao = "G00-G99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "VII", Nome = "DOENÇAS DO OLHO E ANEXOS", Posicao = "H00-H59"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "VIII", Nome = "DOENÇAS DO OUVIDO E DA APÓFISE MASTÓIDE", Posicao = "H60-H95"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "IX", Nome = "DOENÇAS DO APARELHO CIRCULATÓRIO", Posicao = "I00-I99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "X", Nome = "DOENÇAS DO APARELHO RESPIRATÓRIO", Posicao = "J00-J99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XI", Nome = "DOENÇAS DO APARELHO DIGESTIVO", Posicao = "K00-K93"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XII", Nome = "DOENÇAS DA PELE E DO TECIDO SUBCUTÂNEO", Posicao = "L00-L99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XIII", Nome = "DOENÇAS DO SISTEMA OSTEOMUSCULAR E DO TECIDO CONJUNTIVO", Posicao = "M00-M99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XIV", Nome = "DOENÇAS DO APARELHO GENITURINÁRIO", Posicao = "N00-N99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XV", Nome = "GRAVIDEZ, PARTO E PUERPÉRIO", Posicao = "O00-099"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XVI", Nome = "ALGUMAS AFECÇÕES ORIGINADAS NO PERÍODO PERINATAL", Posicao = "P00-P96"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XVII", Nome = "MALFORMAÇÕES CONGÊNITAS, DEFORMIDADES E ANOMALIAS CROMOSSÔMICAS", Posicao = "Q00-Q99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XVIII", Nome = "SINTOMAS, SINAIS E ACHADOS ANORMAIS DE EXAMES CLÍNICOS E DE LABORATÓRIO, NÃO CLASSIFICADOS EM OUTRA PARTE", Posicao = "R00-R99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XIX", Nome = "LESÕES, ENVENENAMENTOS E ALGUMAS OUTRAS CONSEQUÊNCIAS DE CAUSAS EXTERNAS", Posicao = "S00-T98"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XX", Nome = "CAUSAS EXTERNAS DE MORBILIDADE E DE MORTALIDADE", Posicao = "V01-Y98"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "XXI", Nome = "FATORES QUE INFLUENCIAM O ESTADO DE SAÚDE E O CONTATO COM OS SERVIÇOS DE SAÚDE", Posicao = "Z00-Z99"},
+                        new ConsultaCID() { ConsultaCIDId = Guid.NewGuid(), Capitulo = "**", Nome = "CID 10ª REVISÃO NÃO DISPONÍVEL OU NÃO PREENCHIDO OU INVÁLIDO", Posicao = "U99, EM BRANCO OU INVÁLIDO"},
+
+                    };
+
+                    new ConsultaCIDService(_contextKlinikos, _context).AdicionarCarga(listaconsultacid, pessoaMasterId);
+                    #endregion
                 }
 
             }

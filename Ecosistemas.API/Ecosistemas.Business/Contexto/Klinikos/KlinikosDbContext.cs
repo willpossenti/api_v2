@@ -57,7 +57,27 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<Preferencial> Preferenciais { get; set; }
         public DbSet<Acolhimento> Acolhimentos { get; set; }
         public DbSet<AcolhimentoHistorico> AcolhimentoHistorico { get; set; }
-
+        public DbSet<TipoSaida> TiposSaida { get; set; }
+        public DbSet<GrupoExame> GruposExame { get; set; }
+        public DbSet<Exame> Exames { get; set; }
+        public DbSet<AtendimentoMedicoExame> AtendimentoMedicoExames { get; set; }
+        public DbSet<AtendimentoMedicoExameHistorico> AtendimentoMedicoExameHistorico { get; set; }
+        public DbSet<CID> CID { get; set; }
+        public DbSet<ModeloPrescricaoReceita> ModelosPrescricaoReceita { get; set; }
+        public DbSet<ModeloPrescricaoReceitaDetalhe> ModeloPrescricaoReceitaDetalhes { get; set; }
+        public DbSet<Medicamento> Medicamentos { get; set; }
+        public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
+        public DbSet<ViaAdministracaoMedicamento> ViasAdministracaoMedicamento { get; set; }
+        public DbSet<UnidadeMedicamento> UnidadesMedicamento { get; set; }
+        public DbSet<IntervaloMedicamento> IntervalosMedicamento { get; set; }
+        public DbSet<ModeloAtestado> ModelosAtestado { get; set; }
+        public DbSet<AtendimentoMedicoPrescricaoReceita> AtendimentoMedicoPrescricoesReceitas { get; set; }
+        public DbSet<AtendimentoMedicoPrescricaoReceitaHistorico> AtendimentoMedicoPrescricaoReceitaHistorico { get; set; }
+        public DbSet<AtendimentoMedicoAlergia> AtendimentoMedicoAlergias { get; set; }
+        public DbSet<AtendimentoMedicoAlergiaHistorico> AtendimentoMedicoAlergiaHistorico { get; set; }
+        public DbSet<AtendimentoMedico> AtendimentosMedicos { get; set; }
+        public DbSet<AtendimentoMedicoHistorico> AtendimentoMedicoHistorico { get; set; }
+        public DbSet<ConsultaCID> ConsultasCID { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
