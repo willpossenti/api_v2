@@ -11,7 +11,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid ExameId { get; set; }
 
-        [Required(ErrorMessage = "O grupo de exame é obrigatório")]
         public virtual GrupoExame GrupoExame { get; set; }
 
         [Required(ErrorMessage = "O nome da variavel da abertura ocular é obrigatório")]
