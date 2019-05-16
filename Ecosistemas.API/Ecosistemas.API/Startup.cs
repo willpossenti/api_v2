@@ -56,13 +56,21 @@ namespace Ecosistemas.API
             services.AddDbContext<ApiDbContext>(options =>
                     options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("DefaultConnection"))));
 
+            services.AddDbContext<KlinikosDbContext>(options =>
+        options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("KlinikosConnection"))));
+
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AutomaticAuthentication = false;
+            });
+
             //services.AddEntityFrameworkNpgsql()
             //    .AddDbContext<CatalogoDbContext>(options =>
             //    options.UseNpgsql(SegurancaService.Descriptografar(Configuration.GetConnectionString("PostgreSQLDBConnection"))));
 
 
-            services.AddDbContext<KlinikosDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("KlinikosConnection")));
+            //services.AddDbContext<KlinikosDbContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("KlinikosConnection")));
 
             services.AddScoped<UserService>();
             services.AddScoped<AccessManager>();
