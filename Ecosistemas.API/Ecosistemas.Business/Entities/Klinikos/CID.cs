@@ -17,7 +17,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
 
         [Required(ErrorMessage = "O nome do CID é obrigatório")]
-        [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
+        [StringLength(200, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]
         public string Nome { get; set; }
 

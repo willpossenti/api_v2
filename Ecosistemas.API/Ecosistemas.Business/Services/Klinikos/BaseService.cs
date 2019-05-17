@@ -12,6 +12,7 @@ using Ecosistemas.Business.Entities.Api;
 using Ecosistemas.Business.Contexto.Api;
 using System.Reflection;
 using System.Linq.Expressions;
+using System.Transactions;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -86,8 +87,10 @@ namespace Ecosistemas.Business.Services.Klinikos
                 Error.LogError(ex);
             }
 
+
             return _response;
         }
+
 
         public async Task<CustomResponse<T>> Atualizar(T entity, Guid UserId)
         {
