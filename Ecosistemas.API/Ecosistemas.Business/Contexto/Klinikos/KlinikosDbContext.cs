@@ -10,6 +10,10 @@ namespace Ecosistemas.Business.Contexto.Klinikos
 {
     public class KlinikosDbContext: DbContext
     {
+        public KlinikosDbContext()
+        {
+        }
+
         public KlinikosDbContext(DbContextOptions<KlinikosDbContext> options) : base(options)
         {
 
@@ -83,6 +87,8 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         {
 
         }
+
+      
 
     }
 }

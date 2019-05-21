@@ -56,8 +56,8 @@ namespace Ecosistemas.API
             services.AddDbContext<ApiDbContext>(options =>
                     options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("DefaultConnection"))));
 
-            services.AddDbContext<KlinikosDbContext>(options =>
-        options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("KlinikosConnection"))));
+        //    services.AddDbContext<KlinikosDbContext>(options =>
+        //options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("KlinikosConnection"))));
 
             services.Configure<IISServerOptions>(options =>
             {
@@ -69,8 +69,8 @@ namespace Ecosistemas.API
             //    options.UseNpgsql(SegurancaService.Descriptografar(Configuration.GetConnectionString("PostgreSQLDBConnection"))));
 
 
-            //services.AddDbContext<KlinikosDbContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("KlinikosConnection")));
+            services.AddDbContext<KlinikosDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("KlinikosConnection")));
 
             services.AddScoped<UserService>();
             services.AddScoped<AccessManager>();
@@ -117,6 +117,9 @@ namespace Ecosistemas.API
 
             new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
             .InitializeKlinikos();
+
+            new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+          .InitializeSigtap();
 
             app.UseCors("ApiPolicy");
             app.UseHttpsRedirection();

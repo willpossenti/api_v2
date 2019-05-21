@@ -7,7 +7,13 @@
 /Ecosistemas.API/Ecosistemas.Business/obj
 /Ecosistemas.API/Ecosistemas.API
 Ecosistemas.API/Ecosistemas.API/obj/Debug/netcoreapp2.2/Ecosistemas.API.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 Ecosistemas.API/Ecosistemas.API/obj/Debug/netcoreapp2.2/Ecosistemas.API.csprojAssemblyReference.cache
 Ecosistemas.API/Ecosistemas.API/obj/Debug/netcoreapp2.2/Ecosistemas.API.csprojAssemblyReference.cache
 *.cache
 *.props
+=======
+*.cache
+Ecosistemas.API/.vs/Ecosistemas.API/DesignTimeBuild/.dtbcache
+Ecosistemas.API/.vs/Ecosistemas.API/v16/.suo
+>>>>>>> sprint_wp_17052019_2
