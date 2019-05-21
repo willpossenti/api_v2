@@ -7,3 +7,6 @@
 /Ecosistemas.API/Ecosistemas.Business/obj
 /Ecosistemas.API/Ecosistemas.API
 Ecosistemas.API/Ecosistemas.API/obj/Debug/netcoreapp2.2/Ecosistemas.API.csproj.CoreCompileInputs.cache
+*.cache
+Ecosistemas.API/.vs/Ecosistemas.API/DesignTimeBuild/.dtbcache
+Ecosistemas.API/.vs/Ecosistemas.API/v16/.suo

@@ -135,9 +135,6 @@ namespace Ecosistemas.API.Initial
 
             }
         }
-
-
-
         public void InitializeKlinikos()
         {
 
@@ -10420,14 +10417,15 @@ namespace Ecosistemas.API.Initial
 
             }
         }
+        public void InitializeSigtap()
+        {
 
-
-
-        public void InitializeSigtap() {
-
-
-            #region carga  CID
-            var listaCID = new List<CID>() {
+            try
+            {
+                if (_contextKlinikos.CID.Count() == 0)
+                {
+                    #region carga  CID
+                    var listaCID = new List<CID>() {
 
                         new CID() { CIDId = Guid.NewGuid(), Codigo = "A00", Nome = "COLERA", Agravo = "0", Sexo = "I", Estadio ="N"},
                         new CID() { CIDId = Guid.NewGuid(), Codigo = "A000", Nome = "COLERA DEVIDA A VIBRIO CHOLERAE 01, BIOTIPO CHOLERAE", Agravo = "2", Sexo = "I", Estadio ="N"},
@@ -24664,10 +24662,21 @@ namespace Ecosistemas.API.Initial
 
                     };
 
-            var pessoaMaster = _context.Users.Where(x=>x.Master).FirstOrDefault();
+                    var pessoaMaster = _context.Users.Where(x => x.Master).FirstOrDefault();
 
-            new CIDService(_contextKlinikos, _context).AdicionarCarga(listaCID, pessoaMaster.UserId);
-            #endregion
+                    new CIDService(_contextKlinikos, _context).AdicionarCarga(listaCID, pessoaMaster.UserId);
+                    #endregion
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(
+                               ex.Message);
+
+            }
         }
     }
 }
