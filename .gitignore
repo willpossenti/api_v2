@@ -25,3 +25,6 @@ Ecosistemas.API/Ecosistemas.Security/obj/Ecosistemas.Security.csproj.nuget.g.pro
 Ecosistemas.API/Ecosistemas.Security/obj/project.assets.json
 Ecosistemas.API/Ecosistemas.Security/obj/Ecosistemas.Security.csproj.nuget.cache
 Ecosistemas.API/.vs/Ecosistemas.API/v16/.suo
+Ecosistemas.API/.vs/Ecosistemas.API/DesignTimeBuild/.dtbcache
+Ecosistemas.API/.vs/Ecosistemas.API/v16/.suo
+*.dll
