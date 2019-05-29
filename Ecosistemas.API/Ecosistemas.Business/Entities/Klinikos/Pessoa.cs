@@ -35,9 +35,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string IdadeAparente { get; set; }
         
-        public virtual Raca Raca { get; set; }
+        public Guid RacaId { get; set; }
 
-        public virtual Etnia Etnia { get; set; }
+        public Guid EtniaId { get; set; }
 
         [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 70")]
         [DataType(DataType.Text)]
@@ -52,10 +52,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Cpf { get; set; }
 
-        public virtual Justificativa Justificativa { get; set; }
-        public virtual Nacionalidade Nacionalidade { get; set; }
-        public virtual Cidade Naturalidade { get; set; }
-        public virtual OrgaoEmissor OrgaoEmissor { get; set; }
+        public Guid JustificativaId { get; set; }
+        public Guid NacionalidadeId { get; set; }
+        public Guid NaturalidadeId { get; set; }
+        public Guid OrgaoEmissorId { get; set; }
 
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
@@ -93,9 +93,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Bairro { get; set; }
 
-        public virtual Estado Estado { get; set; }
+        public Guid EstadoId { get; set; }
 
-        public virtual Cidade Cidade { get; set; }
+        public Guid CidadeId { get; set; }
 
         [StringLength(11, ErrorMessage = "{0} Precisa ter no máximo 11")]
         [DataType(DataType.Text)]
@@ -115,14 +115,14 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string PisPasep { get; set; }
 
-        public virtual Ocupacao Ocupacao { get; set; }
+        public Guid OcupacaoId { get; set; }
 
-        public virtual Pais PaisOrigem { get; set; }
+        public Guid PaisOrigemId { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime DataEntradaPis { get; set; }
 
-        public virtual TipoCertidao TipoCertidao { get; set; }
+        public Guid TipoCertidaoId { get; set; }
 
         [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
         [DataType(DataType.Text)]
@@ -172,9 +172,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool FrequentaEscola { get; set; }
 
-        public virtual Escolaridade Escolaridade { get; set; }
+        public Guid EscolaridadeId { get; set; }
 
-        public virtual SituacaoFamiliarConjugal SituacaoFamiliarConjugal { get; set; }
+        public Guid SituacaoFamiliarConjugalId { get; set; }
 
         public bool PacienteProfissional { get; set; }
 
@@ -194,7 +194,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         [Column(TypeName = "varchar(MAX)")]
         [DataType(DataType.Text)]
-        public string foto { get; set; }
+        public string Foto { get; set; }
 
         public bool Ativo { get; set; } = true;
 

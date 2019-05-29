@@ -1,5 +1,6 @@
 ﻿using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
@@ -15,13 +16,13 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class ClassificacaoRiscoService : BaseService<ClassificacaoRisco>, IClassificacaoRiscoService
     {
 
-        private IClassificacaoRiscoHistoricoService _serviceClassificacaoRiscoHistorico;
+        private readonly IClassificacaoRiscoHistoricoService _serviceClassificacaoRiscoHistorico;
         private readonly KlinikosDbContext _contextKlinikos;
 
-        public ClassificacaoRiscoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public ClassificacaoRiscoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _serviceClassificacaoRiscoHistorico = new ClassificacaoRiscoHistoricoService(contextKlinikos, context);
+            _serviceClassificacaoRiscoHistorico = new ClassificacaoRiscoHistoricoService(contextDominio, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<ClassificacaoRisco>> AdicionarClassificacaoRisco(ClassificacaoRisco classificacaoRisco, Guid userId)

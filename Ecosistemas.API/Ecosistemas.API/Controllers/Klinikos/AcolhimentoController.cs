@@ -9,25 +9,28 @@ using Microsoft.AspNetCore.Http;
 using Ecosistemas.Business;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
 
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     [Authorize("Bearer")]
     public class AcolhimentoController : Controller
     {
         private readonly IAcolhimentoService _service;
 
-        public AcolhimentoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public AcolhimentoController(DominioDbContext dominioDbContext, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new AcolhimentoService(contextKlinikos, context);
+            _service = new AcolhimentoService(dominioDbContext, contextKlinikos, context);
         }
 
         [Route("Incluir")]

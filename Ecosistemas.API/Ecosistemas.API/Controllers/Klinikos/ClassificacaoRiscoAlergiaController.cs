@@ -14,46 +14,49 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
 
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     public class ClassificacaoRiscoAlergiaController : Controller
     {
         private readonly IClassificacaoRiscoAlergiaService _service;
 
-        public ClassificacaoRiscoAlergiaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public ClassificacaoRiscoAlergiaController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new ClassificacaoRiscoAlergiaService(contextKlinikos, context);
+            _service = new ClassificacaoRiscoAlergiaService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]
         [HttpPost]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<ClassificacaoRiscoAlergia>> Incluir([FromBody]ClassificacaoRiscoAlergia classificacaoRiscoAlergia)
         {
             return await _service.AdicionarClassificacaoRiscoAlergia(classificacaoRiscoAlergia, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
 
         [HttpPut]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<ClassificacaoRiscoAlergia>> Put([FromBody]ClassificacaoRiscoAlergia classificacaoRiscoAlergia, [FromServices]AccessManager accessManager)
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<ClassificacaoRiscoAlergia>> Put([FromBody]ClassificacaoRiscoAlergia classificacaoRiscoAlergia)
         {
             return await _service.Atualizar(classificacaoRiscoAlergia, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
 
         [HttpDelete("{ClassificacaoRiscoAlergiaId}")]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<ClassificacaoRiscoAlergia>> Delete(string ClassificacaoRiscoAlergiaId)
         {
             return await _service.Remover(Guid.Parse(ClassificacaoRiscoAlergiaId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
         [HttpGet]
-        //[Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<ClassificacaoRiscoAlergia>>> Get()
         {
             return await _service.ListarTodos();

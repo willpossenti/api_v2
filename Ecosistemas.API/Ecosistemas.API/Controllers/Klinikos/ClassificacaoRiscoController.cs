@@ -14,20 +14,23 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
 
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     [Authorize("Bearer")]
     public class ClassificacaoRiscoController : Controller
     {
         private readonly IClassificacaoRiscoService _service;
 
-        public ClassificacaoRiscoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public ClassificacaoRiscoController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new ClassificacaoRiscoService(contextKlinikos, context);
+            _service = new ClassificacaoRiscoService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]
@@ -40,7 +43,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [HttpPut]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<ClassificacaoRisco>> Put([FromBody]ClassificacaoRisco classificacaoRisco, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<ClassificacaoRisco>> Put([FromBody]ClassificacaoRisco classificacaoRisco)
         {
             return await _service.Atualizar(classificacaoRisco, Guid.Parse(HttpContext.User.Identity.Name));
         }

@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class AtendimentoMedicoHistoricoService : BaseService<AtendimentoMedicoHistorico>, IAtendimentoMedicoHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public AtendimentoMedicoHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public AtendimentoMedicoHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -42,7 +41,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     FrequenciaRespiratoria = atendimentoMedico.FrequenciaRespiratoria,
                     Saturacao = atendimentoMedico.Saturacao,
                     Anamnese = atendimentoMedico.Anamnese,
-                    CID = atendimentoMedico.CID?.Nome,
+                    CID = _contextDominio.CID.FindAsync(atendimentoMedico.CIDId).Result.Nome,
                     CampoObservacao = atendimentoMedico.CampoObservacao,
                     CondutaExames = atendimentoMedico.CondutaExames,
                     CondutaAtestado = atendimentoMedico.CondutaAtestado,

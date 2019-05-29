@@ -1,5 +1,6 @@
 ﻿using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
@@ -15,13 +16,13 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class AtendimentoMedicoService : BaseService<AtendimentoMedico>, IAtendimentoMedicoService
     {
 
-        private IAtendimentoMedicoHistoricoService _serviceAtendimentoMedicoHistorico;
+        private readonly IAtendimentoMedicoHistoricoService _serviceAtendimentoMedicoHistorico;
         private readonly KlinikosDbContext _contextKlinikos;
 
-        public AtendimentoMedicoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public AtendimentoMedicoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _serviceAtendimentoMedicoHistorico = new AtendimentoMedicoHistoricoService(contextKlinikos, context);
+            _serviceAtendimentoMedicoHistorico = new AtendimentoMedicoHistoricoService(contextDominio, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<AtendimentoMedico>> AdicionarAtendimentoMedico(AtendimentoMedico atendimentoMedico, Guid userId)

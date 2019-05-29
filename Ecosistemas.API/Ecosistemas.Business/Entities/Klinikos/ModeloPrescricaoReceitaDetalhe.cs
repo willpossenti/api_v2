@@ -13,15 +13,15 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual ModeloPrescricaoReceita ModeloPrescricaoReceita { get; set; }
 
-        public virtual GrupoMedicamento GrupoMedicamento { get; set; }
+        public Guid GrupoMedicamento { get; set; }
 
-        public virtual Medicamento Medicamento { get; set; }
+        public Guid Medicamento { get; set; }
 
-        public virtual ViaAdministracaoMedicamento ViaAdministracaoMedicamento { get; set; }
+        public Guid ViaAdministracaoMedicamento { get; set; }
 
-        public virtual UnidadeMedicamento UnidadeMedicamento { get; set; }
+        public Guid UnidadeMedicamento { get; set; }
 
-        public virtual IntervaloMedicamento IntervaloMedicamento { get; set; }
+        public Guid IntervaloMedicamento { get; set; }
 
         [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 50")]
         [DataType(DataType.Text)]

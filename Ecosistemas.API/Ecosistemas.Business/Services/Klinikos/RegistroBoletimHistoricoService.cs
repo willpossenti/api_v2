@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class RegistroBoletimHistoricoService : BaseService<RegistroBoletimHistorico>, IRegistroBoletimHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public RegistroBoletimHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public RegistroBoletimHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
         }
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoRegistroBoletim(RegistroBoletim registroBoletim, PessoaProfissional pessoaProfissionalCadastro)
         {
@@ -32,13 +31,13 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Ativo = registroBoletim.Ativo,
                     DataBoletim = registroBoletim.DataBoletim,
                     EnderecoInformante = registroBoletim.EnderecoInformante,
-                    Especialidade = registroBoletim.Especialidade?.Descricao,
+                    Especialidade = _contextDominio.Especialidades.FindAsync(registroBoletim.EspecialidadeId).Result.Descricao,
                     GrauParentesco = registroBoletim.GrauParentesco,
                     NomeInformante = registroBoletim.NomeInformante,
                     NumeroBoletim = registroBoletim.NumeroBoletim,
                     RegistroBoletim = registroBoletim,
                     TelefoneInformante = registroBoletim.TelefoneInformante,
-                    TipoChegada = registroBoletim.TipoChegada?.Descricao,
+                    TipoChegada = _contextDominio.TiposChegada.FindAsync(registroBoletim.TipoChegadaId).Result.Descricao,
                     DataAlteracao = DateTime.Now,
                     PessoaAlteracao = pessoaProfissionalCadastro.NomeCompleto
                 };

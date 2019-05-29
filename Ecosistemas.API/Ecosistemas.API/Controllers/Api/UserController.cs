@@ -15,10 +15,12 @@ using Ecosistemas.Business.Interfaces.Api;
 using Ecosistemas.Business.Services.Api;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     [Authorize("Bearer")]
     public class UserController : Controller

@@ -64,9 +64,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string SuspeitaDiagnostico { get; set; }
 
-        public virtual CID CID { get; set; }
+        public Guid CIDId { get; set; }
 
-        public virtual ConsultaCID ConsultaCID { get; set; }
+        public Guid ConsultaCIDId { get; set; }
 
         public bool CondutaExames { get; set; }
 

@@ -15,9 +15,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public virtual PessoaPaciente PessoaPaciente { get; set; }
 
         [Required(ErrorMessage = "Especialidade obrigatoria")]
-        public virtual Especialidade Especialidade { get; set; }
+        public Guid EspecialidadeId { get; set; }
 
-        public virtual Preferencial Preferencial { get; set; }
+        public Guid PreferencialId { get; set; }
 
         public bool Risco { get; set; }
 

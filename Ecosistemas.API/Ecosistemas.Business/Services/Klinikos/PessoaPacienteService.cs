@@ -1,6 +1,7 @@
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,14 +19,12 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class PessoaPacienteService : BaseService<PessoaPaciente>, IPessoaPacienteService
     {
         private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
-        private IPessoaHistoricoService _servicePessoaHistorico;
+        private readonly IPessoaHistoricoService _servicePessoaHistorico;
 
-        public PessoaPacienteService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public PessoaPacienteService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _context = context;
-            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
+            _servicePessoaHistorico = new PessoaHistoricoService(contextDominio, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<PessoaPaciente>> AdicionarPaciente(PessoaPaciente pessoaPaciente, Guid userId)
@@ -100,7 +99,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                {
 
-                   var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
+                   var _pessoaEncontrado = _contextKlinikos.PessoaPacientes.Where(_filtroNome).ToList().FirstOrDefault();
 
 
                    if (_pessoaEncontrado != null)
@@ -141,7 +140,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
+                    var _pessoaEncontrado = _contextKlinikos.PessoaPacientes.Where(_filtroNome).ToList().FirstOrDefault();
 
 
                     if (_pessoaEncontrado != null)
@@ -182,7 +181,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList().FirstOrDefault();
+                    var _pessoaEncontrado = _contextKlinikos.PessoaPacientes.Where(_filtroNome).ToList().FirstOrDefault();
 
 
                     if (_pessoaEncontrado != null)
@@ -222,7 +221,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                 {
 
-                    var _listaPacientes = Paciente.Where(_filtroNome).Take(5).ToList();
+                    var _listaPacientes = _contextKlinikos.PessoaPacientes.Where(_filtroNome).Take(5).ToList();
 
                     if (_listaPacientes != null)
                     {
@@ -263,7 +262,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                 {
 
-                    var _listaPacientes = Paciente.Where(_filtroNome).Take(5).ToList();
+                    var _listaPacientes = _contextKlinikos.PessoaPacientes.Where(_filtroNome).Take(5).ToList();
 
                     if (_listaPacientes != null)
                     {
@@ -306,7 +305,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                 {
 
-                    var _pessoaEncontrado = Paciente.Where(_filtroNome).ToList();
+                    var _pessoaEncontrado = _contextKlinikos.PessoaPacientes.Where(_filtroNome).ToList();
 
 
                     if (_pessoaEncontrado != null)
@@ -334,28 +333,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-        protected internal IQueryable<PessoaPaciente> Paciente
-        {
-
-
-            get
-            {
-                return _contextKlinikos.PessoaPacientes
-                   .Include(pessoa => pessoa.Raca)
-                   .Include(pessoa => pessoa.Etnia)
-                   .Include(pessoa => pessoa.Justificativa)
-                   .Include(pessoa => pessoa.Nacionalidade)
-                   .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
-                   .Include(pessoa => pessoa.OrgaoEmissor)
-                   .Include(pessoa => pessoa.Estado)
-                   .Include(pessoa => pessoa.Cidade)
-                   .Include(pessoa => pessoa.Ocupacao)
-                   .Include(pessoa => pessoa.PaisOrigem)
-                   .Include(pessoa => pessoa.TipoCertidao)
-                   .Include(pessoa => pessoa.Escolaridade)
-                   .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
-            }
-        }
+      
 
     }
 

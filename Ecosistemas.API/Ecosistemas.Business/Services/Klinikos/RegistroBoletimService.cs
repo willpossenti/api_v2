@@ -1,5 +1,6 @@
 ﻿using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
@@ -15,16 +16,14 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class RegistroBoletimService : BaseService<RegistroBoletim>, IRegistroBoletimService
     {
         private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
-        private IPessoaHistoricoService _servicePessoaHistorico;
-        private IRegistroBoletimHistoricoService _serviceRegistroBoletimHistorico;
+        private readonly IPessoaHistoricoService _servicePessoaHistorico;
+        private readonly IRegistroBoletimHistoricoService _serviceRegistroBoletimHistorico;
 
-        public RegistroBoletimService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public RegistroBoletimService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _context = context;
-            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
-            _serviceRegistroBoletimHistorico = new RegistroBoletimHistoricoService(contextKlinikos, context);
+            _servicePessoaHistorico = new PessoaHistoricoService(contextDominio, contextKlinikos, context);
+            _serviceRegistroBoletimHistorico = new RegistroBoletimHistoricoService(contextDominio, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<RegistroBoletim>> AdicionarRegistroBoletim(RegistroBoletim registroBoletim, Guid userId)

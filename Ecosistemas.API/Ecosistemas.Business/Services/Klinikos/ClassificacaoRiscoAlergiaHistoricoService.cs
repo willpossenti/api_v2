@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class ClassificacaoRiscoAlergiaHistoricoService : BaseService<ClassificacaoRiscoAlergiaHistorico>, IClassificacaoRiscoAlergiaHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public ClassificacaoRiscoAlergiaHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public ClassificacaoRiscoAlergiaHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -32,11 +31,11 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _ClassificacaoRiscoAlergiaHistorico = new ClassificacaoRiscoAlergiaHistorico
                 {
                     ClassificacaoRiscoAlergia = classificacaoRiscoAlergia,
-                    Alergia = classificacaoRiscoAlergia.Alergia?.Nome,
-                    TipoAlergia = classificacaoRiscoAlergia.TipoAlergia?.Descricao,
-                    LocalizacaoAlergia = classificacaoRiscoAlergia.LocalizacaoAlergia?.Nome,
-                    ReacaoAlergia = classificacaoRiscoAlergia.ReacaoAlergia?.Descricao,
-                    SeveridadeAlergia = classificacaoRiscoAlergia.SeveridadeAlergia?.Nome,
+                    Alergia = _contextDominio.Alergias.FindAsync(classificacaoRiscoAlergia.AlergiaId).Result.Nome,
+                    TipoAlergia = _contextDominio.TiposAlergia.FindAsync(classificacaoRiscoAlergia.TipoAlergiaId).Result.Descricao,
+                    LocalizacaoAlergia = _contextDominio.LocalizacoesAlergia.FindAsync(classificacaoRiscoAlergia.LocalizacaoAlergiaId).Result.Nome,
+                    ReacaoAlergia = _contextDominio.ReacoesAlergia.FindAsync(classificacaoRiscoAlergia.ReacaoAlergiaId).Result.Descricao,
+                    SeveridadeAlergia = _contextDominio.SeveridadesAlergia.FindAsync(classificacaoRiscoAlergia.SeveridadeAlergiaId).Result.Nome,
                     AlergiaSituacao = classificacaoRiscoAlergia.AlergiaSituacao,
                     DataSintomas = classificacaoRiscoAlergia.DataSintomas,
                     Ativo = classificacaoRiscoAlergia.Ativo,

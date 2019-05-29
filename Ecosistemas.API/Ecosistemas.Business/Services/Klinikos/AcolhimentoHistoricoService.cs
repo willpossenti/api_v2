@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class AcolhimentoHistoricoService : BaseService<AcolhimentoHistorico>, IAcolhimentoHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public AcolhimentoHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public AcolhimentoHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -36,8 +35,8 @@ namespace Ecosistemas.Business.Services.Klinikos
                     CPF = acolhimento.PessoaPaciente?.Cpf,
                     CNS = acolhimento.PessoaPaciente?.Cns,
                     NomeSocial = acolhimento.PessoaPaciente?.NomeSocial,
-                    Especialidade = acolhimento.Especialidade?.Descricao,
-                    Preferencial = acolhimento.Preferencial?.Nome,
+                    Especialidade = _contextDominio.Escolaridades.FindAsync(acolhimento.AcolhimentoId).Result.Descricao,
+                    Preferencial = _contextDominio.Preferenciais.FindAsync(acolhimento.PreferencialId).Result.Nome,
                     Risco = acolhimento.Risco,
                     Peso = acolhimento.Peso,
                     Altura = acolhimento.Altura,

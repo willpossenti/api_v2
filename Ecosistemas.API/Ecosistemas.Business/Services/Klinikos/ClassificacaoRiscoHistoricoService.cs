@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class ClassificacaoRiscoHistoricoService : BaseService<ClassificacaoRiscoHistorico>, IClassificacaoRiscoHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public ClassificacaoRiscoHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public ClassificacaoRiscoHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -41,13 +40,13 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Pulso = classificacaoRisco.Pulso,
                     FrequenciaRespiratoria = classificacaoRisco.FrequenciaRespiratoria,
                     Saturacao = classificacaoRisco.Saturacao,
-                    EscalaDor = classificacaoRisco.EscalaDor?.Descricao,
+                    EscalaDor = _contextDominio.EscalasDor.FindAsync(classificacaoRisco.EscalaDorId).Result.Descricao,
                     DescricaoQueixa = classificacaoRisco.DescricaoQueixa,
-                    NivelConsciencia = classificacaoRisco.NivelConsciencia?.Descricao,
-                    TipoChegada = classificacaoRisco.TipoChegada?.Descricao,
+                    NivelConsciencia = _contextDominio.NiveisConsciencia.FindAsync(classificacaoRisco.NivelConscienciaId).Result.Descricao,
+                    TipoChegada = _contextDominio.TiposChegada.FindAsync(classificacaoRisco.TipoChegadaId).Result.Descricao,
                     Avaliacao = classificacaoRisco.Avaliacao,
                     Sutura = classificacaoRisco.Sutura,
-                    CausaExterna = classificacaoRisco.CausaExterna?.Descricao,
+                    CausaExterna = _contextDominio.CausasExternas.FindAsync(classificacaoRisco.CausaExternaId).Result.Descricao,
                     Cardiopata = classificacaoRisco.Cardiopata,
                     Diabete = classificacaoRisco.Diabete,
                     Hipertensao = classificacaoRisco.Hipertensao,
@@ -56,13 +55,13 @@ namespace Ecosistemas.Business.Services.Klinikos
                     RenalCronico = classificacaoRisco.RenalCronico,
                     RespiratoriaCronica = classificacaoRisco.RespiratoriaCronica,
                     ObservacaoRespiratoriaCronica = classificacaoRisco.ObservacaoRespiratoriaCronica,
-                    Especialidade = classificacaoRisco.Especialidade?.Descricao,
-                    Risco = classificacaoRisco.Risco?.Descricao,
-                    AberturaOcular = classificacaoRisco.AberturaOcular?.Variavel,
-                    RespostaVerbal = classificacaoRisco.RespostaVerbal?.Variavel,
-                    RespostaMotora = classificacaoRisco.RespostaMotora?.Variavel,
+                    Especialidade = _contextDominio.Especialidades.FindAsync(classificacaoRisco.EspecialidadeId).Result.Descricao,
+                    Risco = _contextDominio.Riscos.FindAsync(classificacaoRisco.RiscoId).Result.Descricao,
+                    AberturaOcular = _contextDominio.AberturasOculares.FindAsync(classificacaoRisco.AberturaOcularId).Result.Variavel,
+                    RespostaVerbal = _contextDominio.RespostasVerbais.FindAsync(classificacaoRisco.RespostaVerbalId).Result.Variavel,
+                    RespostaMotora = _contextDominio.RespostasMotoras.FindAsync(classificacaoRisco.RespostaMotoraId).Result.Variavel,
                     Procedencia = classificacaoRisco.Procedencia,
-                    TipoOcorrencia = classificacaoRisco.TipoOcorrencia?.Descricao,
+                    TipoOcorrencia = _contextDominio.TiposOcorrencia.FindAsync(classificacaoRisco.TipoOcorrenciaId).Result.Descricao,
                     DataOcorrencia = classificacaoRisco.DataOcorrencia,
                     Pab = classificacaoRisco.Pab,
                     Paf = classificacaoRisco.Paf,
@@ -71,8 +70,8 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Numero = classificacaoRisco.Numero,
                     Complemento = classificacaoRisco.Complemento,
                     Bairro = classificacaoRisco.Bairro,
-                    Estado = classificacaoRisco.Estado?.Nome,
-                    Cidade = classificacaoRisco.Cidade?.Nome,
+                    Estado = _contextDominio.Estados.FindAsync(classificacaoRisco.EstadoId).Result.Nome,
+                    Cidade = _contextDominio.Cidades.FindAsync(classificacaoRisco.CidadeId).Result.Nome,
                     PessoaAlteracao = pessoaProfissionalCadastro.NomeCompleto,
                     DataAlteracao = DateTime.Now,
                     Ativo = classificacaoRisco.Ativo,

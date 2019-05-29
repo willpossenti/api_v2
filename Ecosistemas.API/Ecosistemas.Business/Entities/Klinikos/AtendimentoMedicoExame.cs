@@ -17,9 +17,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool ExameImagem { get; set; }
 
-        public virtual GrupoExame GrupoExame { get; set; }
+        public Guid GrupoExameId { get; set; }
 
-        public virtual Exame Exame { get; set; }
+        public Guid ExameId { get; set; }
 
         [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]

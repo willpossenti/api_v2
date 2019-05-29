@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class AtendimentoMedicoPrescricaoReceitaHistoricoService : BaseService<AtendimentoMedicoPrescricaoReceitaHistorico>, IAtendimentoMedicoPrescricaoReceitaHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public AtendimentoMedicoPrescricaoReceitaHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public AtendimentoMedicoPrescricaoReceitaHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -33,11 +32,11 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
                     AtendimentoMedicoPrescricaoReceita = atendimentoMedicoPrescricaoReceita,
                     Dose = atendimentoMedicoPrescricaoReceita.Dose,
-                    GrupoMedicamento = atendimentoMedicoPrescricaoReceita.GrupoMedicamento?.Nome,
-                    Medicamento = atendimentoMedicoPrescricaoReceita.Medicamento?.Nome,
-                    ViaAdministracaoMedicamento = atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamento?.Descricao,
-                    IntervaloMedicamento = atendimentoMedicoPrescricaoReceita.IntervaloMedicamento?.Descricao,
-                    UnidadeMedicamento = atendimentoMedicoPrescricaoReceita.UnidadeMedicamento?.Descricao,
+                    GrupoMedicamento = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.Nome,
+                    Medicamento = _contextDominio.Medicamentos.FindAsync(atendimentoMedicoPrescricaoReceita.MedicamentoId).Result.Nome,
+                    ViaAdministracaoMedicamento = _contextDominio.ViasAdministracaoMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamentoId).Result.Descricao,
+                    IntervaloMedicamento = _contextDominio.IntervalosMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.IntervaloMedicamentoId).Result.Descricao,
+                    UnidadeMedicamento = _contextDominio.UnidadesMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.UnidadeMedicamentoId).Result.Descricao,
                     Observacao = atendimentoMedicoPrescricaoReceita?.Observacao,
                     Prescricao = atendimentoMedicoPrescricaoReceita.Prescricao,
                     Receita = atendimentoMedicoPrescricaoReceita.Receita,

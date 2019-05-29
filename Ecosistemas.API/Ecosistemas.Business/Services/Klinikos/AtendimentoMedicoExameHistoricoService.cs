@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class AtendimentoMedicoExameHistoricoService : BaseService<AtendimentoMedicoExameHistorico>, IAtendimentoMedicoExameHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public AtendimentoMedicoExameHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public AtendimentoMedicoExameHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -32,10 +31,10 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoExameHistorico = new AtendimentoMedicoExameHistorico
                 {
                     AtendimentoMedicoExame = atendimentoMedicoExame,
-                    ExameLaboratorial = atendimentoMedicoExame.ExameLaboratorial,
-                    ExameImagem = atendimentoMedicoExame.ExameImagem,
-                    GrupoExame = atendimentoMedicoExame.GrupoExame?.Nome,
-                    Exame = atendimentoMedicoExame.Exame?.Nome,
+                    //ExameLaboratorial = _contextDominio.Alergias.FindAsync(atendimentoMedicoAlergia.AlergiaId).Result.Nome,
+                    //ExameImagem = atendimentoMedicoExame.ExameImagem,
+                    GrupoExame = _contextDominio.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExameId).Result.Nome,
+                    Exame = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.ExameId).Result.Nome,
                     ObservacaoExame = atendimentoMedicoExame.ObservacaoExame,
                     Ativo = atendimentoMedicoExame.Ativo,
                 };

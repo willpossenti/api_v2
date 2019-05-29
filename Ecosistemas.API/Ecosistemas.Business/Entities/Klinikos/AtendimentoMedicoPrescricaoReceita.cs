@@ -11,19 +11,19 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid AtendimentoMedicoPrescricaoReceitaId { get; set; }
 
-        public virtual GrupoMedicamento GrupoMedicamento { get; set; }
+        public Guid GrupoMedicamentoId { get; set; }
 
-        public virtual Medicamento Medicamento { get; set; }
+        public Guid MedicamentoId { get; set; }
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
         public string Dose { get; set; }
 
-        public virtual ViaAdministracaoMedicamento ViaAdministracaoMedicamento { get; set; }
+        public Guid ViaAdministracaoMedicamentoId { get; set; }
 
-        public virtual UnidadeMedicamento UnidadeMedicamento { get; set; }
+        public Guid UnidadeMedicamentoId { get; set; }
 
-        public virtual IntervaloMedicamento IntervaloMedicamento { get; set; }
+        public Guid IntervaloMedicamentoId { get; set; }
 
         [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 50")]
         [DataType(DataType.Text)]

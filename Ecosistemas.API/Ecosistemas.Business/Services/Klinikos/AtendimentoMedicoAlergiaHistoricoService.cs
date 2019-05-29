@@ -1,6 +1,7 @@
 ﻿using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,13 +13,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class AtendimentoMedicoAlergiaHistoricoService : BaseService<AtendimentoMedicoAlergiaHistorico>, IAtendimentoMedicoAlergiaHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
 
-        public AtendimentoMedicoAlergiaHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public AtendimentoMedicoAlergiaHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+            _contextDominio = contextDominio;
 
         }
 
@@ -32,11 +31,11 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoAlergiaHistorico = new AtendimentoMedicoAlergiaHistorico
                 {
                     AtendimentoMedicoAlergia = atendimentoMedicoAlergia,
-                    Alergia = atendimentoMedicoAlergia.Alergia?.Nome,
-                    TipoAlergia = atendimentoMedicoAlergia.TipoAlergia?.Descricao,
-                    LocalizacaoAlergia = atendimentoMedicoAlergia.LocalizacaoAlergia?.Nome,
-                    ReacaoAlergia = atendimentoMedicoAlergia.ReacaoAlergia?.Descricao,
-                    SeveridadeAlergia = atendimentoMedicoAlergia.SeveridadeAlergia?.Nome,
+                    Alergia = _contextDominio.Alergias.FindAsync(atendimentoMedicoAlergia.AlergiaId).Result.Nome,
+                    TipoAlergia = _contextDominio.TiposAlergia.FindAsync(atendimentoMedicoAlergia.TipoAlergiaId).Result.Descricao,
+                    LocalizacaoAlergia = _contextDominio.LocalizacoesAlergia.FindAsync(atendimentoMedicoAlergia.LocalizacaoAlergiaId).Result.Nome,
+                    ReacaoAlergia = _contextDominio.ReacoesAlergia.FindAsync(atendimentoMedicoAlergia.ReacaoAlergiaId).Result.Descricao,
+                    SeveridadeAlergia = _contextDominio.SeveridadesAlergia.FindAsync(atendimentoMedicoAlergia.SeveridadeAlergiaId).Result.Nome,
                     AlergiaSituacao = atendimentoMedicoAlergia.AlergiaSituacao,
                     DataSintomas = atendimentoMedicoAlergia.DataSintomas,
                     Ativo = atendimentoMedicoAlergia.Ativo,

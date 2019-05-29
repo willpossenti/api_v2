@@ -11,20 +11,19 @@ using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaProfissionalService : BaseService<PessoaProfissional>, IPessoaProfissionalService
     {
         private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _contextApi;
-        private IPessoaHistoricoService _servicePessoaHistorico;
+        private readonly IPessoaHistoricoService _servicePessoaHistorico;
 
-        public PessoaProfissionalService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public PessoaProfissionalService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _contextApi = context;
-            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
+            _servicePessoaHistorico = new PessoaHistoricoService(contextDominio, contextKlinikos, context);
         }
 
 
@@ -90,7 +89,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await Task.Run(() =>
                 {
 
-                    var _pessoaEncontrado = Profissional
+                    var _pessoaEncontrado = _contextKlinikos.PessoaProfissionais
                     .Where(_filtroNome).ToList().FirstOrDefault();
 
                     if (_pessoaEncontrado != null)
@@ -150,7 +149,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _pessoaEncontrado = Profissional.Where(_filtroNome).ToList().FirstOrDefault();
+                    var _pessoaEncontrado = _contextKlinikos.PessoaProfissionais.Where(_filtroNome).ToList().FirstOrDefault();
 
                     if (_pessoaEncontrado != null)
                     {
@@ -190,7 +189,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _pessoaEncontrado = Profissional.Where(_filtroNome).ToList().FirstOrDefault();
+                    var _pessoaEncontrado = _contextKlinikos.PessoaProfissionais.Where(_filtroNome).ToList().FirstOrDefault();
 
 
                     if (_pessoaEncontrado != null)
@@ -231,7 +230,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _listaProfissionais = Profissional.Where(_filtroNome).Take(5).ToList();
+                    var _listaProfissionais = _contextKlinikos.PessoaProfissionais.Where(_filtroNome).Take(5).ToList();
 
                     if (_listaProfissionais != null)
                     {
@@ -273,7 +272,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _pessoaEncontrado = Profissional.Where(_filtroNome).ToList();
+                    var _pessoaEncontrado = _contextKlinikos.PessoaProfissionais.Where(_filtroNome).ToList();
 
                     if (_pessoaEncontrado != null)
                     {
@@ -300,27 +299,6 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-        protected internal IQueryable<PessoaProfissional> Profissional
-        {
-
-
-            get
-            {
-                return _contextKlinikos.PessoaProfissionais
-                   .Include(pessoa => pessoa.Raca)
-                   .Include(pessoa => pessoa.Etnia)
-                   .Include(pessoa => pessoa.Justificativa)
-                   .Include(pessoa => pessoa.Nacionalidade)
-                   .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
-                   .Include(pessoa => pessoa.OrgaoEmissor)
-                   .Include(pessoa => pessoa.Estado)
-                   .Include(pessoa => pessoa.Cidade)
-                   .Include(pessoa => pessoa.Ocupacao)
-                   .Include(pessoa => pessoa.PaisOrigem)
-                   .Include(pessoa => pessoa.TipoCertidao)
-                   .Include(pessoa => pessoa.Escolaridade)
-                   .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
-            }
-        }
+      
     }
 }

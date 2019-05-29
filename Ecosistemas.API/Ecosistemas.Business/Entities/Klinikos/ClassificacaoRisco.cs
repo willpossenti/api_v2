@@ -17,11 +17,11 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string DescricaoQueixa { get; set; }
 
-        public virtual CausaExterna CausaExterna { get; set; }
+        public Guid CausaExternaId { get; set; }
 
-        public virtual NivelConsciencia NivelConsciencia { get; set; }
+        public Guid NivelConscienciaId { get; set; }
 
-        public virtual EscalaDor EscalaDor { get; set; }
+        public Guid EscalaDorId { get; set; }
 
         public bool Sutura { get; set; }
 
@@ -87,21 +87,21 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public string Avaliacao { get; set; }
 
         [Required(ErrorMessage = "O tipo de chegada obrigatório")]
-        public virtual TipoChegada TipoChegada { get; set; }
+        public Guid TipoChegadaId { get; set; }
 
         [Required(ErrorMessage = "A especialidade é obrigatória")]
-        public virtual Especialidade Especialidade { get; set; }
+        public Guid EspecialidadeId { get; set; }
 
         [Required(ErrorMessage = "O risco é obrigatório")]
-        public virtual Risco Risco { get; set; }
+        public Guid RiscoId { get; set; }
 
         public virtual List<ClassificacaoRiscoAlergia> ClassificacoesRiscoAlergia { get; set; }
 
-        public virtual AberturaOcular AberturaOcular { get; set; }
+        public Guid AberturaOcularId { get; set; }
 
-        public virtual RespostaVerbal RespostaVerbal { get; set; }
+        public Guid RespostaVerbalId { get; set; }
 
-        public virtual RespostaMotora RespostaMotora { get; set; }
+        public Guid RespostaMotoraId { get; set; }
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
@@ -111,7 +111,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Procedencia { get; set; }
 
-        public virtual TipoOcorrencia TipoOcorrencia { get; set; }
+        public Guid TipoOcorrenciaId { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime? DataOcorrencia { get; set; }
@@ -140,9 +140,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Bairro { get; set; }
 
-        public virtual Estado Estado { get; set; }
+        public Guid EstadoId { get; set; }
 
-        public virtual Cidade Cidade { get; set; }
+        public Guid CidadeId { get; set; }
 
         public bool Ativo { get; set; } = true;
 

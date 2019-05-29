@@ -16,19 +16,22 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     [Authorize("Bearer")]
     public class RegistroBoletimController : Controller
     {
         private readonly IRegistroBoletimService _service;
 
-        public RegistroBoletimController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public RegistroBoletimController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new RegistroBoletimService(contextKlinikos, context);
+            _service = new RegistroBoletimService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]
@@ -41,7 +44,7 @@ namespace Ecosistemas.API.Controllers.Api
 
         [HttpPut]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<RegistroBoletim>> Put([FromBody]RegistroBoletim registroBoletim, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<RegistroBoletim>> Put([FromBody]RegistroBoletim registroBoletim)
         {
             return await _service.Atualizar(registroBoletim, Guid.Parse(HttpContext.User.Identity.Name));
         }

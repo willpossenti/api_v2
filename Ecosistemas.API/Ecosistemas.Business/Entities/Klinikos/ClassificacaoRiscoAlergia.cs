@@ -14,16 +14,16 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public virtual ClassificacaoRisco ClassificacaoRisco { get; set; }
 
         [Required(ErrorMessage = "O nome da alergia é obrigatório")]
-        public virtual Alergia Alergia { get; set; }
+        public Guid AlergiaId { get; set; }
 
         [Required(ErrorMessage = "O nome do tipo de alegia é obrigatório")]
-        public virtual TipoAlergia TipoAlergia { get; set; }
+        public Guid TipoAlergiaId { get; set; }
 
-        public virtual LocalizacaoAlergia LocalizacaoAlergia { get; set; }
+        public Guid LocalizacaoAlergiaId { get; set; }
 
-        public virtual ReacaoAlergia ReacaoAlergia { get; set; }
+        public Guid ReacaoAlergiaId { get; set; }
 
-        public virtual SeveridadeAlergia SeveridadeAlergia { get; set; }
+        public Guid SeveridadeAlergiaId { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime? DataSintomas { get; set; }

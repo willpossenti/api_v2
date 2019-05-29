@@ -21,9 +21,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Required]
         public virtual PessoaPaciente Pessoa { get; set; }
 
-        public virtual TipoChegada TipoChegada { get; set; }
+        public Guid TipoChegadaId { get; set; }
 
-        public virtual Especialidade Especialidade { get; set; }
+        public Guid EspecialidadeId { get; set; }
 
         [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 30")]
         [DataType(DataType.Text)]
@@ -40,9 +40,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
         public string GrauParentesco { get; set; }
-
-       
-
         public bool Ativo { get; set; } = true;
 
 

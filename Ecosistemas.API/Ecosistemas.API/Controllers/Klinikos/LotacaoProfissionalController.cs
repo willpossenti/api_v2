@@ -16,10 +16,12 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     [Authorize("Bearer")]
     public class LotacaoProfissionalController : Controller

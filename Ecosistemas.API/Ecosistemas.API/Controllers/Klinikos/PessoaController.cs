@@ -16,10 +16,13 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
+using Microsoft.AspNetCore.Cors;
 
 namespace Ecosistemas.API.Controllers.Api
 {
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     [Authorize("Bearer")]
     public class PessoaController : Controller
@@ -28,10 +31,10 @@ namespace Ecosistemas.API.Controllers.Api
         private readonly IPessoaPacienteService _servicePaciente;
         private readonly IPessoaProfissionalService _serviceProfissional;
 
-        public PessoaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public PessoaController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _servicePaciente = new PessoaPacienteService(contextKlinikos, context);
-            _serviceProfissional = new PessoaProfissionalService(contextKlinikos, context);
+            _servicePaciente = new PessoaPacienteService(contextDominio, contextKlinikos, context);
+            _serviceProfissional = new PessoaProfissionalService(contextDominio, contextKlinikos, context);
         }
 
         [Route("PessoaPaciente/Incluir")]
@@ -56,7 +59,7 @@ namespace Ecosistemas.API.Controllers.Api
         [HttpPut]
         [Route("PessoaPaciente/Alterar")]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<PessoaPaciente>> Put([FromBody]PessoaPaciente pessoapaciente, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<PessoaPaciente>> Put([FromBody]PessoaPaciente pessoapaciente)
         {
             return await _servicePaciente.AtualizarPaciente(pessoapaciente, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }

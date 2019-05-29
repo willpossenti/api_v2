@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Ecosistemas.Business.Services.Api;
 using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.API.Initial;
 using Ecosistemas.Security.Manager;
 using static Ecosistemas.Security.Manager.Util;
@@ -72,6 +73,9 @@ namespace Ecosistemas.API
             services.AddDbContext<KlinikosDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("KlinikosConnection")));
 
+            services.AddDbContext<DominioDbContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("DominioConnection")));
+
             services.AddScoped<UserService>();
             services.AddScoped<AccessManager>();
 
@@ -96,12 +100,14 @@ namespace Ecosistemas.API
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader();
+
+                
             }));
 
-
+            
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApiDbContext context, KlinikosDbContext klinikosDbContext, IServiceProvider services)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApiDbContext context, KlinikosDbContext klinikosDbContext, DominioDbContext DominioDbContext, IServiceProvider services)
         {
             if (env.IsDevelopment())
             {
@@ -118,7 +124,10 @@ namespace Ecosistemas.API
             new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
             .InitializeKlinikos();
 
-            new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+            new IdentityInitializer(DominioDbContext, klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+            .InitializeDominio();
+
+            new IdentityInitializer(DominioDbContext, klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
           .InitializeSigtap();
 
             app.UseCors("ApiPolicy");
