@@ -32,11 +32,10 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoExameHistorico = new AtendimentoMedicoExameHistorico
                 {
                     AtendimentoMedicoExame = atendimentoMedicoExame,
-                    ExameLaboratorial = atendimentoMedicoExame.ExameLaboratorial,
-                    ExameImagem = atendimentoMedicoExame.ExameImagem,
                     GrupoExame = atendimentoMedicoExame.GrupoExame?.Nome,
                     Exame = atendimentoMedicoExame.Exame?.Nome,
                     ObservacaoExame = atendimentoMedicoExame.ObservacaoExame,
+                    DataExame = atendimentoMedicoExame.DataExame,
                     Ativo = atendimentoMedicoExame.Ativo,
                 };
 

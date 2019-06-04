@@ -33,7 +33,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
                     AtendimentoMedicoPrescricaoReceita = atendimentoMedicoPrescricaoReceita,
                     Dose = atendimentoMedicoPrescricaoReceita.Dose,
-                    GrupoMedicamento = atendimentoMedicoPrescricaoReceita.GrupoMedicamento?.Nome,
+                    GrupoMedicamentoDetalhe = atendimentoMedicoPrescricaoReceita.GrupoMedicamentoDetalhe?.Nome,
                     Medicamento = atendimentoMedicoPrescricaoReceita.Medicamento?.Nome,
                     ViaAdministracaoMedicamento = atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamento?.Descricao,
                     IntervaloMedicamento = atendimentoMedicoPrescricaoReceita.IntervaloMedicamento?.Descricao,

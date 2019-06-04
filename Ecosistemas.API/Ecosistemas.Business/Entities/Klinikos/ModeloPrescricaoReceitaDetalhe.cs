@@ -13,7 +13,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual ModeloPrescricaoReceita ModeloPrescricaoReceita { get; set; }
 
-        public virtual GrupoMedicamento GrupoMedicamento { get; set; }
+        public virtual GrupoMedicamentoDetalhe GrupoMedicamentoDetalhe { get; set; }
 
         public virtual Medicamento Medicamento { get; set; }
 

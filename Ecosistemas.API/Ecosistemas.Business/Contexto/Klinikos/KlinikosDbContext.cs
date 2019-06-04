@@ -70,6 +70,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<ModeloPrescricaoReceita> ModelosPrescricaoReceita { get; set; }
         public DbSet<ModeloPrescricaoReceitaDetalhe> ModeloPrescricaoReceitaDetalhes { get; set; }
         public DbSet<Medicamento> Medicamentos { get; set; }
+        public DbSet<GrupoMedicamentoDetalhe> GrupoMedicamentoDetalhes { get; set; }
         public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
         public DbSet<ViaAdministracaoMedicamento> ViasAdministracaoMedicamento { get; set; }
         public DbSet<UnidadeMedicamento> UnidadesMedicamento { get; set; }

@@ -19,7 +19,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
-        public string GrupoMedicamento { get; set; }
+        public string GrupoMedicamentoDetalhe { get; set; }
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]

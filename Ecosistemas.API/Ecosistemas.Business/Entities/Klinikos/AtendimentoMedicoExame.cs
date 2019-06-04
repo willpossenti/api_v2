@@ -13,10 +13,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedico AtendimentoMedico { get; set; }
 
-        public bool ExameLaboratorial { get; set; }
-
-        public bool ExameImagem { get; set; }
-
         public virtual GrupoExame GrupoExame { get; set; }
 
         public virtual Exame Exame { get; set; }
@@ -25,7 +21,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string ObservacaoExame { get; set; }
 
-        public bool Ativo { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? DataExame { get; set; }
+
+        public bool Ativo { get; set; } = true;
 
     }
 }
