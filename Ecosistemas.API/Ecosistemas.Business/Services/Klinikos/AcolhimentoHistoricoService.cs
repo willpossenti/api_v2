@@ -35,8 +35,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                     CPF = acolhimento.PessoaPaciente?.Cpf,
                     CNS = acolhimento.PessoaPaciente?.Cns,
                     NomeSocial = acolhimento.PessoaPaciente?.NomeSocial,
-                    Especialidade = _contextDominio.Escolaridades.FindAsync(acolhimento.AcolhimentoId).Result.Descricao,
-                    Preferencial = _contextDominio.Preferenciais.FindAsync(acolhimento.PreferencialId).Result.Nome,
                     Risco = acolhimento.Risco,
                     Peso = acolhimento.Peso,
                     Altura = acolhimento.Altura,
@@ -51,6 +49,13 @@ namespace Ecosistemas.Business.Services.Klinikos
                     DataAlteracao = DateTime.Now,
                     Ativo = acolhimento.Ativo,
                 };
+
+
+                if (acolhimento.EspecialidadeId != Guid.Empty)
+                    _AcolhimentoHistorico.Especialidade = _contextDominio.Especialidades.FindAsync(acolhimento.EspecialidadeId).Result.Descricao;
+
+                if (acolhimento.PreferencialId != Guid.Empty)
+                    _AcolhimentoHistorico.Preferencial = _contextDominio.Preferenciais.FindAsync(acolhimento.PreferencialId).Result.Nome;
 
                 await base.Adicionar(_AcolhimentoHistorico, pessoaProfissionalCadastro.PessoaId);
 

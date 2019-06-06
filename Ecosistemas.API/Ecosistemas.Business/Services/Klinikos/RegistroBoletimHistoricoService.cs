@@ -31,16 +31,21 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Ativo = registroBoletim.Ativo,
                     DataBoletim = registroBoletim.DataBoletim,
                     EnderecoInformante = registroBoletim.EnderecoInformante,
-                    Especialidade = _contextDominio.Especialidades.FindAsync(registroBoletim.EspecialidadeId).Result.Descricao,
                     GrauParentesco = registroBoletim.GrauParentesco,
                     NomeInformante = registroBoletim.NomeInformante,
                     NumeroBoletim = registroBoletim.NumeroBoletim,
                     RegistroBoletim = registroBoletim,
                     TelefoneInformante = registroBoletim.TelefoneInformante,
-                    TipoChegada = _contextDominio.TiposChegada.FindAsync(registroBoletim.TipoChegadaId).Result.Descricao,
                     DataAlteracao = DateTime.Now,
                     PessoaAlteracao = pessoaProfissionalCadastro.NomeCompleto
                 };
+
+                if (registroBoletim.EspecialidadeId != Guid.Empty)
+                    _registroBoletimHistorico.Especialidade = _contextDominio.Especialidades.FindAsync(registroBoletim.EspecialidadeId).Result.Descricao;
+
+                if (registroBoletim.TipoChegadaId != Guid.Empty)
+                    _registroBoletimHistorico.TipoChegada = _contextDominio.TiposChegada.FindAsync(registroBoletim.TipoChegadaId).Result.Descricao;
+
 
                 await base.Adicionar(_registroBoletimHistorico, pessoaProfissionalCadastro.PessoaId);
 

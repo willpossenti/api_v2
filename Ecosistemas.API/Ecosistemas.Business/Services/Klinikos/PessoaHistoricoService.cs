@@ -31,7 +31,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Ativo = pessoaPaciente.Ativo,
                     Cep = pessoaPaciente.Cep,
                     Bairro = pessoaPaciente.Bairro,
-                    Cidade = pessoaPaciente.CidadeId != Guid.Empty? _contextDominio.Cidades.FindAsync(pessoaPaciente.CidadeId).Result.Nome: null,
                     Contato1 = pessoaPaciente.Contato1,
                     Contato2 = pessoaPaciente.Contato2,
                     Contato3 = pessoaPaciente.Contato3,
@@ -42,21 +41,15 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Cpf = pessoaPaciente.Cpf,
                     DataEmissaoCertidao = pessoaPaciente.DataEmissaoCertidao,
                     DataEmissaoCtps = pessoaPaciente.DataEmissaoCtps,
-                    DataEntradaPis = pessoaPaciente.DataEntradaPis,
+                    DataEntradaPis = pessoaPaciente.DataEntradaPais,
                     DescricaoNaoIdentificado = pessoaPaciente.DescricaoNaoIdentificado,
                     Emissao = pessoaPaciente.Emissao,
-                    Escolaridade = pessoaPaciente.EscolaridadeId != Guid.Empty ? _contextDominio.Escolaridades.FindAsync(pessoaPaciente.EscolaridadeId).Result.Descricao : null,
-                    Estado = pessoaPaciente.EstadoId != Guid.Empty ? _contextDominio.Estados.FindAsync(pessoaPaciente.EstadoId).Result.Nome : null,
-                    Etnia = pessoaPaciente.EtniaId != Guid.Empty ? _contextDominio.Etnias.FindAsync(pessoaPaciente.EtniaId).Result.Nome : null,
                     FrequentaEscola = pessoaPaciente.FrequentaEscola,
                     IdadeAparente = pessoaPaciente.IdadeAparente,
                     Identidade = pessoaPaciente.Identidade,
-                    Justificativa = pessoaPaciente.JustificativaId != Guid.Empty ? _contextDominio.Justificativas.FindAsync(pessoaPaciente.JustificativaId).Result.Descricao : null,
                     Login = pessoaPaciente.Login,
                     Logradouro = pessoaPaciente.Logradouro,
-                    Nacionalidade = pessoaPaciente.NacionalidadeId != Guid.Empty ? _contextDominio.Nacionalidades.FindAsync(pessoaPaciente.NacionalidadeId).Result.Descricao : null,
                     Nascimento = pessoaPaciente.Nascimento,
-                    Naturalidade = pessoaPaciente.NaturalidadeId != Guid.Empty ? _contextDominio.Estados.FindAsync(pessoaPaciente.NaturalidadeId).Result.Nome : null,
                     NomeCartorio = pessoaPaciente.NomeCartorio,
                     NomeCompleto = pessoaPaciente.NomeCompleto,
                     NomeMae = pessoaPaciente.NomeMae,
@@ -68,19 +61,13 @@ namespace Ecosistemas.Business.Services.Klinikos
                     NumeroLivro = pessoaPaciente.NumeroLivro,
                     NumeroProntuario = pessoaPaciente.NumeroProntuario,
                     NumeroTermo = pessoaPaciente.NumeroTermo,
-                    Ocupacao = pessoaPaciente.OcupacaoId != Guid.Empty ? _contextDominio.Ocupacoes.FindAsync(pessoaPaciente.OcupacaoId).Result.Descricao : null,
-                    OrgaoEmissor = pessoaPaciente.OrgaoEmissorId != Guid.Empty ? _contextDominio.OrgaosEmissores.FindAsync(pessoaPaciente.OrgaoEmissorId).Result.Descricao : null,
                     PacienteProfissional = pessoaPaciente.PacienteProfissional,
-                    PaisOrigem = pessoaPaciente.PaisOrigemId != Guid.Empty ? _contextDominio.Paises.FindAsync(pessoaPaciente.PaisOrigemId).Result.Descricao : null,
                     PisPasep = pessoaPaciente.PisPasep,
-                    Raca = pessoaPaciente.RacaId != Guid.Empty ? _contextDominio.Racas.FindAsync(pessoaPaciente.RacaId).Result.Nome : null,
                     Recemnascido = pessoaPaciente.Recemnascido,
                     Secao = pessoaPaciente.Secao,
                     Senha = pessoaPaciente.Senha,
                     SerieCtps = pessoaPaciente.SerieCtps,
                     Sexo = pessoaPaciente.Sexo,
-                    SituacaoFamiliarConjugal = pessoaPaciente.SituacaoFamiliarConjugalId != Guid.Empty ? _contextDominio.SituacoesFamiliaresConjugais.FindAsync(pessoaPaciente.SituacaoFamiliarConjugalId).Result.Descricao: null,
-                    TipoCertidao = pessoaPaciente.TipoCertidaoId != Guid.Empty ? _contextDominio.TiposCertidao.FindAsync(pessoaPaciente.TipoCertidaoId).Result.Descricao : null,
                     TituloEleitor = pessoaPaciente.TituloEleitor,
                     Uf = pessoaPaciente.Uf,
                     UfCtps = pessoaPaciente.UfCtps,
@@ -90,6 +77,47 @@ namespace Ecosistemas.Business.Services.Klinikos
                     TipoPessoa = "PessoaPaciente",
                     Pessoa = pessoaPaciente
                 };
+
+                if (pessoaPaciente.CidadeId != Guid.Empty)
+                    _pessoaPacienteHistorico.Cidade = _contextDominio.Cidades.FindAsync(pessoaPaciente.CidadeId).Result.Nome;
+
+                if (pessoaPaciente.EscolaridadeId != Guid.Empty)
+                    _pessoaPacienteHistorico.Escolaridade = _contextDominio.Escolaridades.FindAsync(pessoaPaciente.EscolaridadeId).Result.Descricao;
+
+                if (pessoaPaciente.EstadoId != Guid.Empty)
+                    _pessoaPacienteHistorico.Estado = _contextDominio.Estados.FindAsync(pessoaPaciente.EstadoId).Result.Nome;
+
+                if (pessoaPaciente.EtniaId != Guid.Empty)
+                    _pessoaPacienteHistorico.Etnia = _contextDominio.Etnias.FindAsync(pessoaPaciente.EtniaId).Result.Nome;
+
+                if (pessoaPaciente.JustificativaId != Guid.Empty)
+                    _pessoaPacienteHistorico.Justificativa = _contextDominio.Justificativas.FindAsync(pessoaPaciente.JustificativaId).Result.Descricao;
+
+                if (pessoaPaciente.NacionalidadeId != Guid.Empty)
+                    _pessoaPacienteHistorico.Nacionalidade = _contextDominio.Nacionalidades.FindAsync(pessoaPaciente.NacionalidadeId).Result.Descricao;
+
+                if (pessoaPaciente.NaturalidadeId != Guid.Empty)
+                    _pessoaPacienteHistorico.Naturalidade = _contextDominio.Estados.FindAsync(pessoaPaciente.NaturalidadeId).Result.Nome;
+
+                if (pessoaPaciente.OcupacaoId != Guid.Empty)
+                    _pessoaPacienteHistorico.Ocupacao = _contextDominio.Ocupacoes.FindAsync(pessoaPaciente.OcupacaoId).Result.Descricao;
+
+                if (pessoaPaciente.OrgaoEmissorId != Guid.Empty)
+                    _pessoaPacienteHistorico.OrgaoEmissor = _contextDominio.OrgaosEmissores.FindAsync(pessoaPaciente.OrgaoEmissorId).Result.Descricao;
+
+
+                if (pessoaPaciente.PaisOrigemId != Guid.Empty)
+                    _pessoaPacienteHistorico.PaisOrigem = _contextDominio.Paises.FindAsync(pessoaPaciente.PaisOrigemId).Result.Descricao;
+
+                if (pessoaPaciente.RacaId != Guid.Empty)
+                    _pessoaPacienteHistorico.Raca = _contextDominio.Racas.FindAsync(pessoaPaciente.RacaId).Result.Nome;
+
+                if (pessoaPaciente.SituacaoFamiliarConjugalId != Guid.Empty)
+                    _pessoaPacienteHistorico.SituacaoFamiliarConjugal = _contextDominio.SituacoesFamiliaresConjugais.FindAsync(pessoaPaciente.SituacaoFamiliarConjugalId).Result.Descricao;
+
+                if (pessoaPaciente.TipoCertidaoId != Guid.Empty)
+                    _pessoaPacienteHistorico.TipoCertidao = _contextDominio.TiposCertidao.FindAsync(pessoaPaciente.TipoCertidaoId).Result.Descricao;
+
 
                 await base.Adicionar(_pessoaPacienteHistorico, pessoaProfissionalCadastro.PessoaId);
 
@@ -119,7 +147,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Ativo = pessoaProfissional.Ativo,
                     Cep = pessoaProfissional.Cep,
                     Bairro = pessoaProfissional.Bairro,
-                    Cidade = _contextDominio.Cidades.FindAsync(pessoaProfissional.CidadeId).Result.Nome,
                     Contato1 = pessoaProfissional.Contato1,
                     Contato2 = pessoaProfissional.Contato2,
                     Contato3 = pessoaProfissional.Contato3,
@@ -130,20 +157,14 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Cpf = pessoaProfissional.Cpf,
                     DataEmissaoCertidao = pessoaProfissional.DataEmissaoCertidao,
                     DataEmissaoCtps = pessoaProfissional.DataEmissaoCtps,
-                    DataEntradaPis = pessoaProfissional.DataEntradaPis,
+                    DataEntradaPis = pessoaProfissional.DataEntradaPais,
                     Emissao = pessoaProfissional.Emissao,
-                    Escolaridade = _contextDominio.Escolaridades.FindAsync(pessoaProfissional.EscolaridadeId).Result.Descricao,
-                    Estado = _contextDominio.Estados.FindAsync(pessoaProfissional.EstadoId).Result.Nome,
-                    Etnia = _contextDominio.Etnias.FindAsync(pessoaProfissional.EtniaId).Result.Nome,
                     FrequentaEscola = pessoaProfissional.FrequentaEscola,
                     IdadeAparente = pessoaProfissional.IdadeAparente,
                     Identidade = pessoaProfissional.Identidade,
-                    Justificativa = _contextDominio.Justificativas.FindAsync(pessoaProfissional.JustificativaId).Result.Descricao,
                     Login = pessoaProfissional.Login,
                     Logradouro = pessoaProfissional.Logradouro,
-                    Nacionalidade = _contextDominio.Nacionalidades.FindAsync(pessoaProfissional.NacionalidadeId).Result.Descricao,
                     Nascimento = pessoaProfissional.Nascimento,
-                    Naturalidade = _contextDominio.Estados.FindAsync(pessoaProfissional.NaturalidadeId).Result.Nome,
                     NomeCartorio = pessoaProfissional.NomeCartorio,
                     NomeCompleto = pessoaProfissional.NomeCompleto,
                     NomeMae = pessoaProfissional.NomeMae,
@@ -154,18 +175,12 @@ namespace Ecosistemas.Business.Services.Klinikos
                     NumeroFolha = pessoaProfissional.NumeroFolha,
                     NumeroLivro = pessoaProfissional.NumeroLivro,
                     NumeroTermo = pessoaProfissional.NumeroTermo,
-                    Ocupacao = _contextDominio.Ocupacoes.FindAsync(pessoaProfissional.OcupacaoId).Result.Descricao,
-                    OrgaoEmissor = _contextDominio.OrgaosEmissores.FindAsync(pessoaProfissional.OrgaoEmissorId).Result.Descricao,
                     PacienteProfissional = pessoaProfissional.PacienteProfissional,
-                    PaisOrigem = _contextDominio.Paises.FindAsync(pessoaProfissional.PaisOrigemId).Result.Descricao,
                     PisPasep = pessoaProfissional.PisPasep,
-                    Raca = _contextDominio.Racas.FindAsync(pessoaProfissional.RacaId).Result.Nome,
                     Secao = pessoaProfissional.Secao,
                     Senha = pessoaProfissional.Senha,
                     SerieCtps = pessoaProfissional.SerieCtps,
                     Sexo = pessoaProfissional.Sexo,
-                    SituacaoFamiliarConjugal = _contextDominio.SituacoesFamiliaresConjugais.FindAsync(pessoaProfissional.SituacaoFamiliarConjugalId).Result.Descricao,
-                    TipoCertidao = _contextDominio.TiposCertidao.FindAsync(pessoaProfissional.TipoCertidaoId).Result.Descricao,
                     TituloEleitor = pessoaProfissional.TituloEleitor,
                     Uf = pessoaProfissional.Uf,
                     UfCtps = pessoaProfissional.UfCtps,
@@ -175,6 +190,46 @@ namespace Ecosistemas.Business.Services.Klinikos
                     TipoPessoa = "PessoaProfissional",
                     Pessoa = pessoaProfissional
                 };
+
+
+                if (pessoaProfissional.CidadeId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Cidade = _contextDominio.Cidades.FindAsync(pessoaProfissional.CidadeId).Result.Nome;
+
+                if (pessoaProfissional.EscolaridadeId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Escolaridade = _contextDominio.Escolaridades.FindAsync(pessoaProfissional.EscolaridadeId).Result.Descricao;
+
+                if (pessoaProfissional.EstadoId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Estado = _contextDominio.Estados.FindAsync(pessoaProfissional.EstadoId).Result.Nome;
+
+                if (pessoaProfissional.EtniaId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Etnia = _contextDominio.Etnias.FindAsync(pessoaProfissional.EtniaId).Result.Nome;
+
+                if (pessoaProfissional.JustificativaId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Justificativa = _contextDominio.Justificativas.FindAsync(pessoaProfissional.JustificativaId).Result.Descricao;
+
+                if (pessoaProfissional.NacionalidadeId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Nacionalidade = _contextDominio.Nacionalidades.FindAsync(pessoaProfissional.NacionalidadeId).Result.Descricao;
+
+                if (pessoaProfissional.NaturalidadeId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Naturalidade = _contextDominio.Estados.FindAsync(pessoaProfissional.NaturalidadeId).Result.Nome;
+
+                if (pessoaProfissional.OcupacaoId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Ocupacao = _contextDominio.Ocupacoes.FindAsync(pessoaProfissional.OcupacaoId).Result.Descricao;
+
+                if (pessoaProfissional.OrgaoEmissorId != Guid.Empty)
+                    _pessoaProfissionalHistorico.OrgaoEmissor = _contextDominio.OrgaosEmissores.FindAsync(pessoaProfissional.OrgaoEmissorId).Result.Descricao;
+
+                if (pessoaProfissional.PaisOrigemId != Guid.Empty)
+                    _pessoaProfissionalHistorico.PaisOrigem = _contextDominio.Paises.FindAsync(pessoaProfissional.PaisOrigemId).Result.Descricao;
+
+                if (pessoaProfissional.RacaId != Guid.Empty)
+                    _pessoaProfissionalHistorico.Raca = _contextDominio.Racas.FindAsync(pessoaProfissional.RacaId).Result.Nome;
+
+                if (pessoaProfissional.SituacaoFamiliarConjugalId != Guid.Empty)
+                    _pessoaProfissionalHistorico.SituacaoFamiliarConjugal = _contextDominio.SituacoesFamiliaresConjugais.FindAsync(pessoaProfissional.SituacaoFamiliarConjugalId).Result.Descricao;
+
+                if (pessoaProfissional.TipoCertidaoId != Guid.Empty)
+                    _pessoaProfissionalHistorico.TipoCertidao = _contextDominio.TiposCertidao.FindAsync(pessoaProfissional.TipoCertidaoId).Result.Descricao;
 
 
                 await base.Adicionar(_pessoaProfissionalHistorico, pessoaProfissionalCadastro.PessoaId);

@@ -120,7 +120,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public Guid PaisOrigemId { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime DataEntradaPis { get; set; }
+        public DateTime DataEntradaPais { get; set; }
 
         public Guid TipoCertidaoId { get; set; }
 

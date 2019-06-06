@@ -31,15 +31,26 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoAlergiaHistorico = new AtendimentoMedicoAlergiaHistorico
                 {
                     AtendimentoMedicoAlergia = atendimentoMedicoAlergia,
-                    Alergia = _contextDominio.Alergias.FindAsync(atendimentoMedicoAlergia.AlergiaId).Result.Nome,
-                    TipoAlergia = _contextDominio.TiposAlergia.FindAsync(atendimentoMedicoAlergia.TipoAlergiaId).Result.Descricao,
-                    LocalizacaoAlergia = _contextDominio.LocalizacoesAlergia.FindAsync(atendimentoMedicoAlergia.LocalizacaoAlergiaId).Result.Nome,
-                    ReacaoAlergia = _contextDominio.ReacoesAlergia.FindAsync(atendimentoMedicoAlergia.ReacaoAlergiaId).Result.Descricao,
-                    SeveridadeAlergia = _contextDominio.SeveridadesAlergia.FindAsync(atendimentoMedicoAlergia.SeveridadeAlergiaId).Result.Nome,
                     AlergiaSituacao = atendimentoMedicoAlergia.AlergiaSituacao,
                     DataSintomas = atendimentoMedicoAlergia.DataSintomas,
                     Ativo = atendimentoMedicoAlergia.Ativo,
                 };
+
+                if (atendimentoMedicoAlergia.AlergiaId != Guid.Empty)
+                    _AtendimentoMedicoAlergiaHistorico.Alergia = _contextDominio.Alergias.FindAsync(atendimentoMedicoAlergia.AlergiaId).Result.Nome;
+
+                if (atendimentoMedicoAlergia.LocalizacaoAlergiaId != Guid.Empty)
+                    _AtendimentoMedicoAlergiaHistorico.LocalizacaoAlergia = _contextDominio.LocalizacoesAlergia.FindAsync(atendimentoMedicoAlergia.LocalizacaoAlergiaId).Result.Nome;
+
+                if (atendimentoMedicoAlergia.TipoAlergiaId != Guid.Empty)
+                    _AtendimentoMedicoAlergiaHistorico.TipoAlergia = _contextDominio.TiposAlergia.FindAsync(atendimentoMedicoAlergia.TipoAlergiaId).Result.Descricao;
+
+                if (atendimentoMedicoAlergia.ReacaoAlergiaId != Guid.Empty)
+                    _AtendimentoMedicoAlergiaHistorico.ReacaoAlergia = _contextDominio.ReacoesAlergia.FindAsync(atendimentoMedicoAlergia.ReacaoAlergiaId).Result.Descricao;
+
+                if (atendimentoMedicoAlergia.SeveridadeAlergiaId != Guid.Empty)
+                    _AtendimentoMedicoAlergiaHistorico.SeveridadeAlergia = _contextDominio.SeveridadesAlergia.FindAsync(atendimentoMedicoAlergia.SeveridadeAlergiaId).Result.Nome;
+
 
                 await base.Adicionar(_AtendimentoMedicoAlergiaHistorico, pessoaProfissionalCadastro.PessoaId);
 

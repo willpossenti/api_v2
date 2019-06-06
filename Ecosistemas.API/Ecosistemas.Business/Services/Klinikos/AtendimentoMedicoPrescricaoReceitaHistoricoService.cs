@@ -32,16 +32,30 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
                     AtendimentoMedicoPrescricaoReceita = atendimentoMedicoPrescricaoReceita,
                     Dose = atendimentoMedicoPrescricaoReceita.Dose,
-                    GrupoMedicamento = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.Nome,
-                    Medicamento = _contextDominio.Medicamentos.FindAsync(atendimentoMedicoPrescricaoReceita.MedicamentoId).Result.Nome,
-                    ViaAdministracaoMedicamento = _contextDominio.ViasAdministracaoMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamentoId).Result.Descricao,
-                    IntervaloMedicamento = _contextDominio.IntervalosMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.IntervaloMedicamentoId).Result.Descricao,
-                    UnidadeMedicamento = _contextDominio.UnidadesMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.UnidadeMedicamentoId).Result.Descricao,
                     Observacao = atendimentoMedicoPrescricaoReceita?.Observacao,
                     Prescricao = atendimentoMedicoPrescricaoReceita.Prescricao,
                     Receita = atendimentoMedicoPrescricaoReceita.Receita,
                     Ativo = atendimentoMedicoPrescricaoReceita.Ativo,
                 };
+
+
+                if (atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId != Guid.Empty)
+                    _AtendimentoMedicoPrescricaoReceitaHistorico.GrupoMedicamento = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.Nome;
+
+                if (atendimentoMedicoPrescricaoReceita.MedicamentoId != Guid.Empty)
+                    _AtendimentoMedicoPrescricaoReceitaHistorico.Medicamento = _contextDominio.Medicamentos.FindAsync(atendimentoMedicoPrescricaoReceita.MedicamentoId).Result.Nome;
+
+                if (atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamentoId != Guid.Empty)
+                    _AtendimentoMedicoPrescricaoReceitaHistorico.ViaAdministracaoMedicamento = _contextDominio.ViasAdministracaoMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamentoId).Result.Descricao;
+
+                if (atendimentoMedicoPrescricaoReceita.IntervaloMedicamentoId != Guid.Empty)
+                    _AtendimentoMedicoPrescricaoReceitaHistorico.IntervaloMedicamento = _contextDominio.IntervalosMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.IntervaloMedicamentoId).Result.Descricao;
+
+
+                if (atendimentoMedicoPrescricaoReceita.UnidadeMedicamentoId != Guid.Empty)
+                    _AtendimentoMedicoPrescricaoReceitaHistorico.UnidadeMedicamento = _contextDominio.UnidadesMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.UnidadeMedicamentoId).Result.Descricao;
+
+
 
                 await base.Adicionar(_AtendimentoMedicoPrescricaoReceitaHistorico, pessoaProfissionalCadastro.PessoaId);
 

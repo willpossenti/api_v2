@@ -31,13 +31,17 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoExameHistorico = new AtendimentoMedicoExameHistorico
                 {
                     AtendimentoMedicoExame = atendimentoMedicoExame,
-                    //ExameLaboratorial = _contextDominio.Alergias.FindAsync(atendimentoMedicoAlergia.AlergiaId).Result.Nome,
+                    //ExameLaboratorial = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.AlergiaId).Result.Nome,
                     //ExameImagem = atendimentoMedicoExame.ExameImagem,
-                    GrupoExame = _contextDominio.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExameId).Result.Nome,
-                    Exame = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.ExameId).Result.Nome,
                     ObservacaoExame = atendimentoMedicoExame.ObservacaoExame,
                     Ativo = atendimentoMedicoExame.Ativo,
                 };
+
+                if (atendimentoMedicoExame.GrupoExameId != Guid.Empty)
+                    _AtendimentoMedicoExameHistorico.GrupoExame = _contextDominio.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExameId).Result.Nome;
+
+                if (atendimentoMedicoExame.ExameId != Guid.Empty)
+                    _AtendimentoMedicoExameHistorico.Exame = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.ExameId).Result.Nome;
 
                 await base.Adicionar(_AtendimentoMedicoExameHistorico, pessoaProfissionalCadastro.PessoaId);
 
