@@ -65,17 +65,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string CID { get; set; }
 
-        public bool CondutaExames { get; set; }
+        public bool Prescricao { get; set; }
 
-        public bool CondutaPrescricao { get; set; }
-
-        public bool CondutaAtestado { get; set; }
-
-        [StringLength(50, ErrorMessage = "{0} Precisa ter no máximo 50")]
-        [DataType(DataType.Text)]
-        public string Observacao { get; set; }
-
-        public string Tipo { get; set; }
+        public bool Receita { get; set; }
 
         [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 500")]
         [DataType(DataType.Text)]

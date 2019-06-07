@@ -68,11 +68,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual ConsultaCID ConsultaCID { get; set; }
 
-        public bool CondutaExames { get; set; }
+        public bool Prescricao { get; set; }
 
-        public bool CondutaPrescricao { get; set; }
-
-        public bool CondutaAtestado { get; set; }
+        public bool Receita { get; set; }
 
         public virtual List<AtendimentoMedicoExame> AtendimentoMedicoExame { get; set; }
 

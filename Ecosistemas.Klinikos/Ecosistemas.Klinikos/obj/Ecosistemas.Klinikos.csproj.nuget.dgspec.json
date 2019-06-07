@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {}
+    "E:\\eco\\api_v2\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos.csproj": {}
   },
   "projects": {
-    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
+    "E:\\eco\\api_v2\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
-        "projectName": "Ecosistemas.Security",
-        "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+        "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos.csproj",
+        "projectName": "Ecosistemas.Klinikos",
+        "projectPath": "E:\\eco\\api_v2\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos.csproj",
         "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
+        "outputPath": "E:\\eco\\api_v2\\Ecosistemas.Klinikos\\Ecosistemas.Klinikos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,43 +41,22 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "Microsoft.AspNetCore": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Authorization": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "autoReferenced": true
             },
             "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[5.4.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[5.4.0, )"
             }
           },
           "imports": [

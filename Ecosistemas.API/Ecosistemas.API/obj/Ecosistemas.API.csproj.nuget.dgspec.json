@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {}
+    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {}
   },
   "projects": {
-    "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {
+    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
+        "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
         "projectName": "Ecosistemas.API",
-        "projectPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
+        "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
         "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\obj\\",
+        "outputPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
-                "projectPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj"
+              "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
+                "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj"
               }
             }
           }
@@ -97,14 +97,14 @@
         }
       }
     },
-    "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
+    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
+        "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
         "projectName": "Ecosistemas.Business",
-        "projectPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
+        "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
         "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\obj\\",
+        "outputPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -123,8 +123,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
-                "projectPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj"
+              "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
+                "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj"
               }
             }
           }
@@ -165,14 +165,14 @@
         }
       }
     },
-    "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
+    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+        "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
         "projectName": "Ecosistemas.Security",
-        "projectPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+        "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
         "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "C:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
+        "outputPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
