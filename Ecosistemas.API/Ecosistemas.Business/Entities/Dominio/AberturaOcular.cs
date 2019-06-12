@@ -18,6 +18,8 @@ namespace Ecosistemas.Business.Entities.Dominio
 
         public int Escore { get; set; }
 
+        public int Ordem { get; set; }
+
         public bool Ativo { get; set; } = true;
 
     }
