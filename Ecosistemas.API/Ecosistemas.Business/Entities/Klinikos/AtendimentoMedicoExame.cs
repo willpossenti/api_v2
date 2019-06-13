@@ -13,11 +13,15 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedico AtendimentoMedico { get; set; }
 
+<<<<<<< HEAD
         public bool ExameLaboratorial { get; set; }
 
         public bool ExameImagem { get; set; }
 
         public Guid GrupoExameId { get; set; }
+=======
+        public virtual GrupoExame GrupoExame { get; set; }
+>>>>>>> sprint_yl_25052019
 
         public Guid ExameId { get; set; }
 
@@ -25,7 +29,12 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string ObservacaoExame { get; set; }
 
-        public bool Ativo { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? DataExame { get; set; }
+
+        public virtual PessoaProfissional Profissional { get; set; }
+
+        public bool Ativo { get; set; } = true;
 
     }
 }
