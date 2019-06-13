@@ -178,9 +178,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public bool PacienteProfissional { get; set; }
 
-        [StringLength(5, ErrorMessage = "{0} Precisa ter no máximo 5")]
-        [DataType(DataType.Text)]
-        public string CodigoLogin { get; set; }
+        public Guid UserId { get; set; }
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]

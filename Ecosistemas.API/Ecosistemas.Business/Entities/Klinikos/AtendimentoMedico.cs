@@ -68,11 +68,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public Guid ConsultaCIDId { get; set; }
 
-        public bool CondutaExames { get; set; }
+        public bool Prescricao { get; set; }
 
-        public bool CondutaPrescricao { get; set; }
-
-        public bool CondutaAtestado { get; set; }
+        public bool Receita { get; set; }
 
         public virtual List<AtendimentoMedicoExame> AtendimentoMedicoExame { get; set; }
 
@@ -85,6 +83,17 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(500, ErrorMessage = "{0} Precisa ter no máximo 500")]
         [DataType(DataType.Text)]
         public string Atestado { get; set; }
+
+        [StringLength(9, ErrorMessage = "{0} Precisa ter no máximo 9")]
+        [DataType(DataType.Text)]
+        public string ValidadeAtestado { get; set; }
+
+        [StringLength(1, ErrorMessage = "{0} Precisa ter no máximo 1")]
+        [DataType(DataType.Text)]
+        public string TipoSaida { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime? DataSaida { get; set; }
 
         public bool Ativo { get; set; } = true;
 
