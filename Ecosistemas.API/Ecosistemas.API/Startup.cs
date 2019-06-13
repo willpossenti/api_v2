@@ -107,7 +107,11 @@ namespace Ecosistemas.API
             
         }
 
+<<<<<<< HEAD
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApiDbContext context, KlinikosDbContext klinikosDbContext, DominioDbContext DominioDbContext, IServiceProvider services)
+=======
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApiDbContext context, KlinikosDbContext klinikosDbContext)
+>>>>>>> sprint_yl_25052019
         {
             if (env.IsDevelopment())
             {
@@ -121,13 +125,17 @@ namespace Ecosistemas.API
             new IdentityInitializer(context, _signingConfigurations, _tokenConfigurations)
                .InitializeApi();
 
-            new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+            new IdentityInitializer(klinikosDbContext, context)
             .InitializeKlinikos();
 
+<<<<<<< HEAD
             new IdentityInitializer(DominioDbContext, klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
             .InitializeDominio();
 
             new IdentityInitializer(DominioDbContext, klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+=======
+            new IdentityInitializer(klinikosDbContext, context)
+>>>>>>> sprint_yl_25052019
           .InitializeSigtap();
 
             app.UseCors("ApiPolicy");

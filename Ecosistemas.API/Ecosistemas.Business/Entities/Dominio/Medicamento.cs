@@ -11,10 +11,8 @@ namespace Ecosistemas.Business.Entities.Dominio
         [Key]
         public Guid MedicamentoId { get; set; }
 
-        public virtual GrupoMedicamento GrupoMedicamento { get; set; }
-
         [Required(ErrorMessage = "O nome do medicamento é obrigatório")]
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [StringLength(400, ErrorMessage = "{0} Precisa ter no máximo 400")]
         [DataType(DataType.Text)]
         public string Nome { get; set; }
 

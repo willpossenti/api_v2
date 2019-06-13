@@ -13,10 +13,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedicoExame AtendimentoMedicoExame { get; set; }
 
-        public bool ExameLaboratorial { get; set; }
-
-        public bool ExameImagem { get; set; }
-
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
         public string GrupoExame { get; set; }
@@ -28,6 +24,13 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(100, ErrorMessage = "{0} Precisa ter no máximo 100")]
         [DataType(DataType.Text)]
         public string ObservacaoExame { get; set; }
+
+        [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 70")]
+        [DataType(DataType.Text)]
+        public string Profissional { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime? DataExame { get; set; }
 
         public bool Ativo { get; set; } = true;
 
