@@ -56,7 +56,7 @@ namespace Ecosistemas.API.Controllers.Api
         [HttpPut]
         [Route("PessoaPaciente/Alterar")]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<PessoaPaciente>> Put([FromBody]PessoaPaciente pessoapaciente, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<PessoaPaciente>> Put([FromBody]PessoaPaciente pessoapaciente)
         {
             return await _servicePaciente.AtualizarPaciente(pessoapaciente, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
@@ -162,6 +162,14 @@ namespace Ecosistemas.API.Controllers.Api
         {
             return await _servicePaciente.ConsultaPacienteAcolhimento(pesquisa, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
         }
+
+        [HttpGet("PessoaProfissional/ConsultaProfissional/{UserId}")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissional(string UserId)
+        {
+            return await _serviceProfissional.ConsultaProfissional(Guid.Parse(UserId));
+        }
+
 
     }
 }

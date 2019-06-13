@@ -24,6 +24,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
     {
         private readonly IAtendimentoMedicoAlergiaService _service;
 
+
         public AtendimentoMedicoAlergiaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
             _service = new AtendimentoMedicoAlergiaService(contextKlinikos, context);

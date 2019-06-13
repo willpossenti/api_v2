@@ -17,13 +17,10 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class ExameService : BaseService<Exame>, IExameService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
 
         public ExameService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+
         }
 
         public async Task<CustomResponse<List<Exame>>> ConsultaExame(string exame, Guid userId)

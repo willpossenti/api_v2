@@ -67,7 +67,19 @@ namespace Ecosistemas.API.Controllers.Klinikos
             return await _service.Obter(Guid.Parse(CIDId));
         }
 
+        [HttpPost("GetCIDByCapitulo")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<IList<CID>>> GetCIDByCapitulo([FromBody]CID CID)
+        {
+            return await _service.GetCIDByCapitulo(CID);
+        }
 
+        [HttpGet("ConsultaCIDs/{nome}")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<List<CID>>> ConsultaCIDs(string nome)
+        {
+            return await _service.ConsultaCIDs(nome, Guid.Parse("B9AB33C3-6697-49F4-BF30-598214D0B7F2"));
+        }
 
     }
 }

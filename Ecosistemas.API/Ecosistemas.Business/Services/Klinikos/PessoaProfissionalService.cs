@@ -17,13 +17,11 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class PessoaProfissionalService : BaseService<PessoaProfissional>, IPessoaProfissionalService
     {
         private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _contextApi;
-        private IPessoaHistoricoService _servicePessoaHistorico;
+        private readonly IPessoaHistoricoService _servicePessoaHistorico;
 
         public PessoaProfissionalService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _contextApi = context;
             _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
         }
 
@@ -46,20 +44,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
                 pessoaprofissional.Master = false;
-
-                if (!string.IsNullOrWhiteSpace(pessoaprofissional.Login))
-                {
-                    var login = _contextKlinikos.Pessoas.Max(x => x.CodigoLogin);
-
-                    if (login != null)
-                    {
-                        var novoCodigo = int.Parse(login);
-                        novoCodigo++;
-                        pessoaprofissional.CodigoLogin = novoCodigo.ToString("000000");
-                    }
-                    else
-                        pessoaprofissional.CodigoLogin = "000001";
-                }
 
                 await base.Adicionar(pessoaprofissional, userId);
                 await _servicePessoaHistorico.AdicionarHistoricoProfissional(pessoaprofissional, _pessoaMaster);
@@ -288,6 +272,48 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     }
                 });
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+            }
+
+            return _response;
+        }
+
+        public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissional(Guid userId)
+        {
+            var _response = new CustomResponse<PessoaProfissional>();
+
+            try
+            {
+                Expression<Func<PessoaProfissional, bool>> _filtroUser = x => x.UserId.Equals(userId) && x.Ativo;
+                //&& !x.Master;
+                await Task.Run(() =>
+                {
+
+
+                    var _profissionalEncontrado = Profissional.Where(_filtroUser).ToList().FirstOrDefault();
+
+
+                    if (_profissionalEncontrado != null)
+                    {
+                        _response.Message = "Profissional encontrado";
+                        _response.StatusCode = StatusCodes.Status302Found;
+                        _response.Result = _profissionalEncontrado;
+                    }
+                    else
+                    {
+                        _response.Message = "Profissional não encontrado";
+                        _response.StatusCode = StatusCodes.Status404NotFound;
+
+                    }
+                });
+
+
 
 
             }

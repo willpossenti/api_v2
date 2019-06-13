@@ -36,6 +36,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Exame = atendimentoMedicoExame.Exame?.Nome,
                     ObservacaoExame = atendimentoMedicoExame.ObservacaoExame,
                     DataExame = atendimentoMedicoExame.DataExame,
+                    Profissional = atendimentoMedicoExame.Profissional?.NomeCompleto,
                     Ativo = atendimentoMedicoExame.Ativo,
                 };
 

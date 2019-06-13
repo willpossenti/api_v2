@@ -25,6 +25,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string ObservacaoExame { get; set; }
 
+        [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 70")]
+        [DataType(DataType.Text)]
+        public string Profissional { get; set; }
+
         [DataType(DataType.DateTime)]
         public DateTime? DataExame { get; set; }
 

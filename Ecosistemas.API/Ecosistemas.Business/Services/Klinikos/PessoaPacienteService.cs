@@ -18,13 +18,11 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class PessoaPacienteService : BaseService<PessoaPaciente>, IPessoaPacienteService
     {
         private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
-        private IPessoaHistoricoService _servicePessoaHistorico;
+        private readonly IPessoaHistoricoService _servicePessoaHistorico;
 
         public PessoaPacienteService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-            _context = context;
             _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
         }
 

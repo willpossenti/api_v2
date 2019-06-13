@@ -84,7 +84,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [DataType(DataType.Text)]
         public string Atestado { get; set; }
 
-        [StringLength(3, ErrorMessage = "{0} Precisa ter no máximo 3")]
+        [StringLength(9, ErrorMessage = "{0} Precisa ter no máximo 9")]
         [DataType(DataType.Text)]
         public string ValidadeAtestado { get; set; }
 

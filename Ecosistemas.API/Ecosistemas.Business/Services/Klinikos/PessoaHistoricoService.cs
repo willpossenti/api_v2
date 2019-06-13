@@ -12,13 +12,11 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaHistoricoService : BaseService<PessoaHistorico>, IPessoaHistoricoService
     {
-        private readonly KlinikosDbContext _contextKlinikos;
-        private readonly ApiDbContext _context;
+
 
         public PessoaHistoricoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextKlinikos = contextKlinikos;
-            _context = context;
+
         }
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoPaciente(PessoaPaciente pessoaPaciente, PessoaProfissional pessoaProfissionalCadastro)
         {
@@ -38,7 +36,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Contato3 = pessoaPaciente.Contato3,
                     Email = pessoaPaciente.Email,
                     Cns = pessoaPaciente.Cns,
-                    CodigoLogin = pessoaPaciente.CodigoLogin,
                     Complemento = pessoaPaciente.Complemento,
                     Cpf = pessoaPaciente.Cpf,
                     DataEmissaoCertidao = pessoaPaciente.DataEmissaoCertidao,
@@ -48,7 +45,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Emissao = pessoaPaciente.Emissao,
                     Escolaridade = pessoaPaciente.Escolaridade?.Descricao,
                     Estado = pessoaPaciente.Estado?.Nome,
-                    Etnia = pessoaPaciente.Etnia == null ? null : pessoaPaciente.Etnia.Nome,
+                    Etnia = pessoaPaciente.Etnia?.Nome,
                     FrequentaEscola = pessoaPaciente.FrequentaEscola,
                     IdadeAparente = pessoaPaciente.IdadeAparente,
                     Identidade = pessoaPaciente.Identidade,
@@ -126,7 +123,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Contato3 = pessoaProfissional.Contato3,
                     Email = pessoaProfissional.Email,
                     Cns = pessoaProfissional.Cns,
-                    CodigoLogin = pessoaProfissional.CodigoLogin,
                     Complemento = pessoaProfissional.Complemento,
                     Cpf = pessoaProfissional.Cpf,
                     DataEmissaoCertidao = pessoaProfissional.DataEmissaoCertidao,

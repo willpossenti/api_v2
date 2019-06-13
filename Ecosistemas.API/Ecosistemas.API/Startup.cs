@@ -101,7 +101,7 @@ namespace Ecosistemas.API
 
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApiDbContext context, KlinikosDbContext klinikosDbContext, IServiceProvider services)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApiDbContext context, KlinikosDbContext klinikosDbContext)
         {
             if (env.IsDevelopment())
             {
@@ -115,10 +115,10 @@ namespace Ecosistemas.API
             new IdentityInitializer(context, _signingConfigurations, _tokenConfigurations)
                .InitializeApi();
 
-            new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+            new IdentityInitializer(klinikosDbContext, context)
             .InitializeKlinikos();
 
-            new IdentityInitializer(klinikosDbContext, context, _signingConfigurations, _tokenConfigurations)
+            new IdentityInitializer(klinikosDbContext, context)
           .InitializeSigtap();
 
             app.UseCors("ApiPolicy");
