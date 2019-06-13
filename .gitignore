@@ -29,3 +29,10 @@ Ecosistemas.API/.vs/Ecosistemas.API/DesignTimeBuild/.dtbcache
 Ecosistemas.API/.vs/Ecosistemas.API/v16/.suo
 *.dll
 Ecosistemas.API/.vs/Ecosistemas.API/DesignTimeBuild/.dtbcache
+Ecosistemas.Klinikos/Ecosistemas.Klinikos/obj/Debug/netcoreapp2.2/Ecosistemas.Klinikos.csproj.CoreCompileInputs.cache
+Ecosistemas.API/Ecosistemas.API/bin/Debug/netcoreapp2.2/ErrorLog.txt
+Ecosistemas.API/Ecosistemas.API/appsettings.json
+*.json
+*.txt
+*.cache
+*.props
