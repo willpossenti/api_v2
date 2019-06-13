@@ -32,6 +32,14 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
                     AtendimentoMedicoPrescricaoReceita = atendimentoMedicoPrescricaoReceita,
                     Dose = atendimentoMedicoPrescricaoReceita.Dose,
+<<<<<<< HEAD
+=======
+                    GrupoMedicamentoDetalhe = atendimentoMedicoPrescricaoReceita.GrupoMedicamentoDetalhe?.Nome,
+                    Medicamento = atendimentoMedicoPrescricaoReceita.Medicamento?.Nome,
+                    ViaAdministracaoMedicamento = atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamento?.Descricao,
+                    IntervaloMedicamento = atendimentoMedicoPrescricaoReceita.IntervaloMedicamento?.Descricao,
+                    UnidadeMedicamento = atendimentoMedicoPrescricaoReceita.UnidadeMedicamento?.Descricao,
+>>>>>>> sprint_yl_25052019
                     Observacao = atendimentoMedicoPrescricaoReceita?.Observacao,
                     Prescricao = atendimentoMedicoPrescricaoReceita.Prescricao,
                     Receita = atendimentoMedicoPrescricaoReceita.Receita,

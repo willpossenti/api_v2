@@ -31,9 +31,16 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoExameHistorico = new AtendimentoMedicoExameHistorico
                 {
                     AtendimentoMedicoExame = atendimentoMedicoExame,
+<<<<<<< HEAD
                     //ExameLaboratorial = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.AlergiaId).Result.Nome,
                     //ExameImagem = atendimentoMedicoExame.ExameImagem,
+=======
+                    GrupoExame = atendimentoMedicoExame.GrupoExame?.Nome,
+                    Exame = atendimentoMedicoExame.Exame?.Nome,
+>>>>>>> sprint_yl_25052019
                     ObservacaoExame = atendimentoMedicoExame.ObservacaoExame,
+                    DataExame = atendimentoMedicoExame.DataExame,
+                    Profissional = atendimentoMedicoExame.Profissional?.NomeCompleto,
                     Ativo = atendimentoMedicoExame.Ativo,
                 };
 
