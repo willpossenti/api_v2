@@ -16,13 +16,27 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class AtendimentoMedicoService : BaseService<AtendimentoMedico>, IAtendimentoMedicoService
     {
 
+<<<<<<< HEAD
         private readonly IAtendimentoMedicoHistoricoService _serviceAtendimentoMedicoHistorico;
+=======
+        private IAtendimentoMedicoHistoricoService _serviceAtendimentoMedicoHistorico;
+        private IAtendimentoMedicoAlergiaHistoricoService _serviceAtendimentoMedicoAlergiaHistorico;
+        private IAtendimentoMedicoExameHistoricoService _serviceAtendimentoMedicoExameHistorico;
+        private IAtendimentoMedicoPrescricaoReceitaHistoricoService _serviceAtendimentoMedicoPrescricaoReceitaHistorico;
+>>>>>>> sprint_yl_25052019
         private readonly KlinikosDbContext _contextKlinikos;
 
         public AtendimentoMedicoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
+<<<<<<< HEAD
             _serviceAtendimentoMedicoHistorico = new AtendimentoMedicoHistoricoService(contextDominio, contextKlinikos, context);
+=======
+            _serviceAtendimentoMedicoHistorico = new AtendimentoMedicoHistoricoService(contextKlinikos, context);
+            _serviceAtendimentoMedicoAlergiaHistorico = new AtendimentoMedicoAlergiaHistoricoService(contextKlinikos, context);
+            _serviceAtendimentoMedicoExameHistorico = new AtendimentoMedicoExameHistoricoService(contextKlinikos, context);
+            _serviceAtendimentoMedicoPrescricaoReceitaHistorico = new AtendimentoMedicoPrescricaoReceitaHistoricoService(contextKlinikos, context);
+>>>>>>> sprint_yl_25052019
         }
 
         public async Task<CustomResponse<AtendimentoMedico>> AdicionarAtendimentoMedico(AtendimentoMedico atendimentoMedico, Guid userId)
@@ -38,7 +52,39 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 await this.Adicionar(atendimentoMedico, userId);
 
+
                 await _serviceAtendimentoMedicoHistorico.AdicionarHistoricoAtendimentoMedico(atendimentoMedico, _pessoaMaster);
+
+                if (atendimentoMedico.AtendimentoMedicoAlergia.Count > 0) {
+
+
+                    foreach (var alergia in atendimentoMedico.AtendimentoMedicoAlergia) {
+
+                        await _serviceAtendimentoMedicoAlergiaHistorico.AdicionarHistoricoAtendimentoMedicoAlergia(alergia, _pessoaMaster);
+                    }
+
+                }
+
+                if (atendimentoMedico.AtendimentoMedicoExame.Count > 0)
+                {
+
+                    foreach (var exame in atendimentoMedico.AtendimentoMedicoExame)
+                    {
+                        await _serviceAtendimentoMedicoExameHistorico.AdicionarHistoricoAtendimentoMedicoExame(exame, _pessoaMaster);
+                    }
+                }
+
+                if (atendimentoMedico.AtendimentoMedicoPrescricaoReceita.Count > 0)
+                {
+
+                    foreach (var prescricaoReceita in atendimentoMedico.AtendimentoMedicoPrescricaoReceita)
+                    {
+                        await _serviceAtendimentoMedicoPrescricaoReceitaHistorico.AdicionarHistoricoAtendimentoMedicoPrescricaoReceita(prescricaoReceita, _pessoaMaster);
+                    }
+                }
+                        
+
+
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Message = "Incluído com sucesso";
