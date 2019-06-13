@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecosistemas.Business.Entities.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -13,15 +14,15 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedico AtendimentoMedico { get; set; }
 
-<<<<<<< HEAD
+
         public bool ExameLaboratorial { get; set; }
 
         public bool ExameImagem { get; set; }
 
         public Guid GrupoExameId { get; set; }
-=======
+
         public virtual GrupoExame GrupoExame { get; set; }
->>>>>>> sprint_yl_25052019
+
 
         public Guid ExameId { get; set; }
 

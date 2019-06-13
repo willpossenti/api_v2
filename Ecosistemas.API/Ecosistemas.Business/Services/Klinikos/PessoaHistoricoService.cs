@@ -13,19 +13,13 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class PessoaHistoricoService : BaseService<PessoaHistorico>, IPessoaHistoricoService
     {
-<<<<<<< HEAD
-        private readonly DominioDbContext _contextDominio;
-=======
 
->>>>>>> sprint_yl_25052019
+        private readonly DominioDbContext _contextDominio;
+
 
         public PessoaHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-<<<<<<< HEAD
             _contextDominio = contextDominio;
-=======
-
->>>>>>> sprint_yl_25052019
         }
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoPaciente(PessoaPaciente pessoaPaciente, PessoaProfissional pessoaProfissionalCadastro)
         {
@@ -51,12 +45,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                     DataEntradaPis = pessoaPaciente.DataEntradaPais,
                     DescricaoNaoIdentificado = pessoaPaciente.DescricaoNaoIdentificado,
                     Emissao = pessoaPaciente.Emissao,
-<<<<<<< HEAD
-=======
-                    Escolaridade = pessoaPaciente.Escolaridade?.Descricao,
-                    Estado = pessoaPaciente.Estado?.Nome,
-                    Etnia = pessoaPaciente.Etnia?.Nome,
->>>>>>> sprint_yl_25052019
                     FrequentaEscola = pessoaPaciente.FrequentaEscola,
                     IdadeAparente = pessoaPaciente.IdadeAparente,
                     Identidade = pessoaPaciente.Identidade,

@@ -11,11 +11,9 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid AtendimentoMedicoPrescricaoReceitaId { get; set; }
 
-<<<<<<< HEAD
         public Guid GrupoMedicamentoId { get; set; }
-=======
+
         public virtual GrupoMedicamentoDetalhe GrupoMedicamentoDetalhe { get; set; }
->>>>>>> sprint_yl_25052019
 
         public Guid MedicamentoId { get; set; }
 

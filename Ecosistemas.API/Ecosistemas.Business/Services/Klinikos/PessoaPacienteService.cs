@@ -24,11 +24,7 @@ namespace Ecosistemas.Business.Services.Klinikos
         public PessoaPacienteService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-<<<<<<< HEAD
             _servicePessoaHistorico = new PessoaHistoricoService(contextDominio, contextKlinikos, context);
-=======
-            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
->>>>>>> sprint_yl_25052019
         }
 
         public async Task<CustomResponse<PessoaPaciente>> AdicionarPaciente(PessoaPaciente pessoaPaciente, Guid userId)

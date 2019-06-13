@@ -23,11 +23,8 @@ namespace Ecosistemas.Business.Services.Klinikos
         public PessoaProfissionalService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
-<<<<<<< HEAD
             _servicePessoaHistorico = new PessoaHistoricoService(contextDominio, contextKlinikos, context);
-=======
-            _servicePessoaHistorico = new PessoaHistoricoService(contextKlinikos, context);
->>>>>>> sprint_yl_25052019
+
         }
 
 
@@ -289,9 +286,6 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-<<<<<<< HEAD
-      
-=======
         public async Task<CustomResponse<PessoaProfissional>> ConsultaProfissional(Guid userId)
         {
             var _response = new CustomResponse<PessoaProfissional>();
@@ -356,6 +350,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                    .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
             }
         }
->>>>>>> sprint_yl_25052019
+
     }
 }

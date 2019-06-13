@@ -32,14 +32,6 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
                     AtendimentoMedicoPrescricaoReceita = atendimentoMedicoPrescricaoReceita,
                     Dose = atendimentoMedicoPrescricaoReceita.Dose,
-<<<<<<< HEAD
-=======
-                    GrupoMedicamentoDetalhe = atendimentoMedicoPrescricaoReceita.GrupoMedicamentoDetalhe?.Nome,
-                    Medicamento = atendimentoMedicoPrescricaoReceita.Medicamento?.Nome,
-                    ViaAdministracaoMedicamento = atendimentoMedicoPrescricaoReceita.ViaAdministracaoMedicamento?.Descricao,
-                    IntervaloMedicamento = atendimentoMedicoPrescricaoReceita.IntervaloMedicamento?.Descricao,
-                    UnidadeMedicamento = atendimentoMedicoPrescricaoReceita.UnidadeMedicamento?.Descricao,
->>>>>>> sprint_yl_25052019
                     Observacao = atendimentoMedicoPrescricaoReceita?.Observacao,
                     Prescricao = atendimentoMedicoPrescricaoReceita.Prescricao,
                     Receita = atendimentoMedicoPrescricaoReceita.Receita,
@@ -48,7 +40,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
 
                 if (atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId != Guid.Empty)
-                    _AtendimentoMedicoPrescricaoReceitaHistorico.GrupoMedicamento = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.Nome;
+                    _AtendimentoMedicoPrescricaoReceitaHistorico.GrupoMedicamentoDetalhe = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.GrupoMedicamentoDetalhe;
 
                 if (atendimentoMedicoPrescricaoReceita.MedicamentoId != Guid.Empty)
                     _AtendimentoMedicoPrescricaoReceitaHistorico.Medicamento = _contextDominio.Medicamentos.FindAsync(atendimentoMedicoPrescricaoReceita.MedicamentoId).Result.Nome;

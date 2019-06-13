@@ -1,5 +1,5 @@
 ﻿using Ecosistemas.Business.Contexto.Klinikos;
-using Ecosistemas.Business.Entities.Klinikos;
+using Ecosistemas.Business.Entities.Dominio;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
 using System;
@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Interfaces.Dominio;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
