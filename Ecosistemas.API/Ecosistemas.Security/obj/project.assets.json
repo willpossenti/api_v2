@@ -7972,19 +7972,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
       "projectName": "Ecosistemas.Security",
       "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
       "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
       "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
-=======
-      "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
-      "projectName": "Ecosistemas.Security",
-      "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
-      "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-      "outputPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
->>>>>>> sprint_yl_25052019
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

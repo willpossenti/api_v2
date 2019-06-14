@@ -1,6 +1,4 @@
 ﻿using Ecosistemas.Business.Contexto.Klinikos;
-using Ecosistemas.Business.Entities.Dominio;
-using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
 using System;
 using System.Collections.Generic;
@@ -11,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Entities.Dominio;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Interfaces.Dominio;
 
 namespace Ecosistemas.Business.Services.Klinikos
@@ -18,11 +18,13 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class CIDService : BaseService<CID>, ICIDService
     {
         private readonly KlinikosDbContext _contextKlinikos;
+        private readonly DominioDbContext _contextDominio;
         private readonly ApiDbContext _context;
 
-        public CIDService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
+        public CIDService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
+            _contextDominio = contextDominio;
         }
 
         public async Task<CustomResponse<IList<CID>>> GetCIDByCapitulo(CID CID)
@@ -35,7 +37,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
                     Expression<Func<CID, bool>> filtroByCapitulo = x => x.ConsultaCID.ConsultaCIDId == CID.ConsultaCID.ConsultaCIDId
                     && x.Nome.Contains(CID.Nome);
-                    var listaCids = _contextKlinikos.CID.Where(filtroByCapitulo);
+                    var listaCids = _contextDominio.CID.Where(filtroByCapitulo);
 
                     _response.StatusCode = StatusCodes.Status201Created;
                     _response.Message = "Incluído com sucesso";

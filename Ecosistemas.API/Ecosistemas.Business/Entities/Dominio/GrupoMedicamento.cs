@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecosistemas.Business.Entities.Klinikos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
