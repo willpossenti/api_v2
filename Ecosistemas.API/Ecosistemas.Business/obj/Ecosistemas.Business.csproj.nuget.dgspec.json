@@ -113,6 +113,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -121,7 +125,7 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+            "Microsoft.AspNetCore.HttpsPolicy": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -129,13 +133,9 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.AspNetCore.Razor.Design": {
+            "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[5.4.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

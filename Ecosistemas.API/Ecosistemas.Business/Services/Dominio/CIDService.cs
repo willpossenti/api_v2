@@ -17,9 +17,8 @@ namespace Ecosistemas.Business.Services.Dominio
     public class CIDService : BaseService<CID>, ICIDService
     {
         private readonly DominioDbContext _contextDominio;
-        private readonly ApiDbContext _context;
 
-        public CIDService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextDominio, context)
+        public CIDService(DominioDbContext contextDominio, ApiDbContext context) : base(contextDominio, context)
         {
             _contextDominio = contextDominio;
         }

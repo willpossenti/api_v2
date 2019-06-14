@@ -32,7 +32,7 @@ namespace Ecosistemas.Business.Services.Dominio
 
             try
             {
-                var _pessoaMaster = (PessoaProfissional)_contextDominio.Pessoas.Where(x => x.Master).FirstOrDefault();
+               // var _pessoaMaster = (PessoaProfissional)_contextDominio.Pessoas.Where(x => x.Master).FirstOrDefault();
 
 
                 grupoMedicamento.Ativo = true;

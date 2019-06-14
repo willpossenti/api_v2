@@ -39,8 +39,8 @@ namespace Ecosistemas.Business.Services.Klinikos
                 };
 
 
-                if (atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId != Guid.Empty)
-                    _AtendimentoMedicoPrescricaoReceitaHistorico.GrupoMedicamentoDetalhe = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.GrupoMedicamentoDetalhe;
+                //if (atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId != Guid.Empty)
+                //    _AtendimentoMedicoPrescricaoReceitaHistorico.GrupoMedicamentoDetalhe = _contextDominio.GruposMedicamento.FindAsync(atendimentoMedicoPrescricaoReceita.GrupoMedicamentoId).Result.GrupoMedicamentoDetalhe;
 
                 if (atendimentoMedicoPrescricaoReceita.MedicamentoId != Guid.Empty)
                     _AtendimentoMedicoPrescricaoReceitaHistorico.Medicamento = _contextDominio.Medicamentos.FindAsync(atendimentoMedicoPrescricaoReceita.MedicamentoId).Result.Nome;

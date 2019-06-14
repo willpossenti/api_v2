@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
         "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
         "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
-=======
-    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {}
-  },
-  "projects": {
-    "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
-        "projectName": "Ecosistemas.Security",
-        "projectPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
-        "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "E:\\eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
->>>>>>> sprint_yl_25052019
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -59,6 +45,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -67,7 +57,7 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+            "Microsoft.AspNetCore.HttpsPolicy": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -75,13 +65,9 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.AspNetCore.Razor.Design": {
+            "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[5.4.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

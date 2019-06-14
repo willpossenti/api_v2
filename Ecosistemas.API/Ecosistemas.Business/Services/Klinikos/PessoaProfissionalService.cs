@@ -298,7 +298,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 {
 
 
-                    var _profissionalEncontrado = Profissional.Where(_filtroUser).ToList().FirstOrDefault();
+                    var _profissionalEncontrado = _contextKlinikos.PessoaProfissionais.Where(_filtroUser).ToList().FirstOrDefault();
 
 
                     if (_profissionalEncontrado != null)
@@ -328,28 +328,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-        protected internal IQueryable<PessoaProfissional> Profissional
-        {
-
-
-            get
-            {
-                return _contextKlinikos.PessoaProfissionais
-                   .Include(pessoa => pessoa.Raca)
-                   .Include(pessoa => pessoa.Etnia)
-                   .Include(pessoa => pessoa.Justificativa)
-                   .Include(pessoa => pessoa.Nacionalidade)
-                   .Include(pessoa => pessoa.Naturalidade).ThenInclude(estado => estado.Estado)
-                   .Include(pessoa => pessoa.OrgaoEmissor)
-                   .Include(pessoa => pessoa.Estado)
-                   .Include(pessoa => pessoa.Cidade)
-                   .Include(pessoa => pessoa.Ocupacao)
-                   .Include(pessoa => pessoa.PaisOrigem)
-                   .Include(pessoa => pessoa.TipoCertidao)
-                   .Include(pessoa => pessoa.Escolaridade)
-                   .Include(pessoa => pessoa.SituacaoFamiliarConjugal);
-            }
-        }
+       
 
     }
 }
