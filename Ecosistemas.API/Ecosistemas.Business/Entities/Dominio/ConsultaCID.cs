@@ -27,7 +27,7 @@ namespace Ecosistemas.Business.Entities.Dominio
         [DataType(DataType.Text)]
         public string Posicao { get; set; }
 
-        public int ordem { get; set; }
+        public int Ordem { get; set; }
 
         public bool Ativo { get; set; } = true;
 

@@ -2,18 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Ecosistemas.Business;
-using Ecosistemas.Business.Entities.Klinikos;
-using Ecosistemas.Business.Contexto.Klinikos;
-using Ecosistemas.Business.Interfaces.Klinikos;
-using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Interfaces.Dominio;
+using Ecosistemas.Business.Services.Dominio;
+using Ecosistemas.Business.Entities.Dominio;
+using Ecosistemas.Business.Contexto.Dominio;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -25,9 +22,9 @@ namespace Ecosistemas.API.Controllers.Klinikos
     {
         private readonly IUnidadeMedicamentoService _service;
 
-        public UnidadeMedicamentoController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public UnidadeMedicamentoController(DominioDbContext contextDominio, ApiDbContext context)
         {
-            _service = new UnidadeMedicamentoService(contextKlinikos, context);
+            _service = new UnidadeMedicamentoService(contextDominio, context);
         }
 
         [Route("Incluir")]
@@ -40,7 +37,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [HttpPut]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<UnidadeMedicamento>> Put([FromBody]UnidadeMedicamento unidadeMedicamento, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<UnidadeMedicamento>> Put([FromBody]UnidadeMedicamento unidadeMedicamento)
         {
             return await _service.Atualizar(unidadeMedicamento, Guid.Parse(HttpContext.User.Identity.Name));
         }
