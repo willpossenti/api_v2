@@ -28,9 +28,9 @@ namespace Ecosistemas.API.Controllers.Klinikos
     {
         private readonly IAcolhimentoService _service;
 
-        public AcolhimentoController(DominioDbContext dominioDbContext, KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public AcolhimentoController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new AcolhimentoService(dominioDbContext, contextKlinikos, context);
+            _service = new AcolhimentoService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]
@@ -43,7 +43,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [HttpPut]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<Acolhimento>> Put([FromBody]Acolhimento acolhimento, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<Acolhimento>> Put([FromBody]Acolhimento acolhimento)
         {
             return await _service.Atualizar(acolhimento, Guid.Parse(HttpContext.User.Identity.Name));
         }

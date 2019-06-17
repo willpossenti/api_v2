@@ -40,7 +40,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [HttpPut]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<ModeloPrescricaoReceita>> Put([FromBody]ModeloPrescricaoReceita modeloPrescricaoReceita, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<ModeloPrescricaoReceita>> Put([FromBody]ModeloPrescricaoReceita modeloPrescricaoReceita)
         {
             return await _service.Atualizar(modeloPrescricaoReceita, Guid.Parse(HttpContext.User.Identity.Name));
         }

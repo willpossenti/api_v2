@@ -14,6 +14,7 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -24,9 +25,9 @@ namespace Ecosistemas.API.Controllers.Klinikos
     {
         private readonly IAtendimentoMedicoExameService _service;
 
-        public AtendimentoMedicoExameController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public AtendimentoMedicoExameController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new AtendimentoMedicoExameService(contextKlinikos, context);
+            _service = new AtendimentoMedicoExameService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]

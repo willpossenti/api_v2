@@ -14,6 +14,7 @@ using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Ecosistemas.Business.Contexto.Dominio;
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -25,9 +26,9 @@ namespace Ecosistemas.API.Controllers.Klinikos
         private readonly IAtendimentoMedicoAlergiaService _service;
 
 
-        public AtendimentoMedicoAlergiaController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public AtendimentoMedicoAlergiaController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new AtendimentoMedicoAlergiaService(contextKlinikos, context);
+            _service = new AtendimentoMedicoAlergiaService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]
@@ -40,7 +41,7 @@ namespace Ecosistemas.API.Controllers.Klinikos
 
         [HttpPut]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<AtendimentoMedicoAlergia>> Put([FromBody]AtendimentoMedicoAlergia atendimentoMedicoAlergia, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<AtendimentoMedicoAlergia>> Put([FromBody]AtendimentoMedicoAlergia atendimentoMedicoAlergia)
         {
             return await _service.Atualizar(atendimentoMedicoAlergia, Guid.Parse(HttpContext.User.Identity.Name));
         }
