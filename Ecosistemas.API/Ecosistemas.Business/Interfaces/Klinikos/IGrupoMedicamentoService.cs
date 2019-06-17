@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecosistemas.Business.Interfaces.Dominio
+namespace Ecosistemas.Business.Interfaces.Klinikos
 {
     public interface IGrupoMedicamentoService : IBaseService<GrupoMedicamento>
     {

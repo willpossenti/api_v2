@@ -1,8 +1,7 @@
 ﻿using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Contexto.Klinikos;
-using Ecosistemas.Business.Entities.Dominio;
-using Ecosistemas.Business.Interfaces.Dominio;
+using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Utility;
 using Microsoft.AspNetCore.Http;
@@ -12,17 +11,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecosistemas.Business.Services.Dominio
+namespace Ecosistemas.Business.Services.Klinikos
 {
     public class GrupoMedicamentoService : BaseService<GrupoMedicamento>, IGrupoMedicamentoService
     {
 
-        // private IGrupoMedicamentoHistoricoService _serviceGrupoMedicamentoHistorico;
-        private readonly DominioDbContext _contextDominio;
+       //  private IGrupoMedicamentoHistoricoService _serviceGrupoMedicamentoHistorico;
+        private readonly KlinikosDbContext _contextKlinikos;
 
-        public GrupoMedicamentoService(DominioDbContext contextDominio, ApiDbContext context) : base(contextDominio, context)
+        public GrupoMedicamentoService(KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
-            _contextDominio = contextDominio;
+            _contextKlinikos = contextKlinikos;
            // _serviceGrupoMedicamentoHistorico = new GrupoMedicamentoHistoricoService(contextKlinikos, context);
         }
 
@@ -32,14 +31,14 @@ namespace Ecosistemas.Business.Services.Dominio
 
             try
             {
-               // var _pessoaMaster = (PessoaProfissional)_contextDominio.Pessoas.Where(x => x.Master).FirstOrDefault();
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
 
                 grupoMedicamento.Ativo = true;
 
                 await this.Adicionar(grupoMedicamento, userId);
 
-               // await _serviceGrupoMedicamentoHistorico.AdicionarHistoricoGrupoMedicamento(grupoMedicamento, _pessoaMaster);
+             //   await _serviceGrupoMedicamentoHistorico.AdicionarHistoricoGrupoMedicamento(grupoMedicamento, _pessoaMaster);
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Message = "Incluído com sucesso";

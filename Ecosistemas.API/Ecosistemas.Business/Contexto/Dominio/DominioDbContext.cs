@@ -53,7 +53,6 @@ namespace Ecosistemas.Business.Contexto.Dominio
         public DbSet<Exame> Exames { get; set; }
         public DbSet<CID> CID { get; set; }
         public DbSet<Medicamento> Medicamentos { get; set; }
-        public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
         public DbSet<ViaAdministracaoMedicamento> ViasAdministracaoMedicamento { get; set; }
         public DbSet<UnidadeMedicamento> UnidadesMedicamento { get; set; }
         public DbSet<IntervaloMedicamento> IntervalosMedicamento { get; set; }

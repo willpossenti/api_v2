@@ -41,7 +41,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<AtendimentoMedicoHistorico> AtendimentoMedicoHistorico { get; set; }
         public DbSet<GrupoExame> GruposExame { get; set; }
 
-
+        public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
