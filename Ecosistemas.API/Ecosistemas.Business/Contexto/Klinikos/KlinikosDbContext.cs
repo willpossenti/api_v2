@@ -1,12 +1,6 @@
-﻿using Ecosistemas.Business.Entities;
-using Ecosistemas.Business.Entities.Dominio;
+﻿
 using Ecosistemas.Business.Entities.Klinikos;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Ecosistemas.Business.Contexto.Klinikos
 {
     public class KlinikosDbContext: DbContext
@@ -37,14 +31,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<AtendimentoMedicoExameHistorico> AtendimentoMedicoExameHistorico { get; set; }
         public DbSet<ModeloPrescricaoReceita> ModelosPrescricaoReceita { get; set; }
         public DbSet<ModeloPrescricaoReceitaDetalhe> ModeloPrescricaoReceitaDetalhes { get; set; }
-
-        public DbSet<Medicamento> Medicamentos { get; set; }
         public DbSet<GrupoMedicamentoDetalhe> GrupoMedicamentoDetalhes { get; set; }
-        public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
-        public DbSet<ViaAdministracaoMedicamento> ViasAdministracaoMedicamento { get; set; }
-        public DbSet<UnidadeMedicamento> UnidadesMedicamento { get; set; }
-        public DbSet<IntervaloMedicamento> IntervalosMedicamento { get; set; }
-
         public DbSet<ModeloAtestado> ModelosAtestado { get; set; }
         public DbSet<AtendimentoMedicoPrescricaoReceita> AtendimentoMedicoPrescricoesReceitas { get; set; }
         public DbSet<AtendimentoMedicoPrescricaoReceitaHistorico> AtendimentoMedicoPrescricaoReceitaHistorico { get; set; }
@@ -52,7 +39,8 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<AtendimentoMedicoAlergiaHistorico> AtendimentoMedicoAlergiaHistorico { get; set; }
         public DbSet<AtendimentoMedico> AtendimentosMedicos { get; set; }
         public DbSet<AtendimentoMedicoHistorico> AtendimentoMedicoHistorico { get; set; }
-       
+        public DbSet<GrupoExame> GruposExame { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

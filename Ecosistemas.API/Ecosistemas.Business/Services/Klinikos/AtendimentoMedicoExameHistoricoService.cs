@@ -13,12 +13,13 @@ namespace Ecosistemas.Business.Services.Klinikos
 {
     public class AtendimentoMedicoExameHistoricoService : BaseService<AtendimentoMedicoExameHistorico>, IAtendimentoMedicoExameHistoricoService
     {
+        private readonly KlinikosDbContext _contextKlinikos;
         private readonly DominioDbContext _contextDominio;
 
         public AtendimentoMedicoExameHistoricoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
+            _contextKlinikos = contextKlinikos;
             _contextDominio = contextDominio;
-
         }
 
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoAtendimentoMedicoExame(AtendimentoMedicoExame atendimentoMedicoExame, PessoaProfissional pessoaProfissionalCadastro)
@@ -42,7 +43,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 };
 
                 if (atendimentoMedicoExame.GrupoExameId != Guid.Empty)
-                    _AtendimentoMedicoExameHistorico.GrupoExame = _contextDominio.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExameId).Result.Nome;
+                    _AtendimentoMedicoExameHistorico.GrupoExame = _contextKlinikos.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExameId).Result.Nome;
 
                 if (atendimentoMedicoExame.ExameId != Guid.Empty)
                     _AtendimentoMedicoExameHistorico.Exame = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.ExameId).Result.Nome;

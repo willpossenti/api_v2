@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Ecosistemas.Business.Entities.Klinikos;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Ecosistemas.Business.Entities.Dominio
 {

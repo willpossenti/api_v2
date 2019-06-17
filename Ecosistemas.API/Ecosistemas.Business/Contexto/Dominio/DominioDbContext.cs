@@ -50,7 +50,6 @@ namespace Ecosistemas.Business.Contexto.Dominio
         public DbSet<CausaExterna> CausasExternas { get; set; }
         public DbSet<Preferencial> Preferenciais { get; set; }
         public DbSet<TipoSaida> TiposSaida { get; set; }
-        public DbSet<GrupoExame> GruposExame { get; set; }
         public DbSet<Exame> Exames { get; set; }
         public DbSet<CID> CID { get; set; }
         public DbSet<Medicamento> Medicamentos { get; set; }
