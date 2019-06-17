@@ -42,7 +42,7 @@ namespace Ecosistemas.API.Controllers.Dominio
 
         [HttpPut]
         [Authorize(Roles = Roles.ROLE_API_MASTER)]
-        public async Task<CustomResponse<LocalizacaoAlergia>> Put([FromBody]LocalizacaoAlergia localizacaoAlergia, [FromServices]AccessManager accessManager)
+        public async Task<CustomResponse<LocalizacaoAlergia>> Put([FromBody]LocalizacaoAlergia localizacaoAlergia)
         {
             return await _service.Atualizar(localizacaoAlergia, Guid.Parse(HttpContext.User.Identity.Name));
         }
