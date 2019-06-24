@@ -14,15 +14,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedico AtendimentoMedico { get; set; }
 
-
-        public bool ExameLaboratorial { get; set; }
-
-        public bool ExameImagem { get; set; }
-
-        public Guid GrupoExameId { get; set; }
-
         public virtual GrupoExame GrupoExame { get; set; }
-
 
         public Guid ExameId { get; set; }
 

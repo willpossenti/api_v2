@@ -15,7 +15,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual GrupoMedicamentoDetalhe GrupoMedicamentoDetalhe { get; set; }
 
-        public virtual Medicamento Medicamento { get; set; }
+        public Guid MedicamentoId { get; set; }
 
         public bool Ativo { get; set; }
 

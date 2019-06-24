@@ -19,7 +19,7 @@ namespace Ecosistemas.Business.Services.Klinikos
         private readonly IAtendimentoMedicoHistoricoService _serviceAtendimentoMedicoHistorico;
         private readonly IAtendimentoMedicoAlergiaHistoricoService _serviceAtendimentoMedicoAlergiaHistorico;
         private readonly IAtendimentoMedicoExameHistoricoService _serviceAtendimentoMedicoExameHistorico;
-        private readonly IAtendimentoMedicoPrescricaoReceitaHistoricoService _serviceAtendimentoMedicoPrescricaoReceitaHistorico;
+        private readonly IAtendimentoMedicoPrescricaoReceitaDetalheHistoricoService _serviceAtendimentoMedicoPrescricaoReceitaDetalheHistorico;
         private readonly KlinikosDbContext _contextKlinikos;
 
         public AtendimentoMedicoService(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
@@ -28,7 +28,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             _serviceAtendimentoMedicoHistorico = new AtendimentoMedicoHistoricoService(contextDominio, contextKlinikos, context);
             _serviceAtendimentoMedicoAlergiaHistorico = new AtendimentoMedicoAlergiaHistoricoService(contextDominio, contextKlinikos, context);
             _serviceAtendimentoMedicoExameHistorico = new AtendimentoMedicoExameHistoricoService(contextDominio, contextKlinikos, context);
-            _serviceAtendimentoMedicoPrescricaoReceitaHistorico = new AtendimentoMedicoPrescricaoReceitaHistoricoService(contextDominio, contextKlinikos, context);
+            _serviceAtendimentoMedicoPrescricaoReceitaDetalheHistorico = new AtendimentoMedicoPrescricaoReceitaDetalheHistoricoService(contextDominio, contextKlinikos, context);
 
         }
 
@@ -67,12 +67,12 @@ namespace Ecosistemas.Business.Services.Klinikos
                     }
                 }
 
-                if (atendimentoMedico.AtendimentoMedicoPrescricaoReceita.Count > 0)
+                if (atendimentoMedico.AtendimentoMedicoPrescricaoReceitaDetalhe.Count > 0)
                 {
 
-                    foreach (var prescricaoReceita in atendimentoMedico.AtendimentoMedicoPrescricaoReceita)
+                    foreach (var prescricaoReceita in atendimentoMedico.AtendimentoMedicoPrescricaoReceitaDetalhe)
                     {
-                        await _serviceAtendimentoMedicoPrescricaoReceitaHistorico.AdicionarHistoricoAtendimentoMedicoPrescricaoReceita(prescricaoReceita, _pessoaMaster);
+                        await _serviceAtendimentoMedicoPrescricaoReceitaDetalheHistorico.AdicionarHistoricoAtendimentoMedicoPrescricaoReceitaDetalhe(prescricaoReceita, _pessoaMaster);
                     }
                 }
                         

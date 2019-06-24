@@ -9,11 +9,14 @@ using Microsoft.AspNetCore.Http;
 using Ecosistemas.Business;
 using Ecosistemas.Business.Entities.Klinikos;
 using Ecosistemas.Business.Contexto.Klinikos;
+using Ecosistemas.Business.Contexto.Dominio;
 using Ecosistemas.Business.Interfaces.Klinikos;
 using Ecosistemas.Business.Services.Klinikos;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Microsoft.AspNetCore.Cors;
+
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -24,9 +27,9 @@ namespace Ecosistemas.API.Controllers.Klinikos
     {
         private readonly IAtendimentoMedicoExameService _service;
 
-        public AtendimentoMedicoExameController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public AtendimentoMedicoExameController(DominioDbContext dominioDbContext, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new AtendimentoMedicoExameService(contextKlinikos, context);
+            _service = new AtendimentoMedicoExameService(dominioDbContext, contextKlinikos, context);
         }
 
         [Route("Incluir")]

@@ -31,16 +31,17 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<AtendimentoMedicoExameHistorico> AtendimentoMedicoExameHistorico { get; set; }
         public DbSet<ModeloPrescricaoReceita> ModelosPrescricaoReceita { get; set; }
         public DbSet<ModeloPrescricaoReceitaDetalhe> ModeloPrescricaoReceitaDetalhes { get; set; }
+        public DbSet<GrupoExameDetalhe> GrupoExameDetalhes { get; set; }
         public DbSet<GrupoMedicamentoDetalhe> GrupoMedicamentoDetalhes { get; set; }
         public DbSet<ModeloAtestado> ModelosAtestado { get; set; }
         public DbSet<AtendimentoMedicoPrescricaoReceita> AtendimentoMedicoPrescricoesReceitas { get; set; }
-        public DbSet<AtendimentoMedicoPrescricaoReceitaHistorico> AtendimentoMedicoPrescricaoReceitaHistorico { get; set; }
+        public DbSet<AtendimentoMedicoPrescricaoReceitaDetalhe> AtendimentoMedicoPrescricaoReceitaDetalhes { get; set; }
+        public DbSet<AtendimentoMedicoPrescricaoReceitaDetalheHistorico> AtendimentoMedicoPrescricaoReceitaDetalheHistorico { get; set; }
         public DbSet<AtendimentoMedicoAlergia> AtendimentoMedicoAlergias { get; set; }
         public DbSet<AtendimentoMedicoAlergiaHistorico> AtendimentoMedicoAlergiaHistorico { get; set; }
         public DbSet<AtendimentoMedico> AtendimentosMedicos { get; set; }
         public DbSet<AtendimentoMedicoHistorico> AtendimentoMedicoHistorico { get; set; }
         public DbSet<GrupoExame> GruposExame { get; set; }
-
         public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

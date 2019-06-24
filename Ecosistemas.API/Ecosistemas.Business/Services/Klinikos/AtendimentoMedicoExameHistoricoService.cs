@@ -42,8 +42,8 @@ namespace Ecosistemas.Business.Services.Klinikos
                     Ativo = atendimentoMedicoExame.Ativo,
                 };
 
-                if (atendimentoMedicoExame.GrupoExameId != Guid.Empty)
-                    _AtendimentoMedicoExameHistorico.GrupoExame = _contextKlinikos.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExameId).Result.Nome;
+                if (atendimentoMedicoExame.GrupoExame != null)
+                    _AtendimentoMedicoExameHistorico.GrupoExame = _contextKlinikos.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExame).Result.Nome;
 
                 if (atendimentoMedicoExame.ExameId != Guid.Empty)
                     _AtendimentoMedicoExameHistorico.Exame = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.ExameId).Result.Nome;

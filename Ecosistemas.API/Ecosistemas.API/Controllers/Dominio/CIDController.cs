@@ -7,13 +7,15 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Ecosistemas.Business;
-using Ecosistemas.Business.Entities.Klinikos;
-using Ecosistemas.Business.Contexto.Klinikos;
-using Ecosistemas.Business.Interfaces.Klinikos;
-using Ecosistemas.Business.Services.Klinikos;
+using Ecosistemas.Business.Entities.Dominio;
+using Ecosistemas.Business.Contexto.Dominio;
+using Ecosistemas.Business.Interfaces.Dominio;
+using Ecosistemas.Business.Services.Dominio;
 using Ecosistemas.Security.Manager;
 using Ecosistemas.Business.Utility;
 using Ecosistemas.Business.Contexto.Api;
+using Microsoft.AspNetCore.Cors;
+
 
 namespace Ecosistemas.API.Controllers.Klinikos
 {
@@ -25,9 +27,9 @@ namespace Ecosistemas.API.Controllers.Klinikos
     {
         private readonly ICIDService _service;
 
-        public CIDController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public CIDController(DominioDbContext contextDominio, ApiDbContext context)
         {
-            _service = new CIDService(contextKlinikos, context);
+            _service = new CIDService(contextDominio, context);
         }
 
         [Route("Incluir")]

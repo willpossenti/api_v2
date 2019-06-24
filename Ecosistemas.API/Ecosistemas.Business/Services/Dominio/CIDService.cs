@@ -31,7 +31,7 @@ namespace Ecosistemas.Business.Services.Dominio
             {
                 await Task.Run(() =>
                 {
-                    Expression<Func<CID, bool>> filtroByCapitulo = x => x.ConsultaCID.ConsultaCIDId == CID.ConsultaCID.ConsultaCIDId
+                    Expression<Func<CID, bool>> filtroByCapitulo = x => x.CapituloCID.CapituloCIDId == CID.CapituloCID.CapituloCIDId
                     && x.Nome.Contains(CID.Nome);
                     var listaCids = _contextDominio.CID.Where(filtroByCapitulo);
 

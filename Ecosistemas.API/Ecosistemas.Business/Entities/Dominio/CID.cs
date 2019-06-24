@@ -12,7 +12,7 @@ namespace Ecosistemas.Business.Entities.Dominio
         public Guid CIDId { get; set; }
         
    
-        public ConsultaCID ConsultaCID { get; set; }
+        public CapituloCID CapituloCID { get; set; }
 
         [StringLength(4, ErrorMessage = "{0} Precisa ter no máximo 4")]
         [DataType(DataType.Text)]

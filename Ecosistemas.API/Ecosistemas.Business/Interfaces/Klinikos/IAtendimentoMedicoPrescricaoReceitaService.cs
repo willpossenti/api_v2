@@ -9,6 +9,6 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
 {
     public interface IAtendimentoMedicoPrescricaoReceitaService : IBaseService<AtendimentoMedicoPrescricaoReceita>
     {
-        Task<CustomResponse<AtendimentoMedicoPrescricaoReceita>> AdicionarAtendimentoMedicoPrescricaoReceita(AtendimentoMedicoPrescricaoReceita atendimentoMedicoPrescricaoReceita, Guid userId);
+
     }
 }

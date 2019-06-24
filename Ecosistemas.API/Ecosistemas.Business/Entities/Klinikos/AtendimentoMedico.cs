@@ -9,7 +9,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
     {
 
         public AtendimentoMedico() { this.AtendimentoMedicoAlergia = new List<AtendimentoMedicoAlergia>();
-            this.AtendimentoMedicoExame = new List<AtendimentoMedicoExame>(); this.AtendimentoMedicoPrescricaoReceita = new List<AtendimentoMedicoPrescricaoReceita>(); }
+            this.AtendimentoMedicoExame = new List<AtendimentoMedicoExame>(); this.AtendimentoMedicoPrescricaoReceitaDetalhe = new List<AtendimentoMedicoPrescricaoReceitaDetalhe>(); }
 
         [Key]
         public Guid AtendimentoMedicoId { get; set; }
@@ -66,7 +66,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public Guid CIDId { get; set; }
 
-        public Guid ConsultaCIDId { get; set; }
+        public Guid CapituloCIDId { get; set; }
 
         public bool Prescricao { get; set; }
 
@@ -76,7 +76,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual ModeloPrescricaoReceitaDetalhe ModeloPrescricaoReceitaDetalhe { get; set; }
 
-        public virtual List<AtendimentoMedicoPrescricaoReceita> AtendimentoMedicoPrescricaoReceita { get; set; }
+        public virtual List<AtendimentoMedicoPrescricaoReceitaDetalhe> AtendimentoMedicoPrescricaoReceitaDetalhe { get; set; }
 
         public virtual ModeloAtestado ModeloAtestado { get; set; }
 

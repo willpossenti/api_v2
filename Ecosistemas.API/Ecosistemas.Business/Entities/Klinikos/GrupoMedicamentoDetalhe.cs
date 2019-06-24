@@ -11,7 +11,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid GrupoMedicamentoId { get; set; }
 
-        [Required(ErrorMessage = "O nome da variavel da abertura ocular é obrigatório")]
+        [Required(ErrorMessage = "O nome do grupo medicamento é obrigatório")]
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
         public string Nome { get; set; }

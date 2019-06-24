@@ -11,6 +11,8 @@ namespace Ecosistemas.Business.Entities.Dominio
         [Key]
         public Guid MedicamentoId { get; set; }
 
+        public Guid GrupoMedicamentoId { get; set; }
+
         [Required(ErrorMessage = "O nome do medicamento é obrigatório")]
         [StringLength(400, ErrorMessage = "{0} Precisa ter no máximo 400")]
         [DataType(DataType.Text)]
