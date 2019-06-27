@@ -27156,3 +27156,33 @@ Inner Exception : Cannot insert the value NULL into column 'NomeCompleto', table
 >>>>>>> d66124ea95eb497e246c5d807b0b6f2b2bc9a2c0
 The statement has been terminated.
 ------******------
+DateTime : 25/06/2019 15:44:32
+
+
+MessageA second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext, however instance members are not guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this is the case rewrite the query avoiding nested invocations.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarRange(List`1 entity, Guid UserId) in C:\Eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 59
+DateTime : 25/06/2019 16:56:40
+
+
+MessageA second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext, however instance members are not guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this is the case rewrite the query avoiding nested invocations.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarRange(List`1 entity, Guid UserId) in C:\Eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 59
+DateTime : 25/06/2019 17:04:54
+
+
+MessageA second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext, however instance members are not guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this is the case rewrite the query avoiding nested invocations.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ecosistemas.Business.Services.Klinikos.BaseService`1.AdicionarRange(List`1 entity, Guid UserId) in C:\Eco\api_v2\Ecosistemas.API\Ecosistemas.Business\Services\Klinikos\BaseService.cs:line 59

@@ -13,6 +13,7 @@ using Ecosistemas.Business.Contexto.Api;
 using Ecosistemas.Business.Entities.Dominio;
 using Ecosistemas.Business.Interfaces.Dominio;
 using Ecosistemas.Business.Contexto.Dominio;
+using Ecosistemas.Business.Entities.Klinikos;
 
 namespace Ecosistemas.Business.Services.Dominio
 {
@@ -66,6 +67,9 @@ namespace Ecosistemas.Business.Services.Dominio
 
 
         }
+
+
+        
 
     }
 }
