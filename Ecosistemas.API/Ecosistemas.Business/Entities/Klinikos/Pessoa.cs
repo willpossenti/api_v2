@@ -34,7 +34,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [StringLength(10, ErrorMessage = "{0} Precisa ter no máximo 10")]
         [DataType(DataType.Text)]
         public string IdadeAparente { get; set; }
-        
+
         public Guid RacaId { get; set; }
 
         public Guid EtniaId { get; set; }
@@ -193,6 +193,8 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Column(TypeName = "varchar(MAX)")]
         [DataType(DataType.Text)]
         public string Foto { get; set; }
+
+        public Guid PessoaStatusId { get; set; }
 
         public bool Ativo { get; set; } = true;
 

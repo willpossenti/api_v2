@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {}
+    "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {}
   },
   "projects": {
-    "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {
+    "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
+        "projectUniqueName": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
         "projectName": "Ecosistemas.API",
-        "projectPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
-        "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\obj\\",
+        "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\Ecosistemas.API.csproj",
+        "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
+        "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\yuri.lemos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\willian.possenti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
-                "projectPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj"
+              "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
+                "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj"
               }
             }
           }
@@ -72,20 +72,20 @@
         }
       }
     },
-    "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
+    "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
+        "projectUniqueName": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
         "projectName": "Ecosistemas.Business",
-        "projectPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
-        "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\obj\\",
+        "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\Ecosistemas.Business.csproj",
+        "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
+        "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\yuri.lemos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\willian.possenti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,8 +98,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
-                "projectPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj"
+              "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
+                "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj"
               }
             }
           }
@@ -140,20 +140,20 @@
         }
       }
     },
-    "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
+    "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+        "projectUniqueName": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
         "projectName": "Ecosistemas.Security",
-        "projectPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
-        "packagesPath": "C:\\Users\\yuri.lemos\\.nuget\\packages\\",
-        "outputPath": "C:\\Eco\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
+        "projectPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\Ecosistemas.Security.csproj",
+        "packagesPath": "C:\\Users\\willian.possenti\\.nuget\\packages\\",
+        "outputPath": "D:\\api_v2\\Ecosistemas.API\\Ecosistemas.Security\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\yuri.lemos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\willian.possenti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

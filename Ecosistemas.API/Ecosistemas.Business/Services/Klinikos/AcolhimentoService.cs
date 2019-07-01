@@ -41,6 +41,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                 await _serviceAcolhimentoHistorico.AdicionarHistoricoAcolhimento(acolhimento, _pessoaMaster);
 
                 _response.StatusCode = StatusCodes.Status201Created;
+                _response.Result = acolhimento;
                 _response.Message = "Incluído com sucesso";
 
             }

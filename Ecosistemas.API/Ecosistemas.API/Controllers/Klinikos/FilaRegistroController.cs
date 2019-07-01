@@ -29,9 +29,9 @@ namespace Ecosistemas.API.Controllers.Api
     {
         private readonly IFilaRegistroService _service;
 
-        public FilaRegistroController(KlinikosDbContext contextKlinikos, ApiDbContext context)
+        public FilaRegistroController(DominioDbContext contextDominio, KlinikosDbContext contextKlinikos, ApiDbContext context)
         {
-            _service = new FilaRegistroService(contextKlinikos, context);
+            _service = new FilaRegistroService(contextDominio, contextKlinikos, context);
         }
 
         [Route("Incluir")]
@@ -39,7 +39,7 @@ namespace Ecosistemas.API.Controllers.Api
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<FilaRegistro>> Incluir([FromBody]FilaRegistro filaRegistro)
         {
-            return await _service.Adicionar(filaRegistro, Guid.Parse("285CE313-2D96-4425-9A70-B1E71BC17020"));
+            return await _service.AdicionarPacienteFila(filaRegistro, Guid.Parse("285CE313-2D96-4425-9A70-B1E71BC17020"));
         }
 
         [HttpPut]
@@ -61,7 +61,7 @@ namespace Ecosistemas.API.Controllers.Api
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<IList<FilaRegistro>>> Get()
         {
-            return await _service.ListarTodos();
+            return await _service.ConsultarFila();
         }
 
         [HttpGet("{filaRegistroId}")]

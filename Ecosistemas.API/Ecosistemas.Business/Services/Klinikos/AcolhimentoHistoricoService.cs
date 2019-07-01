@@ -19,6 +19,7 @@ namespace Ecosistemas.Business.Services.Klinikos
         {
             _contextDominio = contextDominio;
 
+
         }
 
         public async Task<CustomResponse<PessoaHistorico>> AdicionarHistoricoAcolhimento(Acolhimento acolhimento, PessoaProfissional pessoaProfissionalCadastro)

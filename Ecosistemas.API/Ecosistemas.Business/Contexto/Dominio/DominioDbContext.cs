@@ -58,6 +58,8 @@ namespace Ecosistemas.Business.Contexto.Dominio
         public DbSet<IntervaloMedicamento> IntervalosMedicamento { get; set; }
         public DbSet<CapituloCID> CapitulosCID { get; set; }
 
+        public DbSet<PessoaStatus> PessoaStatus { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            

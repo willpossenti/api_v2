@@ -11,8 +11,12 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid AcolhimentoId { get; set; }
 
+        [DataType(DataType.DateTime)]
+        public DateTime? DataAcolhimento { get; set; }
+
         [Required(ErrorMessage = "Pessoa paciente obrigatorio")]
         public virtual PessoaPaciente PessoaPaciente { get; set; }
+        public virtual PessoaProfissional PessoaProfissional { get; set; }
 
         [Required(ErrorMessage = "Especialidade obrigatoria")]
         public Guid EspecialidadeId { get; set; }
