@@ -11,7 +11,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
         [Key]
         public Guid GrupoExameDetalheId { get; set; }
 
-        public Guid GrupoExameId { get; set; }
+        public virtual GrupoExame GrupoExame { get; set; }
 
         public Guid ExameId { get; set; }
 

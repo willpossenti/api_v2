@@ -19,6 +19,7 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
         Task<CustomResponse<IList<T>>> ObterByExpression(Expression<Func<T, bool>> predicate);
         //Task<CustomResponse<T>> GerarLog(string action, string entity, Guid UserId);
         CustomResponse<T> AdicionarCarga(List<T> entity, Guid UserId);
+       
 
         void Dispose();
     }
