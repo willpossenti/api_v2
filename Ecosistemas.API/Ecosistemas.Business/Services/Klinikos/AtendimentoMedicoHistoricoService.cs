@@ -41,7 +41,7 @@ namespace Ecosistemas.Business.Services.Klinikos
                     FrequenciaRespiratoria = atendimentoMedico.FrequenciaRespiratoria,
                     Saturacao = atendimentoMedico.Saturacao,
                     Anamnese = atendimentoMedico.Anamnese,
-                    CID = _contextDominio.CID.FindAsync(atendimentoMedico.CIDId).Result.Nome,
+                // CID = _contextDominio.CID.FindAsync(atendimentoMedico.CIDId).Result.Nome,
                     CampoObservacao = atendimentoMedico.CampoObservacao,
                     Receita = atendimentoMedico.Receita,
                     Prescricao = atendimentoMedico.Prescricao,
@@ -54,6 +54,9 @@ namespace Ecosistemas.Business.Services.Klinikos
                     DataAlteracao = DateTime.Now,
                     Ativo = atendimentoMedico.Ativo,
                 };
+
+                if (atendimentoMedico.CIDId != null)
+                    _AtendimentoMedicoHistorico.CID = _contextDominio.CID.FindAsync(atendimentoMedico.CIDId).Result.Nome;
 
                 await base.Adicionar(_AtendimentoMedicoHistorico, pessoaProfissionalCadastro.PessoaId);
 

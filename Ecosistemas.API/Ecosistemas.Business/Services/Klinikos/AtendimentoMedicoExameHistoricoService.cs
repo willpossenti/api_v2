@@ -35,15 +35,13 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     //ExameLaboratorial = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.AlergiaId).Result.Nome,
                     //ExameImagem = atendimentoMedicoExame.ExameImagem,
-
+                    GrupoExame = atendimentoMedicoExame.GrupoExame?.Nome,
                     ObservacaoExame = atendimentoMedicoExame.ObservacaoExame,
                     DataExame = atendimentoMedicoExame.DataExame,
                     Profissional = atendimentoMedicoExame.Profissional?.NomeCompleto,
                     Ativo = atendimentoMedicoExame.Ativo,
                 };
 
-                if (atendimentoMedicoExame.GrupoExame != null)
-                    _AtendimentoMedicoExameHistorico.GrupoExame = _contextKlinikos.GruposExame.FindAsync(atendimentoMedicoExame.GrupoExame).Result.Nome;
 
                 if (atendimentoMedicoExame.ExameId != Guid.Empty)
                     _AtendimentoMedicoExameHistorico.Exame = _contextDominio.Exames.FindAsync(atendimentoMedicoExame.ExameId).Result.Nome;

@@ -13,9 +13,6 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedicoPrescricaoReceitaDetalhe AtendimentoMedicoPrescricaoReceitaDetalhe { get; set; }
 
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
-        [DataType(DataType.Text)]
-        public string Nome { get; set; }
 
         [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]

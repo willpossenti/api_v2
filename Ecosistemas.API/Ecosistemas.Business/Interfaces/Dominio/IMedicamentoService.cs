@@ -12,5 +12,6 @@ namespace Ecosistemas.Business.Interfaces.Dominio
     public interface IMedicamentoService : IBaseService<Medicamento>
     {
         Task<CustomResponse<List<Medicamento>>> ConsultaMedicamento(string nome, Guid userId);
+     
     }
 }

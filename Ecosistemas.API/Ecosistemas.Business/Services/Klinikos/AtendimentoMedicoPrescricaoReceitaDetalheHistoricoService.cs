@@ -31,9 +31,9 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _AtendimentoMedicoPrescricaoReceitaDetalheHistorico = new AtendimentoMedicoPrescricaoReceitaDetalheHistorico
                 {
                     AtendimentoMedicoPrescricaoReceitaDetalhe = atendimentoMedicoPrescricaoReceitaDetalhe,
-                    GrupoMedicamento = atendimentoMedicoPrescricaoReceitaDetalhe.GrupoMedicamento.GrupoMedicamentoDetalhe?.Nome,                   
+                    GrupoMedicamento = atendimentoMedicoPrescricaoReceitaDetalhe.GrupoMedicamento?.GrupoMedicamentoDetalhe?.Nome,                   
                     Dose = atendimentoMedicoPrescricaoReceitaDetalhe.Dose,
-                    Observacao = atendimentoMedicoPrescricaoReceitaDetalhe?.Observacao,
+                    Observacao = atendimentoMedicoPrescricaoReceitaDetalhe.Observacao,
                     Prescricao = atendimentoMedicoPrescricaoReceitaDetalhe.Prescricao,
                     Receita = atendimentoMedicoPrescricaoReceitaDetalhe.Receita,
                     Ativo = atendimentoMedicoPrescricaoReceitaDetalhe.Ativo,

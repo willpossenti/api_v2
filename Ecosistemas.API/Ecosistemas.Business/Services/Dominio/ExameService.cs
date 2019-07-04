@@ -24,7 +24,35 @@ namespace Ecosistemas.Business.Services.Dominio
         {
 
         }
+        //public async Task<CustomResponse<IList<Exame>>> GetExameByGrupo(List<GrupoExameDetalhe> listaGrupoExameDetalhe)
+        //{
+        //    var _response = new CustomResponse<IList<Exame>>();
 
+        //    try
+        //    {
+        //        await Task.Run(() =>
+        //        {
+        //            Expression<Func<Exame, bool>> filtroByGrupo = x => x.ExameId == listaGrupoExameDetalhe.ForEach();
+        //            && x.Nome.Contains(CID.Nome);
+        //            var listaCids = _contextDominio.CID.Where(filtroByCapitulo);
+
+        //            _response.StatusCode = StatusCodes.Status201Created;
+        //            _response.Message = "Incluído com sucesso";
+        //            _response.Result = listaCids.Take(50).ToList();
+
+        //        });
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        _response.Message = ex.InnerException.Message;
+        //        Error.LogError(ex);
+
+        //    }
+
+        //    return _response;
+        //}
         public async Task<CustomResponse<List<Exame>>> ConsultaExame(string exame, Guid userId)
         {
             var _response = new CustomResponse<List<Exame>>();

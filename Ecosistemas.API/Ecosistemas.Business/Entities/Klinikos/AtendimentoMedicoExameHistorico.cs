@@ -13,7 +13,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual AtendimentoMedicoExame AtendimentoMedicoExame { get; set; }
 
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [StringLength(70, ErrorMessage = "{0} Precisa ter no máximo 20")]
         [DataType(DataType.Text)]
         public string GrupoExame { get; set; }
 
