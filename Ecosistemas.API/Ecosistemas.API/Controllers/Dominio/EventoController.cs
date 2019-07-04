@@ -70,7 +70,14 @@ namespace Ecosistemas.API.Controllers.Dominio
             return await _service.Obter(Guid.Parse(EventoId));
         }
 
-      
+        [HttpGet("GetByDescricao/{descricao}")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<Evento>> GetByDescricao(string descricao)
+        {
+            return await _service.GetByDescricao(descricao);
+        }
+
+
 
     }
 }

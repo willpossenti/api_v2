@@ -44,6 +44,7 @@ namespace Ecosistemas.Business.Contexto.Klinikos
         public DbSet<GrupoExame> GruposExame { get; set; }
         public DbSet<GrupoMedicamento> GruposMedicamento { get; set; }
         public DbSet<FilaRegistro> FilaRegistro { get; set; }
+        public DbSet<FilaRegistroEvento> FilaRegistroEvento { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
