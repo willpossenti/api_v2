@@ -10,6 +10,8 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
     public interface IFilaRegistroService : IBaseService<FilaRegistro>
     {
         Task<CustomResponse<IList<FilaRegistro>>> ConsultarFila();
+        Task<CustomResponse<FilaRegistro>> BuscarFilaRegistroPorId(Guid filaRegistroId, Guid userId);
         Task<CustomResponse<FilaRegistro>> AdicionarPacienteFila(FilaRegistro filaRegistro, Guid userId);
+        Task<CustomResponse<FilaRegistro>> RetirarPacienteFila(FilaRegistro filaRegistro, Guid userId);
     }
 }

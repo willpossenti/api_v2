@@ -12,8 +12,12 @@ namespace Ecosistemas.Business.Entities.Dominio
         public Guid EventoId { get; set; }
 
         [DataType(DataType.Text)]
-        [StringLength(20, ErrorMessage = "{0} Precisa ter no máximo 20")]
+        [StringLength(30, ErrorMessage = "{0} Precisa ter no máximo 20")]
         public string Descricao { get; set; }
+
+        [DataType(DataType.Text)]
+        [StringLength(1, ErrorMessage = "{0} Precisa ter no máximo 1")]
+        public string Sigla { get; set; }
 
         public bool Ativo { get; set; } = true;
 

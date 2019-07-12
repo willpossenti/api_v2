@@ -16,6 +16,8 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual FilaRegistro FilaRegistro { get; set; }
 
+        public virtual PessoaProfissional PessoaProfissional { get; set; }
+
 
         public Guid EventoId { get; set; }
 

@@ -49,6 +49,14 @@ namespace Ecosistemas.API.Controllers.Api
             return await _service.Atualizar(filaRegistro, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
+        [Route("RetirarPacienteFila")]
+        [HttpPut]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<FilaRegistro>> RetirarPacienteFila([FromBody]FilaRegistro filaRegistro)
+        {
+            return await _service.RetirarPacienteFila(filaRegistro, Guid.Parse(HttpContext.User.Identity.Name));
+        }
+
 
         [HttpDelete("{filaRegistroId}")]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
@@ -68,7 +76,7 @@ namespace Ecosistemas.API.Controllers.Api
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
         public async Task<CustomResponse<FilaRegistro>> Get(string filaRegistroId)
         {
-            return await _service.Obter(Guid.Parse(filaRegistroId));
+            return await _service.BuscarFilaRegistroPorId(Guid.Parse(filaRegistroId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
       

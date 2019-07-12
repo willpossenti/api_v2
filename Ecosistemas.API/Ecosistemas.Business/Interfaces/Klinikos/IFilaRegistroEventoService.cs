@@ -11,5 +11,9 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
     {
         Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosNovos(FilaRegistroEvento filaRegistroEvento, Guid userId);
         Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosRetirados(FilaRegistroEvento filaRegistroEvento, Guid userId);
+        Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosChamadosAoPainel(FilaRegistroEvento filaRegistroEvento, Guid userId);
+
+        Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosCancelados(FilaRegistroEvento filaRegistroEvento, Guid userId);
+        Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosConfirmados(FilaRegistroEvento filaRegistroEvento, Guid userId);
     }
 }

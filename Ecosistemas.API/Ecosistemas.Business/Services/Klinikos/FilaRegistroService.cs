@@ -19,6 +19,7 @@ namespace Ecosistemas.Business.Services.Klinikos
     {
         private readonly IAcolhimentoHistoricoService _serviceAcolhimentoHistorico;
         private readonly IFilaRegistroEventoService _serviceFilaRegistroEvento;
+        private readonly IPessoaPacienteService _servicePaciente;
         private readonly IPessoaHistoricoService _servicePessoaHistorico;
         private readonly KlinikosDbContext _contextKlinikos;
         private readonly DominioDbContext _contextDominio;
@@ -29,6 +30,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             _serviceAcolhimentoHistorico = new AcolhimentoHistoricoService(dominioDbContext, contextKlinikos, context);
             _servicePessoaHistorico = new PessoaHistoricoService(dominioDbContext, contextKlinikos, context);
             _serviceFilaRegistroEvento = new FilaRegistroEventoService(dominioDbContext, contextKlinikos, context);
+            _servicePaciente = new PessoaPacienteService(dominioDbContext, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<IList<FilaRegistro>>> ConsultarFila()
@@ -53,6 +55,31 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+
+        public async Task<CustomResponse<FilaRegistro>> BuscarFilaRegistroPorId(Guid filaRegistroId, Guid userId) {
+
+            var _response = new CustomResponse<FilaRegistro>();
+
+
+            try
+            {
+                var filaregistro = await _contextKlinikos.FilaRegistro.Where(x => x.FilaRegistroId == filaRegistroId && x.Ativo).Include(fila => fila.Acolhimento).ThenInclude(pessoa=>pessoa.PessoaPaciente).FirstOrDefaultAsync();
+                _response.StatusCode = StatusCodes.Status200OK;
+                _response.Result = filaregistro;
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+
+        }
+
+
         public async Task<CustomResponse<FilaRegistro>> AdicionarPacienteFila(FilaRegistro filaRegistro, Guid userId)
         {
             var _response = new CustomResponse<FilaRegistro>();
@@ -61,7 +88,21 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                 var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
-                await this.Adicionar(filaRegistro, userId);
+                var _pacienteJaAcolhido = false;
+
+                if (filaRegistro.Acolhimento.PessoaPaciente.PessoaId != Guid.Empty)
+                    _pacienteJaAcolhido = _contextKlinikos.FilaRegistro.Any(x=>x.Acolhimento.PessoaPaciente.PessoaId == filaRegistro.Acolhimento.PessoaPaciente.PessoaId && x.Ativo);
+
+                if (!_pacienteJaAcolhido)
+                    await this.Adicionar(filaRegistro, userId);
+                else {
+
+                    _response.StatusCode = StatusCodes.Status409Conflict;
+                    _response.Message = "Paciente já acolhido";
+                    return _response;
+
+                }
+
 
                 if (filaRegistro.Acolhimento != null)
                 {
@@ -76,7 +117,8 @@ namespace Ecosistemas.Business.Services.Klinikos
                     {
                         FilaRegistro = filaRegistro,
                         DataFilaRegistroEvento = filaRegistro.DataEntradaFilaRegistro,
-                        EventoId = _contextDominio.Eventos.Where(x=>x.Descricao == "ADICIONAR FILA").FirstOrDefault().EventoId
+                        EventoId = _contextDominio.Eventos.Where(x=>x.Sigla == "A").FirstOrDefault().EventoId,
+                        PessoaProfissional = filaRegistro.Acolhimento.PessoaProfissional
 
                     };
 
@@ -112,25 +154,14 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 await this.Atualizar(filaRegistro, userId);
 
-                //if (filaRegistro.Acolhimento != null)
-                //{
+                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "F").FirstOrDefault().PessoaStatusId;
+                filaRegistro.Acolhimento.PessoaPaciente.PessoaStatusId = _pessoaStatusId;
 
-                //    var _filaRegistroEvento = new FilaRegistroEvento
-                //    {
-                //        FilaRegistro = filaRegistro,
-                //        EventoId = _contextDominio.Eventos.Where(x => x.Descricao == "REMOVER FILA").FirstOrDefault().EventoId
-
-                //    };
-
-
-                //    await _serviceFilaRegistroEvento.Adicionar(_filaRegistroEvento, userId);
-                //}
-
-
+                await _servicePaciente.AtualizarPaciente(filaRegistro.Acolhimento.PessoaPaciente, userId);
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Result = filaRegistro;
-                _response.Message = "Incluído com sucesso";
+                _response.Message = "retirado com sucesso";
 
             }
             catch (Exception ex)
@@ -144,6 +175,6 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-
-    }
+       
+        }
 }

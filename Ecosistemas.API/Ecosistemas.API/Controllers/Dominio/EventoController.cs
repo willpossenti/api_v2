@@ -70,11 +70,11 @@ namespace Ecosistemas.API.Controllers.Dominio
             return await _service.Obter(Guid.Parse(EventoId));
         }
 
-        [HttpGet("GetByDescricao/{descricao}")]
+        [HttpGet("GetBySigla/{sigla}")]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<Evento>> GetByDescricao(string descricao)
+        public async Task<CustomResponse<Evento>> GetBySigla(string sigla)
         {
-            return await _service.GetByDescricao(descricao);
+            return await _service.GetBySigla(sigla);
         }
 
 

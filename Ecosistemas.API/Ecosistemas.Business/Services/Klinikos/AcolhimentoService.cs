@@ -33,9 +33,6 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
-
-                acolhimento.Ativo = true;
-
                 await this.Adicionar(acolhimento, userId);
 
                 await _serviceAcolhimentoHistorico.AdicionarHistoricoAcolhimento(acolhimento, _pessoaMaster);

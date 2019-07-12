@@ -87,5 +87,30 @@ namespace Ecosistemas.API.Controllers.Api
             return await _service.ConsultarRegistrosRetirados(filaregistroevento, Guid.Parse(HttpContext.User.Identity.Name));
         }
 
+        [Route("ConsultarRegistrosChamadosAoPainel")]
+        [HttpPost]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosChamadosAoPainel([FromBody]FilaRegistroEvento filaregistroevento)
+        {
+            return await _service.ConsultarRegistrosChamadosAoPainel(filaregistroevento, Guid.Parse(HttpContext.User.Identity.Name));
+        }
+
+        [Route("ConsultarRegistrosCancelados")]
+        [HttpPost]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosCancelados([FromBody]FilaRegistroEvento filaregistroevento)
+        {
+            return await _service.ConsultarRegistrosCancelados(filaregistroevento, Guid.Parse(HttpContext.User.Identity.Name));
+        }
+
+        [Route("ConsultarRegistrosConfirmados")]
+        [HttpPost]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<FilaRegistroEvento>> ConsultarRegistrosConfirmados([FromBody]FilaRegistroEvento filaregistroevento)
+        {
+            return await _service.ConsultarRegistrosConfirmados(filaregistroevento, Guid.Parse(HttpContext.User.Identity.Name));
+        }
+
+
     }
 }

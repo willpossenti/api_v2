@@ -32,7 +32,6 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
                 var numeroBoletim = _contextKlinikos.RegistrosBoletim.Max(x => x.NumeroBoletim);
 
                 if (numeroBoletim != null)
@@ -44,14 +43,13 @@ namespace Ecosistemas.Business.Services.Klinikos
                 else
                     registroBoletim.NumeroBoletim = "000001";
 
-                registroBoletim.Ativo = true;
 
                 await this.Adicionar(registroBoletim, userId);
 
-                if (registroBoletim.Pessoa != null)
-                    await _servicePessoaHistorico.AdicionarHistoricoPaciente(registroBoletim.Pessoa, _pessoaMaster);
+                if (registroBoletim.PessoaPaciente != null)
+                    await _servicePessoaHistorico.AdicionarHistoricoPaciente(registroBoletim.PessoaPaciente, registroBoletim.PessoaProfissional);
 
-                await _serviceRegistroBoletimHistorico.AdicionarHistoricoRegistroBoletim(registroBoletim, _pessoaMaster);
+                await _serviceRegistroBoletimHistorico.AdicionarHistoricoRegistroBoletim(registroBoletim, registroBoletim.PessoaProfissional);
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Message = "Incluído com sucesso";

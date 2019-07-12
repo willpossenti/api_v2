@@ -9,7 +9,7 @@ namespace Ecosistemas.Business.Interfaces.Dominio
 {
     public interface IEventoService : IBaseService<Evento>
     {
-        Task<CustomResponse<Evento>> GetByDescricao(string descricao);
+        Task<CustomResponse<Evento>> GetBySigla(string sigla);
 
     }
 }

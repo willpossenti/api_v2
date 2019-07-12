@@ -119,6 +119,9 @@ namespace Ecosistemas.Business.Services.Klinikos
                 if (pessoaPaciente.TipoCertidaoId != Guid.Empty)
                     _pessoaPacienteHistorico.TipoCertidao = _contextDominio.TiposCertidao.FindAsync(pessoaPaciente.TipoCertidaoId).Result.Descricao;
 
+                if (pessoaPaciente.PessoaStatusId != Guid.Empty)
+                    _pessoaPacienteHistorico.PessoaStatus = _contextDominio.PessoaStatus.FindAsync(pessoaPaciente.PessoaStatusId).Result.Descricao;
+
 
                 await base.Adicionar(_pessoaPacienteHistorico, pessoaProfissionalCadastro.PessoaId);
 

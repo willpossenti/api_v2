@@ -80,9 +80,9 @@ namespace Ecosistemas.API.Controllers.Api
             return await _servicePaciente.ListarTodos();
         }
 
-        [HttpGet("{PessoaId}")]
+        [HttpGet("PessoaPaciente/{PessoaId}")]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<PessoaPaciente>> Get(string PessoaId)
+        public async Task<CustomResponse<PessoaPaciente>> ConsultarPaciente(string PessoaId)
         {
             return await _servicePaciente.Obter(Guid.Parse(PessoaId));
         }

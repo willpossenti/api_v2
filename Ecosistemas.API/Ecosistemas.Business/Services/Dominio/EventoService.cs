@@ -22,14 +22,14 @@ namespace Ecosistemas.Business.Services.Dominio
 
         }
 
-        public async Task<CustomResponse<Evento>> GetByDescricao(string descricao)
+        public async Task<CustomResponse<Evento>> GetBySigla(string sigla)
         {
             var _response = new CustomResponse<Evento>();
 
             try
             {
-                Expression<Func<Evento, bool>> filtroDescricao = x => x.Descricao.Contains(descricao);
-                var _eventos = await base.ObterByExpression(filtroDescricao);
+                Expression<Func<Evento, bool>> filtroSigla = x => x.Sigla.Contains(sigla);
+                var _eventos = await base.ObterByExpression(filtroSigla);
                 _response.StatusCode = StatusCodes.Status302Found;
                 _response.Result = _eventos.Result.FirstOrDefault();
 
