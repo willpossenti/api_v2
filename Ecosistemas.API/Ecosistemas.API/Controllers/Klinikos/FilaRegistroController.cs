@@ -79,7 +79,15 @@ namespace Ecosistemas.API.Controllers.Api
             return await _service.BuscarFilaRegistroPorId(Guid.Parse(filaRegistroId), Guid.Parse(HttpContext.User.Identity.Name));
         }
 
-      
+        [Route("AberturaBoletim")]
+        [HttpPut]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<FilaRegistro>> AberturaBoletim([FromBody]FilaRegistro filaRegistro)
+        {
+            return await _service.AberturaBoletim(filaRegistro, Guid.Parse(HttpContext.User.Identity.Name));
+        }
+
+
 
     }
 }

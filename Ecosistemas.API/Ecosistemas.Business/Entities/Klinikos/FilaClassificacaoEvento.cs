@@ -9,7 +9,7 @@ namespace Ecosistemas.Business.Entities.Klinikos
     {
 
         [Key]
-        public Guid FilaClassificacaoEventoEventosId { get; set; }
+        public Guid FilaClassificacaoEventoId { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime? DataFilaClassificacaoEvento { get; set; }

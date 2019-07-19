@@ -70,6 +70,13 @@ namespace Ecosistemas.API.Controllers.Klinikos
             return await _service.Obter(Guid.Parse(ClassificacaoRiscoId));
         }
 
+        [HttpGet("ConsultaClassificacaoRiscoPorPessoaId/{PessoaId}")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<IList<ClassificacaoRisco>>> ConsultaClassificacaoRiscoPorPessoaId(string PessoaId)
+        {
+            return await _service.ConsultaClassificacaoRiscoPorPessoaId(Guid.Parse(PessoaId), Guid.Parse(HttpContext.User.Identity.Name));
+        }
+
 
 
     }

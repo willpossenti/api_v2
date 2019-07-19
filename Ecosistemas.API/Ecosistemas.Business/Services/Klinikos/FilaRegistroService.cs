@@ -90,6 +90,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 var _pacienteJaAcolhido = false;
 
+
                 if (filaRegistro.Acolhimento.PessoaPaciente.PessoaId != Guid.Empty)
                     _pacienteJaAcolhido = _contextKlinikos.FilaRegistro.Any(x=>x.Acolhimento.PessoaPaciente.PessoaId == filaRegistro.Acolhimento.PessoaPaciente.PessoaId && x.Ativo);
 
@@ -154,7 +155,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                 await this.Atualizar(filaRegistro, userId);
 
-                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "F").FirstOrDefault().PessoaStatusId;
+                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "FE").FirstOrDefault().PessoaStatusId;
                 filaRegistro.Acolhimento.PessoaPaciente.PessoaStatusId = _pessoaStatusId;
 
                 await _servicePaciente.AtualizarPaciente(filaRegistro.Acolhimento.PessoaPaciente, userId);
@@ -175,6 +176,50 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
-       
+        public async Task<CustomResponse<FilaRegistro>> AberturaBoletim(FilaRegistro filaRegistro, Guid userId)
+        {
+            var _response = new CustomResponse<FilaRegistro>();
+
+            try
+            {
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
+
+                await this.Atualizar(filaRegistro, userId);
+
+                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "AB").FirstOrDefault().PessoaStatusId;
+                filaRegistro.Acolhimento.PessoaPaciente.PessoaStatusId = _pessoaStatusId;
+
+                await _servicePaciente.AtualizarPaciente(filaRegistro.Acolhimento.PessoaPaciente, userId);
+
+
+                var _filaRegistroEvento = new FilaRegistroEvento
+                {
+                    FilaRegistro = filaRegistro,
+                    DataFilaRegistroEvento = filaRegistro.DataEntradaFilaRegistro,
+                    EventoId = _contextDominio.Eventos.Where(x => x.Sigla == "S").FirstOrDefault().EventoId,
+                    PessoaProfissional = filaRegistro.Acolhimento.PessoaProfissional
+
+                };
+
+
+                await _serviceFilaRegistroEvento.Adicionar(_filaRegistroEvento, userId);
+
+                _response.StatusCode = StatusCodes.Status201Created;
+                _response.Result = filaRegistro;
+                _response.Message = "retirado com sucesso";
+
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
         }
+
+
+    }
 }

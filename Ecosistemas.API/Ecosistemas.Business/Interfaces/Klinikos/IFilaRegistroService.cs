@@ -13,5 +13,7 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
         Task<CustomResponse<FilaRegistro>> BuscarFilaRegistroPorId(Guid filaRegistroId, Guid userId);
         Task<CustomResponse<FilaRegistro>> AdicionarPacienteFila(FilaRegistro filaRegistro, Guid userId);
         Task<CustomResponse<FilaRegistro>> RetirarPacienteFila(FilaRegistro filaRegistro, Guid userId);
+
+        Task<CustomResponse<FilaRegistro>> AberturaBoletim(FilaRegistro filaRegistro, Guid userId);
     }
 }

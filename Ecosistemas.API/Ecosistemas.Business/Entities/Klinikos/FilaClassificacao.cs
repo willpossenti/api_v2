@@ -17,6 +17,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public virtual RegistroBoletim RegistroBoletim { get; set; }
         public virtual Acolhimento Acolhimento { get; set; }
 
+        public bool Preferencial { get; set; }
+
+        public bool Idoso80 { get; set; }
+
         public bool Ativo { get; set; } = true;
 
 

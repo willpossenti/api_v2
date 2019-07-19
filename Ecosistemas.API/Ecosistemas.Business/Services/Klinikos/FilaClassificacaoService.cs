@@ -17,6 +17,7 @@ namespace Ecosistemas.Business.Services.Klinikos
     {
         private readonly KlinikosDbContext _contextKlinikos;
         private readonly DominioDbContext _contextDominio;
+        private readonly IPessoaPacienteService _servicePaciente;
         private readonly IPessoaHistoricoService _servicePessoaHistorico;
         private readonly IRegistroBoletimHistoricoService _serviceRegistroBoletimHistorico;
         private readonly IFilaClassificacaoEventoService _serviceFilaClassificacaoEvento;
@@ -28,6 +29,7 @@ namespace Ecosistemas.Business.Services.Klinikos
             _servicePessoaHistorico = new PessoaHistoricoService(contextDominio, contextKlinikos, context);
             _serviceRegistroBoletimHistorico = new RegistroBoletimHistoricoService(contextDominio, contextKlinikos, context);
             _serviceFilaClassificacaoEvento = new FilaClassificacaoEventoService(contextDominio, contextKlinikos, context);
+            _servicePaciente = new PessoaPacienteService(contextDominio, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<IList<FilaClassificacao>>> ConsultarFila()
@@ -37,7 +39,8 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                var lista = await _contextKlinikos.FilaClassificacao.Where(x => x.Ativo).Include(fila => fila.RegistroBoletim).ThenInclude(pessoa => pessoa.PessoaPaciente).Include(x=>x.Acolhimento).ToListAsync();
+                var lista = await _contextKlinikos.FilaClassificacao.Where(x => x.Ativo).Include(fila => fila.RegistroBoletim).ThenInclude(pessoa => pessoa.PessoaPaciente)
+                    .Include(acolhimento=> acolhimento.Acolhimento).ToListAsync();
                 _response.StatusCode = StatusCodes.Status200OK;
                 _response.Result = lista;
             }
@@ -52,12 +55,52 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+        public async Task<CustomResponse<FilaClassificacao>> BuscarFilaClassificacaoPorId(Guid filaClassificacaoId, Guid userId)
+        {
+
+            var _response = new CustomResponse<FilaClassificacao>();
+
+
+            try
+            {
+                var filaclassificacao = await _contextKlinikos.FilaClassificacao.Where(x => x.FilaClassificacaoId == filaClassificacaoId && x.Ativo).Include(fila=>fila.Acolhimento)
+                    .Include(fila => fila.RegistroBoletim).ThenInclude(pessoa => pessoa.PessoaPaciente).FirstOrDefaultAsync();
+                _response.StatusCode = StatusCodes.Status200OK;
+                _response.Result = filaclassificacao;
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+
+        }
+
         public async Task<CustomResponse<FilaClassificacao>> AdicionarPacienteFila(FilaClassificacao filaClassificacao, Guid userId)
         {
             var _response = new CustomResponse<FilaClassificacao>();
 
             try
             {
+
+                var _pacienteJaRegistado = false;
+
+                //Valida se já existe registro para o paciente
+                if (filaClassificacao.RegistroBoletim.PessoaPaciente.PessoaId != Guid.Empty)
+                    _pacienteJaRegistado = _contextKlinikos.FilaClassificacao.Any(x => x.RegistroBoletim.PessoaPaciente.PessoaId == filaClassificacao.RegistroBoletim.PessoaPaciente.PessoaId && x.Ativo);
+
+                if (_pacienteJaRegistado)
+                {
+                    _response.StatusCode = StatusCodes.Status409Conflict;
+                    _response.Message = "Paciente já registado";
+                    _response.Result = filaClassificacao;
+                    return _response;
+                }
+
 
                 var numeroBoletim = _contextKlinikos.RegistrosBoletim.Max(x => x.NumeroBoletim);
 
@@ -71,10 +114,17 @@ namespace Ecosistemas.Business.Services.Klinikos
                     filaClassificacao.RegistroBoletim.NumeroBoletim = "000001";
 
 
+                if (filaClassificacao.RegistroBoletim.PessoaPaciente != null)
+                    if (filaClassificacao.RegistroBoletim.PessoaPaciente.PessoaId != null)
+                        await _servicePaciente.AtualizarPaciente(filaClassificacao.RegistroBoletim.PessoaPaciente, userId);
+                
+
                 await this.Adicionar(filaClassificacao, userId);
 
-                if (filaClassificacao.RegistroBoletim.PessoaPaciente != null)
+                if(filaClassificacao.RegistroBoletim.PessoaPaciente == null)
                     await _servicePessoaHistorico.AdicionarHistoricoPaciente(filaClassificacao.RegistroBoletim.PessoaPaciente, filaClassificacao.RegistroBoletim.PessoaProfissional);
+
+
 
                 await _serviceRegistroBoletimHistorico.AdicionarHistoricoRegistroBoletim(filaClassificacao.RegistroBoletim, filaClassificacao.RegistroBoletim.PessoaProfissional);
 
@@ -108,6 +158,36 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+        public async Task<CustomResponse<FilaClassificacao>> RetirarPacienteFila(FilaClassificacao filaClassificacao, Guid userId)
+        {
+            var _response = new CustomResponse<FilaClassificacao>();
 
-    }
+            try
+            {
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
+
+                await this.Atualizar(filaClassificacao, userId);
+
+                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "FE").FirstOrDefault().PessoaStatusId;
+                filaClassificacao.RegistroBoletim.PessoaPaciente.PessoaStatusId = _pessoaStatusId;
+
+                await _servicePaciente.AtualizarPaciente(filaClassificacao.RegistroBoletim.PessoaPaciente, userId);
+
+                _response.StatusCode = StatusCodes.Status201Created;
+                _response.Result = filaClassificacao;
+                _response.Message = "retirado com sucesso";
+
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+        }
+
+}
 }

@@ -31,6 +31,8 @@ namespace Ecosistemas.Business.Services.Klinikos
                 var _ClassificacaoRiscoHistorico = new ClassificacaoRiscoHistorico
                 {
                     ClassificacaoRisco = classificacaoRisco,
+                    Paciente = classificacaoRisco.PessoaPaciente.NomeCompleto,
+                    DataClassificaoRisco = classificacaoRisco.DataClassificaoRisco,
                     Peso = classificacaoRisco.Peso,
                     Altura = classificacaoRisco.Altura,
                     Imc = classificacaoRisco.Imc,
