@@ -19,8 +19,8 @@ namespace Ecosistemas.Business.Services.Dominio
 
     public class BaseService<T> : IDisposable, IBaseService<T> where T : class
     {
-        private DominioDbContext _contextDominio;
-        private ApiDbContext _context;
+        private readonly DominioDbContext _contextDominio;
+        private readonly ApiDbContext _context;
 
         public BaseService(DominioDbContext contextDominio, ApiDbContext context)
         {

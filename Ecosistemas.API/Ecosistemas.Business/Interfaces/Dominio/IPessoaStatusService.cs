@@ -9,6 +9,7 @@ namespace Ecosistemas.Business.Interfaces.Dominio
 {
     public interface IPessoaStatusService : IBaseService<PessoaStatus>
     {
-        Task<CustomResponse<PessoaStatus>> GetByName(string descricao);
+        Task<CustomResponse<PessoaStatus>> GetBySigla(string descricao);
+        Task<CustomResponse<IList<PessoaStatus>>> GetByNomeAndArray(string[] siglas);
     }
 }

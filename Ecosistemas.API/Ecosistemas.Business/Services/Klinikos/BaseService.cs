@@ -98,7 +98,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                _contextKlinikos.Update<T>(entity);
+                _contextKlinikos.Update<T>(entity).State = EntityState.Modified;
                 await _contextKlinikos.SaveChangesAsync();
                 _response.Message = "Alteração";
                 _response.StatusCode = StatusCodes.Status200OK;

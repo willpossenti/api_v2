@@ -18,13 +18,19 @@ namespace Ecosistemas.Business.Services.Klinikos
     public class FilaRegistroService : BaseService<FilaRegistro>, IFilaRegistroService
     {
         private readonly IAcolhimentoHistoricoService _serviceAcolhimentoHistorico;
+        private readonly IFilaRegistroEventoService _serviceFilaRegistroEvento;
+        private readonly IPessoaPacienteService _servicePaciente;
         private readonly IPessoaHistoricoService _servicePessoaHistorico;
         private readonly KlinikosDbContext _contextKlinikos;
+        private readonly DominioDbContext _contextDominio;
         public FilaRegistroService(DominioDbContext dominioDbContext, KlinikosDbContext contextKlinikos, ApiDbContext context) : base(contextKlinikos, context)
         {
             _contextKlinikos = contextKlinikos;
+            _contextDominio = dominioDbContext;
             _serviceAcolhimentoHistorico = new AcolhimentoHistoricoService(dominioDbContext, contextKlinikos, context);
             _servicePessoaHistorico = new PessoaHistoricoService(dominioDbContext, contextKlinikos, context);
+            _serviceFilaRegistroEvento = new FilaRegistroEventoService(dominioDbContext, contextKlinikos, context);
+            _servicePaciente = new PessoaPacienteService(dominioDbContext, contextKlinikos, context);
         }
 
         public async Task<CustomResponse<IList<FilaRegistro>>> ConsultarFila()
@@ -34,7 +40,7 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             try
             {
-                var lista = await _contextKlinikos.FilaRegistro.Include(fila=> fila.Acolhimento).ThenInclude(pessoa=>pessoa.PessoaPaciente).ToListAsync();
+                var lista = await _contextKlinikos.FilaRegistro.Where(x=>x.Ativo).Include(fila=> fila.Acolhimento).ThenInclude(pessoa=>pessoa.PessoaPaciente).ToListAsync();
                 _response.StatusCode = StatusCodes.Status200OK;
                 _response.Result = lista;
             }
@@ -49,6 +55,31 @@ namespace Ecosistemas.Business.Services.Klinikos
             return _response;
         }
 
+
+        public async Task<CustomResponse<FilaRegistro>> BuscarFilaRegistroPorId(Guid filaRegistroId, Guid userId) {
+
+            var _response = new CustomResponse<FilaRegistro>();
+
+
+            try
+            {
+                var filaregistro = await _contextKlinikos.FilaRegistro.Where(x => x.FilaRegistroId == filaRegistroId && x.Ativo).Include(fila => fila.Acolhimento).ThenInclude(pessoa=>pessoa.PessoaPaciente).FirstOrDefaultAsync();
+                _response.StatusCode = StatusCodes.Status200OK;
+                _response.Result = filaregistro;
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+
+        }
+
+
         public async Task<CustomResponse<FilaRegistro>> AdicionarPacienteFila(FilaRegistro filaRegistro, Guid userId)
         {
             var _response = new CustomResponse<FilaRegistro>();
@@ -57,7 +88,22 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                 var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
-                await this.Adicionar(filaRegistro, userId);
+                var _pacienteJaAcolhido = false;
+
+
+                if (filaRegistro.Acolhimento.PessoaPaciente.PessoaId != Guid.Empty)
+                    _pacienteJaAcolhido = _contextKlinikos.FilaRegistro.Any(x=>x.Acolhimento.PessoaPaciente.PessoaId == filaRegistro.Acolhimento.PessoaPaciente.PessoaId && x.Ativo);
+
+                if (!_pacienteJaAcolhido)
+                    await this.Adicionar(filaRegistro, userId);
+                else {
+
+                    _response.StatusCode = StatusCodes.Status409Conflict;
+                    _response.Message = "Paciente já acolhido";
+                    return _response;
+
+                }
+
 
                 if (filaRegistro.Acolhimento != null)
                 {
@@ -66,6 +112,19 @@ namespace Ecosistemas.Business.Services.Klinikos
 
                     if (filaRegistro.Acolhimento.PessoaPaciente != null)
                         await _servicePessoaHistorico.AdicionarHistoricoPaciente(filaRegistro.Acolhimento.PessoaPaciente, _pessoaMaster);
+
+
+                    var _filaRegistroEvento = new FilaRegistroEvento
+                    {
+                        FilaRegistro = filaRegistro,
+                        DataFilaRegistroEvento = filaRegistro.DataEntradaFilaRegistro,
+                        EventoId = _contextDominio.Eventos.Where(x=>x.Sigla == "A").FirstOrDefault().EventoId,
+                        PessoaProfissional = filaRegistro.Acolhimento.PessoaProfissional
+
+                    };
+
+
+                    await _serviceFilaRegistroEvento.Adicionar(_filaRegistroEvento, userId);
                 }
 
 
@@ -73,6 +132,81 @@ namespace Ecosistemas.Business.Services.Klinikos
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Result = filaRegistro;
                 _response.Message = "Incluído com sucesso";
+
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+        }
+
+        public async Task<CustomResponse<FilaRegistro>> RetirarPacienteFila(FilaRegistro filaRegistro, Guid userId)
+        {
+            var _response = new CustomResponse<FilaRegistro>();
+
+            try
+            {
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
+
+                await this.Atualizar(filaRegistro, userId);
+
+                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "FE").FirstOrDefault().PessoaStatusId;
+                filaRegistro.Acolhimento.PessoaPaciente.PessoaStatusId = _pessoaStatusId;
+
+                await _servicePaciente.AtualizarPaciente(filaRegistro.Acolhimento.PessoaPaciente, userId);
+
+                _response.StatusCode = StatusCodes.Status201Created;
+                _response.Result = filaRegistro;
+                _response.Message = "retirado com sucesso";
+
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+        }
+
+        public async Task<CustomResponse<FilaRegistro>> AberturaBoletim(FilaRegistro filaRegistro, Guid userId)
+        {
+            var _response = new CustomResponse<FilaRegistro>();
+
+            try
+            {
+                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
+
+                await this.Atualizar(filaRegistro, userId);
+
+                var _pessoaStatusId = _contextDominio.PessoaStatus.Where(x => x.Sigla == "AB").FirstOrDefault().PessoaStatusId;
+                filaRegistro.Acolhimento.PessoaPaciente.PessoaStatusId = _pessoaStatusId;
+
+                await _servicePaciente.AtualizarPaciente(filaRegistro.Acolhimento.PessoaPaciente, userId);
+
+
+                var _filaRegistroEvento = new FilaRegistroEvento
+                {
+                    FilaRegistro = filaRegistro,
+                    DataFilaRegistroEvento = filaRegistro.DataEntradaFilaRegistro,
+                    EventoId = _contextDominio.Eventos.Where(x => x.Sigla == "S").FirstOrDefault().EventoId,
+                    PessoaProfissional = filaRegistro.Acolhimento.PessoaProfissional
+
+                };
+
+
+                await _serviceFilaRegistroEvento.Adicionar(_filaRegistroEvento, userId);
+
+                _response.StatusCode = StatusCodes.Status201Created;
+                _response.Result = filaRegistro;
+                _response.Message = "retirado com sucesso";
 
             }
             catch (Exception ex)

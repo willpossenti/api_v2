@@ -13,6 +13,11 @@ namespace Ecosistemas.Business.Entities.Klinikos
 
         public virtual ClassificacaoRisco ClassificacaoRisco { get; set; }
 
+        public string Paciente { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime? DataClassificaoRisco { get; set; }
+
         [StringLength(150, ErrorMessage = "{0} Precisa ter no máximo 150")]
         [DataType(DataType.Text)]
         public string DescricaoQueixa { get; set; }

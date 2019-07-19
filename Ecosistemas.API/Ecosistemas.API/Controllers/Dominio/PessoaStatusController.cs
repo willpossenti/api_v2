@@ -69,11 +69,18 @@ namespace Ecosistemas.API.Controllers.Dominio
             return await _service.Obter(Guid.Parse(PessoaStatusId));
         }
 
-        [HttpGet("GetByNome/{descricao}")]
+        [HttpGet("GetByNome/{sigla}")]
         [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
-        public async Task<CustomResponse<PessoaStatus>> GetByNome(string descricao)
+        public async Task<CustomResponse<PessoaStatus>> GetBySigla(string sigla)
         {
-            return await _service.GetByName(descricao);
+            return await _service.GetBySigla(sigla);
+        }
+
+        [HttpPost("GetByNomeAndArray")]
+        [Authorize(Roles = "" + Roles.ROLE_API_MASTER + "," + Roles.ROLE_API_KLINIKOS + "")]
+        public async Task<CustomResponse<IList<PessoaStatus>>> GetByNomeAndArray(string[] siglas)
+        {
+            return await _service.GetByNomeAndArray(siglas);
         }
 
     }

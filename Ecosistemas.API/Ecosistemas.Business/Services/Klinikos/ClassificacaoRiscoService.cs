@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -33,9 +34,6 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                 var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
-
-                classificacaoRisco.Ativo = true;
-
                 await this.Adicionar(classificacaoRisco, userId);
 
                 await _serviceClassificacaoRiscoHistorico.AdicionarHistoricoClassificacaoRisco(classificacaoRisco, _pessoaMaster);
@@ -53,6 +51,30 @@ namespace Ecosistemas.Business.Services.Klinikos
             }
 
             return _response;
+        }
+
+        public async Task<CustomResponse<IList<ClassificacaoRisco>>> ConsultaClassificacaoRiscoPorPessoaId(Guid pessoaId, Guid userId)
+        {
+
+            var _response = new CustomResponse<IList<ClassificacaoRisco>>();
+
+
+            try
+            {
+                var classificacoes = await _contextKlinikos.ClassificacoesRisco.Where(x => x.PessoaPaciente.PessoaId == pessoaId && x.Ativo).ToListAsync();
+                _response.StatusCode = StatusCodes.Status200OK;
+                _response.Result = classificacoes;
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+
         }
     }
 }

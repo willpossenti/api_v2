@@ -54,11 +54,14 @@ namespace Ecosistemas.API
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApiDbContext>(options =>
-                    options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("DefaultConnection"))));
+            //services.AddDbContext<ApiDbContext>(options =>
+            //        options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("DefaultConnection"))));
 
-        //    services.AddDbContext<KlinikosDbContext>(options =>
-        //options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("KlinikosConnection"))));
+            services.AddDbContext<ApiDbContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //    services.AddDbContext<KlinikosDbContext>(options =>
+            //options.UseSqlServer(SegurancaService.Descriptografar(Configuration.GetConnectionString("KlinikosConnection"))));
 
             services.Configure<IISServerOptions>(options =>
             {

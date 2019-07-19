@@ -59,6 +59,7 @@ namespace Ecosistemas.Business.Contexto.Dominio
         public DbSet<CapituloCID> CapitulosCID { get; set; }
 
         public DbSet<PessoaStatus> PessoaStatus { get; set; }
+        public DbSet<Evento> Eventos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

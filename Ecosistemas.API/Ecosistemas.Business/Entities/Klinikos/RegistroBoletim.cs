@@ -19,7 +19,10 @@ namespace Ecosistemas.Business.Entities.Klinikos
         public DateTime? DataBoletim { get; set; }
 
         [Required]
-        public virtual PessoaPaciente Pessoa { get; set; }
+        public virtual PessoaPaciente PessoaPaciente { get; set; }
+
+ 
+        public virtual PessoaProfissional PessoaProfissional { get; set; }
 
         public Guid TipoChegadaId { get; set; }
 

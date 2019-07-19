@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecosistemas.Business.Services.Klinikos
 {
@@ -33,12 +34,10 @@ namespace Ecosistemas.Business.Services.Klinikos
             {
                var _pessoaMaster = (PessoaProfissional)_contextKlinikos.Pessoas.Where(x => x.Master).FirstOrDefault();
 
-
-                acolhimento.Ativo = true;
-
                 await this.Adicionar(acolhimento, userId);
 
                 await _serviceAcolhimentoHistorico.AdicionarHistoricoAcolhimento(acolhimento, _pessoaMaster);
+
 
                 _response.StatusCode = StatusCodes.Status201Created;
                 _response.Result = acolhimento;
@@ -55,5 +54,30 @@ namespace Ecosistemas.Business.Services.Klinikos
 
             return _response;
         }
+
+        public async Task<CustomResponse<IList<Acolhimento>>> ConsultaAcolhimentoPorPessoaId(Guid pessoaId, Guid userId)
+        {
+
+            var _response = new CustomResponse<IList<Acolhimento>>();
+
+
+            try
+            {
+                var acolhimentos = await _contextKlinikos.Acolhimentos.Where(x => x.PessoaPaciente.PessoaId == pessoaId && x.Ativo).ToListAsync();
+                _response.StatusCode = StatusCodes.Status200OK;
+                _response.Result = acolhimentos;
+            }
+            catch (Exception ex)
+            {
+
+                _response.Message = ex.InnerException.Message;
+                Error.LogError(ex);
+
+            }
+
+            return _response;
+
+        }
+
     }
 }

@@ -17,11 +17,9 @@ namespace Ecosistemas.Business.Services.Dominio
     public class CidadeService : BaseService<Cidade>, ICidadeService
     {
         private readonly DominioDbContext _contextDominio;
-        private readonly ApiDbContext _context;
 
         public CidadeService(DominioDbContext contextDominio, ApiDbContext context) : base(contextDominio, context)
         {
-            _context = context;
             _contextDominio = contextDominio;
 
         }

@@ -10,5 +10,6 @@ namespace Ecosistemas.Business.Interfaces.Klinikos
     public interface IClassificacaoRiscoService : IBaseService<ClassificacaoRisco>
     {
         Task<CustomResponse<ClassificacaoRisco>> AdicionarClassificacaoRisco(ClassificacaoRisco classificacaoRisco, Guid userId);
+        Task<CustomResponse<IList<ClassificacaoRisco>>> ConsultaClassificacaoRiscoPorPessoaId(Guid pessoaId, Guid userId);
     }
 }
