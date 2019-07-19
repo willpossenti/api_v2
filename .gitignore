@@ -36,3 +36,4 @@ Ecosistemas.API/Ecosistemas.API/appsettings.json
 *.txt
 *.cache
 *.props
+*.cache
